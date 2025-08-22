@@ -1,0 +1,52 @@
+[build]
+  publish = "public"
+  command = "npm run build"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+# Geographic + Service combination redirects
+[[redirects]]
+  from = "/northern-virginia-art-restoration"
+  to = "/geographic/northern-virginia/art-restoration/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/alexandria-textile-restoration"
+  to = "/geographic/northern-virginia/alexandria/textile-restoration/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/washington-dc-electronics-restoration"
+  to = "/geographic/washington-dc/electronics-restoration/index.html"
+  status = 200
+
+# Blog redirects
+[[redirects]]
+  from = "/blog/authority-reversal"
+  to = "/blog/authority-reversal-education/index.html"
+  status = 200
+
+# FAQ redirects
+[[redirects]]
+  from = "/faq/specialty-rights"
+  to = "/faq/specialty-restoration-rights/index.html"
+  status = 200
+
+# Catch-all
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 404
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=3600"

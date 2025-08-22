@@ -1,0 +1,31 @@
+{
+  "name": "prism-specialties-dmv-empire",
+  "version": "1.0.0",
+  "description": "Specialty Restoration Landing Page Empire with Authority Reversal Framework",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server public --port=3000",
+    "build": "node build-scripts/generate-sitemap.js && node build-scripts/validate-links.js",
+    "deploy": "netlify deploy --prod --dir=public",
+    "validate": "node build-scripts/validate-links.js"
+  },
+  "keywords": [
+    "specialty-restoration",
+    "art-restoration",
+    "textile-restoration",
+    "electronics-restoration",
+    "document-restoration",
+    "dmv",
+    "authority-reversal"
+  ],
+  "author": "Prism Specialties DMV",
+  "license": "ISC",
+  "dependencies": {
+    "live-server": "^1.2.2",
+    "netlify-cli": "^17.0.0"
+  },
+  "devDependencies": {
+    "sitemap": "^7.1.1",
+    "sharp": "^0.32.6"
+  }
+}

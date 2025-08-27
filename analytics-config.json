@@ -1,0 +1,83 @@
+{
+  "analytics": {
+    "provider": "Google Analytics 4",
+    "measurement_id": "G-XXXXXXXXXX",
+    "tracking_enabled": true,
+    "custom_dimensions": {
+      "geographic_region": "geographic_region",
+      "specialty_type": "specialty_type", 
+      "phone_region": "phone_region",
+      "funeral_director_mentions": "funeral_director_mentions",
+      "authority_reversal_present": "authority_reversal_present",
+      "psychology_density": "psychology_density"
+    }
+  },
+  "regions": {
+    "northern_virginia": {
+      "phone": "703-229-1321",
+      "pages": 29,
+      "specialties": ["art-collectibles", "textile-fabric", "electronics-data", "document-photo"],
+      "damage_types": ["fire-damage", "water-damage", "storm-mold", "emergency"],
+      "counties": ["fairfax", "loudoun-county", "prince-william-county"]
+    },
+    "washington_dc": {
+      "phone": "202-335-4240", 
+      "pages": 6,
+      "specialties": ["art-collectibles", "textile-fabric", "electronics-data", "document-photo"],
+      "damage_types": ["emergency"],
+      "areas": ["capitol-hill", "georgetown", "dupont-circle", "adams-morgan"]
+    },
+    "western_maryland": {
+      "phone": "301-215-3191",
+      "pages": 22,
+      "specialties": ["art-collectibles", "textile-fabric", "electronics-data", "document-photo"],
+      "damage_types": ["fire-damage", "water-damage", "storm-mold"],
+      "counties": ["montgomery-county"],
+      "cities": ["frederick", "hagerstown", "cumberland"]
+    }
+  },
+  "authority_reversal_framework": {
+    "enabled": true,
+    "funeral_director_mentions": 500,
+    "authority_elements": 228,
+    "hook_elements": 57,
+    "implementation_rate": "100%",
+    "tracking_events": [
+      "authority_reversal_click",
+      "hook_point_click", 
+      "funeral_director_mention_view",
+      "psychology_element_interaction"
+    ]
+  },
+  "performance_monitoring": {
+    "funeral_director_standard_ms": 542,
+    "accessibility_target": 95,
+    "current_compliance": "90%",
+    "monitoring_frequency": "hourly",
+    "alerts_enabled": true
+  },
+  "conversion_tracking": {
+    "phone_calls": {
+      "value": 25,
+      "currency": "USD",
+      "track_by_region": true
+    },
+    "form_submissions": {
+      "value": 15,
+      "currency": "USD"
+    },
+    "cta_interactions": {
+      "value": 5,
+      "currency": "USD"
+    }
+  },
+  "empire_statistics": {
+    "total_pages": 57,
+    "geographic_coverage": "Complete DMV",
+    "specialty_matrix": "12 combinations",
+    "damage_scenarios": "Emergency ready",
+    "psychology_framework": "100% implemented",
+    "phone_optimization": "Regional strategy active",
+    "last_updated": "2025-01-XX"
+  }
+}

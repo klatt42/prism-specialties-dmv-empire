@@ -1,0 +1,289 @@
+/**
+ * Emergency Alerts CSS
+ * Styling for urgent messaging and emergency response banners
+ */
+
+/* Emergency Banner Base Styling */
+.emergency-banner {
+    background: linear-gradient(90deg, #FF0000, #FF4444);
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(255, 0, 0, 0.3);
+    border: 2px solid #CC0000;
+    position: relative;
+    overflow: hidden;
+}
+
+.emergency-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    animation: emergency-shine 3s infinite;
+}
+
+/* Hook Headline Styling */
+.hook-headline {
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    margin: 0 0 15px 0;
+    line-height: 1.2;
+    animation: shake 2s ease-in-out infinite;
+}
+
+/* Emergency Phone Button */
+.emergency-phone-btn {
+    background: #00AA00;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3em;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    box-shadow: 0 4px 15px rgba(0, 170, 0, 0.4);
+    transition: all 0.3s ease;
+    animation: phone-pulse 1.5s ease-in-out infinite;
+    position: relative;
+}
+
+.emergency-phone-btn:hover {
+    background: #00CC00;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 170, 0, 0.6);
+}
+
+.emergency-phone-btn::before {
+    content: '📞';
+    margin-right: 8px;
+    font-size: 1.2em;
+}
+
+/* Hook CTA Button */
+.hook-cta-btn {
+    background: #FF6600;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 25px;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin: 10px;
+    box-shadow: 0 3px 10px rgba(255, 102, 0, 0.4);
+    transition: all 0.3s ease;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.hook-cta-btn:hover {
+    background: #FF7722;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 102, 0, 0.6);
+}
+
+/* Animation Keyframes */
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 3px 10px rgba(255, 102, 0, 0.4);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 5px 20px rgba(255, 102, 0, 0.7);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 3px 10px rgba(255, 102, 0, 0.4);
+    }
+}
+
+/* Phone Pulse Animation */
+@keyframes phone-pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(0, 170, 0, 0.4);
+    }
+    25% {
+        transform: scale(1.03);
+        box-shadow: 0 6px 25px rgba(0, 170, 0, 0.6);
+    }
+    50% {
+        transform: scale(1.08);
+        box-shadow: 0 8px 30px rgba(0, 170, 0, 0.8);
+    }
+    75% {
+        transform: scale(1.03);
+        box-shadow: 0 6px 25px rgba(0, 170, 0, 0.6);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 4px 15px rgba(0, 170, 0, 0.4);
+    }
+}
+
+/* Shake Animation */
+@keyframes shake {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(-2px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(2px);
+    }
+}
+
+/* Emergency Shine Animation */
+@keyframes emergency-shine {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+/* Urgent Text Styling */
+.urgent-text {
+    color: #FF0000;
+    font-weight: bold;
+    animation: pulse 1s ease-in-out infinite;
+}
+
+.emergency-subtext {
+    color: white;
+    font-size: 1.2em;
+    margin: 15px 0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Emergency Container */
+.emergency-container {
+    position: relative;
+    z-index: 1000;
+    margin: 20px 0;
+}
+
+/* Warning Icons */
+.warning-icon {
+    font-size: 2em;
+    color: #FFD700;
+    animation: shake 1s ease-in-out infinite;
+    margin: 0 10px;
+}
+
+/* Mobile Responsive Media Query */
+@media (max-width: 768px) {
+    .emergency-banner {
+        padding: 15px 10px;
+        margin: 10px 0;
+    }
+
+    .hook-headline {
+        font-size: 1.8em;
+        margin-bottom: 10px;
+        line-height: 1.1;
+    }
+
+    .emergency-phone-btn {
+        padding: 12px 20px;
+        font-size: 1.1em;
+        margin: 8px 5px;
+        width: calc(100% - 20px);
+        max-width: 300px;
+    }
+
+    .hook-cta-btn {
+        padding: 10px 18px;
+        font-size: 1em;
+        margin: 8px 5px;
+        width: calc(100% - 20px);
+        max-width: 250px;
+    }
+
+    .emergency-subtext {
+        font-size: 1em;
+        margin: 10px 0;
+        padding: 0 10px;
+    }
+
+    .warning-icon {
+        font-size: 1.5em;
+        margin: 0 5px;
+    }
+
+    /* Reduce animation intensity on mobile */
+    .hook-headline {
+        animation: none;
+    }
+
+    .emergency-phone-btn {
+        animation: phone-pulse 2s ease-in-out infinite;
+    }
+
+    .hook-cta-btn {
+        animation: pulse 2.5s ease-in-out infinite;
+    }
+}
+
+/* Additional Mobile Styles for Very Small Screens */
+@media (max-width: 480px) {
+    .hook-headline {
+        font-size: 1.5em;
+    }
+
+    .emergency-phone-btn {
+        font-size: 1em;
+        padding: 10px 15px;
+    }
+
+    .hook-cta-btn {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
+
+    .emergency-subtext {
+        font-size: 0.9em;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    .emergency-banner {
+        background: #FF0000;
+        border: 3px solid #FFFFFF;
+    }
+
+    .hook-headline,
+    .emergency-subtext {
+        text-shadow: 2px 2px 0px #000000;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    .hook-headline,
+    .emergency-phone-btn,
+    .hook-cta-btn,
+    .warning-icon,
+    .emergency-banner::before {
+        animation: none;
+    }
+
+    .emergency-phone-btn:hover,
+    .hook-cta-btn:hover {
+        transform: none;
+    }
+}

@@ -1,0 +1,127 @@
+# Prism Specialties Campaign Pages Routing
+# Keep campaign pages unlinked but accessible via direct URL
+
+# Security Headers
+Header always set X-Frame-Options DENY
+Header always set X-Content-Type-Options nosniff
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Disable directory browsing globally
+Options -Indexes
+
+# Campaign pages routing - accessible but not indexed
+<Directory "campaigns">
+    # Allow access to campaign pages via direct URL
+    Options -Indexes
+    AllowOverride None
+    
+    # Prevent crawling and indexing
+    <Files "*.html">
+        Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
+    </Files>
+</Directory>
+
+# Emergency campaign pages
+<Directory "campaigns/emergency">
+    Options -Indexes
+    AllowOverride None
+    
+    # Custom headers for emergency pages
+    Header set Cache-Control "private, no-cache, no-store, must-revalidate"
+    Header set Pragma "no-cache"
+    Header set Expires "0"
+    
+    <Files "*.html">
+        Header set X-Robots-Tag "noindex, nofollow"
+        Header set X-Campaign-Type "emergency"
+    </Files>
+</Directory>
+
+# Insurance authority reversal pages
+<Directory "campaigns/insurance">
+    Options -Indexes
+    AllowOverride None
+    
+    <Files "*.html">
+        Header set X-Robots-Tag "noindex, nofollow"
+        Header set X-Campaign-Type "insurance"
+    </Files>
+</Directory>
+
+# Seasonal campaign pages
+<Directory "campaigns/seasonal">
+    Options -Indexes
+    AllowOverride None
+    
+    <Files "*.html">
+        Header set X-Robots-Tag "noindex, nofollow"
+        Header set X-Campaign-Type "seasonal"
+    </Files>
+</Directory>
+
+# URL Rewriting for clean campaign URLs
+RewriteEngine On
+
+# Redirect campaign root to main site
+RewriteRule ^campaigns/?$ / [R=301,L]
+
+# Clean URLs for emergency campaigns
+RewriteRule ^emergency/([^/]+)/?$ campaigns/emergency/$1.html [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^campaigns/emergency/([^/]+)/?$ campaigns/emergency/$1.html [L]
+
+# Clean URLs for insurance campaigns  
+RewriteRule ^insurance-claim/([^/]+)/?$ campaigns/insurance/$1.html [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^campaigns/insurance/([^/]+)/?$ campaigns/insurance/$1.html [L]
+
+# Clean URLs for seasonal campaigns
+RewriteRule ^special/([^/]+)/?$ campaigns/seasonal/$1.html [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^campaigns/seasonal/([^/]+)/?$ campaigns/seasonal/$1.html [L]
+
+# Block direct access to campaign directories without specific pages
+RewriteCond %{REQUEST_URI} ^/campaigns/(emergency|insurance|seasonal)/?$
+RewriteRule . / [R=301,L]
+
+# Prevent hotlinking to campaign assets
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http(s)?://(www\.)?yourdomain\.com [NC]
+RewriteCond %{REQUEST_URI} ^/campaigns/.*\.(jpg|jpeg|png|gif|css|js)$ [NC]
+RewriteRule . - [F]
+
+# Campaign-specific analytics tracking
+<LocationMatch "^/campaigns/">
+    Header set X-Campaign-Source "paid-ads"
+    Header set X-Tracking-Category "lead-generation"
+</LocationMatch>
+
+# Compress campaign pages for faster loading
+<LocationMatch "^/campaigns/.*\.(html|css|js)$">
+    SetOutputFilter DEFLATE
+</LocationMatch>
+
+# Cache control for campaign assets
+<LocationMatch "^/campaigns/.*\.(css|js|jpg|jpeg|png|gif|ico|svg)$">
+    Header set Cache-Control "public, max-age=86400"
+</LocationMatch>
+
+# Security: Block access to sensitive files in campaigns
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak|sql|conf)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Prevent access to campaign development files
+<FilesMatch "\.(md|txt|json|yml|yaml|xml)$">
+    <LocationMatch "^/campaigns/">
+        Order Allow,Deny
+        Deny from all
+    </LocationMatch>
+</FilesMatch>
+
+# Force HTTPS for campaign pages (if SSL is available)
+# RewriteCond %{HTTPS} off
+# RewriteCond %{REQUEST_URI} ^/campaigns/
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]

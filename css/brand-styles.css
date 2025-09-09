@@ -497,3 +497,82 @@ header {
 .btn-learn:hover {
     background: #00a0df !important;
 }
+
+/* Enhanced Service Coverage Areas Hover Effects */
+.coverage-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 160, 223, 0.15);
+    border-left: 4px solid #ff6b35;
+}
+
+.btn-emergency:hover {
+    transform: scale(1.05);
+    background: #e55a00 !important;
+    box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+}
+
+/* Enhanced Footer Hover Effects */
+.btn-submit-claim:hover {
+    background: #f8f9fa !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+.btn-footer-contact:hover {
+    background: #0090c7 !important;
+    transform: translateY(-2px);
+}
+
+.social-links a:hover span {
+    background: #00a0df !important;
+    transform: scale(1.1);
+}
+
+.footer-content a:hover {
+    color: #00a0df !important;
+}
+
+.legal-links a:hover {
+    color: #ccc !important;
+}
+
+/* Footer Styles */
+footer a:hover {
+    color: #00a0df !important;
+}
+
+.btn-submit-claim:hover {
+    background: #f0f0f0 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+.btn-footer-contact:hover {
+    background: #0090c9 !important;
+    transform: translateY(-2px);
+}
+
+.social-links a span:hover {
+    background: #00a0df !important;
+}
+
+/* Mobile Responsive Footer */
+@media (max-width: 768px) {
+    .footer-content {
+        grid-template-columns: 1fr !important;
+        text-align: center;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .legal-links {
+        margin-top: 15px;
+    }
+    
+    .social-links {
+        justify-content: center;
+    }
+}

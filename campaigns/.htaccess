@@ -1,0 +1,21 @@
+# Campaign Directory Security
+Options -Indexes
+DirectoryIndex index.html
+
+# Prevent direct directory access
+<Files "*">
+    Order Allow,Deny
+    Allow from all
+</Files>
+
+# Block sensitive files
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|inc|bak|sql|conf|md|txt)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Set no-index headers for all campaign pages
+<FilesMatch "\.html$">
+    Header set X-Robots-Tag "noindex, nofollow, noarchive, nosnippet"
+    Header set X-Campaign-Source "direct-access"
+</FilesMatch>

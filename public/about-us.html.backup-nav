@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Prism Specialties DMV | Premier Specialty Restoration Experts</title>
+    <meta name="description" content="Learn about Prism Specialties DMV, your local specialty restoration experts serving Washington DC, Maryland, and Northern Virginia with 25+ years of expertise.">
+    <link rel="stylesheet" href="../css/brand-styles.css">
+    <link rel="icon" type="image/png" href="../images/logos/prism-logo-1000.png">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo navbar-brand">
+                    <img src="/images/logos/prism-logo-1000.png" 
+     alt="Prism Specialties" 
+     style="height: 85px !important; width: auto !important; clip-path: inset(0 0 12% 0);"
+     class="logo-img">
+                    <span class="brand-text">Prism Specialties DMV</span>
+                </a>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="services-dropdown">
+                            <a href="index.html#services">Services</a>
+                            <div class="dropdown-menu">
+                                <a href="index.html#art-restoration">Art Restoration</a>
+                                <a href="index.html#electronics-restoration">Electronics Restoration</a>
+                                <a href="index.html#textile-restoration">Textile Restoration</a>
+                                <a href="index.html#document-restoration">Document Restoration</a>
+                            </div>
+                        </li>
+                        <li><a href="about-us.html" style="color: #00a0df; font-weight: 600;">About Us</a></li>
+                        <li><a href="index.html#service-areas">Service Areas</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section EXACTLY matching main page style -->
+    <section style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; padding: 150px 0; text-align: center;">
+        <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <h1 style="font-size: 4rem; margin-bottom: 30px; font-weight: 700; color: white; line-height: 1.1;">About Prism Specialties DMV</h1>
+            <p style="font-size: 1.5rem; margin-bottom: 50px; color: white; opacity: 1; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.4;">
+                Your trusted local specialty restoration experts, backed by 25+ years of industry-leading expertise
+            </p>
+            
+            <!-- CTA buttons matching main page -->
+            <div style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; margin-top: 40px;">
+                <a href="tel:301-215-3191" style="background: rgba(255,255,255,0.2); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; display: inline-flex; align-items: center; gap: 10px; border: 2px solid rgba(255,255,255,0.3); backdrop-filter: blur(10px);">
+                    📞 24/7 Emergency: 301-215-3191
+                </a>
+                <a href="index.html#contact" style="background: white; color: #0ea5e9; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                    Get Free Assessment
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content with improved styling -->
+    <main style="background: #f8f9fa;">
+        
+        <!-- Our Story Section -->
+        <section style="padding: 100px 0;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;">
+                    <div>
+                        <h2 style="font-size: 3rem; color: #1e293b; margin-bottom: 30px; font-weight: 700; line-height: 1.2;">Our Story in the DMV</h2>
+                        <p style="font-size: 1.25rem; color: #475569; line-height: 1.7; margin-bottom: 25px;">
+                            After a disaster hits, those impacted are changed forever. At <strong style="color: #0ea5e9;">Prism Specialties DMV</strong>, we believe in helping the people of Washington DC, Maryland, and Northern Virginia through their most trying times so we can offer reassurance and relief when they need it the most.
+                        </p>
+                        <p style="font-size: 1.1rem; color: #475569; line-height: 1.7; margin-bottom: 25px;">
+                            As an <strong>independently owned and operated franchise</strong> of Prism Specialties, we bring over 25 years of proven specialty restoration expertise directly to our local DMV community. We understand the unique challenges our region faces - from historic home restorations in Georgetown to high-tech electronics recovery in Northern Virginia's business corridor.
+                        </p>
+                        <p style="font-size: 1.1rem; color: #475569; line-height: 1.7;">
+                            Whether it's residential or commercial, we deliver effective recovery solutions to help people and businesses in our community recover fast from natural disasters and other unforeseen damages.
+                        </p>
+                    </div>
+                    <div style="background: white; padding: 60px; border-radius: 20px; text-align: center; box-shadow: 0 20px 50px rgba(0,0,0,0.1);">
+                        <div style="background: linear-gradient(135deg, #0ea5e9, #0284c7); color: white; width: 120px; height: 120px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 30px; font-size: 3rem; font-weight: bold; box-shadow: 0 10px 30px rgba(14,165,233,0.3);">25+</div>
+                        <h3 style="color: #1e293b; margin-bottom: 15px; font-size: 1.8rem; font-weight: 600;">Years of Expertise</h3>
+                        <p style="color: #475569; line-height: 1.6; font-size: 1.15rem;">Bringing proven specialty restoration solutions to the DMV region</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Expertise Section -->
+        <section style="padding: 100px 0; background: white;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <h2 style="font-size: 3rem; color: #1e293b; margin-bottom: 20px; font-weight: 700;">Our Areas of Expertise</h2>
+                    <p style="font-size: 1.3rem; color: #475569; max-width: 700px; margin: 0 auto; line-height: 1.6;">
+                        What many companies don't specialize in, or may consider a total loss, <strong style="color: #0ea5e9;">we can restore</strong>.
+                    </p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px;">
+                    <div style="background: #f8fafc; padding: 40px 30px; border-radius: 20px; text-align: center; border: 1px solid #e2e8f0; transition: transform 0.3s;">
+                        <div style="background: linear-gradient(135deg, #0ea5e9, #0284c7); color: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 2rem; box-shadow: 0 10px 25px rgba(14,165,233,0.2);">🎨</div>
+                        <h3 style="color: #1e293b; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Art & Collectibles</h3>
+                        <p style="color: #475569; line-height: 1.6; font-size: 1.05rem;">Works on paper, sculptures, and precious collectibles</p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 40px 30px; border-radius: 20px; text-align: center; border: 1px solid #e2e8f0; transition: transform 0.3s;">
+                        <div style="background: linear-gradient(135deg, #0ea5e9, #0284c7); color: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 2rem; box-shadow: 0 10px 25px rgba(14,165,233,0.2);">💻</div>
+                        <h3 style="color: #1e293b; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Electronics & Data</h3>
+                        <p style="color: #475569; line-height: 1.6; font-size: 1.05rem;">Computers, appliances, and industrial machinery</p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 40px 30px; border-radius: 20px; text-align: center; border: 1px solid #e2e8f0; transition: transform 0.3s;">
+                        <div style="background: linear-gradient(135deg, #0ea5e9, #0284c7); color: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 2rem; box-shadow: 0 10px 25px rgba(14,165,233,0.2);">👗</div>
+                        <h3 style="color: #1e293b; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Textiles & Fabrics</h3>
+                        <p style="color: #475569; line-height: 1.6; font-size: 1.05rem;">Leather goods, shoes, and delicate fabrics</p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 40px 30px; border-radius: 20px; text-align: center; border: 1px solid #e2e8f0; transition: transform 0.3s;">
+                        <div style="background: linear-gradient(135deg, #0ea5e9, #0284c7); color: white; width: 80px; height: 80px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; font-size: 2rem; box-shadow: 0 10px 25px rgba(14,165,233,0.2);">📄</div>
+                        <h3 style="color: #1e293b; margin-bottom: 15px; font-size: 1.5rem; font-weight: 600;">Documents & Photos</h3>
+                        <p style="color: #475569; line-height: 1.6; font-size: 1.05rem;">Important papers and irreplaceable memories</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission & Vision Section -->
+        <section style="padding: 100px 0; background: #f8f9fa;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 60px;">
+                    <div style="background: white; padding: 60px; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); border-left: 6px solid #0ea5e9;">
+                        <h2 style="color: #0ea5e9; margin-bottom: 30px; font-size: 2.5rem; font-weight: 700;">Our Mission</h2>
+                        <p style="font-size: 1.4rem; color: #1e293b; line-height: 1.6; font-style: italic; font-weight: 500;">
+                            "To calmly and professionally guide our DMV clients through the protection and restoration of their most precious and important possessions."
+                        </p>
+                    </div>
+                    <div style="background: white; padding: 60px; border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.08); border-left: 6px solid #0ea5e9;">
+                        <h2 style="color: #0ea5e9; margin-bottom: 30px; font-size: 2.5rem; font-weight: 700;">Our Vision</h2>
+                        <p style="font-size: 1.4rem; color: #1e293b; line-height: 1.6; font-style: italic; font-weight: 500;">
+                            "To be the expert of choice for specialty restoration services throughout Washington DC, Maryland, and Northern Virginia."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Our Values Section -->
+        <section style="padding: 100px 0; background: white;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                <div style="text-align: center; margin-bottom: 80px;">
+                    <h2 style="font-size: 3rem; color: #1e293b; margin-bottom: 20px; font-weight: 700;">How We Serve Our Community</h2>
+                    <p style="font-size: 1.3rem; color: #475569; line-height: 1.6;">
+                        Prism Specialties DMV proudly serves contractors, adjusters, and the insured throughout our region.
+                    </p>
+                </div>
+                
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px;">
+                    <div style="background: #f8fafc; padding: 50px; border-radius: 20px; border-top: 5px solid #0ea5e9; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                        <h3 style="color: #0ea5e9; margin-bottom: 20px; font-size: 1.6rem; font-weight: 600;">🚨 Immediate Response</h3>
+                        <p style="color: #475569; line-height: 1.7; font-size: 1.1rem;">
+                            Restoration requires immediate care solutions. To mitigate and prevent further damage, we act with the utmost urgency to restore items to their pre-loss condition in a way that's safe and reliable.
+                        </p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 50px; border-radius: 20px; border-top: 5px solid #0ea5e9; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                        <h3 style="color: #0ea5e9; margin-bottom: 20px; font-size: 1.6rem; font-weight: 600;">❤️ Personal Care</h3>
+                        <p style="color: #475569; line-height: 1.7; font-size: 1.1rem;">
+                            Prism Specialties DMV treats every item as if it were our own. This means carefully transporting items, restoring them with caution, using eco-friendly solutions, and providing safe storage, testing, and delivery.
+                        </p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 50px; border-radius: 20px; border-top: 5px solid #0ea5e9; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                        <h3 style="color: #0ea5e9; margin-bottom: 20px; font-size: 1.6rem; font-weight: 600;">💬 Open Communication</h3>
+                        <p style="color: #475569; line-height: 1.7; font-size: 1.1rem;">
+                            By entrusting us with sentimental and valuable items, we guarantee open communication throughout the restoration process. We're available 24/7 to answer questions and accommodate needs.
+                        </p>
+                    </div>
+                    <div style="background: #f8fafc; padding: 50px; border-radius: 20px; border-top: 5px solid #0ea5e9; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                        <h3 style="color: #0ea5e9; margin-bottom: 20px; font-size: 1.6rem; font-weight: 600;">🏆 Expert Craftsmanship</h3>
+                        <p style="color: #475569; line-height: 1.7; font-size: 1.1rem;">
+                            Specialty items require special care. Our team of certified experts are uniquely trained to use the best tools and eco-friendly solutions to restore damaged items with straightforward care and urgency.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Local Commitment Section -->
+        <section style="padding: 100px 0; background: #f8f9fa;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <h2 style="font-size: 3rem; color: #1e293b; margin-bottom: 30px; font-weight: 700;">Committed to Our DMV Community</h2>
+                    <p style="font-size: 1.3rem; color: #475569; line-height: 1.8; margin-bottom: 30px;">
+                        As a locally owned and operated franchise, we understand the unique character of our region. From the historic neighborhoods of <strong style="color: #0ea5e9;">Georgetown and Capitol Hill</strong> to the bustling business districts of <strong style="color: #0ea5e9;">Northern Virginia</strong> and the suburban communities throughout <strong style="color: #0ea5e9;">Maryland</strong>, we're here to protect what matters most to our neighbors.
+                    </p>
+                    <p style="font-size: 1.15rem; color: #475569; line-height: 1.8;">
+                        Our specialized restoration services accommodate the diverse needs of our DMV community, ensuring that specific requirements and preferences are met with precision and care after a disaster.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%); color: white; padding: 100px 0; text-align: center;">
+            <div style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+                <h2 style="font-size: 3.5rem; margin-bottom: 25px; font-weight: 700; color: white;">Experience the Prism Difference</h2>
+                <p style="font-size: 1.5rem; margin-bottom: 50px; max-width: 600px; margin-left: auto; margin-right: auto; color: white; line-height: 1.5;">
+                    When disaster strikes, trust the local experts with 25+ years of proven specialty restoration expertise.
+                </p>
+                <div style="display: flex; gap: 25px; justify-content: center; flex-wrap: wrap;">
+                    <a href="tel:301-215-3191" style="background: white; color: #0ea5e9; padding: 20px 45px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.3rem; display: inline-block; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">Call Now: 301-215-3191</a>
+                    <a href="index.html#contact" style="background: transparent; color: white; border: 3px solid white; padding: 17px 45px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.3rem; display: inline-block;">Free Assessment</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer EXACTLY matching main page -->
+    <footer style="background: #2d2d2d; color: white; padding: 50px 20px 20px;">
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 40px;">
+                <div>
+                    <img src="../public/images/prism-logo-white.png.webp" alt="Prism Specialties DMV" style="height: 60px; margin-bottom: 20px;">
+                    <p style="color: #ccc; line-height: 1.6;">Premier specialty restoration experts serving the DC, Maryland, and Northern Virginia region.</p>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 20px; color: #00a0df;">Services</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><a href="index.html#services" style="color: #ccc; text-decoration: none;">Art & Collectibles</a></li>
+                        <li style="margin-bottom: 10px;"><a href="index.html#services" style="color: #ccc; text-decoration: none;">Electronics & Data</a></li>
+                        <li style="margin-bottom: 10px;"><a href="index.html#services" style="color: #ccc; text-decoration: none;">Textiles & Fabrics</a></li>
+                        <li style="margin-bottom: 10px;"><a href="index.html#services" style="color: #ccc; text-decoration: none;">Document Recovery</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="margin-bottom: 20px; color: #00a0df;">Contact</h4>
+                    <p style="color: #ccc; margin-bottom: 10px;">Emergency Response: <strong style="color: white;">24/7</strong></p>
+                    <p style="color: #ccc; margin-bottom: 10px;">Phone: <a href="tel:301-215-3191" style="color: #00a0df; text-decoration: none;">301-215-3191</a></p>
+                    <p style="color: #ccc;">Serving DC, MD & Northern VA</p>
+                </div>
+            </div>
+            <div style="border-top: 1px solid #444; padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+                <p style="margin: 0; color: #888;">&copy; 2025 Prism Specialties DMV. All rights reserved.</p>
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <a href="../privacy-policy.html" style="color: #888; text-decoration: none;">Privacy Policy</a>
+                    <a href="../terms-conditions.html" style="color: #888; text-decoration: none;">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Responsive CSS -->
+    <style>
+        @media (max-width: 768px) {
+            header div {
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+            nav {
+                flex-direction: column !important;
+                gap: 15px !important;
+            }
+            h1 {
+                font-size: 2.5rem !important;
+            }
+            h2 {
+                font-size: 2.2rem !important;
+            }
+            div[style*="grid-template-columns: 1fr 1fr"] {
+                grid-template-columns: 1fr !important;
+                gap: 40px !important;
+            }
+            div[style*="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))"] {
+                grid-template-columns: 1fr !important;
+            }
+            div[style*="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr))"] {
+                grid-template-columns: 1fr !important;
+            }
+            div[style*="padding: 100px"] {
+                padding: 60px 20px !important;
+            }
+        }
+    </style>
+</body>
+</html>

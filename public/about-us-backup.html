@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Prism Specialties DMV - Premier specialty restoration experts in Maryland, Virginia, and Washington DC. Professional art, electronics, textiles, and document restoration services.">
+    <title>About Us - Prism Specialties DMV</title>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Prism Specialties DMV",
+        "description": "Premier specialty restoration services for art, electronics, textiles, and documents",
+        "telephone": "301-215-3191",
+        "email": "info@prismspecialtiesdmv.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "DMV Area",
+            "addressRegion": "MD, VA, DC"
+        },
+        "serviceArea": [
+            "Washington DC",
+            "Montgomery County MD", 
+            "Frederick County MD",
+            "Prince George's County MD",
+            "Fairfax County VA",
+            "Arlington County VA", 
+            "Loudoun County VA"
+        ],
+        "services": [
+            "Art and Collectibles Restoration",
+            "Electronics and Data Recovery",
+            "Textile and Fabric Restoration",
+            "Document and Photo Recovery"
+        ]
+    }
+    </script>
+    
+    <style>
+        /* Brand Color Variables */
+        :root {
+            --brand-primary: #00a0df;    /* Headers */
+            --brand-accent: #7c878f;     /* Secondary */
+            --brand-tertiary: #e8eaed;   /* Backgrounds */
+            --brand-text: #666666;       /* Body text */
+            --brand-light: #f8f9fa;      /* Light backgrounds */
+            --brand-white: #ffffff;
+        }
+        
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            line-height: 1.6;
+            color: var(--brand-text);
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--brand-primary);
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+        
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--brand-white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--brand-primary);
+            text-decoration: none;
+        }
+        
+        .logo-img {
+            height: 60px;
+            width: auto;
+            margin-right: 15px;
+            vertical-align: middle;
+            object-fit: contain;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--brand-primary);
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu a:hover {
+            background: var(--brand-light);
+            color: var(--brand-accent);
+        }
+        
+        .services-dropdown {
+            position: relative;
+        }
+        
+        .services-dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--brand-white);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            min-width: 200px;
+            padding: 10px 0;
+        }
+        
+        .dropdown-menu a {
+            display: block;
+            padding: 10px 20px;
+            color: var(--brand-text);
+            border-radius: 0;
+        }
+        
+        .dropdown-menu a:hover {
+            background: var(--brand-light);
+            color: var(--brand-primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--brand-primary) 0%, #004080 100%);
+            color: var(--brand-white);
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            color: var(--brand-white);
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero .subheadline {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            color: #e6f3ff;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn-primary {
+            background: var(--brand-accent);
+            color: var(--brand-white);
+        }
+        
+        .btn-primary:hover {
+            background: #e55a00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 102, 0, 0.3);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--brand-white);
+            border: 2px solid var(--brand-white);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--brand-white);
+            color: var(--brand-primary);
+        }
+        
+        /* Services Grid */
+        .services-section {
+            padding: 80px 0;
+            background: var(--brand-light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: var(--brand-white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--brand-accent);
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: var(--brand-primary);
+        }
+        
+        .service-card p {
+            margin-bottom: 25px;
+            color: var(--brand-text);
+        }
+        
+        .service-card .btn {
+            padding: 12px 25px;
+            font-size: 14px;
+        }
+        
+        /* Trust Indicators */
+        .trust-section {
+            padding: 60px 0;
+            background: var(--brand-white);
+        }
+        
+        .trust-indicators {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .trust-badge {
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .trust-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--brand-accent);
+        }
+        
+        .trust-badge h4 {
+            color: var(--brand-primary);
+            margin-bottom: 10px;
+        }
+        
+        .trust-badge p {
+            font-size: 0.9rem;
+            color: var(--brand-text);
+            margin-bottom: 0;
+        }
+        
+        /* Service Areas */
+        .service-areas {
+            padding: 80px 0;
+            background: var(--brand-light);
+        }
+        
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .area-card {
+            background: var(--brand-white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .area-card h3 {
+            color: var(--brand-primary);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .area-icon {
+            font-size: 1.5rem;
+            color: var(--brand-accent);
+        }
+        
+        .counties {
+            list-style: none;
+        }
+        
+        .counties li {
+            padding: 5px 0;
+            color: var(--brand-text);
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .counties li:before {
+            content: "✓";
+            color: var(--brand-accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--brand-primary);
+            color: var(--brand-white);
+            padding: 50px 0 30px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .footer h4 {
+            color: var(--brand-white);
+            margin-bottom: 20px;
+        }
+        
+        .footer p, .footer a {
+            color: #b3d9ff;
+            text-decoration: none;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .footer a:hover {
+            color: var(--brand-white);
+        }
+        
+        .franchise-disclosure {
+            border-top: 1px solid #004080;
+            padding-top: 20px;
+            text-align: center;
+            color: #b3d9ff;
+            font-size: 0.9rem;
+        }
+        
+        /* Who We Serve Section */
+        .who-we-serve-section {
+            padding: 80px 0;
+            background: var(--brand-tertiary);
+        }
+        
+        .who-we-serve-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .client-card {
+            background: var(--brand-white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .client-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .client-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .client-card h3 {
+            color: var(--brand-primary);
+            margin: 20px 20px 10px;
+        }
+        
+        .client-card p {
+            margin: 0 20px 20px;
+            color: var(--brand-text);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        /* Our Services Section */
+        .our-services-section {
+            padding: 80px 0;
+            background: var(--brand-light);
+        }
+        
+        .our-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .specialty-card {
+            background: var(--brand-white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .specialty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .specialty-card h3 {
+            color: var(--brand-primary);
+            margin: 20px 20px 10px;
+            font-size: 1.3rem;
+        }
+        
+        .specialty-card p {
+            margin: 0 20px 20px;
+            color: var(--brand-text);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        /* Types of Damage Section */
+        .damage-types-section {
+            padding: 80px 0;
+            background: var(--brand-white);
+        }
+        
+        .damage-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .damage-card {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            min-height: 300px;
+        }
+        
+        .damage-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        }
+        
+        .damage-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        
+        .damage-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 160, 223, 0.9));
+            color: white;
+            padding: 40px 20px 20px;
+        }
+        
+        .damage-overlay h3 {
+            color: white;
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+        
+        .damage-overlay p {
+            color: white;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero .subheadline {
+                font-size: 1.1rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            
+            /* Mobile responsive for new sections */
+            .who-we-serve-grid,
+            .our-services-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .damage-types-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .damage-card {
+                min-height: 250px;
+            }
+            
+            .client-image,
+            .service-image {
+                height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo navbar-brand">
+                    <img src="/images/logos/prism-logo-1000.png" 
+     alt="Prism Specialties" 
+     style="height: 85px !important; width: auto !important; clip-path: inset(0 0 12% 0);"
+     class="logo-img">
+                    <span class="brand-text">Prism Specialties DMV</span>
+                </a>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="services-dropdown">
+                            <a href="#services">Services</a>
+                            <div class="dropdown-menu">
+                                <a href="#art-restoration">Art Restoration</a>
+                                <a href="#electronics-restoration">Electronics Restoration</a>
+                                <a href="#textile-restoration">Textile Restoration</a>
+                                <a href="#document-restoration">Document Restoration</a>
+                            </div>
+                        </li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="#service-areas">Service Areas</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>About Prism Specialties DMV</h1>
+            <p class="subheadline">Restoring What Matters Most - Art, Electronics, Textiles & Documents</p>
+            
+            <div class="cta-buttons">
+                <a href="tel:301-215-3191" class="btn btn-primary">📞 24/7 Emergency: 301-215-3191</a>
+                <a href="#contact" class="btn btn-secondary">Get Free Assessment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Serve Section -->
+    <section class="who-we-serve-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Who We Serve</h2>
+                <p>Professional restoration services for diverse clients across the DMV region</p>
+            </div>
+            
+            <div class="who-we-serve-grid">
+                <div class="client-card">
+                    <img src="/public/images/who-we-serve/contractors.webp" alt="Contractors" class="client-image">
+                    <h3>Contractors</h3>
+                    <p>Partner with construction professionals for comprehensive restoration projects and emergency response coordination.</p>
+                </div>
+                
+                <div class="client-card">
+                    <img src="/public/images/who-we-serve/adjusters.webp" alt="Insurance Adjusters" class="client-image">
+                    <h3>Insurance Adjusters</h3>
+                    <p>Work directly with insurance professionals to provide detailed assessments and professional restoration services.</p>
+                </div>
+                
+                <div class="client-card">
+                    <img src="/public/images/who-we-serve/homeowners.webp" alt="Homeowners" class="client-image">
+                    <h3>Homeowners</h3>
+                    <p>Restore precious family heirlooms, documents, and personal belongings with care and expertise.</p>
+                </div>
+                
+                <div class="client-card">
+                    <img src="/public/images/who-we-serve/businesses.webp" alt="Businesses" class="client-image">
+                    <h3>Businesses</h3>
+                    <p>Commercial restoration services for offices, retail spaces, and business operations continuity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Types of Damage Section -->
+    <section class="damage-types-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Types of Damage We Restore</h2>
+                <p>Expert restoration services for all types of property damage</p>
+            </div>
+            
+            <div class="damage-types-grid">
+                <div class="damage-card">
+                    <img src="/public/images/damage-types/fire.jpg" alt="Fire Damage" class="damage-image">
+                    <div class="damage-overlay">
+                        <h3>Fire Damage</h3>
+                        <p>Complete fire damage restoration including smoke, soot, and heat damage recovery for all affected items.</p>
+                    </div>
+                </div>
+                
+                <div class="damage-card">
+                    <img src="/public/images/damage-types/water.jpg" alt="Water Damage" class="damage-image">
+                    <div class="damage-overlay">
+                        <h3>Water Damage</h3>
+                        <p>Professional water damage restoration using advanced drying techniques and moisture removal technology.</p>
+                    </div>
+                </div>
+                
+                <div class="damage-card">
+                    <img src="/public/images/damage-types/vandalism.jpg" alt="Vandalism Damage" class="damage-image">
+                    <div class="damage-overlay">
+                        <h3>Vandalism Damage</h3>
+                        <p>Restoration services for vandalism and intentional damage with sensitivity to emotional impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services" style="padding: 80px 20px; background: #f8f9fa;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; color: #00a0df; font-size: 2.5rem; margin-bottom: 20px;">
+                Professional Specialty Restoration Services
+            </h2>
+            <p style="text-align: center; color: #7c878f; margin-bottom: 50px; font-size: 1.1rem;">
+                Expert restoration specialists with museum-quality standards and emergency response capabilities
+            </p>
+            
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                
+                <!-- Art & Collectibles -->
+                <div class="service-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="/public/images/services/art.webp" alt="Art & Collectibles Restoration" 
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 30px;">
+                        <h3 style="color: #00a0df; margin-bottom: 15px; font-size: 1.5rem;">
+                            Art & Collectibles Restoration
+                        </h3>
+                        <p style="color: #7c878f; line-height: 1.6; margin-bottom: 20px;">
+                            Professional restoration of paintings, sculptures, antiques, and family heirlooms 
+                            using museum-quality conservation techniques.
+                        </p>
+                        <a href="#contact" class="btn-learn" 
+                           style="display: inline-block; background: #7c878f; color: white; padding: 10px 25px; 
+                                  border-radius: 25px; text-decoration: none; transition: background 0.3s;">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Electronics & Data -->
+                <div class="service-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="/public/images/services/electronics.webp" alt="Electronics & Data Recovery" 
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 30px;">
+                        <h3 style="color: #00a0df; margin-bottom: 15px; font-size: 1.5rem;">
+                            Electronics & Data Recovery
+                        </h3>
+                        <p style="color: #7c878f; line-height: 1.6; margin-bottom: 20px;">
+                            Advanced electronics restoration with comprehensive data recovery services to 
+                            salvage irreplaceable digital files and memories.
+                        </p>
+                        <a href="#contact" class="btn-learn" 
+                           style="display: inline-block; background: #7c878f; color: white; padding: 10px 25px; 
+                                  border-radius: 25px; text-decoration: none; transition: background 0.3s;">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Textile & Fabric -->
+                <div class="service-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="/public/images/services/textiles.webp" alt="Textile & Fabric Restoration" 
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 30px;">
+                        <h3 style="color: #00a0df; margin-bottom: 15px; font-size: 1.5rem;">
+                            Textile & Fabric Restoration
+                        </h3>
+                        <p style="color: #7c878f; line-height: 1.6; margin-bottom: 20px;">
+                            Specialized cleaning and restoration of designer clothing, wedding dresses, 
+                            luxury fabrics, and textile heirlooms.
+                        </p>
+                        <a href="#contact" class="btn-learn" 
+                           style="display: inline-block; background: #7c878f; color: white; padding: 10px 25px; 
+                                  border-radius: 25px; text-decoration: none; transition: background 0.3s;">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Additional Services Row -->
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 30px;">
+                
+                <!-- Document Recovery -->
+                <div class="service-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="/public/images/services/documents.webp" alt="Document & Digitizing" 
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 30px;">
+                        <h3 style="color: #00a0df; margin-bottom: 15px; font-size: 1.5rem;">
+                            Document Recovery & Digitizing
+                        </h3>
+                        <p style="color: #7c878f; line-height: 1.6; margin-bottom: 20px;">
+                            Recovery and preservation of important documents, photos, and paper materials 
+                            with digitization services.
+                        </p>
+                        <a href="#contact" class="btn-learn" 
+                           style="display: inline-block; background: #7c878f; color: white; padding: 10px 25px; 
+                                  border-radius: 25px; text-decoration: none; transition: background 0.3s;">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Commercial & Large Loss -->
+                <div class="service-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="/public/images/services/commercial.webp" alt="Commercial & Large Loss" 
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 30px;">
+                        <h3 style="color: #00a0df; margin-bottom: 15px; font-size: 1.5rem;">
+                            Commercial & Large Loss
+                        </h3>
+                        <p style="color: #7c878f; line-height: 1.6; margin-bottom: 20px;">
+                            Specialized restoration services for businesses and large-scale property damage 
+                            with rapid response teams.
+                        </p>
+                        <a href="#contact" class="btn-learn" 
+                           style="display: inline-block; background: #7c878f; color: white; padding: 10px 25px; 
+                                  border-radius: 25px; text-decoration: none; transition: background 0.3s;">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Lightning Strike Validation -->
+                <div class="service-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="/public/images/services/lightning.webp" alt="Lightning Strike Validation" 
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 30px;">
+                        <h3 style="color: #00a0df; margin-bottom: 15px; font-size: 1.5rem;">
+                            Lightning Strike Validation
+                        </h3>
+                        <p style="color: #7c878f; line-height: 1.6; margin-bottom: 20px;">
+                            Expert assessment and validation of damage caused by lightning strikes 
+                            for insurance claims.
+                        </p>
+                        <a href="#contact" class="btn-learn" 
+                           style="display: inline-block; background: #7c878f; color: white; padding: 10px 25px; 
+                                  border-radius: 25px; text-decoration: none; transition: background 0.3s;">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Credentials & Certifications</h2>
+                <p>Fully certified and compliant restoration specialists you can trust</p>
+            </div>
+            
+            <div class="trust-indicators">
+                <div class="trust-badge">
+                    <div class="trust-icon">🏆</div>
+                    <h4>IICRC Certified</h4>
+                    <p>Institute of Inspection, Cleaning and Restoration Certification</p>
+                </div>
+                
+                <div class="trust-badge">
+                    <div class="trust-icon">🛡️</div>
+                    <h4>EPA RRP Certified</h4>
+                    <p>Environmental Protection Agency Renovation, Repair, and Painting Program</p>
+                </div>
+                
+                <div class="trust-badge">
+                    <div class="trust-icon">⚡</div>
+                    <h4>OSHA Compliant</h4>
+                    <p>Occupational Safety and Health Administration standards compliance</p>
+                </div>
+                
+                <div class="trust-badge">
+                    <div class="trust-icon">⭐</div>
+                    <h4>BBB A+ Rated</h4>
+                    <p>Better Business Bureau highest rating for customer satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Coverage Areas - Enhanced Version -->
+    <section id="service-areas" class="service-areas" style="padding: 80px 20px; background: white;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; color: #00a0df; font-size: 2.5rem; margin-bottom: 20px;">
+                Service Coverage Areas
+            </h2>
+            <p style="text-align: center; color: #7c878f; margin-bottom: 50px; font-size: 1.1rem;">
+                Professional specialty restoration services throughout the greater DMV region
+            </p>
+            
+            <div class="coverage-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px;">
+                
+                <!-- Maryland Coverage -->
+                <div class="coverage-card" style="background: #f8f9fa; border-radius: 10px; padding: 30px; border-left: 4px solid #00a0df;">
+                    <h3 style="color: #00a0df; font-size: 1.8rem; margin-bottom: 25px; display: flex; align-items: center;">
+                        🏛️ Maryland
+                    </h3>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Montgomery County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Bethesda • Rockville • Silver Spring • Gaithersburg • Germantown • Potomac • Chevy Chase • Takoma Park
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Prince George's County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Upper Marlboro • College Park • Bowie • Laurel • Greenbelt • Hyattsville • National Harbor • Fort Washington
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Anne Arundel County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Annapolis • Glen Burnie • Severna Park • Pasadena • Crofton • Odenton • Arnold • Edgewater
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Frederick County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Frederick • Urbana • Thurmont • Middletown • Brunswick • Mount Airy • New Market
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Charles County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Waldorf • La Plata • White Plains • Indian Head • Bryans Road • Hughesville
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Calvert County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Prince Frederick • Dunkirk • Chesapeake Beach • North Beach • Owings • Huntingtown
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">St. Mary's County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Leonardtown • Lexington Park • California • Mechanicsville • Hollywood • Piney Point
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Virginia/NOVA Coverage -->
+                <div class="coverage-card" style="background: #f8f9fa; border-radius: 10px; padding: 30px; border-left: 4px solid #00a0df;">
+                    <h3 style="color: #00a0df; font-size: 1.8rem; margin-bottom: 25px; display: flex; align-items: center;">
+                        🌄 Northern Virginia
+                    </h3>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Fairfax County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Fairfax • McLean • Vienna • Reston • Herndon • Chantilly • Burke • Springfield • Annandale • Great Falls • Tysons
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Arlington County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Arlington • Ballston • Clarendon • Crystal City • Pentagon City • Rosslyn • Shirlington
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Loudoun County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Leesburg • Ashburn • Sterling • Purcellville • Middleburg • South Riding • Brambleton • Lansdowne
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">City of Alexandria</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Old Town • Del Ray • Potomac Yard • Carlyle • Seminary Hill • Cameron Station
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Prince William County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Woodbridge • Manassas • Lake Ridge • Dale City • Gainesville • Haymarket • Dumfries
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Stafford County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Stafford • Fredericksburg • Aquia Harbour • Garrisonville • North Stafford
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Winchester Area</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Winchester • Front Royal • Stephens City • Berryville
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Washington DC Coverage -->
+                <div class="coverage-card" style="background: #f8f9fa; border-radius: 10px; padding: 30px; border-left: 4px solid #00a0df;">
+                    <h3 style="color: #00a0df; font-size: 1.8rem; margin-bottom: 25px; display: flex; align-items: center;">
+                        🏛️ Washington, DC
+                    </h3>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Northwest DC</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Georgetown • Dupont Circle • Foggy Bottom • Cleveland Park • Woodley Park • Palisades • 
+                            Cathedral Heights • Spring Valley • Wesley Heights • Tenleytown • Chevy Chase DC • 
+                            Kalorama • Embassy Row • Adams Morgan • Columbia Heights
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Northeast DC</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Capitol Hill • Brookland • Petworth • Bloomingdale • Eckington • NoMa • 
+                            Trinidad • Ivy City • Michigan Park • Woodridge
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Southwest DC</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            The Wharf • Navy Yard • Southwest Waterfront • Bellevue • Buzzard Point
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Southeast DC</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Capitol Hill (East) • Anacostia • Congress Heights • Washington Highlands • 
+                            Fort Dupont • Hillcrest • Penn Branch
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Downtown & Central DC</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Downtown • Penn Quarter • Chinatown • Federal Triangle • Metro Center • 
+                            Judiciary Square • Mount Vernon Square • Logan Circle • Shaw • U Street Corridor
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Call to Action -->
+            <div style="text-align: center; margin-top: 50px; padding: 40px; background: linear-gradient(135deg, #00a0df 0%, #00b8e6 100%); border-radius: 10px;">
+                <h3 style="color: white; font-size: 1.8rem; margin-bottom: 15px;">
+                    Serving the Entire DMV Region
+                </h3>
+                <p style="color: white; font-size: 1.1rem; margin-bottom: 25px; opacity: 0.95;">
+                    24/7 Emergency Response • Licensed & Insured • Franchise Support
+                </p>
+                <a href="tel:301-215-3191" class="btn-emergency" 
+                   style="display: inline-block; background: #ff6b35; color: white; padding: 15px 35px; 
+                          border-radius: 50px; text-decoration: none; font-size: 1.2rem; font-weight: bold;
+                          transition: transform 0.3s;">
+                    📞 Call 301-215-3191
+                </a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- CTA Section Above Footer -->
+    <section class="footer-cta" style="background: linear-gradient(135deg, #00a0df 0%, #00b8e6 100%); padding: 60px 20px; text-align: center;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="color: white; font-size: 2.5rem; margin-bottom: 20px;">
+                Minimize Downtime with Restoration Experts
+            </h2>
+            <p style="color: white; font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95;">
+                Need Emergency Services? We can help you get back on track!
+            </p>
+            <a href="#contact" class="btn-submit-claim" 
+               style="display: inline-block; background: white; color: #00a0df; padding: 15px 40px; 
+                      border-radius: 5px; text-decoration: none; font-size: 1.1rem; font-weight: bold;
+                      transition: all 0.3s;">
+                📋 Submit a Claim
+            </a>
+        </div>
+    </section>
+
+    <!-- Dark Footer with Reverse Colors -->
+    <footer id="contact" style="background: #2d2d2d; color: white; padding: 50px 20px 20px;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            
+            <!-- Main Footer Content -->
+            <div class="footer-content" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; padding-bottom: 30px; border-bottom: 1px solid #444;">
+                
+                <!-- Logo and Franchise Info - UPDATED -->
+                <div>
+                    <!-- Use the white logo directly -->
+                    <img src="/public/images/prism-logo-white.png.webp" 
+                         alt="Prism Specialties" 
+                         style="height: 70px; width: auto; margin-bottom: 15px;">
+                    
+                    <p style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">
+                        Prism Specialties DMV is an independently owned and operated franchise.
+                    </p>
+                    <p style="color: #ccc; font-size: 0.9rem; margin-top: 15px;">
+                        24/7 Emergency: <a href="tel:301-215-3191" style="color: #00a0df; text-decoration: none; font-weight: bold;">301-215-3191</a>
+                    </p>
+                </div>
+                
+                <!-- Quick Links Column 1 -->
+                <div>
+                    <h3 style="color: white; font-size: 1.2rem; margin-bottom: 20px;">Services</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;">
+                            <a href="#services" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Art & Collectibles</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#services" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Electronics & Data</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#services" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Textiles & Fabrics</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#services" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Documents</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#services" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Commercial & Large Loss</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Quick Links Column 2 -->
+                <div>
+                    <h3 style="color: white; font-size: 1.2rem; margin-bottom: 20px;">Company</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;">
+                            <a href="about-us.html" style="color: #ccc; text-decoration: none; transition: color 0.3s;">About Us</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#service-areas" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Service Areas</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="mailto:info@prismspecialtiesdmv.com" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Contact</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="https://www.prismspecialties.com" target="_blank" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Prism National</a>
+                        </li>
+                        <li style="margin-bottom: 10px;">
+                            <a href="#careers" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Careers</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Contact & Social -->
+                <div>
+                    <h3 style="color: white; font-size: 1.2rem; margin-bottom: 20px;">Connect With Us</h3>
+                    <p style="color: #ccc; margin-bottom: 20px;">
+                        Follow us for restoration tips and updates
+                    </p>
+                    
+                    <!-- Social Media Icons -->
+                    <div class="social-links" style="display: flex; gap: 15px; margin-bottom: 20px;">
+                        <a href="#" style="color: white; font-size: 1.5rem; transition: color 0.3s;">
+                            <span style="display: inline-block; width: 40px; height: 40px; background: #444; border-radius: 50%; text-align: center; line-height: 40px;">f</span>
+                        </a>
+                        <a href="#" style="color: white; font-size: 1.5rem; transition: color 0.3s;">
+                            <span style="display: inline-block; width: 40px; height: 40px; background: #444; border-radius: 50%; text-align: center; line-height: 40px;">in</span>
+                        </a>
+                        <a href="#" style="color: white; font-size: 1.5rem; transition: color 0.3s;">
+                            <span style="display: inline-block; width: 40px; height: 40px; background: #444; border-radius: 50%; text-align: center; line-height: 40px;">📧</span>
+                        </a>
+                        <a href="#" style="color: white; font-size: 1.5rem; transition: color 0.3s;">
+                            <span style="display: inline-block; width: 40px; height: 40px; background: #444; border-radius: 50%; text-align: center; line-height: 40px;">📱</span>
+                        </a>
+                    </div>
+                    
+                    <a href="mailto:info@prismspecialtiesdmv.com" class="btn-footer-contact" 
+                       style="display: inline-block; background: #00a0df; color: white; padding: 10px 25px; 
+                              border-radius: 5px; text-decoration: none; font-weight: bold; transition: all 0.3s;">
+                        Get Free Assessment
+                    </a>
+                </div>
+                
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="footer-bottom" style="padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+                <p style="color: #888; font-size: 0.9rem; margin: 10px 0;">
+                    ©2025 <span style="color: #00a0df;">Prism Specialties DMV</span>. All rights reserved. | Powered by Excellence
+                </p>
+                
+                <div class="legal-links" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <a href="privacy-policy.html" style="color: #888; text-decoration: none; font-size: 0.9rem; transition: color 0.3s;">Privacy Policy</a>
+                    <a href="terms-conditions.html" style="color: #888; text-decoration: none; font-size: 0.9rem; transition: color 0.3s;">Terms & Conditions</a>
+                    <a href="#disclaimer" style="color: #888; text-decoration: none; font-size: 0.9rem; transition: color 0.3s;">Disclaimer</a>
+                    <a href="#accessibility" style="color: #888; text-decoration: none; font-size: 0.9rem; transition: color 0.3s;">Accessibility</a>
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+</body>
+</html>

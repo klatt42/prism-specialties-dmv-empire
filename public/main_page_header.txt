@@ -1,0 +1,488 @@
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo navbar-brand">
+                    <img src="/images/logos/prism-logo-1000.png" 
+     alt="Prism Specialties" 
+     style="height: 85px !important; width: auto !important; clip-path: inset(0 0 12% 0);"
+     class="logo-img">
+                    <span class="brand-text">Prism Specialties DMV</span>
+                </a>
+                
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="services-dropdown">
+                            <a href="#services">Services</a>
+                            <div class="dropdown-menu">
+                                <a href="#art-restoration">Art Restoration</a>
+                                <a href="#electronics-restoration">Electronics Restoration</a>
+                                <a href="#textile-restoration">Textile Restoration</a>
+                                <a href="#document-restoration">Document Restoration</a>
+                            </div>
+                        </li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="#service-areas">Service Areas</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Premier Specialty Restoration Experts</h1>
+            <p class="subheadline">Restoring What Matters Most - Art, Electronics, Textiles & Documents</p>
+            
+            <div class="cta-buttons">
+                <a href="tel:301-215-3191" class="btn btn-primary">📞 24/7 Emergency: 301-215-3191</a>
+                <a href="#contact" class="btn btn-secondary">Get Free Assessment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who We Serve Section -->
+    <section class="who-we-serve-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Who We Serve</h2>
+                <p>Professional restoration services for diverse clients across the DMV region</p>
+            </div>
+            
+            <div class="who-we-serve-grid">
+                <div class="client-card">
+                    <img src="/public/images/who-we-serve/contractors.webp" alt="Contractors" class="client-image">
+                    <h3>Contractors</h3>
+                    <p>Partner with construction professionals for comprehensive restoration projects and emergency response coordination.</p>
+                </div>
+                
+                <div class="client-card">
+                    <img src="/public/images/who-we-serve/adjusters.webp" alt="Insurance Adjusters" class="client-image">
+                    <h3>Insurance Adjusters</h3>
+                    <p>Work directly with insurance professionals to provide detailed assessments and professional restoration services.</p>
+                </div>
+                
+                <div class="client-card">
+                    <img src="/public/images/who-we-serve/homeowners.webp" alt="Homeowners" class="client-image">
+                    <h3>Homeowners</h3>
+                    <p>Restore precious family heirlooms, documents, and personal belongings with care and expertise.</p>
+                </div>
+                
+                <div class="client-card">
+                    <img src="/public/images/who-we-serve/businesses.webp" alt="Businesses" class="client-image">
+                    <h3>Businesses</h3>
+                    <p>Commercial restoration services for offices, retail spaces, and business operations continuity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Types of Damage Section -->
+    <section class="damage-types-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Types of Damage We Restore</h2>
+                <p>Expert restoration services for all types of property damage</p>
+            </div>
+            
+            <div class="damage-types-grid">
+                <div class="damage-card">
+                    <img src="/public/images/damage-types/fire.jpg" alt="Fire Damage" class="damage-image">
+                    <div class="damage-overlay">
+                        <h3>Fire Damage</h3>
+                        <p>Complete fire damage restoration including smoke, soot, and heat damage recovery for all affected items.</p>
+                    </div>
+                </div>
+                
+                <div class="damage-card">
+                    <img src="/public/images/damage-types/water.jpg" alt="Water Damage" class="damage-image">
+                    <div class="damage-overlay">
+                        <h3>Water Damage</h3>
+                        <p>Professional water damage restoration using advanced drying techniques and moisture removal technology.</p>
+                    </div>
+                </div>
+                
+                <div class="damage-card">
+                    <img src="/public/images/damage-types/vandalism.jpg" alt="Vandalism Damage" class="damage-image">
+                    <div class="damage-overlay">
+                        <h3>Vandalism Damage</h3>
+                        <p>Restoration services for vandalism and intentional damage with sensitivity to emotional impact.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services" style="padding: 80px 20px; background: #f8f9fa;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; color: #00a0df; font-size: 2.5rem; margin-bottom: 20px;">
+                Professional Specialty Restoration Services
+            </h2>
+            <p style="text-align: center; color: #7c878f; margin-bottom: 50px; font-size: 1.1rem;">
+                Expert restoration specialists with museum-quality standards and emergency response capabilities
+            </p>
+            
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+                
+                <!-- Art & Collectibles -->
+                <div class="service-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="/public/images/services/art.webp" alt="Art & Collectibles Restoration" 
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 30px;">
+                        <h3 style="color: #00a0df; margin-bottom: 15px; font-size: 1.5rem;">
+                            Art & Collectibles Restoration
+                        </h3>
+                        <p style="color: #7c878f; line-height: 1.6; margin-bottom: 20px;">
+                            Professional restoration of paintings, sculptures, antiques, and family heirlooms 
+                            using museum-quality conservation techniques.
+                        </p>
+                        <a href="#contact" class="btn-learn" 
+                           style="display: inline-block; background: #7c878f; color: white; padding: 10px 25px; 
+                                  border-radius: 25px; text-decoration: none; transition: background 0.3s;">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Electronics & Data -->
+                <div class="service-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="/public/images/services/electronics.webp" alt="Electronics & Data Recovery" 
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 30px;">
+                        <h3 style="color: #00a0df; margin-bottom: 15px; font-size: 1.5rem;">
+                            Electronics & Data Recovery
+                        </h3>
+                        <p style="color: #7c878f; line-height: 1.6; margin-bottom: 20px;">
+                            Advanced electronics restoration with comprehensive data recovery services to 
+                            salvage irreplaceable digital files and memories.
+                        </p>
+                        <a href="#contact" class="btn-learn" 
+                           style="display: inline-block; background: #7c878f; color: white; padding: 10px 25px; 
+                                  border-radius: 25px; text-decoration: none; transition: background 0.3s;">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Textile & Fabric -->
+                <div class="service-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="/public/images/services/textiles.webp" alt="Textile & Fabric Restoration" 
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 30px;">
+                        <h3 style="color: #00a0df; margin-bottom: 15px; font-size: 1.5rem;">
+                            Textile & Fabric Restoration
+                        </h3>
+                        <p style="color: #7c878f; line-height: 1.6; margin-bottom: 20px;">
+                            Specialized cleaning and restoration of designer clothing, wedding dresses, 
+                            luxury fabrics, and textile heirlooms.
+                        </p>
+                        <a href="#contact" class="btn-learn" 
+                           style="display: inline-block; background: #7c878f; color: white; padding: 10px 25px; 
+                                  border-radius: 25px; text-decoration: none; transition: background 0.3s;">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Additional Services Row -->
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 30px;">
+                
+                <!-- Document Recovery -->
+                <div class="service-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="/public/images/services/documents.webp" alt="Document & Digitizing" 
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 30px;">
+                        <h3 style="color: #00a0df; margin-bottom: 15px; font-size: 1.5rem;">
+                            Document Recovery & Digitizing
+                        </h3>
+                        <p style="color: #7c878f; line-height: 1.6; margin-bottom: 20px;">
+                            Recovery and preservation of important documents, photos, and paper materials 
+                            with digitization services.
+                        </p>
+                        <a href="#contact" class="btn-learn" 
+                           style="display: inline-block; background: #7c878f; color: white; padding: 10px 25px; 
+                                  border-radius: 25px; text-decoration: none; transition: background 0.3s;">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Commercial & Large Loss -->
+                <div class="service-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="/public/images/services/commercial.webp" alt="Commercial & Large Loss" 
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 30px;">
+                        <h3 style="color: #00a0df; margin-bottom: 15px; font-size: 1.5rem;">
+                            Commercial & Large Loss
+                        </h3>
+                        <p style="color: #7c878f; line-height: 1.6; margin-bottom: 20px;">
+                            Specialized restoration services for businesses and large-scale property damage 
+                            with rapid response teams.
+                        </p>
+                        <a href="#contact" class="btn-learn" 
+                           style="display: inline-block; background: #7c878f; color: white; padding: 10px 25px; 
+                                  border-radius: 25px; text-decoration: none; transition: background 0.3s;">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Lightning Strike Validation -->
+                <div class="service-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
+                    <img src="/public/images/services/lightning.webp" alt="Lightning Strike Validation" 
+                         style="width: 100%; height: 200px; object-fit: cover;">
+                    <div style="padding: 30px;">
+                        <h3 style="color: #00a0df; margin-bottom: 15px; font-size: 1.5rem;">
+                            Lightning Strike Validation
+                        </h3>
+                        <p style="color: #7c878f; line-height: 1.6; margin-bottom: 20px;">
+                            Expert assessment and validation of damage caused by lightning strikes 
+                            for insurance claims.
+                        </p>
+                        <a href="#contact" class="btn-learn" 
+                           style="display: inline-block; background: #7c878f; color: white; padding: 10px 25px; 
+                                  border-radius: 25px; text-decoration: none; transition: background 0.3s;">
+                            Learn More
+                        </a>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Indicators Section -->
+    <section class="trust-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Credentials & Certifications</h2>
+                <p>Fully certified and compliant restoration specialists you can trust</p>
+            </div>
+            
+            <div class="trust-indicators">
+                <div class="trust-badge">
+                    <div class="trust-icon">🏆</div>
+                    <h4>IICRC Certified</h4>
+                    <p>Institute of Inspection, Cleaning and Restoration Certification</p>
+                </div>
+                
+                <div class="trust-badge">
+                    <div class="trust-icon">🛡️</div>
+                    <h4>EPA RRP Certified</h4>
+                    <p>Environmental Protection Agency Renovation, Repair, and Painting Program</p>
+                </div>
+                
+                <div class="trust-badge">
+                    <div class="trust-icon">⚡</div>
+                    <h4>OSHA Compliant</h4>
+                    <p>Occupational Safety and Health Administration standards compliance</p>
+                </div>
+                
+                <div class="trust-badge">
+                    <div class="trust-icon">⭐</div>
+                    <h4>BBB A+ Rated</h4>
+                    <p>Better Business Bureau highest rating for customer satisfaction</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Coverage Areas - Enhanced Version -->
+    <section id="service-areas" class="service-areas" style="padding: 80px 20px; background: white;">
+        <div class="container" style="max-width: 1200px; margin: 0 auto;">
+            <h2 style="text-align: center; color: #00a0df; font-size: 2.5rem; margin-bottom: 20px;">
+                Service Coverage Areas
+            </h2>
+            <p style="text-align: center; color: #7c878f; margin-bottom: 50px; font-size: 1.1rem;">
+                Professional specialty restoration services throughout the greater DMV region
+            </p>
+            
+            <div class="coverage-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px;">
+                
+                <!-- Maryland Coverage -->
+                <div class="coverage-card" style="background: #f8f9fa; border-radius: 10px; padding: 30px; border-left: 4px solid #00a0df;">
+                    <h3 style="color: #00a0df; font-size: 1.8rem; margin-bottom: 25px; display: flex; align-items: center;">
+                        🏛️ Maryland
+                    </h3>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Montgomery County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Bethesda • Rockville • Silver Spring • Gaithersburg • Germantown • Potomac • Chevy Chase • Takoma Park
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Prince George's County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Upper Marlboro • College Park • Bowie • Laurel • Greenbelt • Hyattsville • National Harbor • Fort Washington
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Anne Arundel County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Annapolis • Glen Burnie • Severna Park • Pasadena • Crofton • Odenton • Arnold • Edgewater
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Frederick County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Frederick • Urbana • Thurmont • Middletown • Brunswick • Mount Airy • New Market
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Charles County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Waldorf • La Plata • White Plains • Indian Head • Bryans Road • Hughesville
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Calvert County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Prince Frederick • Dunkirk • Chesapeake Beach • North Beach • Owings • Huntingtown
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">St. Mary's County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Leonardtown • Lexington Park • California • Mechanicsville • Hollywood • Piney Point
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Virginia/NOVA Coverage -->
+                <div class="coverage-card" style="background: #f8f9fa; border-radius: 10px; padding: 30px; border-left: 4px solid #00a0df;">
+                    <h3 style="color: #00a0df; font-size: 1.8rem; margin-bottom: 25px; display: flex; align-items: center;">
+                        🌄 Northern Virginia
+                    </h3>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Fairfax County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Fairfax • McLean • Vienna • Reston • Herndon • Chantilly • Burke • Springfield • Annandale • Great Falls • Tysons
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Arlington County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Arlington • Ballston • Clarendon • Crystal City • Pentagon City • Rosslyn • Shirlington
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Loudoun County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Leesburg • Ashburn • Sterling • Purcellville • Middleburg • South Riding • Brambleton • Lansdowne
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">City of Alexandria</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Old Town • Del Ray • Potomac Yard • Carlyle • Seminary Hill • Cameron Station
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Prince William County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Woodbridge • Manassas • Lake Ridge • Dale City • Gainesville • Haymarket • Dumfries
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Stafford County</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Stafford • Fredericksburg • Aquia Harbour • Garrisonville • North Stafford
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Winchester Area</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Winchester • Front Royal • Stephens City • Berryville
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Washington DC Coverage -->
+                <div class="coverage-card" style="background: #f8f9fa; border-radius: 10px; padding: 30px; border-left: 4px solid #00a0df;">
+                    <h3 style="color: #00a0df; font-size: 1.8rem; margin-bottom: 25px; display: flex; align-items: center;">
+                        🏛️ Washington, DC
+                    </h3>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Northwest DC</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Georgetown • Dupont Circle • Foggy Bottom • Cleveland Park • Woodley Park • Palisades • 
+                            Cathedral Heights • Spring Valley • Wesley Heights • Tenleytown • Chevy Chase DC • 
+                            Kalorama • Embassy Row • Adams Morgan • Columbia Heights
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Northeast DC</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Capitol Hill • Brookland • Petworth • Bloomingdale • Eckington • NoMa • 
+                            Trinidad • Ivy City • Michigan Park • Woodridge
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Southwest DC</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            The Wharf • Navy Yard • Southwest Waterfront • Bellevue • Buzzard Point
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Southeast DC</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Capitol Hill (East) • Anacostia • Congress Heights • Washington Highlands • 
+                            Fort Dupont • Hillcrest • Penn Branch
+                        </p>
+                    </div>
+                    
+                    <div style="margin-bottom: 20px;">
+                        <h4 style="color: #333; font-size: 1.1rem; margin-bottom: 10px;">Downtown & Central DC</h4>
+                        <p style="color: #7c878f; font-size: 0.95rem; margin-left: 15px;">
+                            Downtown • Penn Quarter • Chinatown • Federal Triangle • Metro Center • 
+                            Judiciary Square • Mount Vernon Square • Logan Circle • Shaw • U Street Corridor
+                        </p>
+                    </div>
+                </div>
+                
+            </div>
+            
+            <!-- Call to Action -->
+            <div style="text-align: center; margin-top: 50px; padding: 40px; background: linear-gradient(135deg, #00a0df 0%, #00b8e6 100%); border-radius: 10px;">
+                <h3 style="color: white; font-size: 1.8rem; margin-bottom: 15px;">
+                    Serving the Entire DMV Region
+                </h3>
+                <p style="color: white; font-size: 1.1rem; margin-bottom: 25px; opacity: 0.95;">
+                    24/7 Emergency Response • Licensed & Insured • Franchise Support
+                </p>
+                <a href="tel:301-215-3191" class="btn-emergency" 
+                   style="display: inline-block; background: #ff6b35; color: white; padding: 15px 35px; 
+                          border-radius: 50px; text-decoration: none; font-size: 1.2rem; font-weight: bold;
+                          transition: transform 0.3s;">
+                    📞 Call 301-215-3191
+                </a>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- CTA Section Above Footer -->
+    <section class="footer-cta" style="background: linear-gradient(135deg, #00a0df 0%, #00b8e6 100%); padding: 60px 20px; text-align: center;">

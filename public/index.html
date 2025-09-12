@@ -13,7 +13,7 @@
         "@type": "LocalBusiness",
         "name": "Prism Specialties DMV",
         "description": "Premier specialty restoration services for art, electronics, textiles, and documents",
-        "telephone": "703-229-1321",
+        "telephone": "301-215-3191",
         "email": "info@prismspecialtiesdmv.com",
         "address": {
             "@type": "PostalAddress",
@@ -151,23 +151,26 @@
             position: absolute;
             top: 100%;
             left: 0;
-            background: var(--brand-white);
+            background: white;
             box-shadow: 0 5px 15px rgba(0,0,0,0.2);
             border-radius: 5px;
-            min-width: 200px;
+            min-width: 220px;
             padding: 10px 0;
+            z-index: 1000;
         }
         
         .dropdown-menu a {
             display: block;
-            padding: 10px 20px;
-            color: var(--brand-text);
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
             border-radius: 0;
         }
         
         .dropdown-menu a:hover {
-            background: var(--brand-light);
-            color: var(--brand-primary);
+            background: #f8f9fa;
+            color: #00a0df;
         }
         
         /* Hero Section */
@@ -463,7 +466,7 @@
         
         .our-services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
             margin-top: 40px;
         }
@@ -606,6 +609,142 @@
             .service-image {
                 height: 180px;
             }
+            
+            /* Modal responsive adjustments */
+            #claimModal > div {
+                margin: 10px auto !important;
+                width: calc(100% - 20px) !important;
+                min-height: calc(100vh - 20px) !important;
+                max-height: calc(100vh - 20px) !important;
+            }
+            
+            #claimModal .modal-header {
+                padding: 15px 20px !important;
+            }
+            
+            #claimModal .modal-header h2 {
+                font-size: 1.3rem !important;
+            }
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 15px;
+                max-width: 100%;
+            }
+            
+            .hero-section h1 {
+                font-size: 2rem;
+                line-height: 1.2;
+            }
+            
+            .hero-section p {
+                font-size: 1rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
+            .our-services-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
+            .coverage-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px !important;
+            }
+            
+            .coverage-card {
+                padding: 20px !important;
+            }
+            
+            .coverage-card h3 {
+                font-size: 1.5rem !important;
+            }
+            
+            .coverage-card h4 {
+                font-size: 1rem !important;
+            }
+            
+            .coverage-card p {
+                font-size: 0.9rem !important;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            /* Ensure text wraps properly and no horizontal scroll */
+            body, html {
+                overflow-x: hidden;
+                word-wrap: break-word;
+            }
+            
+            * {
+                box-sizing: border-box;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .service-card {
+                margin: 0 10px;
+            }
+            
+            .service-card h3 {
+                font-size: 1.3rem !important;
+            }
+            
+            .service-card p {
+                font-size: 0.9rem !important;
+                line-height: 1.5 !important;
+            }
+            
+            .coverage-card h3 {
+                font-size: 1.3rem !important;
+            }
+            
+            .coverage-card p {
+                font-size: 0.85rem !important;
+                margin-left: 10px !important;
+            }
+            
+            #claimModal > div {
+                margin: 5px auto !important;
+                width: calc(100% - 10px) !important;
+                min-height: calc(100vh - 10px) !important;
+                max-height: calc(100vh - 10px) !important;
+                border-radius: 5px !important;
+            }
+            
+            .modal-header {
+                padding: 10px 15px !important;
+            }
+            
+            .modal-header h2 {
+                font-size: 1.1rem !important;
+            }
+            
+            /* Make buttons touch-friendly */
+            .cta-button, .btn-learn {
+                min-height: 44px;
+                font-size: 0.9rem;
+                padding: 12px 20px !important;
+            }
+        }
+
+        /* Ensure iframe content is scrollable */
+        #claimModal iframe {
+            overflow-y: auto !important;
         }
     </style>
 </head>
@@ -627,13 +766,15 @@
                         <li class="services-dropdown">
                             <a href="#services">Services</a>
                             <div class="dropdown-menu">
-                                <a href="#art-restoration">Art Restoration</a>
-                                <a href="#electronics-restoration">Electronics Restoration</a>
-                                <a href="#textile-restoration">Textile Restoration</a>
-                                <a href="#document-restoration">Document Restoration</a>
+                                <a href="#services">Art & Collectibles</a>
+                                <a href="#services">Electronics & Data Recovery</a>
+                                <a href="#services">Textile & Fabric Restoration</a>
+                                <a href="#services">Document Recovery</a>
+                                <a href="#services">Commercial & Large Loss</a>
+                                <a href="#services">Lightning Strike Validation</a>
                             </div>
                         </li>
-                        <li><a href="#about">About Us</a></li>
+                        <li><a href="about-us.html">About Us</a></li>
                         <li><a href="#service-areas">Service Areas</a></li>
                         <li><a href="#contact">Contact</a></li>
                     </ul>
@@ -649,8 +790,8 @@
             <p class="subheadline">Restoring What Matters Most - Art, Electronics, Textiles & Documents</p>
             
             <div class="cta-buttons">
-                <a href="tel:703-229-1321" class="btn btn-primary">📞 24/7 Emergency: 703-229-1321</a>
-                <a href="#contact" class="btn btn-secondary">Get Free Assessment</a>
+                <a href="tel:301-215-3191" class="btn btn-primary">📞 24/7 Emergency: 301-215-3191</a>
+                <div class="btn btn-secondary" style="cursor: default; display: inline-block;">Call for Free Assessment</div>
             </div>
         </div>
     </section>
@@ -738,7 +879,7 @@
                 Expert restoration specialists with museum-quality standards and emergency response capabilities
             </p>
             
-            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px;">
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
                 
                 <!-- Art & Collectibles -->
                 <div class="service-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
@@ -803,7 +944,7 @@
             </div>
             
             <!-- Additional Services Row -->
-            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 30px;">
+            <div class="services-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-top: 30px;">
                 
                 <!-- Document Recovery -->
                 <div class="service-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s;">
@@ -915,7 +1056,7 @@
                 Professional specialty restoration services throughout the greater DMV region
             </p>
             
-            <div class="coverage-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px;">
+            <div class="coverage-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
                 
                 <!-- Maryland Coverage -->
                 <div class="coverage-card" style="background: #f8f9fa; border-radius: 10px; padding: 30px; border-left: 4px solid #00a0df;">
@@ -1086,11 +1227,11 @@
                 <p style="color: white; font-size: 1.1rem; margin-bottom: 25px; opacity: 0.95;">
                     24/7 Emergency Response • Licensed & Insured • Franchise Support
                 </p>
-                <a href="tel:703-229-1321" class="btn-emergency" 
+                <a href="tel:301-215-3191" class="btn-emergency" 
                    style="display: inline-block; background: #ff6b35; color: white; padding: 15px 35px; 
                           border-radius: 50px; text-decoration: none; font-size: 1.2rem; font-weight: bold;
                           transition: transform 0.3s;">
-                    📞 Call 703-229-1321
+                    📞 Call 301-215-3191
                 </a>
             </div>
             
@@ -1106,12 +1247,12 @@
             <p style="color: white; font-size: 1.2rem; margin-bottom: 30px; opacity: 0.95;">
                 Need Emergency Services? We can help you get back on track!
             </p>
-            <a href="#contact" class="btn-submit-claim" 
+            <button onclick="openClaimModal()" class="btn-submit-claim" 
                style="display: inline-block; background: white; color: #00a0df; padding: 15px 40px; 
-                      border-radius: 5px; text-decoration: none; font-size: 1.1rem; font-weight: bold;
-                      transition: all 0.3s;">
+                      border-radius: 5px; font-size: 1.1rem; font-weight: bold; border: none;
+                      cursor: pointer; transition: all 0.3s;">
                 📋 Submit a Claim
-            </a>
+            </button>
         </div>
     </section>
 
@@ -1133,7 +1274,7 @@
                         Prism Specialties DMV is an independently owned and operated franchise.
                     </p>
                     <p style="color: #ccc; font-size: 0.9rem; margin-top: 15px;">
-                        24/7 Emergency: <a href="tel:703-229-1321" style="color: #00a0df; text-decoration: none; font-weight: bold;">703-229-1321</a>
+                        24/7 Emergency: <a href="tel:301-215-3191" style="color: #00a0df; text-decoration: none; font-weight: bold;">301-215-3191</a>
                     </p>
                 </div>
                 
@@ -1164,7 +1305,7 @@
                     <h3 style="color: white; font-size: 1.2rem; margin-bottom: 20px;">Company</h3>
                     <ul style="list-style: none; padding: 0;">
                         <li style="margin-bottom: 10px;">
-                            <a href="#about" style="color: #ccc; text-decoration: none; transition: color 0.3s;">About Us</a>
+                            <a href="about-us.html" style="color: #ccc; text-decoration: none; transition: color 0.3s;">About Us</a>
                         </li>
                         <li style="margin-bottom: 10px;">
                             <a href="#service-areas" style="color: #ccc; text-decoration: none; transition: color 0.3s;">Service Areas</a>
@@ -1204,11 +1345,11 @@
                         </a>
                     </div>
                     
-                    <a href="mailto:info@prismspecialtiesdmv.com" class="btn-footer-contact" 
+                    <div class="btn-footer-contact" 
                        style="display: inline-block; background: #00a0df; color: white; padding: 10px 25px; 
-                              border-radius: 5px; text-decoration: none; font-weight: bold; transition: all 0.3s;">
-                        Get Free Assessment
-                    </a>
+                              border-radius: 5px; font-weight: bold; cursor: default;">
+                        Call for Free Assessment
+                    </div>
                 </div>
                 
             </div>
@@ -1229,5 +1370,73 @@
             
         </div>
     </footer>
+
+    <!-- Claim Submission Modal -->
+    <div id="claimModal" style="display: none; position: fixed; z-index: 10000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(3px); overflow-y: auto;">
+        <div style="background: white; margin: 10px auto; padding: 0; width: calc(100% - 20px); max-width: 900px; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); position: relative; min-height: calc(100vh - 20px); max-height: calc(100vh - 20px); overflow: hidden; display: flex; flex-direction: column;">
+            
+            <!-- Modal Header -->
+            <div class="modal-header" style="background: #00a0df; color: white; padding: 15px 20px; border-radius: 10px 10px 0 0; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0;">
+                <h2 style="margin: 0; font-size: 1.2rem;">Submit Insurance Claim</h2>
+                <span onclick="closeClaimModal()" style="font-size: 24px; font-weight: bold; cursor: pointer; line-height: 1; color: white; background: rgba(255,255,255,0.2); border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; transition: background 0.3s;" onmouseover="this.style.background='rgba(255,255,255,0.3)'" onmouseout="this.style.background='rgba(255,255,255,0.2)'">&times;</span>
+            </div>
+            
+            <!-- Modal Body with GHL Form -->
+            <div style="flex: 1; overflow: auto; position: relative; -webkit-overflow-scrolling: touch;">
+                <iframe
+                    src="https://links.bizinsiderpro.com/widget/form/dBtqkHrbBA01xbbFBU4S"
+                    style="width: 100%; height: 100%; border: none; border-radius: 0 0 10px 10px; overflow-y: auto; -webkit-overflow-scrolling: touch;"
+                    id="inline-dBtqkHrbBA01xbbFBU4S" 
+                    data-layout="{'id':'INLINE'}"
+                    data-trigger-type="alwaysShow"
+                    data-trigger-value=""
+                    data-activation-type="alwaysActivated"
+                    data-activation-value=""
+                    data-deactivation-type="neverDeactivate"
+                    data-deactivation-value=""
+                    data-form-name="Claim Submission Form"
+                    data-height="undefined"
+                    data-layout-iframe-id="inline-dBtqkHrbBA01xbbFBU4S"
+                    data-form-id="dBtqkHrbBA01xbbFBU4S"
+                    title="Claim Submission Form"
+                    allow="camera; microphone"
+                    scrolling="yes"
+                >
+                </iframe>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function openClaimModal() {
+        document.getElementById('claimModal').style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+    }
+
+    function closeClaimModal() {
+        document.getElementById('claimModal').style.display = 'none';
+        document.body.style.overflow = 'auto'; // Restore scrolling
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+        const modal = document.getElementById('claimModal');
+        if (event.target == modal) {
+            closeClaimModal();
+        }
+    }
+
+    // Listen for GHL form completion (optional)
+    window.addEventListener('message', function(event) {
+        if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormSubmit') {
+            // Form was submitted successfully - you can add custom actions here
+            console.log('Claim form submitted successfully!');
+            // Optionally close modal after a delay
+            setTimeout(closeClaimModal, 2000);
+        }
+    });
+    </script>
+    
+    <script src="https://links.bizinsiderpro.com/js/form_embed.js"></script>
 </body>
 </html>

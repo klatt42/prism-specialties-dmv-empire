@@ -1,0 +1,27 @@
+# Exclude screenshot and large image files from Claude Code processing
+screenshots-archive/
+*.png
+*-full.png
+*-screenshot*
+*backup*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+*.bmp
+
+# Exclude backup and temp files
+*.backup
+*.bak
+*-backup*
+*-old*
+*-broken*
+*-test*
+
+# Exclude node modules and build artifacts
+node_modules/
+package-lock.json
+
+# Exclude OS files
+.DS_Store
+Thumbs.db

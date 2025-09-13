@@ -3,65 +3,716 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prince William County Document Photo Restoration | Manassas Woodbridge Young Family Photo Recovery | Community Document Services</title>
-    <meta name="description" content="Prince William County document and photo restoration experts. Young family photo recovery, growing community document preservation. Manassas, Woodbridge Museum-quality professional restoration">
-    <link rel="stylesheet" href="../../assets/css/global.css">
-    <script src="../../assets/js/global.js" defer></script>
+    <meta name="description" content="Document and photo restoration in Prince William County. Professional restoration of family documents, photos, and archives in Manassas, Woodbridge, Lake Ridge, Gainesville.">
+    <title>Document & Photo Restoration | Prince William County | Manassas Woodbridge Gainesville</title>
+
+    <style>
+        :root {
+            --primary-blue: #00a0df;
+            --warm-gray: #7c878f;
+            --light-gray: #e8eaed;
+            --text-dark: #333333;
+            --text-medium: #666666;
+            --text-light: #999999;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+            --emergency-red: #dc3545;
+            --success-green: #28a745;
+            --gold-accent: #d4af37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 85%;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-brand img {
+            height: 85px;
+            width: auto;
+            clip-path: inset(0 0 12% 0);
+            margin-right: 20px;
+        }
+
+        .brand-text {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--warm-gray) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-100px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section h1 {
+            font-size: 3.8rem;
+            margin-bottom: 35px;
+            font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .hero-section .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 45px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .hero-answer {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Story Hook Section */
+        .story-hook {
+            background: var(--background-light);
+            padding: 80px 0;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            max-width: 900px;
+            margin: 0 auto;
+            border-left: 6px solid var(--gold-accent);
+        }
+
+        .story-card .hook {
+            font-size: 1.4rem;
+            color: var(--emergency-red);
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .story-card .story-text {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .story-card .outcome {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--gold-accent);
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        /* Proof Section */
+        .proof-section {
+            background: white;
+            padding: 80px 0;
+        }
+
+        .proof-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .proof-card {
+            background: var(--background-light);
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+            border-top: 4px solid var(--gold-accent);
+        }
+
+        .proof-number {
+            font-size: 3rem;
+            font-weight: bold;
+            color: var(--gold-accent);
+            margin-bottom: 15px;
+        }
+
+        .proof-card .icon {
+            font-size: 3rem;
+            color: var(--gold-accent);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .proof-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold-accent), var(--primary-blue));
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .service-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process-section {
+            background: var(--background-light);
+            padding: 80px 0;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step .step-number {
+            background: var(--gold-accent);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .process-step p {
+            color: var(--text-medium);
+        }
+
+        /* Expertise Section */
+        .expertise-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .expertise-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .expertise-card {
+            background: var(--background-light);
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+            border-top: 4px solid var(--gold-accent);
+        }
+
+        .expertise-card .icon {
+            font-size: 3rem;
+            color: var(--gold-accent);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .expertise-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-blue);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .emergency-call {
+            background: white;
+            color: var(--primary-blue);
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.8rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .emergency-call:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .hero-content {
+                max-width: 95%;
+            }
+
+            .hero-section h1 {
+                font-size: 2.8rem;
+                line-height: 1.2;
+            }
+
+            .hero-section .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .hero-answer {
+                font-size: 1.1rem;
+            }
+
+            .story-card {
+                padding: 30px 25px;
+                margin: 0 10px;
+            }
+
+            .story-card .hook {
+                font-size: 1.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .header-content {
+                justify-content: center;
+            }
+
+            .emergency-call {
+                font-size: 1.5rem;
+                padding: 15px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .story-card {
+                padding: 25px 20px;
+            }
+
+            .service-card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="container">
-            <h1 class="hook-point" data-hook-type="geographic-specialty">Prince William County Document Restoration</h1>
-            <p>Growing Family Photos • Community Documents • New Family Memory Preservation</p>
+            <div class="header-content">
+                <a href="../index.html" class="logo-brand">
+                    <img src="../../images/logos/prism-logo-1000.png" alt="Prism Specialties DMV">
+                    <span class="brand-text">Prism Specialties DMV</span>
+                </a>
+                <nav>
+                    <a href="../../index.html">Home</a>
+                    <a href="../../all-services.html">Services</a>
+                    <a href="../../contact.html">Contact</a>
+                    <a href="../../about-us.html">About</a>
+                    <a href="../../emergency.html">Emergency</a>
+                </nav>
+            </div>
         </div>
     </header>
 
-    <main>
-        <section class="container">
-            <div class="hook-point-hero">
-                <h2>Would you let your funeral director pick your doctor?</h2>
-                <p>Then why let your insurance company choose your restoration contractor? Professional restoration specialists understand the irreplaceable nature of family heirlooms and personal treasures. Choose your own restoration expert with museum-quality standards.</p>
-                <p><strong>Professional expertise you need:</strong> Your precious belongings deserve specialists who treat them with museum-quality precision and care.</p>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Would you trust your family's irreplaceable historical documents to someone who usually cleans up after floods?</h1>
+                <p class="subtitle">Then why trust your document restoration to anyone but specialists?</p>
+                <p class="hero-answer">When your Prince William County family's precious documents are damaged, you need restoration specialists who understand that <strong><em>some papers hold memories that insurance can't measure - they can only be preserved.</em></strong></p>
             </div>
+        </div>
+    </section>
 
-            <div class="specialty-services">
-                <h2>📋 Prince William County Community Document Services</h2>
-                <div class="service-grid">
-                    <div class="service-card">
-                        <h3>Young Family Photo Collections</h3>
-                        <p>Baby photos, family milestone pictures, growing family photo albums damaged by water, fire, or storage issues across Manassas, Woodbridge, Gainesville.</p>
-                    </div>
-
-                    <div class="service-card">
-                        <h3>New Family Important Documents</h3>
-                        <p>Birth certificates, marriage certificates, home purchase documents, new family paperwork damaged by accidents. Prince William County's professional restoration preservation.</p>
-                    </div>
-
-                    <div class="service-card">
-                        <h3>Children's School & Growth Records</h3>
-                        <p>School photos, report cards, children's achievement certificates, growth documentation damaged by home accidents. Professional care with museum-quality standards.</p>
-                    </div>
-
-                    <div class="service-card">
-                        <h3>Community Memory Preservation</h3>
-                        <p>Neighborhood event photos, community organization documents, cultural celebration pictures damaged by weather or accidents. Professional restoration with museum-quality precision.</p>
-                    </div>
+    <!-- Story Hook Section -->
+    <section class="story-hook">
+        <div class="container">
+            <div class="story-card">
+                <p class="hook">"The insurance adjuster looked at our water-damaged family documents and said 'They're just old papers. We'll give you $100 to replace them.'"</p>
+                <p class="story-text">A Lake Ridge waterfront family called us devastated after storm surge flooded their beautiful home's lower level. The "old papers" were three generations of family archives - immigration documents from the 1920s, military service records, handwritten letters between grandparents, and birth certificates that could never be "replaced."</p>
+                <p class="story-text">The insurance company saw water-stained documents. We saw a family's entire legacy carefully preserved in their Lake Ridge home - irreplaceable records of courage, love, and sacrifice that documented their American journey from immigrants to established residents.</p>
+                <div class="outcome">
+                    <strong>The Preservation:</strong> Through specialized document conservation techniques, we restored not just papers but a family's heritage. Every immigration document, every love letter, every birth certificate was saved - preserving their complete family story for future generations.
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="contact-section">
-                <h2>📞 Prince William County Document Emergency</h2>
-                <p class="hook-point">We understand growing families need immediate document protection to preserve their expanding legacy.</p>
-                <p><strong>Emergency Call:</strong> <a href="tel:703-215-3191">703-215-3191</a></p>
-                <p><strong>Email:</strong> <a href="mailto:documents@prismspecialtiesdmv.com">documents@prismspecialtiesdmv.com</a></p>
-                <p><strong>Family Service:</strong> Manassas • Woodbridge • Gainesville • Dale City • Dumfries • Occoquan</p>
+    <!-- Proof Section -->
+    <section class="proof-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Lake Ridge families trust us with their family archives</h2>
+                <p>From Manassas to Dumfries, we're the document specialists families call</p>
             </div>
-        </section>
-    </main>
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <div class="proof-number">30+</div>
+                    <h3>Years of Document Conservation</h3>
+                    <p>Family papers, photographs, and legal documents restored with archival-quality expertise</p>
+                </div>
+                <div class="proof-card">
+                    <span class="icon">📋</span>
+                    <h3>Specialized Preservation</h3>
+                    <p>Conservation techniques that insurance contractors don't understand or offer</p>
+                </div>
+                <div class="proof-card">
+                    <span class="icon">🏛️</span>
+                    <h3>Archival Standards</h3>
+                    <p>Museum-quality preservation methods used by libraries and historical societies</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Document Restoration Specialties</h2>
+                <p>Professional preservation for your family's documentary treasures and historical records</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="icon">📸</span>
+                    <h3>Family Photography Recovery</h3>
+                    <p>Water, fire, and age-damaged family photographs containing irreplaceable memories require specialized restoration techniques and archival preservation.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">📜</span>
+                    <h3>Historical Document Restoration</h3>
+                    <p>Immigration papers, military records, birth certificates, and family archives need expert conservation to preserve their legal and historical value.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">💌</span>
+                    <h3>Personal Letter & Diary Recovery</h3>
+                    <p>Handwritten letters, diaries, and personal correspondence hold family stories that can't be replaced. We restore these intimate family treasures.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">🏠</span>
+                    <h3>Property & Legal Documents</h3>
+                    <p>Deeds, wills, contracts, and legal papers require professional restoration to maintain their legal validity and family importance.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">🎓</span>
+                    <h3>Educational & Achievement Records</h3>
+                    <p>Diplomas, certificates, awards, and school records document family achievements and require specialized conservation techniques.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">📋</span>
+                    <h3>Business & Financial Archives</h3>
+                    <p>Family business records, financial documents, and historical papers need professional restoration to preserve family legacy and history.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Document Restoration Process</h2>
+                <p>Every document receives careful analysis and museum-quality preservation treatment</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Emergency Stabilization</h3>
+                    <p>Immediate assessment to prevent further deterioration. We secure and stabilize your documents using professional conservation protocols.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Document Analysis</h3>
+                    <p>Detailed examination under specialized lighting to assess paper type, ink composition, age, and extent of damage for proper treatment.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Conservation Treatment</h3>
+                    <p>Custom restoration procedures using archival materials and techniques appropriate for your document's age, composition, and historical value.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Protective Preservation</h3>
+                    <p>Archival encapsulation and storage solutions to ensure your restored documents remain preserved for future generations to treasure.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Expertise Section -->
+    <section class="expertise-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Our Document Restoration</h2>
+                <p>Professional expertise that insurance adjusters can't provide</p>
+            </div>
+
+            <div class="expertise-grid">
+                <div class="expertise-card">
+                    <span class="icon">🔬</span>
+                    <h3>Scientific Analysis</h3>
+                    <p>Advanced techniques to identify paper composition, ink types, and proper conservation methods for each unique document.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <span class="icon">📚</span>
+                    <h3>Archival Materials</h3>
+                    <p>Museum-quality supplies and conservation materials that ensure long-term preservation and protection.</p>
+                </div>
+
+                <div class="expertise-card">
+                    <span class="icon">🎓</span>
+                    <h3>Conservation Training</h3>
+                    <p>Our specialists understand historical preservation, paper chemistry, and archival standards for proper document care.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Your Family Legacy Deserves Expert Care</h2>
+                <p>Don't let insurance adjusters decide the value of your family's historical treasures.<br>Choose restoration specialists who understand their true significance.</p>
+                <p><strong>Serving:</strong> Lake Ridge • Woodbridge • Manassas • Dale City • Gainesville • Haymarket • Dumfries</p>
+
+                <a href="tel:301-215-3191" class="emergency-call">📞 Call Now: 301-215-3191</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>&copy; 2024 Prism Specialties DMV - Prince William County Document Restoration | Museum-Quality Experts</p>
+            <p>&copy; 2024 Prism Specialties DMV - Prince William County Document Restoration</p>
+            <p><strong>Emergency Response:</strong> 301-215-3191 | <strong>Claims:</strong> claims.dcandmdmetro@prismspecialties.com</p>
+            <p>Lake Ridge • Woodbridge • Manassas • Dale City • Gainesville • Haymarket • Dumfries</p>
         </div>
     </footer>
 </body>

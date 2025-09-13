@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Terms & Conditions - Prism Specialties DMV | Service terms for professional specialty restoration, emergency response, and insurance claim processes.">
+    <title>Terms & Conditions - Prism Specialties DMV | Specialty Restoration Experts</title>
+
+    <style>
+        /* Brand Color Variables */
+        :root {
+            --brand-primary: #00a0df;    /* Headers */
+            --brand-accent: #7c878f;     /* Secondary */
+            --brand-tertiary: #e8eaed;   /* Backgrounds */
+            --brand-text: #666666;       /* Body text */
+            --brand-light: #f8f9fa;      /* Light backgrounds */
+            --brand-white: #ffffff;
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            line-height: 1.6;
+            color: var(--brand-text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--brand-primary);
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--brand-white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--brand-primary);
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 85px;
+            width: auto;
+            margin-right: 15px;
+            vertical-align: middle;
+            object-fit: contain;
+            clip-path: inset(0 0 12% 0);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--brand-primary);
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            background: var(--brand-light);
+            color: var(--brand-accent);
+        }
+
+        .services-dropdown {
+            position: relative;
+        }
+
+        .services-dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            min-width: 220px;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 0;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f8f9fa;
+            color: #00a0df;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 80px 0;
+            background: var(--brand-white);
+        }
+
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .legal-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--brand-primary) 0%, #004080 100%);
+            color: var(--brand-white);
+            border-radius: 10px;
+        }
+
+        .legal-header h1 {
+            color: var(--brand-white);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .legal-header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: var(--brand-light);
+            border-radius: 8px;
+            border-left: 4px solid var(--brand-primary);
+        }
+
+        .section h2 {
+            color: var(--brand-primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .section h3 {
+            color: var(--brand-accent);
+            margin-bottom: 15px;
+            margin-top: 25px;
+            font-size: 1.2rem;
+        }
+
+        .section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+            color: var(--brand-text);
+        }
+
+        .important-notice {
+            background: #fff3cd;
+            border: 2px solid #ffeaa7;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            background: var(--brand-primary);
+            color: var(--brand-white);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .contact-info h3 {
+            color: var(--brand-white);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: var(--brand-white);
+            font-weight: bold;
+        }
+
+        .effective-date {
+            background: var(--brand-tertiary);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 2px solid var(--brand-primary);
+        }
+
+        .back-link {
+            display: inline-block;
+            background: var(--brand-primary);
+            color: var(--brand-white);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--brand-accent);
+            transform: translateY(-2px);
+        }
+
+        .limitation-box {
+            background: #f8d7da;
+            border: 2px solid #f5c6cb;
+            color: #721c24;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 25px 0;
+        }
+
+        .limitation-box h4 {
+            color: #721c24;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--brand-primary);
+            color: var(--brand-white);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer h4 {
+            color: var(--brand-white);
+            margin-bottom: 15px;
+        }
+
+        .footer p, .footer a {
+            color: #b3d9ff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .footer a:hover {
+            color: var(--brand-white);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .legal-header h1 {
+                font-size: 2rem;
+            }
+
+            .legal-header p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 20px;
+                margin: 20px 0;
+            }
+
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="images/logos/prism-logo-1000.png"
+                         alt="Prism Specialties DMV"
+                         class="logo-img">
+                    <span class="brand-text">Prism Specialties DMV</span>
+                </a>
+
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="services-dropdown">
+                            <a href="index.html#services">Services</a>
+                            <div class="dropdown-menu">
+                                <a href="index.html#services">Art & Collectibles</a>
+                                <a href="index.html#services">Electronics & Data Recovery</a>
+                                <a href="index.html#services">Textile & Fabric Restoration</a>
+                                <a href="index.html#services">Document Recovery</a>
+                                <a href="index.html#services">Commercial & Large Loss</a>
+                                <a href="index.html#services">Lightning Strike Validation</a>
+                            </div>
+                        </li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="index.html#service-areas">Service Areas</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="legal-container">
+
+                <!-- Back Navigation -->
+                <a href="index.html" class="back-link">← Back to Home</a>
+
+                <!-- Legal Header -->
+                <div class="legal-header">
+                    <h1>Terms & Conditions</h1>
+                    <p>Service terms for professional specialty restoration services and emergency response</p>
+                </div>
+
+                <!-- Effective Date -->
+                <div class="effective-date">
+                    <p><strong>Effective Date:</strong> September 13, 2025</p>
+                    <p><strong>Last Updated:</strong> September 13, 2025</p>
+                </div>
+
+                <!-- Important Notice -->
+                <div class="important-notice">
+                    <strong>IMPORTANT:</strong> These Terms & Conditions constitute a binding legal agreement. Please read carefully before using our services. By engaging our restoration services, you agree to be bound by these terms.
+                </div>
+
+                <!-- Agreement Acceptance -->
+                <div class="section">
+                    <h2>1. Agreement and Acceptance</h2>
+                    <p>These Terms and Conditions ("Terms") govern your use of restoration services provided by Prism Specialties DMV ("Company," "we," "our," or "us"), an independently owned and operated franchise. By engaging our services, contacting us, or submitting a service request, you ("Client," "Customer," "you") agree to be bound by these Terms.</p>
+                    <p>If you do not agree to these Terms, please do not use our services or contact us for service requests.</p>
+                </div>
+
+                <!-- Services Overview -->
+                <div class="section">
+                    <h2>2. Services Overview</h2>
+                    <p>Prism Specialties DMV provides professional specialty restoration services including:</p>
+                    <ul>
+                        <li><strong>Art & Collectibles Restoration:</strong> Fine art, antiques, sculptures, and valuable collectibles</li>
+                        <li><strong>Electronics & Data Recovery:</strong> Computer systems, servers, media devices, and data recovery services</li>
+                        <li><strong>Textile & Fabric Restoration:</strong> Clothing, upholstery, rugs, curtains, and specialty textiles</li>
+                        <li><strong>Document Recovery:</strong> Important papers, legal documents, photos, and books</li>
+                        <li><strong>Commercial & Large Loss Services:</strong> Business and industrial restoration projects</li>
+                        <li><strong>Lightning Strike Validation:</strong> Assessment and validation services for lightning damage claims</li>
+                        <li><strong>Emergency Response Services:</strong> 24/7 emergency assessment and mitigation</li>
+                    </ul>
+
+                    <h3>Service Area</h3>
+                    <p>Services are provided throughout the DMV region including:</p>
+                    <ul>
+                        <li>Washington, DC (all quadrants and neighborhoods)</li>
+                        <li>Maryland (Montgomery, Prince George's, Anne Arundel, Frederick, Charles, Calvert, and St. Mary's Counties)</li>
+                        <li>Northern Virginia (Fairfax, Arlington, Loudoun, Prince William, Stafford Counties, and City of Alexandria)</li>
+                    </ul>
+                </div>
+
+                <!-- Emergency Response Terms -->
+                <div class="section">
+                    <h2>3. Emergency Response Services</h2>
+
+                    <h3>24/7 Availability</h3>
+                    <p>We provide 24/7 emergency response services for urgent restoration needs. Emergency services include initial assessment, damage mitigation, and immediate stabilization to prevent further damage.</p>
+
+                    <h3>Emergency Response Fees</h3>
+                    <ul>
+                        <li>After-hours emergency calls (weekends, holidays, nights) may include premium charges</li>
+                        <li>Emergency response fees are separate from restoration service costs</li>
+                        <li>Fees will be disclosed before service commencement when possible</li>
+                    </ul>
+
+                    <h3>Scope Limitations</h3>
+                    <p>Emergency services are limited to assessment, documentation, and immediate mitigation. Full restoration requires separate authorization and may be subject to insurance approval.</p>
+                </div>
+
+                <!-- Estimates and Pricing -->
+                <div class="section">
+                    <h2>4. Estimates, Pricing, and Payment Terms</h2>
+
+                    <h3>Free Assessments</h3>
+                    <p>We provide free initial assessments for potential restoration projects. Detailed written estimates are provided upon request and assessment completion.</p>
+
+                    <h3>Pricing Structure</h3>
+                    <ul>
+                        <li>Pricing is based on scope of damage, restoration complexity, and time requirements</li>
+                        <li>Estimates are valid for 30 days unless otherwise specified</li>
+                        <li>Additional work discovered during restoration requires separate authorization</li>
+                        <li>Rush services and expedited timelines may incur premium pricing</li>
+                    </ul>
+
+                    <h3>Payment Terms</h3>
+                    <ul>
+                        <li>Payment schedules vary by project scope and insurance arrangements</li>
+                        <li>Commercial clients: Net 30 days unless otherwise agreed</li>
+                        <li>Insurance work: Payment upon insurance settlement or customer arrangement</li>
+                        <li>Direct pay clients: 50% deposit, remainder upon completion</li>
+                        <li>Late payments may incur 1.5% monthly service charges</li>
+                    </ul>
+                </div>
+
+                <!-- Insurance Claims Process -->
+                <div class="section">
+                    <h2>5. Insurance Claims and Coordination</h2>
+
+                    <h3>Insurance Claim Assistance</h3>
+                    <p>We work directly with insurance companies and adjusters to facilitate claims processing. Our services include:</p>
+                    <ul>
+                        <li>Detailed damage documentation and photography</li>
+                        <li>Written assessment reports for insurance submission</li>
+                        <li>Direct communication with insurance adjusters</li>
+                        <li>Restoration estimates aligned with insurance requirements</li>
+                    </ul>
+
+                    <h3>Customer Responsibilities</h3>
+                    <ul>
+                        <li>Notify insurance carrier promptly after damage occurs</li>
+                        <li>Provide complete and accurate information about damages</li>
+                        <li>Cooperate with insurance investigations and inspections</li>
+                        <li>Authorize necessary documentation and restoration work</li>
+                    </ul>
+
+                    <h3>Insurance Settlement</h3>
+                    <ul>
+                        <li>Final restoration scope may depend on insurance coverage determinations</li>
+                        <li>Customers are responsible for deductibles and non-covered items</li>
+                        <li>Insurance disputes are between customer and insurance company</li>
+                        <li>Work may proceed at customer expense if insurance denies coverage</li>
+                    </ul>
+                </div>
+
+                <!-- Liability and Limitations -->
+                <div class="limitation-box">
+                    <h4>Important Liability Limitations</h4>
+                    <p><strong>Total Liability Cap:</strong> Our total liability for any claim, regardless of cause, shall not exceed the amount paid for the specific service giving rise to the claim.</p>
+                    <p><strong>Consequential Damages:</strong> We are not liable for consequential, indirect, special, or punitive damages, including but not limited to lost profits, business interruption, or emotional distress.</p>
+                    <p><strong>Restoration Limitations:</strong> While we use professional techniques, we cannot guarantee complete restoration to original condition. Some damage may be permanent or irreversible.</p>
+                </div>
+
+                <div class="section">
+                    <h2>6. Warranty and Service Guarantees</h2>
+
+                    <h3>Service Warranty</h3>
+                    <p>We warrant that our restoration services will be performed in a professional and workmanlike manner using industry-standard techniques and materials.</p>
+
+                    <h3>Warranty Period</h3>
+                    <ul>
+                        <li>Service warranty: 90 days from completion for defects in workmanship</li>
+                        <li>Materials warranty: As provided by manufacturers</li>
+                        <li>Data recovery: No warranty on successful data retrieval</li>
+                    </ul>
+
+                    <h3>Warranty Exclusions</h3>
+                    <ul>
+                        <li>Normal wear and tear following restoration</li>
+                        <li>Damage from mishandling or environmental factors</li>
+                        <li>Pre-existing conditions not addressed in original scope</li>
+                        <li>Items deemed non-restorable or total loss</li>
+                    </ul>
+                </div>
+
+                <!-- Customer Responsibilities -->
+                <div class="section">
+                    <h2>7. Customer Responsibilities and Obligations</h2>
+
+                    <h3>Accurate Information</h3>
+                    <ul>
+                        <li>Provide complete and accurate information about damaged items</li>
+                        <li>Disclose known hazards or safety concerns</li>
+                        <li>Provide access to damaged property and items</li>
+                        <li>Maintain insurance coverage and provide policy information</li>
+                    </ul>
+
+                    <h3>Item Preparation</h3>
+                    <ul>
+                        <li>Remove or secure valuable undamaged items from work areas</li>
+                        <li>Provide safe and reasonable access to restoration areas</li>
+                        <li>Ensure utilities (power, water) are available as needed</li>
+                        <li>Obtain necessary permits or approvals when required</li>
+                    </ul>
+
+                    <h3>Communication</h3>
+                    <ul>
+                        <li>Respond promptly to requests for information or decisions</li>
+                        <li>Designate authorized decision-maker for project changes</li>
+                        <li>Notify us immediately of any concerns or issues</li>
+                    </ul>
+                </div>
+
+                <!-- Risk Disclosures -->
+                <div class="section">
+                    <h2>8. Risk Disclosures and Acknowledgments</h2>
+
+                    <h3>Restoration Risks</h3>
+                    <p>Customer acknowledges and accepts the following risks inherent in restoration services:</p>
+                    <ul>
+                        <li><strong>Further Damage:</strong> Some items may sustain additional damage during cleaning or restoration attempts</li>
+                        <li><strong>Incomplete Restoration:</strong> Original condition may not be fully achievable</li>
+                        <li><strong>Color Changes:</strong> Cleaning processes may reveal or cause color variations</li>
+                        <li><strong>Structural Integrity:</strong> Damaged items may have compromised strength or durability</li>
+                        <li><strong>Value Impact:</strong> Restoration may affect collectible or market value</li>
+                    </ul>
+
+                    <h3>Data Recovery Risks</h3>
+                    <ul>
+                        <li>Data recovery success cannot be guaranteed</li>
+                        <li>Recovery attempts may result in complete data loss</li>
+                        <li>Recovered data may be incomplete or corrupted</li>
+                        <li>Privacy of recovered data cannot be guaranteed</li>
+                    </ul>
+                </div>
+
+                <!-- Termination and Cancellation -->
+                <div class="section">
+                    <h2>9. Service Termination and Cancellation</h2>
+
+                    <h3>Customer Cancellation Rights</h3>
+                    <ul>
+                        <li>Services may be cancelled before work begins without penalty</li>
+                        <li>Cancellation after work commences subject to charges for work completed</li>
+                        <li>Emergency services cannot be cancelled once technicians are dispatched</li>
+                    </ul>
+
+                    <h3>Company Termination Rights</h3>
+                    <p>We reserve the right to terminate services if:</p>
+                    <ul>
+                        <li>Customer fails to pay agreed fees or deposits</li>
+                        <li>Safety hazards prevent safe completion of work</li>
+                        <li>Customer breaches these Terms or engages in disruptive behavior</li>
+                        <li>Items are determined to be unrestorable or hazardous</li>
+                    </ul>
+                </div>
+
+                <!-- Dispute Resolution -->
+                <div class="section">
+                    <h2>10. Dispute Resolution and Legal Terms</h2>
+
+                    <h3>Governing Law</h3>
+                    <p>These Terms are governed by the laws of Maryland and the District of Columbia. Any disputes will be resolved in the appropriate courts within the DMV region.</p>
+
+                    <h3>Dispute Resolution Process</h3>
+                    <ul>
+                        <li><strong>Step 1:</strong> Direct communication with management to resolve issues</li>
+                        <li><strong>Step 2:</strong> Mediation through agreed neutral third party</li>
+                        <li><strong>Step 3:</strong> Binding arbitration if mediation fails</li>
+                        <li><strong>Step 4:</strong> Court proceedings only for specific legal matters</li>
+                    </ul>
+
+                    <h3>Time Limitations</h3>
+                    <ul>
+                        <li>Service complaints must be reported within 30 days of completion</li>
+                        <li>Legal claims must be filed within one (1) year of service completion</li>
+                        <li>Insurance-related disputes follow insurance policy timeframes</li>
+                    </ul>
+                </div>
+
+                <!-- Franchise Disclosure -->
+                <div class="section">
+                    <h2>11. Franchise Disclosure and Independence</h2>
+                    <p>Prism Specialties DMV is an independently owned and operated franchise. While we operate under the Prism Specialties brand and follow system standards, we are:</p>
+                    <ul>
+                        <li>Independently owned and operated</li>
+                        <li>Solely responsible for our services and obligations</li>
+                        <li>Not agents or representatives of the franchisor</li>
+                        <li>Liable only for our own acts and omissions</li>
+                    </ul>
+                    <p>The franchisor, Prism Specialties, LLC, is not responsible for the acts, omissions, contracts, representations, or warranties of this independently operated franchise.</p>
+                </div>
+
+                <!-- Modifications and Updates -->
+                <div class="section">
+                    <h2>12. Terms Modification and Updates</h2>
+                    <p>We may modify these Terms periodically to reflect:</p>
+                    <ul>
+                        <li>Changes in service offerings or business practices</li>
+                        <li>Legal or regulatory requirements</li>
+                        <li>Industry best practices and standards</li>
+                    </ul>
+                    <p>Updated Terms will be posted on our website and take effect 30 days after posting. Continued use of services constitutes acceptance of modified Terms.</p>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Questions About These Terms?</h3>
+                    <p><strong>Prism Specialties DMV</strong></p>
+                    <p>Independently Owned and Operated Franchise</p>
+                    <p><strong>Emergency 24/7:</strong> <a href="tel:301-215-3191">301-215-3191</a></p>
+                    <p><strong>Business Inquiries:</strong> <a href="mailto:info@prismspecialtiesdmv.com">info@prismspecialtiesdmv.com</a></p>
+                    <p><strong>Service Area:</strong> Washington DC, Maryland, Northern Virginia</p>
+                    <p>Licensed, Bonded & Insured | IICRC Certified</p>
+                </div>
+
+                <!-- Legal Effectiveness -->
+                <div class="section">
+                    <h2>13. Legal Effectiveness and Enforceability</h2>
+                    <p>If any provision of these Terms is found to be unenforceable, the remainder of the Terms shall remain in full force and effect. The unenforceable provision shall be replaced with an enforceable provision that most closely achieves the original intent.</p>
+                    <p>These Terms constitute the complete agreement between the parties and supersede all prior negotiations, representations, or agreements relating to the subject matter herein.</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h4>Prism Specialties DMV</h4>
+            <p>Professional Specialty Restoration Services</p>
+            <p>Licensed & Insured | 24/7 Emergency Response</p>
+            <p>Independently Owned and Operated Franchise</p>
+            <p>&copy; 2025 Prism Specialties DMV. All rights reserved.</p>
+            <p style="margin-top: 15px;">
+                <a href="index.html">Home</a> |
+                <a href="about-us.html">About Us</a> |
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

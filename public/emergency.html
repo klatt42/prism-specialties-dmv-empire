@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="When disaster strikes your precious belongings, you're not alone. 24/7 emergency restoration with compassionate specialists who understand your loss. Immediate response across DMV region.">
+    <title>You're Not Alone in This Crisis | 24/7 Emergency Restoration | Prism Specialties DMV</title>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "EmergencyService",
+        "name": "Prism Specialties DMV Emergency Restoration",
+        "description": "24/7 emergency restoration services for fire, water, and disaster damage",
+        "telephone": ["301-215-3191", "703-229-1321"],
+        "areaServed": ["Washington DC", "Maryland", "Virginia"],
+        "availableLanguage": "English",
+        "openingHours": "Mo-Su 00:00-23:59"
+    }
+    </script>
+    
+    <style>
+        /* Brand Color Variables */
+        :root {
+            --brand-primary: #00a0df;
+            --brand-accent: #7c878f;
+            --emergency-red: #dc3545;
+            --emergency-orange: #fd7e14;
+            --brand-text: #666666;
+            --brand-light: #f8f9fa;
+            --brand-white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--brand-text);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-brand img {
+            height: 85px;
+            width: auto;
+            clip-path: inset(0 0 12% 0);
+            margin-right: 15px;
+        }
+        
+        .brand-text {
+            color: var(--brand-primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            color: var(--emergency-red);
+        }
+        
+        /* Emergency Alert Banner */
+        .emergency-banner {
+            background: linear-gradient(45deg, var(--emergency-red), var(--emergency-orange));
+            color: white;
+            padding: 15px 0;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.8; }
+            100% { opacity: 1; }
+        }
+        
+        .emergency-banner .container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .emergency-icon {
+            font-size: 1.5rem;
+            animation: bounce 1s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-5px); }
+            60% { transform: translateY(-3px); }
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--emergency-red) 0%, #c82333 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-100px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-section h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-section .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+        
+        /* Emergency Phone Grid */
+        .emergency-phones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .phone-card {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 2px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .phone-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.2);
+        }
+        
+        .region-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .region-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .emergency-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 20px 0;
+            display: block;
+        }
+        
+        .emergency-number a {
+            color: white;
+            text-decoration: none;
+            border: 3px solid white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        
+        .emergency-number a:hover {
+            background: white;
+            color: var(--emergency-red);
+            transform: scale(1.05);
+        }
+        
+        .coverage-note {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-top: 15px;
+        }
+        
+        /* Emergency Services Section */
+        .emergency-services {
+            padding: 80px 0;
+            background: var(--brand-light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            color: var(--emergency-red);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--emergency-red);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-icon {
+            font-size: 3rem;
+            color: var(--emergency-red);
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .service-card h3 {
+            color: var(--emergency-red);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        /* Response Time Section */
+        .response-time {
+            background: linear-gradient(45deg, var(--brand-primary), var(--brand-accent));
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .response-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .stat-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* What to Do Section */
+        .what-to-do {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .step-card {
+            background: var(--brand-light);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -20px;
+            left: 30px;
+            background: var(--emergency-red);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .step-card h3 {
+            color: var(--emergency-red);
+            margin: 20px 0 15px 0;
+            font-size: 1.3rem;
+        }
+        
+        /* Final CTA */
+        .final-cta {
+            background: var(--emergency-red);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .cta-button {
+            background: white;
+            color: var(--emergency-red);
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .emergency-number {
+                font-size: 2rem;
+            }
+            
+            .emergency-phones {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            .phone-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-brand">
+                <img src="images/logos/prism-logo-1000.png" alt="Prism Specialties DMV">
+                <span class="brand-text">Prism Specialties DMV</span>
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="about-us.html">About</a>
+                <a href="emergency.html" class="active">Emergency</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Emergency Alert Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            <span class="emergency-icon">🚨</span>
+            <span class="emergency-text">YOU'RE NOT ALONE - HELP IS HERE</span>
+            <span class="emergency-icon">🚨</span>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Take a Deep Breath - Help Is On The Way</h1>
+                <p class="subtitle">When disaster damages what you treasure most, you don't have to face it alone</p>
+                <p>We know the overwhelming panic when fire, water, or disaster strikes your precious belongings. <strong>Stop, breathe, and remember: You called the right people.</strong> Our emergency specialists have seen it all, and we've saved treasures that others said were "impossible."</p>
+                
+                <div class="emergency-phones">
+                    <div class="phone-card">
+                        <span class="region-icon">🏛️</span>
+                        <div class="region-title">Maryland Emergency Line</div>
+                        <div class="emergency-number">
+                            <a href="tel:301-215-3191">301-215-3191</a>
+                        </div>
+                        <p class="coverage-note"><strong>"I understand you're scared - we'll get through this together"</strong></p>
+                        <p class="coverage-note">Montgomery • Prince George's • Anne Arundel • Frederick • Charles • Calvert • St. Mary's</p>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 40px; padding: 20px; background: rgba(255,255,255,0.1); border-radius: 15px;">
+                    <h3 style="margin-bottom: 15px;">Other Regional Emergency Numbers:</h3>
+                    <p><strong>Washington DC:</strong> <a href="tel:202-335-4240" style="color: white;">202-335-4240</a></p>
+                    <p><strong>Northern Virginia:</strong> <a href="tel:703-229-1321" style="color: white;">703-229-1321</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Services -->
+    <section class="emergency-services">
+        <div class="container">
+            <div class="section-title">
+                <h2>When Others Say "Total Loss," We Say "Let Us Try"</h2>
+                <p>Emergency specialists who understand that your "stuff" isn't just stuff - it's your life story</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">🔥</span>
+                    <h3>Fire Damage Emergency</h3>
+                    <p><strong>"The fire is out, but my treasures..."</strong> We know. Smoke and soot can be devastating, but we've restored family photos from house fires, art from apartment blazes, and electronics from kitchen disasters. Don't give up hope yet.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">💧</span>
+                    <h3>Water Damage Emergency</h3>
+                    <p><strong>"Everything is soaked..."</strong> Water feels like the end, but it's often just the beginning of restoration. We've saved wedding dresses from floods, family documents from burst pipes, and computers from basement floods. Time matters, but hope isn't lost.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">🌪️</span>
+                    <h3>Storm Damage Emergency</h3>
+                    <p><strong>"The storm destroyed everything we care about..."</strong> Nature can be cruel, but human determination is stronger. When storms damage your collections, artwork, and precious belongings, we've learned that miracles happen in restoration labs.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">💻</span>
+                    <h3>Electronics Emergency</h3>
+                    <p><strong>"All our family photos are on there..."</strong> We hear this cry for help daily. When electronics fail from water or fire, we immediately begin data recovery. The device might be gone, but your memories aren't necessarily lost forever.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">🎨</span>
+                    <h3>Art Emergency</h3>
+                    <p><strong>"That painting has been in our family for generations..."</strong> We understand. Art isn't just decoration - it's heritage, investment, and irreplaceable beauty. Our museum-trained specialists treat every piece like it belongs in a gallery.</p>
+                </div>
+                
+                <div class="service-card">
+                    <span class="service-icon">📄</span>
+                    <h3>Document Emergency</h3>
+                    <p><strong>"Those documents can never be replaced..."</strong> Birth certificates, marriage licenses, family photos, legal papers - we know which documents are "just paper" and which ones are irreplaceable. Your important papers get immediate freeze-drying treatment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Response Time -->
+    <section class="response-time">
+        <div class="container">
+            <h2>Our Promise to You in Your Darkest Hour</h2>
+            <p>When disaster strikes, you need more than technicians - you need people who care</p>
+            
+            <div class="response-stats">
+                <div class="stat-card">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">"We're always here"</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">< 2hrs</span>
+                    <span class="stat-label">"Help is coming soon"</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">DMV</span>
+                    <span class="stat-label">"We'll find you"</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number">Expert</span>
+                    <span class="stat-label">"You can trust us"</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What to Do -->
+    <section class="what-to-do">
+        <div class="container">
+            <div class="section-title">
+                <h2>First, Take a Breath - Then Follow These Steps</h2>
+                <p>You're overwhelmed right now, and that's completely normal. Here's what to do next:</p>
+            </div>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Your Safety Comes First</h3>
+                    <p><strong>We know you want to save everything, but your safety matters most.</strong> Don't enter unsafe areas. Don't touch damaged electrical items. Your belongings can wait - your wellbeing cannot.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Call Us Right Now</h3>
+                    <p><strong>Don't wait, don't hesitate - just call: 301-215-3191</strong> Our emergency specialists will calm your fears and guide you through immediate steps. You don't have to figure this out alone.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Document Now, Restore Later</h3>
+                    <p><strong>Your instinct is to start cleaning - resist it.</strong> Take photos first for insurance. Don't move or clean anything yet. What looks "ruined" to you might be saveable to us.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h3>Protect What You Can</h3>
+                    <p><strong>You can help save your treasures.</strong> Move undamaged items to safety. Cover wet items with clean plastic if possible. Small actions now can make a big difference later.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">5</div>
+                    <h3>Help Is Coming</h3>
+                    <p><strong>You called the right people.</strong> Our specialists are already preparing specialized equipment for your specific situation. We've handled disasters just like yours, and we know what works.</p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">6</div>
+                    <h3>Hope Returns</h3>
+                    <p><strong>This is where miracles happen.</strong> We'll assess each precious item with the care it deserves. You'll be amazed what skilled hands and proper techniques can restore. Your treasures aren't gone - they're just temporarily damaged.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>You've Found the Right People - Now Let Us Help</h2>
+            <p><strong>In your moment of crisis, you found specialists who truly understand loss.</strong> We've seen the tears, felt the panic, and witnessed the joy when treasures return home. Your call for help ends here.</p>
+            
+            <div class="cta-buttons">
+                <a href="tel:301-215-3191" class="cta-button">📱 Call Now - We're Here: 301-215-3191</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Prism Specialties DMV - When Hope Seems Lost, We Find It Again</p>
+            <p><strong>Maryland Emergency Line:</strong> 301-215-3191 - <em>"Your treasures matter to us"</em></p>
+        </div>
+    </footer>
+</body>
+</html>

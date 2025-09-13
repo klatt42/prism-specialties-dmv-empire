@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="When your precious belongings are damaged, you need restoration specialists who understand that some things hold memories insurance can't measure. Professional restoration across DMV region.">
+    <title>Your Treasures Deserve Expert Care | Restoration Services | Prism Specialties DMV</title>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "name": "Specialty Restoration Services",
+        "provider": {
+            "@type": "LocalBusiness",
+            "name": "Prism Specialties DMV",
+            "telephone": ["301-215-3191", "703-229-1321"],
+            "areaServed": ["Washington DC", "Maryland", "Virginia"]
+        },
+        "serviceType": ["Art Restoration", "Electronics Restoration", "Textile Restoration", "Document Restoration"]
+    }
+    </script>
+    
+    <style>
+        /* Brand Color Variables */
+        :root {
+            --brand-primary: #00a0df;
+            --brand-accent: #7c878f;
+            --brand-tertiary: #e8eaed;
+            --brand-text: #666666;
+            --brand-light: #f8f9fa;
+            --brand-white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--brand-text);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-brand img {
+            height: 85px;
+            width: auto;
+            clip-path: inset(0 0 12% 0);
+            margin-right: 15px;
+        }
+        
+        .brand-text {
+            color: var(--brand-primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover {
+            color: var(--brand-primary);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-100px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 85%;
+            margin: 0 auto;
+        }
+
+        .hero-section h1 {
+            font-size: 3.8rem;
+            margin-bottom: 35px;
+            font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .hero-section .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 45px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .hero-section .hero-answer {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        /* Story Hook Section */
+        .story-hook {
+            background: var(--brand-light);
+            padding: 80px 0;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            max-width: 900px;
+            margin: 0 auto;
+            border-left: 6px solid #d4af37;
+        }
+
+        .story-card .hook {
+            font-size: 1.4rem;
+            color: #dc3545;
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .story-card .story-text {
+            font-size: 1.1rem;
+            color: var(--brand-text);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .story-card .outcome {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid #d4af37;
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            color: #333;
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            color: var(--brand-primary);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+        
+        .service-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .service-content {
+            padding: 30px;
+        }
+        
+        .service-content h3 {
+            color: var(--brand-primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .service-content p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .service-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .service-features li {
+            padding: 5px 0;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .service-features li::before {
+            content: "✓";
+            color: var(--brand-primary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+        
+        .btn-service {
+            display: inline-block;
+            background: var(--brand-primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-service:hover {
+            background: var(--brand-accent);
+            transform: translateY(-2px);
+        }
+        
+        /* Regional Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background: white;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .contact-card {
+            background: var(--brand-light);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 3px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .contact-card:hover {
+            border-color: var(--brand-primary);
+        }
+        
+        .contact-card h3 {
+            color: var(--brand-primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .phone-number {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--brand-accent);
+            margin: 15px 0;
+        }
+        
+        .phone-number a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .phone-number a:hover {
+            color: var(--brand-primary);
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo-brand">
+                <img src="images/logos/prism-logo-1000.png" alt="Prism Specialties DMV">
+                <span class="brand-text">Prism Specialties DMV</span>
+            </a>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="all-services.html">Services</a>
+                <a href="contact.html">Contact</a>
+                <a href="about-us.html">About</a>
+                <a href="emergency.html">Emergency</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Would you trust your family's irreplaceable treasures to someone who "does restoration on the side"?</h1>
+                <p class="subtitle">When precious belongings are damaged, every decision matters</p>
+                <p class="hero-answer">Your damaged treasures aren't just "stuff" to replace - they're <strong><em>memories, investments, and irreplaceable pieces of your life story.</em></strong> That's why you need specialists who understand what can't be measured by insurance adjusters.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Hook Section -->
+    <section class="story-hook">
+        <div class="container">
+            <div class="story-card">
+                <p class="hook">"The contractor said my water-damaged items were 'total losses' and should just be thrown away."</p>
+                <p class="story-text">After a burst pipe flooded their Arlington home, a family watched movers load their "ruined" belongings into dumpsters. The piano where their daughter learned to play. The electronics containing years of family photos. The wedding dress waiting for the next generation.</p>
+                <p class="story-text">The general contractor saw damaged goods. We saw recoverable memories. Three weeks later, we delivered a fully restored piano, recovered 15,000 family photos from "dead" devices, and transformed a yellowed wedding dress back to its original ivory beauty.</p>
+                <div class="outcome">
+                    <strong>The Result:</strong> What insurance labeled as $25,000 in "total losses" became $85,000 in successfully restored family treasures. More importantly, irreplaceable memories returned home where they belonged.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>You're Not Alone - We Specialize in What Others Give Up On</h2>
+                <p>When contractors say "impossible," we say "let us try" - because your memories deserve that chance</p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Art & Collectibles -->
+                <div class="service-card">
+                    <img src="images/services/art.webp" alt="Art & Collectibles Restoration" class="service-image">
+                    <div class="service-content">
+                        <h3>Art & Collectibles Restoration</h3>
+                        <p><strong>"That painting has been in our family for 90 years..."</strong> We understand. Whether it's your grandmother's portrait or a collection built over decades, art holds stories that can't be replaced. Our museum-trained specialists restore both the artwork and the memories within it.</p>
+                        <ul class="service-features">
+                            <li>Oil painting restoration</li>
+                            <li>Frame repair and refinishing</li>
+                            <li>Antique furniture restoration</li>
+                            <li>Sculpture cleaning and repair</li>
+                            <li>Collectible conservation</li>
+                        </ul>
+                        <a href="index.html#services" class="btn-service">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Electronics & Data Recovery -->
+                <div class="service-card">
+                    <img src="images/services/electronics.webp" alt="Electronics & Data Recovery" class="service-image">
+                    <div class="service-content">
+                        <h3>Electronics & Data Recovery</h3>
+                        <p><strong>"All our family photos are on that computer..."</strong> We know that panic. When water or fire damages your devices, you're not just losing electronics - you're losing thousands of irreplaceable photos, videos, and digital memories. We specialize in recovering what others declare impossible.</p>
+                        <ul class="service-features">
+                            <li>Water damage electronics repair</li>
+                            <li>Hard drive data recovery</li>
+                            <li>Phone and tablet restoration</li>
+                            <li>Computer system recovery</li>
+                            <li>Digital media transfer</li>
+                        </ul>
+                        <a href="index.html#services" class="btn-service">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Textile & Fabric Restoration -->
+                <div class="service-card">
+                    <img src="images/services/textiles.webp" alt="Textile & Fabric Restoration" class="service-image">
+                    <div class="service-content">
+                        <h3>Textile & Fabric Restoration</h3>
+                        <p><strong>"I was saving my wedding dress for my daughter..."</strong> Some fabrics hold dreams for the future. Whether it's a wedding dress, vintage clothing, or luxury textiles damaged by water, smoke, or time, we restore both the fabric and the hopes sewn into every thread.</p>
+                        <ul class="service-features">
+                            <li>Wedding dress restoration</li>
+                            <li>Designer clothing cleaning</li>
+                            <li>Vintage textile repair</li>
+                            <li>Upholstery restoration</li>
+                            <li>Luxury fabric care</li>
+                        </ul>
+                        <a href="index.html#services" class="btn-service">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Document Recovery -->
+                <div class="service-card">
+                    <img src="images/services/documents.webp" alt="Document Recovery & Digitizing" class="service-image">
+                    <div class="service-content">
+                        <h3>Document Recovery & Digitizing</h3>
+                        <p><strong>"Those documents can't be replaced..."</strong> Birth certificates, legal papers, historical documents, family photos - when paper gets damaged, panic sets in. Our document specialists have recovered everything from water-soaked marriage certificates to fire-damaged family bibles.</p>
+                        <ul class="service-features">
+                            <li>Water damaged document recovery</li>
+                            <li>Photo restoration services</li>
+                            <li>Digital archiving</li>
+                            <li>Important paper preservation</li>
+                            <li>Historical document care</li>
+                        </ul>
+                        <a href="index.html#services" class="btn-service">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ready to Save What Matters Most?</h2>
+                <p>Free consultations available - because every treasure deserves a professional assessment</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <h3>🏛️ Maryland</h3>
+                    <div class="phone-number">
+                        <a href="tel:301-215-3191">📞 301-215-3191</a>
+                    </div>
+                    <p><strong>Call for immediate help:</strong> Montgomery, Prince George's, Anne Arundel, Frederick, Charles, Calvert, St. Mary's Counties</p>
+                    <p><em>"Don't wait - every hour matters when treasures are damaged"</em></p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>🌄 Virginia</h3>
+                    <div class="phone-number">
+                        <a href="tel:703-229-1321">📞 703-229-1321</a>
+                    </div>
+                    <p><strong>Free consultation available:</strong> Northern Virginia, Fairfax, Arlington, Loudoun, Prince William Counties</p>
+                    <p><em>"We understand what your belongings mean to you"</em></p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3>🏛️ Washington DC</h3>
+                    <div class="phone-number">
+                        <a href="tel:301-215-3191">📞 301-215-3191</a>
+                    </div>
+                    <p><strong>Same-day assessment:</strong> All DC quadrants, Capitol Hill, Georgetown</p>
+                    <p><em>"Your peace of mind is our priority"</em></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Prism Specialties DMV - Professional Restoration Services</p>
+            <p>Maryland: 301-215-3191 | Virginia: 703-229-1321</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,124 @@
+=== BROWSER CACHE LOCATIONS ===
+Timestamp: Wed Sep 17 21:18:23 EDT 2025
+
+❌ Chrome cache not found: /mnt/c/Users/klatt42/AppData/Local/Google/Chrome/User Data/Default/Cache
+✅ Found Chrome cache: /mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Google/Chrome/User Data/Default/Cache
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Google/Chrome/User Data/Default/Cache/Cache_Data/data_0
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Google/Chrome/User Data/Default/Cache/Cache_Data/data_1
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Google/Chrome/User Data/Default/Cache/Cache_Data/data_2
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Google/Chrome/User Data/Default/Cache/Cache_Data/data_3
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Google/Chrome/User Data/Default/Cache/Cache_Data/data_4
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Google/Chrome/User Data/Default/Cache/Cache_Data/data_1
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Google/Chrome/User Data/Default/Cache/Cache_Data/data_2
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Google/Chrome/User Data/Default/Cache/Cache_Data/data_3
+❌ Chrome cache not found: /mnt/c/Users/klatt42/AppData/Local/Google/Chrome/User Data/Profile 1/Cache
+❌ Edge cache not found: /mnt/c/Users/klatt42/AppData/Local/Microsoft/Edge/User Data/Default/Cache
+✅ Found Edge cache: /mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Microsoft/Edge/User Data/Default/Cache
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Microsoft/Edge/User Data/Default/Cache/Cache_Data/data_0
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Microsoft/Edge/User Data/Default/Cache/Cache_Data/data_1
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Microsoft/Edge/User Data/Default/Cache/Cache_Data/data_3
+
+=== EDITOR BACKUP FILES ===
+❌ VS Code backups not found: /mnt/c/Users/klatt42/AppData/Roaming/Code/User/History
+✅ Found VS Code backups: /mnt/c/Users/RonKlatt_3qsjg34/AppData/Roaming/Code/User/History
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Roaming/Code/User/History/-1fc8b9e2/Xckg.md
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Roaming/Code/User/History/-2202d5c4/wRE2.css
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Roaming/Code/User/History/-528a503c/htsv.jsx
+❌ VS Code backups not found: /mnt/c/Users/klatt42/AppData/Roaming/Code/Backups
+/mnt/c/Users/RonKlatt/.vscode/extensions/pythagoratechnologies.gpt-pilot-vs-code-0.2.32/ui/node_modules/prismjs/components/prism-js-templates.js
+/mnt/c/Users/RonKlatt/.vscode/extensions/pythagoratechnologies.gpt-pilot-vs-code-0.2.32/ui/node_modules/prismjs/components/prism-js-templates.min.js
+/mnt/c/Users/RonKlatt/.vscode/extensions/pythagoratechnologies.gpt-pilot-vs-code-0.2.32/ui/node_modules/prismjs/components/prism-markup-templating.js
+/mnt/c/Users/RonKlatt/.vscode/extensions/pythagoratechnologies.gpt-pilot-vs-code-0.2.32/ui/node_modules/prismjs/components/prism-markup-templating.min.js
+/mnt/c/Users/RonKlatt/.vscode/extensions/pythagoratechnologies.gpt-pilot-vs-code-0.2.32/ui/node_modules/prismjs/components/prism-t4-templating.js
+
+=== SYSTEM TEMPORARY FILES ===
+✅ Found temp directory: /mnt/c/Windows/Temp
+❌ Temp directory not found: /mnt/c/Users/klatt42/AppData/Local/Temp
+✅ Found temp directory: /mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Temp
+✅ Found temp directory: /mnt/c/Temp
+
+=== CLAUDE CODE RELATED FILES ===
+/mnt/c/$Recycle.Bin/S-1-5-21-2967582488-1158111148-1378439238-1003/$RRYI55L/IndexedDB/https_claude.ai_0.indexeddb.leveldb
+/mnt/c/ProgramData/Microsoft/Windows/WER/ReportArchive/AppHang_claude.exe_c550adaf35e6794d8072e7b1773835911163fdc_83d42f37_29d037b0-c17f-4fe6-b1c9-05dc0fa40951
+/mnt/c/Users/RonKlatt/.vscode/extensions/kodu-ai.claude-dev-experimental-2.0.2
+/mnt/c/Users/RonKlatt/.vscode/extensions/saoudrizwan.claude-dev-3.0.12
+/mnt/c/Users/RonKlatt/.windsurf/extensions/saoudrizwan.claude-dev-3.0.12-universal
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/AnthropicClaude/app-0.13.11/claude.exe
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/AnthropicClaude/app-0.13.11/resources/app.asar.unpacked/node_modules/claude-native/claude-native-binding.node
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/AnthropicClaude/app-0.13.11/resources/claude-screen-dark.png
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/AnthropicClaude/app-0.13.11/resources/claude-screen.png
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/AnthropicClaude/app-0.13.19/claude.exe
+/mnt/c/Users/ROK42/AppData/Local/Google/Chrome/User Data/Default/Extensions/fheoggkfdfchfphceeifdbepaooicaho/8.1.0.5741_0/css/activate_banner_mb.css
+/mnt/c/Users/ROK42/AppData/Local/Google/Chrome/User Data/Default/Extensions/fheoggkfdfchfphceeifdbepaooicaho/8.1.0.5741_0/css/advanced_protection_signal.css
+/mnt/c/Users/ROK42/AppData/Local/Google/Chrome/User Data/Default/Extensions/fheoggkfdfchfphceeifdbepaooicaho/8.1.0.5741_0/css/advanced_protection_signal_toast.css
+/mnt/c/Users/ROK42/AppData/Local/Google/Chrome/User Data/Default/Extensions/fheoggkfdfchfphceeifdbepaooicaho/8.1.0.5741_0/css/download_scan_popup.css
+/mnt/c/Users/ROK42/AppData/Local/Google/Chrome/User Data/Default/Extensions/fheoggkfdfchfphceeifdbepaooicaho/8.1.0.5741_0/css/dws.css
+/mnt/c/Users/ROK42/AppData/Local/Google/Chrome/User Data/Default/Extensions/fheoggkfdfchfphceeifdbepaooicaho/8.1.0.5741_0/css/ff_policy.css
+/mnt/c/Users/ROK42/AppData/Local/Google/Chrome/User Data/Default/Extensions/fheoggkfdfchfphceeifdbepaooicaho/8.1.0.5741_0/css/ff_policy2.css
+/mnt/c/Users/ROK42/AppData/Local/Google/Chrome/User Data/Default/Extensions/fheoggkfdfchfphceeifdbepaooicaho/8.1.0.5741_0/css/foreground_sidebar_main.css
+/mnt/c/Users/ROK42/AppData/Local/Google/Chrome/User Data/Default/Extensions/fheoggkfdfchfphceeifdbepaooicaho/8.1.0.5741_0/css/how_it_works.css
+/mnt/c/Users/ROK42/AppData/Local/Google/Chrome/User Data/Default/Extensions/fheoggkfdfchfphceeifdbepaooicaho/8.1.0.5741_0/css/iframe_block_page.css
+
+=== GIT REPOSITORY SEARCH ===
+=== GIT REFLOG (last 20 entries) ===
+5093abb HEAD@{0}: reset: moving to origin/main
+c8893e7 HEAD@{1}: checkout: moving from hook-point-optimization to main
+c8893e7 HEAD@{2}: checkout: moving from main to hook-point-optimization
+c8893e7 HEAD@{3}: commit: Add professional GitHub workflow management
+7dc2b0b HEAD@{4}: commit: Add comprehensive repository documentation
+8aee83e HEAD@{5}: commit: Complete DMV Empire documentation framework establishment
+5093abb HEAD@{6}: commit: 📋 Phase 1 Achievement Archive - Ready for Phase 2
+a910481 HEAD@{7}: commit: ✅ CRITICAL FIX: Blog navigation 404 resolved
+deafd87 HEAD@{8}: commit: NAVIGATION FIX: Replace 'Home' with region names on specialty pages (Loudoun County pattern)
+87dd8b3 HEAD@{9}: commit: Fix navigation consistency: Apply Loudoun County's superior regional hub navigation to all regions
+9455d0c HEAD@{10}: merge brand-compliant-main: Fast-forward
+8092955 HEAD@{11}: checkout: moving from brand-compliant-main to main
+9455d0c HEAD@{12}: commit: 🎯 Complete DMV Empire: All regions storytelling transformation applied
+232a51b HEAD@{13}: commit: 🎯 BMAD Phase 1 Final: All Phase 1 optimizations complete
+1e17c52 HEAD@{14}: commit: Add Privacy Policy and Terms & Conditions pages
+e48c1e0 HEAD@{15}: commit: Complete Prism Specialties DMV franchise website implementation
+93bdcc1 HEAD@{16}: commit: Added white logo for dark footer section
+da4cb99 HEAD@{17}: commit: Fixed Services section - replaced placeholder icons with actual service images
+d0fa2e9 HEAD@{18}: checkout: moving from phase1-hook-point-optimization to brand-compliant-main
+d0fa2e9 HEAD@{19}: commit: 📚 Add Phase 1 completion summary and continuation guide
+=== UNTRACKED FILES ===
+?? blog-assessment.txt
+?? blog-completion-plan.txt
+?? blog/assets/data_1_elegant_styles.txt
+?? blog/assets/data_3_document_content.txt
+?? blog/assets/data_3_elegant_styles.txt
+?? blog/assets/images/document-restoration/
+?? blog/assets/images/textile-restoration/
+?? blog/cache-recovery-summary.txt
+?? local-search-results.txt
+?? public/checklists/
+?? public/index.html.backup-20250917-2038
+?? ux-enhancement-demo.html
+=== ALL BRANCHES ===
+  brand-compliant-main
+  content-updates
+  county-expansion
+  development
+  documentation-updates
+  hook-point-optimization
+* main
+  phase1-hook-point-optimization
+  remotes/origin/brand-compliant-main
+  remotes/origin/main
+  remotes/origin/phase1-hook-point-optimization
+
+=== BROWSER LOCAL STORAGE ===
+❌ Local storage not found: /mnt/c/Users/klatt42/AppData/Local/Google/Chrome/User Data/Default/Local Storage
+✅ Found local storage: /mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Google/Chrome/User Data/Default/Local Storage
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Google/Chrome/User Data/Default/Local Storage/leveldb/057622.ldb
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Google/Chrome/User Data/Default/Local Storage/leveldb/058038.ldb
+/mnt/c/Users/RonKlatt_3qsjg34/AppData/Local/Google/Chrome/User Data/Default/Local Storage/leveldb/058039.ldb
+❌ Local storage not found: /mnt/c/Users/klatt42/AppData/Local/Microsoft/Edge/User Data/Default/Local Storage
+
+=== CONTENT-SPECIFIC SEARCH ===
+=== TEXTILE RESTORATION SEARCH ===
+/mnt/c/Users/RonKlatt/.vscode/Cline-Aider-Supermaven/aider_env/Lib/site-packages/litellm/llms/tokenizers/anthropic_tokenizer.json
+/mnt/c/Users/RonKlatt/.vscode/Cline-Aider-Supermaven2/venv/Lib/site-packages/litellm/llms/tokenizers/anthropic_tokenizer.json
+/mnt/c/Users/RonKlatt/.vscode/ditto/venv/Lib/site-packages/litellm/llms/tokenizers/anthropic_tokenizer.json
+/mnt/c/Users/RonKlatt/.vscode/extensions/continue.continue-0.8.66-win32-x64/out/extension.js
+/mnt/c/Users/RonKlatt/.windsurf/extensions/continue.continue-0.8.66-win32-x64/out/extension.js

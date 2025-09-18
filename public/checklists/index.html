@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free emergency restoration checklists for the DMV area. Download professional PDF guides for fire damage, water damage, and disaster recovery from Prism Specialties.">
+    <title>Emergency Restoration Checklists | Free DMV Resources | Prism Specialties</title>
+
+    <style>
+        :root {
+            --brand-primary: #00a0df;
+            --brand-accent: #7c878f;
+            --brand-text: #666666;
+            --brand-light: #f8f9fa;
+            --brand-white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--brand-text);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-brand img {
+            height: 85px;
+            width: auto;
+            clip-path: inset(0 0 12% 0);
+            margin-right: 15px;
+        }
+
+        .brand-text {
+            color: var(--brand-primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--brand-primary);
+        }
+
+        /* Mobile Navigation */
+        .mobile-nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .hero-section .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+        }
+
+        .emergency-cta {
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            margin: 40px auto;
+            max-width: 500px;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .emergency-number {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .emergency-number a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* Checklists Grid */
+        .checklists-section {
+            padding: 80px 0;
+            background: var(--brand-light);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            color: var(--brand-primary);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .checklists-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .checklist-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--brand-primary);
+            transition: all 0.3s ease;
+        }
+
+        .checklist-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+
+        .checklist-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .checklist-card h3 {
+            color: var(--brand-primary);
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+
+        .checklist-card p {
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+
+        .download-btn {
+            background: var(--brand-primary);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .download-btn:hover {
+            background: var(--brand-accent);
+            transform: scale(1.05);
+        }
+
+        /* Emergency Banner */
+        .emergency-banner {
+            background: #dc3545;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .emergency-banner a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .checklists-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .emergency-number {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo-brand">
+                <img src="../images/logos/prism-logo-1000.png" alt="Prism Specialties DMV">
+                <span class="brand-text">Prism Specialties DMV</span>
+            </a>
+            <nav id="nav-menu">
+                <a href="../index.html">Home</a>
+                <a href="../all-services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../about-us.html">About</a>
+                <a href="../emergency.html">Emergency</a>
+            </nav>
+            <button class="mobile-nav-toggle" onclick="toggleNav()">☰</button>
+        </div>
+    </header>
+
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            🚨 <strong>Emergency? Call Now:</strong> <a href="tel:301-215-3191">301-215-3191</a> - 24/7 Response
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Emergency Restoration Checklists</h1>
+            <p class="subtitle">Free professional guides to help you respond to disasters and emergencies</p>
+            <p>Download our comprehensive checklists developed by restoration experts<br>for immediate use during emergencies in the DMV area.</p>
+
+            <div class="emergency-cta">
+                <div class="emergency-number">
+                    <a href="tel:301-215-3191">📞 301-215-3191</a>
+                </div>
+                <p>24/7 Emergency Response Team</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checklists Section -->
+    <section class="checklists-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Emergency Checklists</h2>
+                <p>Developed by certified restoration specialists for DMV area residents and businesses</p>
+            </div>
+
+            <div class="checklists-grid">
+                <div class="checklist-card">
+                    <span class="checklist-icon">🔥</span>
+                    <h3>Fire Damage - The First 48 Hours</h3>
+                    <p>Critical steps to take immediately after fire damage to minimize loss and begin recovery.</p>
+                    <a href="assets/pdfs/fire-damage-first-48-hours.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">💧</span>
+                    <h3>Water Emergency - Save What Matters</h3>
+                    <p>Essential actions for water damage response to protect your most valuable possessions.</p>
+                    <a href="assets/pdfs/water-emergency-save-what-matters.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">📄</span>
+                    <h3>Document Recovery Priority Guide</h3>
+                    <p>How to prioritize and protect important documents during and after disasters.</p>
+                    <a href="assets/pdfs/document-recovery-priority-guide.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">💻</span>
+                    <h3>Electronics Water Damage Response</h3>
+                    <p>Specialized steps to potentially save electronics and data after water exposure.</p>
+                    <a href="assets/pdfs/electronics-water-damage-response.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">🎨</span>
+                    <h3>Art & Antiques Emergency Protocol</h3>
+                    <p>Museum-quality protection methods for fine art and valuable antiques during emergencies.</p>
+                    <a href="assets/pdfs/art-antiques-emergency-protocol.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">🧵</span>
+                    <h3>Textile & Fabric Damage Control</h3>
+                    <p>Preserve clothing, upholstery, and fabric items with professional restoration techniques.</p>
+                    <a href="assets/pdfs/textile-fabric-damage-control.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">📋</span>
+                    <h3>Insurance Documentation Checklist</h3>
+                    <p>Complete guide to documenting damage for insurance claims and restoration coverage.</p>
+                    <a href="assets/pdfs/insurance-documentation-checklist.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">🏠</span>
+                    <h3>Home Emergency Preparedness</h3>
+                    <p>Proactive steps to prepare your home and family for potential disasters.</p>
+                    <a href="assets/pdfs/home-emergency-preparedness.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">🏢</span>
+                    <h3>Business Continuity After Disaster</h3>
+                    <p>Keep your business operational and minimize downtime after emergency events.</p>
+                    <a href="assets/pdfs/business-continuity-after-disaster.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">🦠</span>
+                    <h3>Mold Prevention Quick Actions</h3>
+                    <p>Immediate steps to prevent mold growth after water damage or high humidity events.</p>
+                    <a href="assets/pdfs/mold-prevention-quick-actions.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">💨</span>
+                    <h3>Smoke Damage Assessment Guide</h3>
+                    <p>Identify and address smoke damage throughout your property after fire incidents.</p>
+                    <a href="assets/pdfs/smoke-damage-assessment-guide.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">🪑</span>
+                    <h3>Antique Furniture Emergency Care</h3>
+                    <p>Specialized care instructions for valuable antique furniture during emergency situations.</p>
+                    <a href="assets/pdfs/antique-furniture-emergency-care.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">📸</span>
+                    <h3>Photograph & Memory Preservation</h3>
+                    <p>Save irreplaceable family photos and documents using professional preservation methods.</p>
+                    <a href="assets/pdfs/photograph-memory-preservation.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">🍳</span>
+                    <h3>Kitchen Fire Damage Protocol</h3>
+                    <p>Specific steps for kitchen fire damage, including appliance and surface restoration.</p>
+                    <a href="assets/pdfs/kitchen-fire-damage-protocol.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">🏠</span>
+                    <h3>Basement Flooding Response Plan</h3>
+                    <p>Comprehensive response plan for basement flooding and below-grade water damage.</p>
+                    <a href="assets/pdfs/basement-flooding-response-plan.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">⛈️</span>
+                    <h3>Storm Damage Immediate Actions</h3>
+                    <p>Fast response checklist for storm damage including wind, rain, and debris impact.</p>
+                    <a href="assets/pdfs/storm-damage-immediate-actions.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+
+                <div class="checklist-card">
+                    <span class="checklist-icon">📞</span>
+                    <h3>Complete Emergency Contact List</h3>
+                    <p>Essential phone numbers and contacts for all types of emergency restoration needs.</p>
+                    <a href="assets/pdfs/complete-emergency-contact-list.pdf" class="download-btn" download>
+                        📄 Download PDF
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3 style="color: var(--brand-primary); margin-bottom: 20px;">Prism Specialties DMV</h3>
+            <p><strong>Emergency Restoration:</strong> 301-215-3191</p>
+            <p>Serving Fairfax County, Loudoun County, Prince William County, Montgomery County, Washington DC</p>
+            <p style="margin-top: 20px;">&copy; 2024 Prism Specialties DMV. Professional Emergency Restoration Services.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleNav() {
+            const nav = document.getElementById('nav-menu');
+            nav.classList.toggle('active');
+        }
+    </script>
+</body>
+</html>

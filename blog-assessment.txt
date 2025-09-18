@@ -1,0 +1,64 @@
+=== RECOVERED BLOG STRUCTURE ===
+blog/art-restoration/dc-art-restoration-success-stories-backup.html
+blog/art-restoration/northern-va-fine-art-recovery.html
+blog/art-restoration/dc-art-restoration-success-stories.html
+blog/art-restoration/emergency-art-restoration-annapolis.html
+blog/art-restoration/northern-va-fine-art-recovery-backup.html
+blog/electronics-restoration/church-musical-electronics-dmv.html
+blog/index.html
+blog/assets/images/image-requirements.md
+blog/assets/images/church-fire-damage-image-requirements.md
+blog/assets/images/annapolis-emergency-image-requirements.md
+blog/assets/images/placeholders/README.md
+blog/assets/images/church-electronics-image-requirements.md
+blog/assets/images/northern-va-image-requirements.md
+blog/blog-style-guide.md
+=== ART RESTORATION POSTS ===
+✅ Art restoration directory exists
+total 188
+drwxr-xr-x 2 klatt42 klatt42  4096 Sep 17 20:35 .
+drwxr-xr-x 5 klatt42 klatt42  4096 Sep 17 20:35 ..
+-rw-r--r-- 1 klatt42 klatt42 27151 Sep 17 20:35 dc-art-restoration-success-stories-backup.html
+-rw-r--r-- 1 klatt42 klatt42 15730 Sep 17 20:35 dc-art-restoration-success-stories.html
+-rw-r--r-- 1 klatt42 klatt42  8994 Sep 17 20:35 emergency-art-restoration-annapolis-seo-summary.txt
+-rw-r--r-- 1 klatt42 klatt42 43911 Sep 17 20:35 emergency-art-restoration-annapolis.html
+-rw-r--r-- 1 klatt42 klatt42 33806 Sep 17 20:35 northern-va-fine-art-recovery-backup.html
+-rw-r--r-- 1 klatt42 klatt42  7888 Sep 17 20:35 northern-va-fine-art-recovery-seo-summary.txt
+-rw-r--r-- 1 klatt42 klatt42 33806 Sep 17 20:35 northern-va-fine-art-recovery.html
+
+=== ELECTRONICS RESTORATION POSTS ===
+✅ Electronics restoration directory exists
+total 76
+drwxr-xr-x 2 klatt42 klatt42  4096 Sep 17 20:35 .
+drwxr-xr-x 5 klatt42 klatt42  4096 Sep 17 20:35 ..
+-rw-r--r-- 1 klatt42 klatt42 10233 Sep 17 20:35 church-fire-recovery-montgomery-county-seo-summary.txt
+-rw-r--r-- 1 klatt42 klatt42 10582 Sep 17 20:35 church-musical-electronics-dmv-seo-summary.txt
+-rw-r--r-- 1 klatt42 klatt42 41786 Sep 17 20:35 church-musical-electronics-dmv.html
+=== TEXTILE RESTORATION POSTS ===
+❌ MISSING: Textile restoration directory - NEEDS RECREATION
+
+=== DOCUMENT RESTORATION POSTS ===
+❌ MISSING: Document restoration directory - NEEDS RECREATION
+
+=== OTHER BLOG CATEGORIES ===
+❌ water-damage directory missing - may need recreation
+❌ fire-damage directory missing - may need recreation
+❌ mold-remediation directory missing - may need recreation
+❌ emergency-response directory missing - may need recreation
+=== BLOG INDEX CONTENT CHECK ===
+167:                        <h3 style="margin-bottom: 15px; font-size: 1.4rem;"><a href="art-restoration/emergency-art-restoration-annapolis.html" style="color: #007bff; text-decoration: none;">Emergency Art Restoration Annapolis: When Every Hour Counts</a></h3>
+175:                        <h3 style="margin-bottom: 15px; font-size: 1.4rem;"><a href="art-restoration/northern-va-fine-art-recovery.html" style="color: #007bff; text-decoration: none;">Alexandria Estate Art Restoration: 19th Century Collection Recovery</a></h3>
+184:                        <h3 style="margin-bottom: 15px; font-size: 1.4rem;"><a href="electronics-restoration/church-musical-electronics-dmv.html" style="color: #007bff; text-decoration: none;">Church Fire Recovery: Smoke Damage Electronics Restoration Montgomery County</a></h3>
+192:                        <h3 style="margin-bottom: 15px; font-size: 1.4rem;"><a href="art-restoration/dc-art-restoration-success-stories.html" style="color: #007bff; text-decoration: none;">Historic Art Recovery: 5 Washington DC Museum Pieces We've Restored</a></h3>
+206:                        <a href="art-restoration/emergency-art-restoration-annapolis.html" style="color: #dc3545; text-decoration: none; font-weight: 600; display: block; margin-bottom: 8px;">🚨 Emergency Art Recovery →</a>
+207:                        <a href="art-restoration/dc-art-restoration-success-stories.html" style="color: #007bff; text-decoration: none; font-weight: 500; display: block; margin-bottom: 8px;">DC Museum Restorations →</a>
+208:                        <a href="art-restoration/northern-va-fine-art-recovery.html" style="color: #007bff; text-decoration: none; font-weight: 500;">Northern VA Estate Recovery →</a>
+216:                        <a href="electronics-restoration/church-musical-electronics-dmv.html" style="color: #dc3545; text-decoration: none; font-weight: 600; display: block; margin-bottom: 8px;">🔥 Church Fire Recovery Montgomery County →</a>
+222:                    <h3 style="color: #007bff; margin-bottom: 15px; font-size: 1.3rem;">Document Preservation</h3>
+223:                    <p style="color: #666; line-height: 1.6; margin-bottom: 20px;">Historic documents, family archives, and important papers restored</p>
+230:                    <h3 style="color: #007bff; margin-bottom: 15px; font-size: 1.3rem;">Textile Restoration</h3>
+259:                    <p style="margin-bottom: 10px; opacity: 0.9;">Art • Electronics • Documents • Textiles</p>
+
+📊 BLOG RECOVERY SUMMARY
+Timestamp: Wed Sep 17 20:38:14 EDT 2025
+Git commit: 5093abb

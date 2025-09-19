@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GHL Integration Test Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .test-section { margin: 20px 0; padding: 20px; border: 1px solid #ddd; }
+        .status { padding: 5px 10px; margin: 5px 0; }
+        .pass { background: #d4edda; color: #155724; }
+        .fail { background: #f8d7da; color: #721c24; }
+        button { padding: 10px 20px; margin: 5px; }
+    </style>
+</head>
+<body>
+    <h1>GHL Integration Testing Dashboard</h1>
+
+    <div class="test-section">
+        <h2>Session Tracking Test</h2>
+        <button onclick="testSessionTracking()">Test Session Initialization</button>
+        <div id="sessionResults"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Content Scoring Test</h2>
+        <button onclick="testContentScoring('artRestoration')">Test Art Page Visit</button>
+        <button onclick="testContentScoring('textileRestoration')">Test Textile Page Visit</button>
+        <button onclick="testContentScoring('emergencyService')">Test Emergency CTA Click</button>
+        <div id="scoringResults"></div>
+    </div>
+
+    <div class="test-section">
+        <h2>Phone Tracking Test</h2>
+        <button onclick="testPhoneTracking()">Test Phone Click</button>
+        <div id="phoneResults"></div>
+    </div>
+
+    <script src="/integrations/ghl/config/ghl-config.js"></script>
+    <script src="/integrations/ghl/tracking/lead-tracker.js"></script>
+
+    <script>
+        function testSessionTracking() {
+            const session = JSON.parse(sessionStorage.getItem('prismSession') || '{}');
+            const results = document.getElementById('sessionResults');
+
+            if (session.sessionId) {
+                results.innerHTML = '<div class="status pass">✅ Session tracking working - ID: ' + session.sessionId + '</div>';
+            } else {
+                results.innerHTML = '<div class="status fail">❌ Session tracking failed</div>';
+            }
+        }
+
+        function testContentScoring(contentType) {
+            if (window.prismTracker) {
+                window.prismTracker.trackPageView(contentType, window.location.href);
+                const session = JSON.parse(sessionStorage.getItem('prismSession') || '{}');
+                document.getElementById('scoringResults').innerHTML +=
+                    '<div class="status pass">✅ ' + contentType + ' tracked - Score: ' + session.contentScore + '</div>';
+            } else {
+                document.getElementById('scoringResults').innerHTML +=
+                    '<div class="status fail">❌ Tracker not initialized</div>';
+            }
+        }
+
+        function testPhoneTracking() {
+            // Simulate phone click
+            window.prismTracker.trackPageView('phoneCall', window.location.href);
+            const session = JSON.parse(sessionStorage.getItem('prismSession') || '{}');
+            document.getElementById('phoneResults').innerHTML =
+                '<div class="status pass">✅ Phone tracking working - Lead Quality: ' + session.leadQuality + '</div>';
+        }
+    </script>
+</body>
+</html>

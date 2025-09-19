@@ -1,0 +1,1632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prism Specialties - Lead Tracking Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        .dashboard-header {
+            background: linear-gradient(135deg, #1976D2 0%, #0D47A1 100%);
+            color: white;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .dashboard-header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .dashboard-header p {
+            opacity: 0.9;
+            font-size: 1.1rem;
+        }
+
+        .dashboard-nav {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-item {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-item.active {
+            background: #E3F2FD;
+            color: #1976D2;
+        }
+
+        .nav-item:hover {
+            background: #f0f0f0;
+        }
+
+        .dashboard-container {
+            padding: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .stat-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .stat-card h3 {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .stat-value {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-change {
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .stat-change.positive {
+            color: #4CAF50;
+        }
+
+        .stat-change.negative {
+            color: #F44336;
+        }
+
+        .cold { color: #9E9E9E; }
+        .warm { color: #FF9800; }
+        .hot { color: #F44336; }
+        .emergency { color: #D32F2F; background: #FFEBEE; }
+
+        .dashboard-section {
+            background: white;
+            margin-bottom: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .section-header {
+            padding: 1.5rem 2rem;
+            background: #fafafa;
+            border-bottom: 1px solid #e0e0e0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .section-header h2 {
+            font-size: 1.3rem;
+            color: #333;
+        }
+
+        .section-content {
+            padding: 2rem;
+        }
+
+        .leads-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .leads-table th,
+        .leads-table td {
+            text-align: left;
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .leads-table th {
+            background: #f5f5f5;
+            font-weight: 600;
+            color: #555;
+        }
+
+        .leads-table tr:hover {
+            background: #f9f9f9;
+        }
+
+        .temperature-badge {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .temperature-cold {
+            background: #E8F5E8;
+            color: #4CAF50;
+        }
+
+        .temperature-warm {
+            background: #FFF3E0;
+            color: #FF9800;
+        }
+
+        .temperature-hot {
+            background: #FFEBEE;
+            color: #F44336;
+        }
+
+        .temperature-emergency {
+            background: #D32F2F;
+            color: white;
+            animation: pulse 2s infinite;
+        }
+
+        .region-badge {
+            padding: 0.2rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+        }
+
+        .region-dc { background: #E3F2FD; color: #1976D2; }
+        .region-va { background: #E8F5E8; color: #4CAF50; }
+        .region-md { background: #FFF3E0; color: #FF9800; }
+
+        .real-time-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4CAF50;
+            animation: blink 2s infinite;
+            margin-right: 0.5rem;
+        }
+
+        .refresh-btn {
+            background: #1976D2;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .refresh-btn:hover {
+            background: #1565C0;
+        }
+
+        .emergency-alert {
+            background: linear-gradient(135deg, #D32F2F 0%, #B71C1C 100%);
+            color: white;
+            padding: 1rem 2rem;
+            margin-bottom: 2rem;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .emergency-alert.show {
+            display: block;
+            animation: slideIn 0.5s ease;
+        }
+
+        .charts-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .chart-container h3 {
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .activity-feed {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .activity-item {
+            padding: 1rem;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .activity-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            color: white;
+        }
+
+        .activity-emergency { background: #D32F2F; }
+        .activity-hot { background: #FF5722; }
+        .activity-warm { background: #FF9800; }
+        .activity-cold { background: #9E9E9E; }
+
+        .activity-details {
+            flex: 1;
+        }
+
+        .activity-time {
+            font-size: 0.85rem;
+            color: #666;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 1; }
+            50% { opacity: 0.7; }
+            100% { opacity: 1; }
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.3; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .dashboard-container {
+                padding: 1rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .charts-container {
+                grid-template-columns: 1fr;
+            }
+
+            .dashboard-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .leads-table {
+                font-size: 0.9rem;
+            }
+
+            .leads-table th,
+            .leads-table td {
+                padding: 0.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Dashboard Header -->
+    <div class="dashboard-header">
+        <h1>🎯 Prism Specialties Lead Tracking Dashboard</h1>
+        <p>Real-time monitoring of blog engagement and lead generation across DMV region</p>
+    </div>
+
+    <!-- Navigation -->
+    <div class="dashboard-nav">
+        <div class="nav-item active" onclick="showSection('overview')">Overview</div>
+        <div class="nav-item" onclick="showSection('leads')">Active Leads</div>
+        <div class="nav-item" onclick="showSection('phones')">Phone Tracking</div>
+        <div class="nav-item" onclick="showSection('automation')">Automation</div>
+        <div class="nav-item" onclick="showSection('emergency')">Emergency Response</div>
+        <div class="nav-item" onclick="showSection('analytics')">Analytics</div>
+        <div class="nav-item" onclick="showSection('settings')">Settings</div>
+        <div style="margin-left: auto; display: flex; align-items: center;">
+            <span class="real-time-indicator"></span>
+            <span>Live Tracking</span>
+            <button class="refresh-btn" onclick="refreshData()" style="margin-left: 1rem;">Refresh</button>
+        </div>
+    </div>
+
+    <!-- Emergency Alert -->
+    <div id="emergency-alert" class="emergency-alert">
+        <strong>🚨 EMERGENCY RESPONSE ACTIVATED</strong> - High-priority lead requires immediate attention
+    </div>
+
+    <!-- Dashboard Content -->
+    <div class="dashboard-container">
+        <!-- Overview Section -->
+        <div id="overview-section" class="dashboard-section">
+            <!-- Key Statistics -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>Total Sessions Today</h3>
+                    <div class="stat-value" id="total-sessions">127</div>
+                    <div class="stat-change positive">+23% from yesterday</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Hot Leads</h3>
+                    <div class="stat-value hot" id="hot-leads">8</div>
+                    <div class="stat-change positive">+3 in last hour</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Emergency Responses</h3>
+                    <div class="stat-value emergency" id="emergency-count">2</div>
+                    <div class="stat-change negative">Response time: 8 min avg</div>
+                </div>
+                <div class="stat-card">
+                    <h3>Conversion Rate</h3>
+                    <div class="stat-value" id="conversion-rate">12.4%</div>
+                    <div class="stat-change positive">+2.1% this week</div>
+                </div>
+            </div>
+
+            <!-- Charts -->
+            <div class="charts-container">
+                <div class="chart-container">
+                    <h3>📈 Lead Temperature Distribution</h3>
+                    <div id="temperature-chart">
+                        <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+                            <div style="flex: 1; text-align: center;">
+                                <div style="font-size: 2rem; color: #9E9E9E;">45</div>
+                                <div>Cold</div>
+                            </div>
+                            <div style="flex: 1; text-align: center;">
+                                <div style="font-size: 2rem; color: #FF9800;">23</div>
+                                <div>Warm</div>
+                            </div>
+                            <div style="flex: 1; text-align: center;">
+                                <div style="font-size: 2rem; color: #F44336;">8</div>
+                                <div>Hot</div>
+                            </div>
+                            <div style="flex: 1; text-align: center;">
+                                <div style="font-size: 2rem; color: #D32F2F;">2</div>
+                                <div>Emergency</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="chart-container">
+                    <h3>🌍 Regional Performance</h3>
+                    <div id="regional-chart">
+                        <div style="margin-top: 1rem;">
+                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                <span>Washington DC</span>
+                                <span style="font-weight: bold;">34 leads</span>
+                            </div>
+                            <div style="background: #e0e0e0; height: 8px; border-radius: 4px;">
+                                <div style="background: #1976D2; height: 100%; width: 68%; border-radius: 4px;"></div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin: 1rem 0 0.5rem 0;">
+                                <span>Northern Virginia</span>
+                                <span style="font-weight: bold;">28 leads</span>
+                            </div>
+                            <div style="background: #e0e0e0; height: 8px; border-radius: 4px;">
+                                <div style="background: #4CAF50; height: 100%; width: 56%; border-radius: 4px;"></div>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; margin: 1rem 0 0.5rem 0;">
+                                <span>Maryland</span>
+                                <span style="font-weight: bold;">16 leads</span>
+                            </div>
+                            <div style="background: #e0e0e0; height: 8px; border-radius: 4px;">
+                                <div style="background: #FF9800; height: 100%; width: 32%; border-radius: 4px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Active Leads Section -->
+        <div id="leads-section" class="dashboard-section" style="display: none;">
+            <div class="section-header">
+                <h2>🎯 Active Leads Monitoring</h2>
+                <div>
+                    <button class="refresh-btn" onclick="refreshLeads()">Refresh Leads</button>
+                </div>
+            </div>
+            <div class="section-content">
+                <table class="leads-table" id="leads-table">
+                    <thead>
+                        <tr>
+                            <th>Session ID</th>
+                            <th>Temperature</th>
+                            <th>Region</th>
+                            <th>Content Score</th>
+                            <th>Time Spent</th>
+                            <th>Last Activity</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leads-tbody">
+                        <!-- Dynamic content will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Phone Tracking Section -->
+        <div id="phones-section" class="dashboard-section" style="display: none;">
+            <div class="section-header">
+                <h2>📞 Regional Phone Tracking</h2>
+                <div>
+                    <button class="refresh-btn" onclick="refreshPhoneData()">Refresh Data</button>
+                </div>
+            </div>
+            <div class="section-content">
+                <!-- Regional Phone Statistics -->
+                <div class="stats-grid" style="margin-bottom: 2rem;">
+                    <div class="stat-card">
+                        <h3>Total Phone Interactions</h3>
+                        <div class="stat-value" id="total-phone-interactions">0</div>
+                        <div class="stat-change positive">All regions combined</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Emergency Calls Today</h3>
+                        <div class="stat-value emergency" id="emergency-calls">0</div>
+                        <div class="stat-change negative">15-min response SLA</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Hot Lead Calls</h3>
+                        <div class="stat-value hot" id="hot-lead-calls">0</div>
+                        <div class="stat-change positive">4-hour response target</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Regional Leader</h3>
+                        <div class="stat-value" id="top-region">DC</div>
+                        <div class="stat-change">Highest call volume</div>
+                    </div>
+                </div>
+
+                <!-- Regional Performance Charts -->
+                <div class="charts-container">
+                    <div class="chart-container">
+                        <h3>📊 Calls by Region</h3>
+                        <div id="regional-calls-chart">
+                            <div style="margin: 1rem 0;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>🏛️ Washington DC (202-335-4240)</span>
+                                    <span style="font-weight: bold;" id="dc-calls">0 calls</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 8px; border-radius: 4px;">
+                                    <div id="dc-bar" style="background: #1976D2; height: 100%; width: 0%; border-radius: 4px; transition: width 0.3s ease;"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin: 1rem 0 0.5rem 0;">
+                                    <span>🌲 Northern Virginia (703-229-1321)</span>
+                                    <span style="font-weight: bold;" id="va-calls">0 calls</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 8px; border-radius: 4px;">
+                                    <div id="va-bar" style="background: #4CAF50; height: 100%; width: 0%; border-radius: 4px; transition: width 0.3s ease;"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin: 1rem 0 0.5rem 0;">
+                                    <span>🦀 Maryland (301-215-3191)</span>
+                                    <span style="font-weight: bold;" id="md-calls">0 calls</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 8px; border-radius: 4px;">
+                                    <div id="md-bar" style="background: #FF9800; height: 100%; width: 0%; border-radius: 4px; transition: width 0.3s ease;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3>⚡ Phone Interaction Types</h3>
+                        <div id="interaction-types-chart">
+                            <div style="margin: 1rem 0;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>📞 Direct Calls</span>
+                                    <span style="font-weight: bold;" id="direct-calls">0</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 6px; border-radius: 3px; margin-bottom: 1rem;">
+                                    <div id="direct-calls-bar" style="background: #D32F2F; height: 100%; width: 0%; border-radius: 3px; transition: width 0.3s ease;"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>👆 Phone Hovers</span>
+                                    <span style="font-weight: bold;" id="phone-hovers">0</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 6px; border-radius: 3px; margin-bottom: 1rem;">
+                                    <div id="hovers-bar" style="background: #FF9800; height: 100%; width: 0%; border-radius: 3px; transition: width 0.3s ease;"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>📋 Phone Copies</span>
+                                    <span style="font-weight: bold;" id="phone-copies">0</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 6px; border-radius: 3px;">
+                                    <div id="copies-bar" style="background: #4CAF50; height: 100%; width: 0%; border-radius: 3px; transition: width 0.3s ease;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Phone Interactions Table -->
+                <div style="margin-top: 2rem;">
+                    <h3>📋 Recent Phone Interactions</h3>
+                    <table class="leads-table" id="phone-interactions-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Type</th>
+                                <th>Phone Number</th>
+                                <th>Region</th>
+                                <th>Urgency</th>
+                                <th>Session Score</th>
+                                <th>Response Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="phone-interactions-tbody">
+                            <!-- Dynamic content will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Automation Section -->
+        <div id="automation-section" class="dashboard-section" style="display: none;">
+            <div class="section-header">
+                <h2>🤖 GHL Automation Triggers</h2>
+                <div>
+                    <button class="refresh-btn" onclick="refreshAutomationData()">Refresh Data</button>
+                </div>
+            </div>
+            <div class="section-content">
+                <!-- Automation Statistics -->
+                <div class="stats-grid" style="margin-bottom: 2rem;">
+                    <div class="stat-card">
+                        <h3>Total Triggers Today</h3>
+                        <div class="stat-value" id="total-automation-triggers">0</div>
+                        <div class="stat-change positive">All automation sequences</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Emergency Automations</h3>
+                        <div class="stat-value emergency" id="emergency-automations">0</div>
+                        <div class="stat-change negative">15-min response triggered</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Hot Lead Sequences</h3>
+                        <div class="stat-value hot" id="hot-lead-automations">0</div>
+                        <div class="stat-change positive">4-hour response triggered</div>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Success Rate</h3>
+                        <div class="stat-value" id="automation-success-rate">0%</div>
+                        <div class="stat-change">GHL API success rate</div>
+                    </div>
+                </div>
+
+                <!-- Automation Performance Charts -->
+                <div class="charts-container">
+                    <div class="chart-container">
+                        <h3>🎯 Automation Triggers by Type</h3>
+                        <div id="automation-types-chart">
+                            <div style="margin: 1rem 0;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>🚨 Emergency Response</span>
+                                    <span style="font-weight: bold;" id="emergency-trigger-count">0</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 8px; border-radius: 4px; margin-bottom: 1rem;">
+                                    <div id="emergency-trigger-bar" style="background: #D32F2F; height: 100%; width: 0%; border-radius: 4px; transition: width 0.3s ease;"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>🔥 Hot Lead Sequences</span>
+                                    <span style="font-weight: bold;" id="hot-trigger-count">0</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 8px; border-radius: 4px; margin-bottom: 1rem;">
+                                    <div id="hot-trigger-bar" style="background: #FF5722; height: 100%; width: 0%; border-radius: 4px; transition: width 0.3s ease;"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>⚡ Warm Lead Nurture</span>
+                                    <span style="font-weight: bold;" id="warm-trigger-count">0</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 8px; border-radius: 4px; margin-bottom: 1rem;">
+                                    <div id="warm-trigger-bar" style="background: #FF9800; height: 100%; width: 0%; border-radius: 4px; transition: width 0.3s ease;"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>❄️ Cold Lead Sequences</span>
+                                    <span style="font-weight: bold;" id="cold-trigger-count">0</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 8px; border-radius: 4px;">
+                                    <div id="cold-trigger-bar" style="background: #9E9E9E; height: 100%; width: 0%; border-radius: 4px; transition: width 0.3s ease;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3>🎨 Content-Specific Triggers</h3>
+                        <div id="content-triggers-chart">
+                            <div style="margin: 1rem 0;">
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>👰 Wedding Dress Specialist</span>
+                                    <span style="font-weight: bold;" id="wedding-trigger-count">0</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 6px; border-radius: 3px; margin-bottom: 1rem;">
+                                    <div id="wedding-trigger-bar" style="background: #E91E63; height: 100%; width: 0%; border-radius: 3px; transition: width 0.3s ease;"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>🪖 Military Uniform Specialist</span>
+                                    <span style="font-weight: bold;" id="military-trigger-count">0</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 6px; border-radius: 3px; margin-bottom: 1rem;">
+                                    <div id="military-trigger-bar" style="background: #4CAF50; height: 100%; width: 0%; border-radius: 3px; transition: width 0.3s ease;"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>🏛️ Institutional/Authority</span>
+                                    <span style="font-weight: bold;" id="authority-trigger-count">0</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 6px; border-radius: 3px; margin-bottom: 1rem;">
+                                    <div id="authority-trigger-bar" style="background: #2196F3; height: 100%; width: 0%; border-radius: 3px; transition: width 0.3s ease;"></div>
+                                </div>
+                                <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                                    <span>🎓 Expert Consultation</span>
+                                    <span style="font-weight: bold;" id="expert-trigger-count">0</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 6px; border-radius: 3px;">
+                                    <div id="expert-trigger-bar" style="background: #9C27B0; height: 100%; width: 0%; border-radius: 3px; transition: width 0.3s ease;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Automation Triggers Table -->
+                <div style="margin-top: 2rem;">
+                    <h3>📋 Recent Automation Triggers</h3>
+                    <table class="leads-table" id="automation-triggers-table">
+                        <thead>
+                            <tr>
+                                <th>Time</th>
+                                <th>Trigger Type</th>
+                                <th>Automation ID</th>
+                                <th>Region</th>
+                                <th>Priority</th>
+                                <th>Content Score</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="automation-triggers-tbody">
+                            <!-- Dynamic content will be inserted here -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Automation Configuration -->
+                <div style="margin-top: 2rem; padding: 2rem; background: #f8f9fa; border-radius: 12px;">
+                    <h3>⚙️ Automation Configuration Status</h3>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem;">
+                        <div>
+                            <h4>🎯 Emergency Sequences</h4>
+                            <div id="emergency-config-status" style="margin: 1rem 0;">
+                                <div style="color: #666;">Loading configuration...</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>🔥 Lead Temperature Sequences</h4>
+                            <div id="lead-config-status" style="margin: 1rem 0;">
+                                <div style="color: #666;">Loading configuration...</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem;">
+                        <div>
+                            <h4>🎨 Content-Specific Sequences</h4>
+                            <div id="content-config-status" style="margin: 1rem 0;">
+                                <div style="color: #666;">Loading configuration...</div>
+                            </div>
+                        </div>
+                        <div>
+                            <h4>⚡ Engagement Sequences</h4>
+                            <div id="engagement-config-status" style="margin: 1rem 0;">
+                                <div style="color: #666;">Loading configuration...</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emergency Response Section -->
+        <div id="emergency-section" class="dashboard-section" style="display: none;">
+            <div class="section-header">
+                <h2>🚨 Emergency Response Center</h2>
+                <div>
+                    <span style="color: #D32F2F; font-weight: bold;">15-minute SLA Target</span>
+                </div>
+            </div>
+            <div class="section-content">
+                <div id="emergency-queue">
+                    <!-- Emergency items will be populated here -->
+                </div>
+            </div>
+        </div>
+
+        <!-- Analytics Section -->
+        <div id="analytics-section" class="dashboard-section" style="display: none;">
+            <div class="section-header">
+                <h2>📊 Analytics & Insights</h2>
+            </div>
+            <div class="section-content">
+                <div class="charts-container">
+                    <div class="chart-container">
+                        <h3>Content Performance</h3>
+                        <div id="content-performance">
+                            <div style="margin: 1rem 0;">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Wedding Dress Restoration</span>
+                                    <span>45 avg score</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 6px; border-radius: 3px; margin-top: 0.5rem;">
+                                    <div style="background: #4CAF50; height: 100%; width: 90%; border-radius: 3px;"></div>
+                                </div>
+                            </div>
+                            <div style="margin: 1rem 0;">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Military Uniform Restoration</span>
+                                    <span>40 avg score</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 6px; border-radius: 3px; margin-top: 0.5rem;">
+                                    <div style="background: #FF9800; height: 100%; width: 80%; border-radius: 3px;"></div>
+                                </div>
+                            </div>
+                            <div style="margin: 1rem 0;">
+                                <div style="display: flex; justify-content: space-between;">
+                                    <span>Document Restoration</span>
+                                    <span>35 avg score</span>
+                                </div>
+                                <div style="background: #e0e0e0; height: 6px; border-radius: 3px; margin-top: 0.5rem;">
+                                    <div style="background: #2196F3; height: 100%; width: 70%; border-radius: 3px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="chart-container">
+                        <h3>Recent Activity Feed</h3>
+                        <div class="activity-feed" id="activity-feed">
+                            <!-- Activity items will be populated here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div id="settings-section" class="dashboard-section" style="display: none;">
+            <div class="section-header">
+                <h2>⚙️ Dashboard Settings</h2>
+            </div>
+            <div class="section-content">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div>
+                        <h3>Alert Settings</h3>
+                        <div style="margin: 1rem 0;">
+                            <label>
+                                <input type="checkbox" checked> Emergency Response Alerts
+                            </label>
+                        </div>
+                        <div style="margin: 1rem 0;">
+                            <label>
+                                <input type="checkbox" checked> Hot Lead Notifications
+                            </label>
+                        </div>
+                        <div style="margin: 1rem 0;">
+                            <label>
+                                <input type="checkbox"> Daily Summary Reports
+                            </label>
+                        </div>
+                    </div>
+                    <div>
+                        <h3>GHL Integration</h3>
+                        <div style="margin: 1rem 0;">
+                            <label>Location ID:</label>
+                            <input type="text" placeholder="YOUR_GHL_LOCATION_ID" style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;">
+                        </div>
+                        <div style="margin: 1rem 0;">
+                            <label>API Key:</label>
+                            <input type="password" placeholder="Enter API Key" style="width: 100%; padding: 0.5rem; margin-top: 0.5rem;">
+                        </div>
+                        <button class="refresh-btn" style="margin-top: 1rem;">Test Connection</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dashboard functionality
+        let currentSection = 'overview';
+        let refreshInterval;
+
+        // Initialize dashboard
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🎯 Lead Tracking Dashboard initialized');
+            loadDashboardData();
+            startRealTimeUpdates();
+        });
+
+        // Show section
+        function showSection(section) {
+            // Hide all sections
+            document.querySelectorAll('.dashboard-section').forEach(s => s.style.display = 'none');
+
+            // Remove active class from nav items
+            document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+
+            // Show selected section
+            document.getElementById(section + '-section').style.display = 'block';
+            event.target.classList.add('active');
+
+            currentSection = section;
+
+            // Load section-specific data
+            loadSectionData(section);
+        }
+
+        // Load dashboard data
+        function loadDashboardData() {
+            // Load data from localStorage
+            const sessionData = getStoredSessionData();
+            const emergencyData = getStoredEmergencyData();
+
+            updateStatistics(sessionData, emergencyData);
+            updateLeadsTable(sessionData);
+            updateActivityFeed(sessionData, emergencyData);
+        }
+
+        // Get stored session data
+        function getStoredSessionData() {
+            const sessions = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('ghl_session_')) {
+                    try {
+                        const data = JSON.parse(localStorage.getItem(key));
+                        data.storageKey = key;
+                        sessions.push(data);
+                    } catch (e) {
+                        console.warn('Invalid session data:', key);
+                    }
+                }
+            }
+            return sessions.sort((a, b) => b.timestamp - a.timestamp);
+        }
+
+        // Get stored emergency data
+        function getStoredEmergencyData() {
+            const emergencies = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('ghl_emergency_')) {
+                    try {
+                        const data = JSON.parse(localStorage.getItem(key));
+                        data.storageKey = key;
+                        emergencies.push(data);
+                    } catch (e) {
+                        console.warn('Invalid emergency data:', key);
+                    }
+                }
+            }
+            return emergencies.sort((a, b) => b.timestamp - a.timestamp);
+        }
+
+        // Update statistics
+        function updateStatistics(sessions, emergencies) {
+            const totalSessions = sessions.length;
+            const hotLeads = sessions.filter(s => s.temperature === 'hot' || s.temperature === 'emergency').length;
+            const emergencyCount = emergencies.length;
+
+            document.getElementById('total-sessions').textContent = totalSessions;
+            document.getElementById('hot-leads').textContent = hotLeads;
+            document.getElementById('emergency-count').textContent = emergencyCount;
+
+            // Calculate conversion rate (mock calculation)
+            const conversionRate = totalSessions > 0 ? ((hotLeads / totalSessions) * 100).toFixed(1) : '0';
+            document.getElementById('conversion-rate').textContent = conversionRate + '%';
+        }
+
+        // Update leads table
+        function updateLeadsTable(sessions) {
+            const tbody = document.getElementById('leads-tbody');
+            tbody.innerHTML = '';
+
+            sessions.slice(0, 20).forEach(session => {
+                const row = createLeadRow(session);
+                tbody.appendChild(row);
+            });
+        }
+
+        // Create lead row
+        function createLeadRow(session) {
+            const row = document.createElement('tr');
+
+            const timeSpent = session.timeSpent ? Math.round(session.timeSpent / 1000) : 0;
+            const lastActivity = new Date(session.timestamp).toLocaleTimeString();
+
+            row.innerHTML = `
+                <td>${session.sessionId || 'N/A'}</td>
+                <td><span class="temperature-badge temperature-${session.temperature || 'cold'}">${session.temperature || 'cold'}</span></td>
+                <td><span class="region-badge region-${(session.region || 'va').toLowerCase()}">${session.region || 'VA'}</span></td>
+                <td>${session.score || session.contentScore || 0}</td>
+                <td>${timeSpent}s</td>
+                <td>${lastActivity}</td>
+                <td>
+                    <button class="refresh-btn" onclick="viewSession('${session.storageKey}')" style="padding: 0.3rem 0.8rem; font-size: 0.8rem;">View</button>
+                </td>
+            `;
+
+            return row;
+        }
+
+        // Update activity feed
+        function updateActivityFeed(sessions, emergencies) {
+            const feed = document.getElementById('activity-feed');
+            feed.innerHTML = '';
+
+            // Combine and sort all activities
+            const activities = [];
+
+            sessions.forEach(session => {
+                activities.push({
+                    type: 'session',
+                    temperature: session.temperature || 'cold',
+                    timestamp: session.timestamp,
+                    data: session
+                });
+            });
+
+            emergencies.forEach(emergency => {
+                activities.push({
+                    type: 'emergency',
+                    temperature: 'emergency',
+                    timestamp: emergency.timestamp,
+                    data: emergency
+                });
+            });
+
+            activities.sort((a, b) => b.timestamp - a.timestamp);
+
+            activities.slice(0, 20).forEach(activity => {
+                const item = createActivityItem(activity);
+                feed.appendChild(item);
+            });
+        }
+
+        // Create activity item
+        function createActivityItem(activity) {
+            const item = document.createElement('div');
+            item.className = 'activity-item';
+
+            const icon = activity.type === 'emergency' ? '🚨' : getTemperatureIcon(activity.temperature);
+            const time = new Date(activity.timestamp).toLocaleString();
+
+            let description = '';
+            if (activity.type === 'emergency') {
+                description = `Emergency response activated - ${activity.data.alertData?.phoneNumber || 'Contact requested'}`;
+            } else {
+                description = `${activity.temperature} lead - Score: ${activity.data.score || activity.data.contentScore || 0}`;
+            }
+
+            item.innerHTML = `
+                <div class="activity-icon activity-${activity.temperature}">
+                    ${icon}
+                </div>
+                <div class="activity-details">
+                    <div>${description}</div>
+                    <div class="activity-time">${time}</div>
+                </div>
+            `;
+
+            return item;
+        }
+
+        // Get temperature icon
+        function getTemperatureIcon(temperature) {
+            switch (temperature) {
+                case 'emergency': return '🚨';
+                case 'hot': return '🔥';
+                case 'warm': return '⚡';
+                default: return '❄️';
+            }
+        }
+
+        // Load section-specific data
+        function loadSectionData(section) {
+            switch (section) {
+                case 'phones':
+                    loadPhoneTrackingData();
+                    break;
+                case 'automation':
+                    loadAutomationData();
+                    break;
+                case 'emergency':
+                    loadEmergencyQueue();
+                    break;
+                case 'analytics':
+                    updateAnalytics();
+                    break;
+            }
+        }
+
+        // Load phone tracking data
+        function loadPhoneTrackingData() {
+            const phoneInteractions = getStoredPhoneData();
+            updatePhoneStatistics(phoneInteractions);
+            updatePhoneCharts(phoneInteractions);
+            updatePhoneInteractionsTable(phoneInteractions);
+        }
+
+        // Get stored phone interaction data
+        function getStoredPhoneData() {
+            const phoneData = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('prism_phone_') || key.startsWith('prism_hot_lead_')) {
+                    try {
+                        const data = JSON.parse(localStorage.getItem(key));
+                        data.storageKey = key;
+                        phoneData.push(data);
+                    } catch (e) {
+                        console.warn('Invalid phone data:', key);
+                    }
+                }
+            }
+            return phoneData.sort((a, b) => b.timestamp - a.timestamp);
+        }
+
+        // Update phone statistics
+        function updatePhoneStatistics(phoneData) {
+            const totalInteractions = phoneData.length;
+            const emergencyCalls = phoneData.filter(p => p.urgency === 'emergency' || p.type === 'emergency_contact').length;
+            const hotLeadCalls = phoneData.filter(p => p.type === 'phone_call_click' && p.urgency !== 'emergency').length;
+
+            // Regional analysis
+            const regionalCounts = { DC: 0, VA: 0, MD: 0 };
+            phoneData.forEach(p => {
+                if (p.region && regionalCounts.hasOwnProperty(p.region)) {
+                    regionalCounts[p.region]++;
+                }
+            });
+
+            const topRegion = Object.entries(regionalCounts).reduce((a, b) => regionalCounts[a[0]] > regionalCounts[b[0]] ? a : b)[0];
+
+            // Update UI
+            document.getElementById('total-phone-interactions').textContent = totalInteractions;
+            document.getElementById('emergency-calls').textContent = emergencyCalls;
+            document.getElementById('hot-lead-calls').textContent = hotLeadCalls;
+            document.getElementById('top-region').textContent = topRegion;
+        }
+
+        // Update phone charts
+        function updatePhoneCharts(phoneData) {
+            // Regional calls analysis
+            const regionalCounts = { DC: 0, VA: 0, MD: 0 };
+            const interactionTypes = {
+                'phone_call_click': 0,
+                'phone_hover': 0,
+                'phone_copy': 0
+            };
+
+            phoneData.forEach(p => {
+                // Count by region
+                if (p.region && regionalCounts.hasOwnProperty(p.region)) {
+                    regionalCounts[p.region]++;
+                }
+
+                // Count by interaction type
+                if (interactionTypes.hasOwnProperty(p.type)) {
+                    interactionTypes[p.type]++;
+                }
+            });
+
+            // Update regional chart
+            const maxRegional = Math.max(...Object.values(regionalCounts)) || 1;
+            document.getElementById('dc-calls').textContent = `${regionalCounts.DC} calls`;
+            document.getElementById('va-calls').textContent = `${regionalCounts.VA} calls`;
+            document.getElementById('md-calls').textContent = `${regionalCounts.MD} calls`;
+
+            document.getElementById('dc-bar').style.width = `${(regionalCounts.DC / maxRegional) * 100}%`;
+            document.getElementById('va-bar').style.width = `${(regionalCounts.VA / maxRegional) * 100}%`;
+            document.getElementById('md-bar').style.width = `${(regionalCounts.MD / maxRegional) * 100}%`;
+
+            // Update interaction types chart
+            const maxInteractions = Math.max(...Object.values(interactionTypes)) || 1;
+            document.getElementById('direct-calls').textContent = interactionTypes['phone_call_click'];
+            document.getElementById('phone-hovers').textContent = interactionTypes['phone_hover'];
+            document.getElementById('phone-copies').textContent = interactionTypes['phone_copy'];
+
+            document.getElementById('direct-calls-bar').style.width = `${(interactionTypes['phone_call_click'] / maxInteractions) * 100}%`;
+            document.getElementById('hovers-bar').style.width = `${(interactionTypes['phone_hover'] / maxInteractions) * 100}%`;
+            document.getElementById('copies-bar').style.width = `${(interactionTypes['phone_copy'] / maxInteractions) * 100}%`;
+        }
+
+        // Update phone interactions table
+        function updatePhoneInteractionsTable(phoneData) {
+            const tbody = document.getElementById('phone-interactions-tbody');
+            tbody.innerHTML = '';
+
+            phoneData.slice(0, 50).forEach(interaction => {
+                const row = createPhoneInteractionRow(interaction);
+                tbody.appendChild(row);
+            });
+        }
+
+        // Create phone interaction row
+        function createPhoneInteractionRow(interaction) {
+            const row = document.createElement('tr');
+
+            const time = new Date(interaction.timestamp).toLocaleString();
+            const phoneNumber = interaction.phoneNumber || 'N/A';
+            const region = interaction.region || 'Unknown';
+            const urgency = interaction.urgency || 'standard';
+            const sessionScore = interaction.sessionData?.contentScore || interaction.sessionData?.score || 0;
+            const responseStatus = getResponseStatus(interaction);
+
+            // Type display mapping
+            const typeDisplay = {
+                'phone_call_click': '📞 Call Click',
+                'phone_hover': '👆 Hover',
+                'phone_copy': '📋 Copy',
+                'emergency_contact': '🚨 Emergency',
+                'hot_lead_phone_call': '🔥 Hot Lead'
+            };
+
+            row.innerHTML = `
+                <td>${time}</td>
+                <td>${typeDisplay[interaction.type] || interaction.type}</td>
+                <td>${phoneNumber}</td>
+                <td><span class="region-badge region-${region.toLowerCase()}">${region}</span></td>
+                <td><span class="temperature-badge temperature-${urgency}">${urgency}</span></td>
+                <td>${sessionScore}</td>
+                <td>${responseStatus}</td>
+            `;
+
+            return row;
+        }
+
+        // Get response status for phone interaction
+        function getResponseStatus(interaction) {
+            const urgency = interaction.urgency || 'standard';
+            const timestamp = interaction.timestamp;
+            const elapsed = Date.now() - timestamp;
+            const elapsedMinutes = Math.floor(elapsed / 60000);
+
+            let slaTarget;
+            switch (urgency) {
+                case 'emergency': slaTarget = 15; break;
+                case 'hot': slaTarget = 240; break;
+                default: slaTarget = 1440; break;
+            }
+
+            if (elapsedMinutes < slaTarget) {
+                return `<span style="color: #4CAF50;">✅ Within SLA (${elapsedMinutes}m)</span>`;
+            } else {
+                return `<span style="color: #F44336;">⚠️ Overdue (${elapsedMinutes}m)</span>`;
+            }
+        }
+
+        // Refresh phone data
+        function refreshPhoneData() {
+            loadPhoneTrackingData();
+            console.log('Phone tracking data refreshed');
+        }
+
+        // Load automation data
+        function loadAutomationData() {
+            const automationData = getStoredAutomationData();
+            updateAutomationStatistics(automationData);
+            updateAutomationCharts(automationData);
+            updateAutomationTable(automationData);
+            updateAutomationConfig();
+        }
+
+        // Get stored automation data
+        function getStoredAutomationData() {
+            const automationData = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('prism_automation_')) {
+                    try {
+                        const data = JSON.parse(localStorage.getItem(key));
+                        data.storageKey = key;
+                        automationData.push(data);
+                    } catch (e) {
+                        console.warn('Invalid automation data:', key);
+                    }
+                }
+            }
+            return automationData.sort((a, b) => b.timestamp - a.timestamp);
+        }
+
+        // Update automation statistics
+        function updateAutomationStatistics(automationData) {
+            const totalTriggers = automationData.length;
+
+            // Count by trigger type
+            const emergencyTriggers = automationData.filter(a =>
+                a.type === 'emergency_response' || a.type === 'emergency'
+            ).length;
+
+            const hotLeadTriggers = automationData.filter(a =>
+                a.type === 'hot_lead' || a.automationId?.includes('HOT_')
+            ).length;
+
+            // Calculate success rate
+            const successfulTriggers = automationData.filter(a =>
+                localStorage.getItem(a.storageKey.replace('automation_', 'automation_success_'))
+            ).length;
+
+            const successRate = totalTriggers > 0 ? Math.round((successfulTriggers / totalTriggers) * 100) : 0;
+
+            // Update UI
+            document.getElementById('total-automation-triggers').textContent = totalTriggers;
+            document.getElementById('emergency-automations').textContent = emergencyTriggers;
+            document.getElementById('hot-lead-automations').textContent = hotLeadTriggers;
+            document.getElementById('automation-success-rate').textContent = successRate + '%';
+        }
+
+        // Update automation charts
+        function updateAutomationCharts(automationData) {
+            // Count by trigger type
+            const triggerTypes = {
+                emergency_response: 0,
+                hot_lead: 0,
+                warm_lead: 0,
+                cold_lead: 0
+            };
+
+            const contentTypes = {
+                wedding_content_engagement: 0,
+                military_content_engagement: 0,
+                authority_content_engagement: 0,
+                expert_consultation_ready: 0
+            };
+
+            automationData.forEach(a => {
+                // Count by lead temperature
+                if (triggerTypes.hasOwnProperty(a.type)) {
+                    triggerTypes[a.type]++;
+                }
+
+                // Count by content type
+                if (contentTypes.hasOwnProperty(a.type)) {
+                    contentTypes[a.type]++;
+                }
+            });
+
+            // Update trigger type chart
+            const maxTriggers = Math.max(...Object.values(triggerTypes)) || 1;
+            document.getElementById('emergency-trigger-count').textContent = triggerTypes.emergency_response;
+            document.getElementById('hot-trigger-count').textContent = triggerTypes.hot_lead;
+            document.getElementById('warm-trigger-count').textContent = triggerTypes.warm_lead;
+            document.getElementById('cold-trigger-count').textContent = triggerTypes.cold_lead;
+
+            document.getElementById('emergency-trigger-bar').style.width = `${(triggerTypes.emergency_response / maxTriggers) * 100}%`;
+            document.getElementById('hot-trigger-bar').style.width = `${(triggerTypes.hot_lead / maxTriggers) * 100}%`;
+            document.getElementById('warm-trigger-bar').style.width = `${(triggerTypes.warm_lead / maxTriggers) * 100}%`;
+            document.getElementById('cold-trigger-bar').style.width = `${(triggerTypes.cold_lead / maxTriggers) * 100}%`;
+
+            // Update content type chart
+            const maxContent = Math.max(...Object.values(contentTypes)) || 1;
+            document.getElementById('wedding-trigger-count').textContent = contentTypes.wedding_content_engagement;
+            document.getElementById('military-trigger-count').textContent = contentTypes.military_content_engagement;
+            document.getElementById('authority-trigger-count').textContent = contentTypes.authority_content_engagement;
+            document.getElementById('expert-trigger-count').textContent = contentTypes.expert_consultation_ready;
+
+            document.getElementById('wedding-trigger-bar').style.width = `${(contentTypes.wedding_content_engagement / maxContent) * 100}%`;
+            document.getElementById('military-trigger-bar').style.width = `${(contentTypes.military_content_engagement / maxContent) * 100}%`;
+            document.getElementById('authority-trigger-bar').style.width = `${(contentTypes.authority_content_engagement / maxContent) * 100}%`;
+            document.getElementById('expert-trigger-bar').style.width = `${(contentTypes.expert_consultation_ready / maxContent) * 100}%`;
+        }
+
+        // Update automation table
+        function updateAutomationTable(automationData) {
+            const tbody = document.getElementById('automation-triggers-tbody');
+            tbody.innerHTML = '';
+
+            automationData.slice(0, 50).forEach(automation => {
+                const row = createAutomationRow(automation);
+                tbody.appendChild(row);
+            });
+        }
+
+        // Create automation row
+        function createAutomationRow(automation) {
+            const row = document.createElement('tr');
+
+            const time = new Date(automation.timestamp).toLocaleString();
+            const triggerType = automation.type || 'Unknown';
+            const automationId = automation.automationId || 'N/A';
+            const region = automation.region || 'Unknown';
+            const priority = automation.priority || 'normal';
+            const contentScore = automation.contentScore || 0;
+            const status = getAutomationStatus(automation);
+
+            // Type display mapping
+            const typeDisplay = {
+                'emergency_response': '🚨 Emergency',
+                'hot_lead': '🔥 Hot Lead',
+                'warm_lead': '⚡ Warm Lead',
+                'cold_lead': '❄️ Cold Lead',
+                'wedding_content_engagement': '👰 Wedding Specialist',
+                'military_content_engagement': '🪖 Military Specialist',
+                'authority_content_engagement': '🏛️ Authority Content',
+                'expert_consultation_ready': '🎓 Expert Consultation',
+                'engagement_milestone': '⏱️ Engagement Milestone',
+                'return_visitor_engagement': '🔄 Return Visitor'
+            };
+
+            const actionsCount = automation.actions ? automation.actions.length : 0;
+
+            row.innerHTML = `
+                <td>${time}</td>
+                <td>${typeDisplay[triggerType] || triggerType}</td>
+                <td style="font-family: monospace; font-size: 0.85rem;">${automationId}</td>
+                <td><span class="region-badge region-${region.toLowerCase()}">${region}</span></td>
+                <td><span class="temperature-badge temperature-${priority}">${priority}</span></td>
+                <td>${contentScore}</td>
+                <td>${status}</td>
+                <td>${actionsCount} actions</td>
+            `;
+
+            return row;
+        }
+
+        // Get automation status
+        function getAutomationStatus(automation) {
+            const successKey = automation.storageKey.replace('automation_', 'automation_success_');
+            const fallbackKey = automation.storageKey.replace('automation_', 'automation_fallback_');
+
+            if (localStorage.getItem(successKey)) {
+                return '<span style="color: #4CAF50;">✅ Success</span>';
+            } else if (localStorage.getItem(fallbackKey)) {
+                return '<span style="color: #F44336;">❌ Failed</span>';
+            } else {
+                return '<span style="color: #FF9800;">⏳ Pending</span>';
+            }
+        }
+
+        // Update automation configuration status
+        function updateAutomationConfig() {
+            // Check if GHL_CONFIG is available
+            if (typeof GHL_CONFIG === 'undefined') {
+                updateConfigStatus('emergency-config-status', [
+                    { name: 'GHL Config', status: 'missing', message: 'Configuration not loaded' }
+                ]);
+                return;
+            }
+
+            // Emergency sequences status
+            const emergencySequences = [
+                { name: 'Emergency Response', id: 'EMERGENCY_RESTORATION_RESPONSE', status: checkConfigStatus('EMERGENCY_RESTORATION_RESPONSE') }
+            ];
+            updateConfigStatus('emergency-config-status', emergencySequences);
+
+            // Lead temperature sequences
+            const leadSequences = [
+                { name: 'Hot Lead', id: 'HOT_RESTORATION_LEAD', status: checkConfigStatus('HOT_RESTORATION_LEAD') },
+                { name: 'Warm Lead', id: 'WARM_RESTORATION_NURTURE', status: checkConfigStatus('WARM_RESTORATION_NURTURE') },
+                { name: 'Cold Lead', id: 'COLD_RESTORATION_NURTURE', status: checkConfigStatus('COLD_RESTORATION_NURTURE') }
+            ];
+            updateConfigStatus('lead-config-status', leadSequences);
+
+            // Content-specific sequences
+            const contentSequences = [
+                { name: 'Wedding Specialist', id: 'WEDDING_DRESS_RESTORATION_SPECIALIST', status: checkConfigStatus('WEDDING_DRESS_RESTORATION_SPECIALIST') },
+                { name: 'Military Specialist', id: 'MILITARY_UNIFORM_RESTORATION_SPECIALIST', status: checkConfigStatus('MILITARY_UNIFORM_RESTORATION_SPECIALIST') },
+                { name: 'Institutional', id: 'INSTITUTIONAL_RESTORATION_SPECIALIST', status: checkConfigStatus('INSTITUTIONAL_RESTORATION_SPECIALIST') }
+            ];
+            updateConfigStatus('content-config-status', contentSequences);
+
+            // Engagement sequences
+            const engagementSequences = [
+                { name: 'Expert Consultation', id: 'EXPERT_CONSULTATION_INVITATION', status: checkConfigStatus('EXPERT_CONSULTATION_INVITATION') },
+                { name: 'Return Visitor', id: 'RETURN_VISITOR_CONVERSION', status: checkConfigStatus('RETURN_VISITOR_CONVERSION') },
+                { name: 'Deep Engagement', id: 'DEEP_ENGAGEMENT_CONVERSION', status: checkConfigStatus('DEEP_ENGAGEMENT_CONVERSION') }
+            ];
+            updateConfigStatus('engagement-config-status', engagementSequences);
+        }
+
+        // Check configuration status for automation ID
+        function checkConfigStatus(automationId) {
+            if (typeof GHL_CONFIG === 'undefined') return 'missing';
+            if (!GHL_CONFIG.automationSequences) return 'missing';
+
+            const configValue = GHL_CONFIG.automationSequences[automationId];
+            if (!configValue) return 'missing';
+            if (configValue.startsWith('YOUR_')) return 'placeholder';
+            return 'configured';
+        }
+
+        // Update configuration status display
+        function updateConfigStatus(elementId, sequences) {
+            const element = document.getElementById(elementId);
+            let html = '';
+
+            sequences.forEach(seq => {
+                let statusIcon, statusColor;
+                switch (seq.status) {
+                    case 'configured':
+                        statusIcon = '✅';
+                        statusColor = '#4CAF50';
+                        break;
+                    case 'placeholder':
+                        statusIcon = '⚠️';
+                        statusColor = '#FF9800';
+                        break;
+                    default:
+                        statusIcon = '❌';
+                        statusColor = '#F44336';
+                }
+
+                html += `
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin: 0.5rem 0;">
+                        <span>${seq.name}</span>
+                        <span style="color: ${statusColor};">${statusIcon} ${seq.status}</span>
+                    </div>
+                `;
+            });
+
+            element.innerHTML = html;
+        }
+
+        // Refresh automation data
+        function refreshAutomationData() {
+            loadAutomationData();
+            console.log('Automation data refreshed');
+        }
+
+        // Load emergency queue
+        function loadEmergencyQueue() {
+            const emergencies = getStoredEmergencyData();
+            const queue = document.getElementById('emergency-queue');
+
+            if (emergencies.length === 0) {
+                queue.innerHTML = '<div style="text-align: center; padding: 2rem; color: #666;">No emergency responses in queue</div>';
+                return;
+            }
+
+            queue.innerHTML = '';
+            emergencies.forEach(emergency => {
+                const item = createEmergencyQueueItem(emergency);
+                queue.appendChild(item);
+            });
+        }
+
+        // Create emergency queue item
+        function createEmergencyQueueItem(emergency) {
+            const item = document.createElement('div');
+            item.style.cssText = 'border: 1px solid #ffcdd2; background: #ffebee; padding: 1rem; margin-bottom: 1rem; border-radius: 8px;';
+
+            const time = new Date(emergency.timestamp).toLocaleString();
+            const phoneNumber = emergency.alertData?.phoneNumber || 'N/A';
+            const region = emergency.alertData?.region || 'Unknown';
+
+            item.innerHTML = `
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+                    <strong style="color: #d32f2f;">🚨 Emergency Response #${emergency.timestamp}</strong>
+                    <span style="font-size: 0.9rem; color: #666;">${time}</span>
+                </div>
+                <div style="margin-bottom: 0.5rem;">
+                    <strong>Phone:</strong> ${phoneNumber} | <strong>Region:</strong> ${region}
+                </div>
+                <div style="margin-bottom: 1rem;">
+                    <strong>Session Score:</strong> ${emergency.sessionData?.score || 'N/A'} |
+                    <strong>Content Type:</strong> ${emergency.sessionData?.contentType || 'N/A'}
+                </div>
+                <div style="display: flex; gap: 1rem;">
+                    <button class="refresh-btn" style="background: #d32f2f;">Mark Contacted</button>
+                    <button class="refresh-btn" style="background: #666;">View Details</button>
+                </div>
+            `;
+
+            return item;
+        }
+
+        // Start real-time updates
+        function startRealTimeUpdates() {
+            refreshInterval = setInterval(() => {
+                loadDashboardData();
+
+                // Check for new emergencies
+                const emergencies = getStoredEmergencyData();
+                if (emergencies.length > 0) {
+                    const alert = document.getElementById('emergency-alert');
+                    alert.classList.add('show');
+                    setTimeout(() => alert.classList.remove('show'), 10000);
+                }
+            }, 30000); // Update every 30 seconds
+        }
+
+        // Refresh data manually
+        function refreshData() {
+            loadDashboardData();
+            console.log('Dashboard data refreshed');
+        }
+
+        // Refresh leads
+        function refreshLeads() {
+            const sessions = getStoredSessionData();
+            updateLeadsTable(sessions);
+            console.log('Leads table refreshed');
+        }
+
+        // View session details
+        function viewSession(storageKey) {
+            const data = localStorage.getItem(storageKey);
+            if (data) {
+                alert('Session Data:\n\n' + JSON.stringify(JSON.parse(data), null, 2));
+            }
+        }
+
+        // Update analytics
+        function updateAnalytics() {
+            const sessions = getStoredSessionData();
+            const emergencies = getStoredEmergencyData();
+
+            // Update activity feed for analytics section
+            updateActivityFeed(sessions, emergencies);
+        }
+
+        // Cleanup on page unload
+        window.addEventListener('beforeunload', function() {
+            if (refreshInterval) {
+                clearInterval(refreshInterval);
+            }
+        });
+
+        // Expose functions for debugging
+        window.dashboardDebug = {
+            getSessions: getStoredSessionData,
+            getEmergencies: getStoredEmergencyData,
+            refreshData: refreshData
+        };
+
+        console.log('🎯 Lead Tracking Dashboard ready for monitoring');
+    </script>
+</body>
+</html>

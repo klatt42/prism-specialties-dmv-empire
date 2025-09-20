@@ -1,0 +1,717 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Dress Restoration - Example Blog with Enhanced Contact Form</title>
+    <link rel="stylesheet" href="assets/css/blog-styles.css">
+    <style>
+        /* Blog-specific styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .blog-header {
+            background: linear-gradient(135deg, #1976D2 0%, #2196F3 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .blog-content {
+            margin-bottom: 3rem;
+        }
+
+        .blog-content h2 {
+            color: #1976D2;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-content p {
+            margin-bottom: 1rem;
+        }
+
+        .cta-section {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #1976D2;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .emergency-cta {
+            background: linear-gradient(135deg, #d32f2f 0%, #b71c1c 100%);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            display: inline-block;
+            margin: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .emergency-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.3);
+        }
+
+        .form-placement {
+            margin: 3rem 0;
+            padding: 1rem;
+            border: 2px dashed #e0e0e0;
+            border-radius: 8px;
+            background: #fafafa;
+        }
+
+        .inline-cta {
+            background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin: 0 0.5rem;
+        }
+    </style>
+<style>
+            @keyframes pulse {
+                0% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0.7); }
+                70% { box-shadow: 0 0 0 10px rgba(211, 47, 47, 0); }
+                100% { box-shadow: 0 0 0 0 rgba(211, 47, 47, 0); }
+            }
+            @keyframes blink {
+                0%, 50% { opacity: 1; }
+                51%, 100% { opacity: 0.6; }
+            }
+        </style><style id="prism-contact-form-styles">
+            .prism-contact-form-enhanced {
+                background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+                padding: 2rem;
+                border-radius: 12px;
+                box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+                border: 1px solid #e3f2fd;
+                margin: 2rem 0;
+                position: relative;
+                overflow: hidden;
+            }
+
+            .prism-contact-form-enhanced::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background: linear-gradient(90deg, #1976D2, #2196F3);
+            }
+
+            .prism-contact-form-enhanced h3 {
+                color: #1976D2;
+                font-size: 1.5rem;
+                font-weight: 700;
+                text-align: center;
+                margin-bottom: 0.5rem;
+            }
+
+            .form-subtitle {
+                text-align: center;
+                color: #666;
+                margin-bottom: 1.5rem;
+                font-size: 1rem;
+            }
+
+            .form-progress {
+                width: 100%;
+                height: 3px;
+                background: #e0e0e0;
+                border-radius: 2px;
+                margin-bottom: 1.5rem;
+                overflow: hidden;
+            }
+
+            .form-progress-bar {
+                height: 100%;
+                background: linear-gradient(90deg, #1976D2, #2196F3);
+                width: 0%;
+                transition: width 0.3s ease;
+            }
+
+            .restoration-contact-form {
+                width: 100%;
+            }
+
+            .form-row {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+                margin-bottom: 1rem;
+            }
+
+            .form-group {
+                margin-bottom: 1rem;
+            }
+
+            .form-group label {
+                display: block;
+                margin-bottom: 0.5rem;
+                font-weight: 600;
+                color: #333;
+                font-size: 0.9rem;
+            }
+
+            .form-group input,
+            .form-group select,
+            .form-group textarea {
+                width: 100%;
+                padding: 0.75rem;
+                border: 2px solid #e0e0e0;
+                border-radius: 6px;
+                font-size: 0.95rem;
+                transition: all 0.3s ease;
+                font-family: inherit;
+            }
+
+            .form-group input:focus,
+            .form-group select:focus,
+            .form-group textarea:focus {
+                outline: none;
+                border-color: #1976D2;
+                box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.1);
+            }
+
+            .checkbox-group {
+                display: flex;
+                align-items: center;
+                margin: 1rem 0;
+            }
+
+            .checkbox-group input[type="checkbox"] {
+                width: auto;
+                margin-right: 0.5rem;
+            }
+
+            .checkbox-group label {
+                margin-bottom: 0;
+                font-weight: 500;
+                cursor: pointer;
+            }
+
+            .submit-btn {
+                width: 100%;
+                background: linear-gradient(135deg, #1976D2 0%, #1565C0 100%);
+                color: white;
+                border: none;
+                padding: 1rem 1.5rem;
+                border-radius: 6px;
+                font-size: 1rem;
+                font-weight: 600;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                position: relative;
+            }
+
+            .submit-btn:hover {
+                background: linear-gradient(135deg, #1565C0 0%, #0D47A1 100%);
+                transform: translateY(-1px);
+            }
+
+            .submit-btn.loading {
+                background: #ccc;
+                cursor: not-allowed;
+            }
+
+            .submit-btn.loading::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 16px;
+                height: 16px;
+                margin: -8px 0 0 -8px;
+                border: 2px solid transparent;
+                border-top: 2px solid white;
+                border-radius: 50%;
+                animation: spin 1s linear infinite;
+            }
+
+            .regional-phone {
+                display: block;
+                font-size: 0.85rem;
+                opacity: 0.9;
+                margin-top: 0.25rem;
+            }
+
+            .form-footer {
+                text-align: center;
+                margin-top: 1rem;
+                padding-top: 1rem;
+                border-top: 1px solid #e0e0e0;
+                color: #666;
+                font-size: 0.85rem;
+            }
+
+            .success-message {
+                text-align: center;
+                padding: 1.5rem;
+                background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+                color: white;
+                border-radius: 8px;
+                animation: slideIn 0.5s ease;
+            }
+
+            .success-message h3 {
+                color: white;
+                margin-bottom: 1rem;
+            }
+
+            .success-message .phone-display {
+                background: rgba(255,255,255,0.2);
+                padding: 0.5rem 1rem;
+                border-radius: 4px;
+                margin: 1rem auto;
+                display: inline-block;
+                font-weight: bold;
+            }
+
+            .form-group.error input,
+            .form-group.error select,
+            .form-group.error textarea {
+                border-color: #f44336;
+                box-shadow: 0 0 0 3px rgba(244, 67, 54, 0.1);
+            }
+
+            .error-message {
+                color: #f44336;
+                font-size: 0.8rem;
+                margin-top: 0.25rem;
+                display: none;
+            }
+
+            .form-group.error .error-message {
+                display: block;
+            }
+
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+
+            @keyframes slideIn {
+                from { transform: translateY(-20px); opacity: 0; }
+                to { transform: translateY(0); opacity: 1; }
+            }
+
+            @keyframes pulse {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.7; }
+            }
+
+            @media (max-width: 768px) {
+                .prism-contact-form-enhanced {
+                    padding: 1.5rem;
+                }
+
+                .form-row {
+                    grid-template-columns: 1fr;
+                    gap: 0;
+                }
+
+                .prism-contact-form-enhanced h3 {
+                    font-size: 1.3rem;
+                }
+            }
+        </style></head>
+<body>
+<!-- PROFESSIONAL STYLED NAVIGATION -->
+<style>
+.main-navigation {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo-section .logo {
+    height: 60px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: #f0f8ff;
+    color: #007bff;
+}
+
+.phone-section {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.phone-section a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.phone-section a:hover {
+    background: #007bff;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .phone-section {
+        justify-content: center;
+    }
+}
+</style>
+
+<nav class="main-navigation">
+    <div class="nav-container">
+        <div class="logo-section">
+            <img src="../images/prism-logo.png" alt="Prism Specialties DMV" class="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../../blog/">Blog</a></li>
+            <li><a href="../checklists/">Checklists</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <div class="phone-section">
+            <a href="tel:202-335-4240" class="phone-dc">DC: (202) 335-4240</a>
+            <a href="tel:301-215-3191" class="phone-md">MD: (301) 215-3191</a>
+            <a href="tel:703-229-1321" class="phone-va">VA: (703) 229-1321</a>
+        </div>
+    </div>
+</nav>
+    <!-- Blog Header -->
+    <div class="blog-header">
+        <h1>👰 Emergency Wedding Dress Restoration Services</h1>
+        <p>Expert restoration for your most precious gown across the DMV region</p>
+    </div>
+
+    <!-- Blog Content -->
+    <div class="blog-content">
+        <h2>When Wedding Day Disasters Strike</h2>
+        <p>Your wedding dress represents one of the most important purchases of your life. Whether it's a family heirloom passed down through generations or a designer gown you spent months selecting, when damage occurs, you need <strong>immediate expert help</strong>.</p>
+
+        <p>At Prism Specialties, we understand the emotional significance of your wedding dress and provide emergency restoration services across Washington DC, Northern Virginia, and Maryland. Our specialized bridal restoration team has saved hundreds of wedding gowns from disasters including:</p>
+
+        <ul>
+            <li>🍷 <strong>Red wine stains</strong> - Even on white silk and lace</li>
+            <li>🌧️ <strong>Water damage</strong> - From outdoor ceremonies and flooding</li>
+            <li>🔥 <strong>Smoke damage</strong> - From fires and cigarette exposure</li>
+            <li>👗 <strong>Fabric tears</strong> - Delicate lace and beading repairs</li>
+            <li>💄 <strong>Makeup stains</strong> - Foundation, lipstick, and cosmetic damage</li>
+            <li>🌸 <strong>Yellowing</strong> - Age-related discoloration restoration</li>
+        </ul>
+
+        <!-- Emergency CTA Section -->
+        <div class="cta-section">
+            <h3>🚨 Wedding Emergency? We Respond Within 15 Minutes!</h3>
+            <p>Don't let dress damage ruin your special day. Our emergency response team is standing by.</p>
+            <a href="tel:202-335-4240" class="emergency-cta emergency-phone-cta">
+                📞 Emergency Wedding Dress Help: 202-335-4240
+            </a>
+            <p><small>Available 24/7 for wedding emergencies across the DMV region</small></p>
+        </div>
+
+        <h2>Our Wedding Dress Restoration Process</h2>
+        <p>Every wedding dress restoration begins with a detailed assessment by our certified textile conservators. We photograph the damage, test cleaning solutions on hidden areas, and create a customized restoration plan that preserves the integrity of your gown while removing all traces of damage.</p>
+
+        <p>Our process includes:</p>
+        <ol>
+            <li><strong>Emergency Stabilization</strong> - Immediate damage control to prevent further harm</li>
+            <li><strong>Detailed Assessment</strong> - Professional evaluation with high-resolution documentation</li>
+            <li><strong>Custom Treatment Plan</strong> - Tailored approach based on fabric, age, and damage type</li>
+            <li><strong>Expert Restoration</strong> - Using museum-quality techniques and materials</li>
+            <li><strong>Quality Assurance</strong> - Multiple quality checks before return</li>
+            <li><strong>Preservation Packaging</strong> - Professional storage solutions for long-term preservation</li>
+        </ol>
+
+        <p>Whether you need <a href="#contact-form" class="inline-cta">immediate consultation</a> or emergency response, we're here to help save your wedding dress and preserve your memories.</p>
+
+        <h2>Why Choose Prism Specialties for Wedding Dress Restoration?</h2>
+        <p>With over 25 years of experience in textile restoration, we've built our reputation on saving the irreplaceable. Our wedding dress specialists understand the unique challenges of bridal fabrics, from delicate French lace to intricate beadwork.</p>
+
+        <blockquote style="border-left: 4px solid #1976D2; padding-left: 1rem; margin: 2rem 0; font-style: italic; color: #666;">
+            "Prism Specialties saved my grandmother's 1940s wedding dress after it was damaged in a basement flood. They restored it perfectly for my own wedding day. The attention to detail was incredible!" - Sarah M., Arlington, VA
+        </blockquote>
+
+        <p>Our team includes:</p>
+        <ul>
+            <li>👩‍🔬 <strong>Certified Textile Conservators</strong> - Advanced training in fabric preservation</li>
+            <li>💍 <strong>Bridal Specialists</strong> - Expertise in wedding dress construction and materials</li>
+            <li>🧵 <strong>Hand-Sewing Artisans</strong> - Traditional techniques for delicate repairs</li>
+            <li>🔬 <strong>Stain Removal Experts</strong> - Specialized in organic and synthetic stain removal</li>
+        </ul>
+    </div>
+
+    <!-- Contact Form Section -->
+    <div class="form-placement">
+        <h2 style="text-align: center; color: #1976D2; margin-bottom: 1rem;">💎 Get Your Free Wedding Dress Assessment</h2>
+        <p style="text-align: center; margin-bottom: 2rem;">Tell us about your wedding dress restoration needs and receive expert advice within 2 hours.</p>
+
+        <!-- Contact Form Container -->
+        <div id="prism-contact-form">
+            <div class="prism-contact-form-enhanced">
+                <h3>🎯 Get Your Free Restoration Consultation</h3>
+                <p class="form-subtitle">Expert restoration services across the DMV region</p>
+
+                <div class="form-progress">
+                    <div class="form-progress-bar" id="formProgress"></div>
+                </div>
+
+                <form id="prismContactFormComponent" class="restoration-contact-form">
+                    <!-- Hidden fields for GHL Integration -->
+                    <input type="hidden" name="region" value="DC">
+                    <input type="hidden" name="content_score" value="0">
+                    <input type="hidden" name="session_id" value="contact_component_1758358774082_cx151w9">
+                    <input type="hidden" name="lead_temperature" value="">
+                    <input type="hidden" name="service_category" value="">
+                    <input type="hidden" name="page_source" value="/blog/example-blog-with-form.html">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name*</label>
+                            <input type="text" id="firstName" name="first_name" required="">
+                            <div class="error-message">Please enter your first name</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name*</label>
+                            <input type="text" id="lastName" name="last_name" required="">
+                            <div class="error-message">Please enter your last name</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address*</label>
+                            <input type="email" id="email" name="email" required="">
+                            <div class="error-message">Please enter a valid email address</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number*</label>
+                            <input type="tel" id="phone" name="phone" required="">
+                            <div class="error-message">Please enter your phone number</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="serviceType">Type of Restoration Needed*</label>
+                        <select id="serviceType" name="service_type" required="">
+                            <option value="">Select Service Type</option>
+                            <option value="art_restoration">🎨 Art &amp; Painting Restoration</option>
+                            <option value="textile_restoration">🧵 Textile &amp; Fabric Restoration</option>
+                            <option value="wedding_dress_restoration">👰 Wedding Dress Restoration</option>
+                            <option value="military_uniform_restoration">🪖 Military Uniform Restoration</option>
+                            <option value="document_restoration">📄 Document &amp; Paper Restoration</option>
+                            <option value="electronics_restoration">🔌 Electronics &amp; Audio Restoration</option>
+                            <option value="emergency_restoration">🚨 Emergency Restoration Service</option>
+                            <option value="consultation">💬 General Consultation</option>
+                        </select>
+                        <div class="error-message">Please select a service type</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="urgency">How urgent is your restoration need?</label>
+                        <select id="urgency" name="urgency">
+                            <option value="consultation">💭 Just exploring options</option>
+                            <option value="planning">📅 Planning for future restoration</option>
+                            <option value="soon">⏰ Needed within 2-4 weeks</option>
+                            <option value="urgent">🔥 Needed within 1-2 weeks</option>
+                            <option value="emergency">🚨 Emergency - Immediate attention needed</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="description">Brief Description of Item(s)*</label>
+                        <textarea id="description" name="description" rows="3" required="" placeholder="Describe your item: type, age, condition, damage, special significance..."></textarea>
+                        <div class="error-message">Please provide a description</div>
+                    </div>
+
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="photoConsent" name="photo_consent">
+                        <label for="photoConsent">📸 I can provide photos for assessment</label>
+                    </div>
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        🎯 Get My Free Consultation
+                        <span class="regional-phone">Call: <span data-phone-region="auto">202-335-4240</span></span>
+                    </button>
+
+                    <p class="form-footer">
+                        <strong>🌍 DMV Coverage:</strong> Washington DC • Northern Virginia • Maryland<br>
+                        <small>Response within 2 hours • Emergency service 24/7</small>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Additional Content -->
+    <div class="blog-content">
+        <h2>Emergency Response Across the DMV Region</h2>
+        <p>Time is critical when dealing with wedding dress damage. That's why we offer emergency pickup and delivery services throughout Washington DC, Northern Virginia, and Maryland. Our regional specialists are strategically located to provide rapid response:</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 2rem 0;">
+            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; text-align: center;">
+                <h3 style="color: #1976D2; margin-bottom: 1rem;">🏛️ Washington DC</h3>
+                <p><strong>Sarah Johnson</strong><br>Wedding Dress Specialist</p>
+                <a href="tel:202-335-4240" class="emergency-phone-cta" style="display: inline-block; background: #1976D2; color: white; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; margin-top: 0.5rem;">202-335-4240</a>
+            </div>
+            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; text-align: center;">
+                <h3 style="color: #4CAF50; margin-bottom: 1rem;">🌲 Northern Virginia</h3>
+                <p><strong>Michael Chen</strong><br>Bridal Restoration Expert</p>
+                <a href="tel:703-229-1321" class="emergency-phone-cta" style="display: inline-block; background: #4CAF50; color: white; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; margin-top: 0.5rem;">703-229-1321</a>
+            </div>
+            <div style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; text-align: center;">
+                <h3 style="color: #FF9800; margin-bottom: 1rem;">🦀 Maryland</h3>
+                <p><strong>Emily Rodriguez</strong><br>Textile Conservator</p>
+                <a href="tel:301-215-3191" class="emergency-phone-cta" style="display: inline-block; background: #FF9800; color: white; padding: 0.5rem 1rem; border-radius: 20px; text-decoration: none; margin-top: 0.5rem;">301-215-3191</a>
+            </div>
+        </div>
+
+        <p>Don't let wedding dress damage create lasting regret. Contact our emergency response team today and let us restore your gown to its original beauty. <strong>Your perfect day deserves a perfect dress.</strong></p>
+    </div>
+
+    <!-- Include GHL Scripts -->
+    <script src="../integrations/ghl/config/ghl-config.js"></script>
+    <script src="assets/js/ghl-blog-integration.js"></script>
+    <script src="assets/components/contact-form-component.js"></script>
+
+    <script>
+        // Blog-specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📰 Wedding dress restoration blog loaded with enhanced contact form');
+
+            // Track blog engagement
+            if (window.prismTracker) {
+                window.prismTracker.trackPageView('weddingDressBlog', window.location.href);
+            }
+
+            // Monitor scroll depth for high-value content
+            let maxScroll = 0;
+            window.addEventListener('scroll', function() {
+                const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+
+                if (scrollPercent > maxScroll) {
+                    maxScroll = scrollPercent;
+
+                    // Track engagement milestones
+                    if (scrollPercent >= 50 && window.prismTracker) {
+                        window.prismTracker.sessionData.contentScore += 15; // High-value content engagement
+                        window.prismTracker.updateLeadQuality();
+                    }
+
+                    // Trigger wedding content automation at 75% scroll
+                    if (scrollPercent >= 75 && window.prismAutomation) {
+                        window.prismAutomation.triggerWeddingContentSequence();
+                    }
+                }
+            });
+
+            // Track emergency CTA clicks
+            document.querySelectorAll('.emergency-phone-cta').forEach(cta => {
+                cta.addEventListener('click', function(e) {
+                    console.log('🚨 Emergency CTA clicked:', e.target.textContent);
+
+                    // Track emergency phone click
+                    if (window.prismTracker) {
+                        window.prismTracker.sessionData.contentScore += 75; // Emergency action
+                        window.prismTracker.updateLeadQuality();
+                    }
+
+                    // Trigger emergency automation
+                    if (window.prismAutomation) {
+                        window.prismAutomation.triggerEmergencySequence();
+                    }
+                });
+            });
+
+            // Smooth scroll to contact form for inline CTAs
+            document.querySelectorAll('a[href="#contact-form"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const form = document.getElementById('prism-contact-form');
+                    if (form) {
+                        form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+                        // Add visual attention to form
+                        setTimeout(() => {
+                            form.style.boxShadow = '0 0 20px rgba(25, 118, 210, 0.3)';
+                            setTimeout(() => {
+                                form.style.boxShadow = '';
+                            }, 2000);
+                        }, 500);
+                    }
+                });
+            });
+
+            // Auto-fill service type based on blog content
+            setTimeout(() => {
+                const serviceSelect = document.getElementById('serviceType');
+                if (serviceSelect && !serviceSelect.value) {
+                    serviceSelect.value = 'wedding_dress_restoration';
+                    serviceSelect.dispatchEvent(new Event('change'));
+                }
+            }, 2000);
+        });
+    </script>
+
+</body></html>

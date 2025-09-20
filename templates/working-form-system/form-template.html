@@ -1,0 +1,121 @@
+<!-- PRISM SPECIALTIES - ENHANCED CONTACT FORM TEMPLATE -->
+<!-- Extracted from working contact-form-enhanced.html -->
+
+<div class="prism-contact-form-enhanced">
+    <h3>🎯 Get Your Free Restoration Consultation</h3>
+    <p class="form-subtitle">Expert restoration services across Washington DC, Northern Virginia, and Maryland</p>
+
+    <!-- Form Progress Indicator -->
+    <div class="form-progress">
+        <div class="form-progress-bar" id="formProgress"></div>
+    </div>
+
+    <form id="prismContactForm" class="restoration-contact-form">
+        <!-- Hidden fields for GHL Integration -->
+        <input type="hidden" id="detectedRegion" name="region" value="">
+        <input type="hidden" id="contentScore" name="content_score" value="">
+        <input type="hidden" id="sessionId" name="session_id" value="">
+        <input type="hidden" id="leadTemperature" name="lead_temperature" value="">
+        <input type="hidden" id="serviceCategory" name="service_category" value="">
+        <input type="hidden" id="estimatedValue" name="estimated_value" value="">
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="firstName">First Name*</label>
+                <input type="text" id="firstName" name="first_name" required>
+                <div class="error-message">Please enter your first name</div>
+            </div>
+            <div class="form-group">
+                <label for="lastName">Last Name*</label>
+                <input type="text" id="lastName" name="last_name" required>
+                <div class="error-message">Please enter your last name</div>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="form-group">
+                <label for="email">Email Address*</label>
+                <input type="email" id="email" name="email" required>
+                <div class="error-message">Please enter a valid email address</div>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number*</label>
+                <input type="tel" id="phone" name="phone" required>
+                <div class="error-message">Please enter your phone number</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="serviceType">Type of Restoration Needed*</label>
+            <select id="serviceType" name="service_type" required>
+                <option value="">Select Service Type</option>
+                <option value="art_restoration">🎨 Art & Painting Restoration</option>
+                <option value="textile_restoration">🧵 Textile & Fabric Restoration</option>
+                <option value="wedding_dress_restoration">👰 Wedding Dress Restoration</option>
+                <option value="military_uniform_restoration">🪖 Military Uniform Restoration</option>
+                <option value="document_restoration">📄 Document & Paper Restoration</option>
+                <option value="electronics_restoration">🔌 Electronics & Audio Restoration</option>
+                <option value="emergency_restoration">🚨 Emergency Restoration Service</option>
+                <option value="consultation">💬 General Consultation</option>
+            </select>
+            <div class="error-message">Please select a service type</div>
+        </div>
+
+        <div class="form-group">
+            <label for="urgency">How urgent is your restoration need?</label>
+            <select id="urgency" name="urgency">
+                <option value="consultation">💭 Just exploring options</option>
+                <option value="planning">📅 Planning for future restoration</option>
+                <option value="soon">⏰ Needed within 2-4 weeks</option>
+                <option value="urgent">🔥 Needed within 1-2 weeks</option>
+                <option value="emergency">🚨 Emergency - Immediate attention needed</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="itemValue">Estimated Item Value (Optional)</label>
+            <select id="itemValue" name="item_value">
+                <option value="">Select approximate value range</option>
+                <option value="under_500">Under $500</option>
+                <option value="500_1000">$500 - $1,000</option>
+                <option value="1000_5000">$1,000 - $5,000</option>
+                <option value="5000_10000">$5,000 - $10,000</option>
+                <option value="over_10000">Over $10,000</option>
+                <option value="heirloom">Family heirloom - Priceless</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Brief Description of Item(s)*</label>
+            <textarea id="description" name="description" rows="4" required
+                placeholder="Please describe what needs restoration: type of item, approximate age, current condition, any damage details, special significance, etc."></textarea>
+            <div class="error-message">Please provide a description of your item(s)</div>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <input type="checkbox" id="photoConsent" name="photo_consent">
+            <label for="photoConsent">
+                📸 I can provide photos of the item(s) for initial assessment
+            </label>
+        </div>
+
+        <div class="form-group checkbox-group">
+            <input type="checkbox" id="newsletterConsent" name="newsletter_consent">
+            <label for="newsletterConsent">
+                📧 Send me restoration tips and updates (optional)
+            </label>
+        </div>
+
+        <button type="submit" class="submit-btn" id="submitBtn">
+            🎯 Get My Free Consultation
+            <span class="regional-phone">
+                Call: <span data-phone-region="auto">202-335-4240</span>
+            </span>
+        </button>
+
+        <p class="form-footer">
+            <strong>🌍 Serving the entire DMV area:</strong> Washington DC, Northern Virginia, and Maryland<br>
+            <small>Response within 2 hours during business hours • Emergency service available 24/7</small>
+        </p>
+    </form>
+</div>

@@ -1,0 +1,55 @@
+{
+  "preservationDate": "2025-09-20T08:59:35.418Z",
+  "totalPages": 8,
+  "backupDirectory": "preserved-content/working-blog-pages/2025-09-20T08-59-26",
+  "pages": [
+    {
+      "url": "http://localhost:8001/blog/photo-restoration-dmv-family-legacy.html",
+      "filename": "photo-restoration-dmv-family-legacy.html",
+      "size": 51978,
+      "timestamp": "2025-09-20T08:59:28.081Z"
+    },
+    {
+      "url": "http://localhost:8001/blog/vintage-electronics-restoration-dmv-retro.html",
+      "filename": "vintage-electronics-restoration-dmv-retro.html",
+      "size": 50292,
+      "timestamp": "2025-09-20T08:59:29.364Z"
+    },
+    {
+      "url": "http://localhost:8001/blog/civil-war-restoration-virginia-historical.html",
+      "filename": "civil-war-restoration-virginia-historical.html",
+      "size": 49618,
+      "timestamp": "2025-09-20T08:59:30.647Z"
+    },
+    {
+      "url": "http://localhost:8001/blog/government-document-preservation-dc-federal.html",
+      "filename": "government-document-preservation-dc-federal.html",
+      "size": 46566,
+      "timestamp": "2025-09-20T08:59:31.912Z"
+    },
+    {
+      "url": "http://localhost:8001/blog/fire-damage-restoration-dmv-emergency.html",
+      "filename": "fire-damage-restoration-dmv-emergency.html",
+      "size": 44383,
+      "timestamp": "2025-09-20T08:59:32.981Z"
+    },
+    {
+      "url": "http://localhost:8001/blog/water-damage-restoration-dmv-emergency.html",
+      "filename": "water-damage-restoration-dmv-emergency.html",
+      "size": 39097,
+      "timestamp": "2025-09-20T08:59:34.066Z"
+    },
+    {
+      "url": "http://localhost:8001/blog/example-blog-with-form.html",
+      "filename": "example-blog-with-form.html",
+      "size": 29072,
+      "timestamp": "2025-09-20T08:59:34.843Z"
+    },
+    {
+      "url": "http://localhost:8001/blog/contact-form-enhanced.html",
+      "filename": "contact-form-enhanced.html",
+      "size": 35884,
+      "timestamp": "2025-09-20T08:59:35.418Z"
+    }
+  ]
+}

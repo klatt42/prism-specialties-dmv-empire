@@ -1,0 +1,3548 @@
+{
+  "timestamp": "2025-09-20T09:05:59.313Z",
+  "analysis": {
+    "commits": [
+      {
+        "hash": "86e25a2",
+        "message": "🚨 EMERGENCY FIX: Restore professional navigation styling",
+        "date": "",
+        "filesChanged": 279,
+        "insertions": 67045,
+        "deletions": 0,
+        "files": [
+          {
+            "name": "analytics-dashboard.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": ".../dc-art-restoration-success-stories-backup.html",
+            "changes": 122,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../dc-art-restoration-success-stories.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../emergency-art-restoration-annapolis.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../northern-va-fine-art-recovery-backup.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../northern-va-fine-art-recovery.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../civil-war-restoration-virginia-historical.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "blog/contact-form-enhanced.html",
+            "changes": 109,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../water-damaged-documents-dmv.html",
+            "changes": 118,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../church-musical-electronics-dmv.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../fire-damage-restoration-dmv.html",
+            "changes": 118,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../mold-remediation-dmv.html",
+            "changes": 118,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../storm-disaster-recovery-dmv.html",
+            "changes": 118,
+            "pattern": "+-"
+          },
+          {
+            "name": "blog/example-blog-with-form.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "blog/fire-damage-restoration-dmv-emergency.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "...overnment-document-preservation-dc-federal.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "blog/index.html",
+            "changes": 115,
+            "pattern": "+-"
+          },
+          {
+            "name": "blog/photo-restoration-dmv-family-legacy.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "blog/test-automation.html",
+            "changes": 109,
+            "pattern": "+-"
+          },
+          {
+            "name": "blog/test-phone-display.html",
+            "changes": 111,
+            "pattern": "+-"
+          },
+          {
+            "name": "blog/test-tracking.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": ".../military-uniform-restoration-dmv.html",
+            "changes": 118,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../wedding-dress-preservation-dmv.html",
+            "changes": 118,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../vintage-electronics-restoration-dmv-retro.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "blog/water-damage-restoration-dmv-emergency.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "campaigns/emergency/index.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "campaigns/index.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "campaigns/insurance/index.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "campaigns/seasonal/index.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "dashboard/lead-monitoring.html",
+            "changes": 121,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../dc-art-restoration-success-stories-backup.html",
+            "changes": 356,
+            "pattern": "+++++"
+          },
+          {
+            "name": ".../dc-art-restoration-success-stories.html",
+            "changes": 269,
+            "pattern": "++++"
+          },
+          {
+            "name": "...gency-art-restoration-annapolis-seo-summary.txt",
+            "changes": 195,
+            "pattern": "+++"
+          },
+          {
+            "name": ".../emergency-art-restoration-annapolis.html",
+            "changes": 574,
+            "pattern": "++++++++"
+          },
+          {
+            "name": ".../northern-va-fine-art-recovery-backup.html",
+            "changes": 461,
+            "pattern": "++++++"
+          },
+          {
+            "name": ".../northern-va-fine-art-recovery-seo-summary.txt",
+            "changes": 179,
+            "pattern": "+++"
+          },
+          {
+            "name": ".../northern-va-fine-art-recovery.html",
+            "changes": 461,
+            "pattern": "++++++"
+          },
+          {
+            "name": ".../assets/components/contact-form-component.js",
+            "changes": 768,
+            "pattern": "++++++++++"
+          },
+          {
+            "name": ".../assets/components/enhanced-header.html",
+            "changes": 12,
+            "pattern": "+"
+          },
+          {
+            "name": ".../blog-broken/assets/css/blog-styles.css",
+            "changes": 637,
+            "pattern": "++++++++"
+          },
+          {
+            "name": ".../blog-broken/assets/css/enhanced-header.css",
+            "changes": 42,
+            "pattern": "+"
+          },
+          {
+            "name": ".../blog-broken/assets/data_1_elegant_styles.txt",
+            "changes": 30,
+            "pattern": "+"
+          },
+          {
+            "name": ".../blog-broken/assets/data_3_document_content.txt",
+            "changes": 50,
+            "pattern": "+"
+          },
+          {
+            "name": ".../annapolis-emergency-image-requirements.md",
+            "changes": 112,
+            "pattern": "++"
+          },
+          {
+            "name": ".../church-electronics-image-requirements.md",
+            "changes": 134,
+            "pattern": "++"
+          },
+          {
+            "name": ".../church-fire-damage-image-requirements.md",
+            "changes": 134,
+            "pattern": "++"
+          },
+          {
+            "name": ".../document-restoration/image-requirements.md",
+            "changes": 20,
+            "pattern": "+"
+          },
+          {
+            "name": ".../assets/images/image-requirements.md",
+            "changes": 194,
+            "pattern": "+++"
+          },
+          {
+            "name": ".../images/northern-va-image-requirements.md",
+            "changes": 89,
+            "pattern": "++"
+          },
+          {
+            "name": ".../assets/images/placeholders/README.md",
+            "changes": 20,
+            "pattern": "+"
+          },
+          {
+            "name": ".../textile-restoration/image-requirements.md",
+            "changes": 20,
+            "pattern": "+"
+          },
+          {
+            "name": ".../blog-broken/assets/js/ghl-blog-integration.js",
+            "changes": 398,
+            "pattern": "+++++"
+          },
+          {
+            "name": ".../blog-broken/blog-style-guide.md",
+            "changes": 268,
+            "pattern": "++++"
+          },
+          {
+            "name": ".../blog-broken/cache-recovery-summary.txt",
+            "changes": 29,
+            "pattern": "+"
+          },
+          {
+            "name": ".../civil-war-restoration-virginia-historical.html",
+            "changes": 653,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": ".../blog-broken/contact-form-enhanced.html",
+            "changes": 848,
+            "pattern": "+++++++++++"
+          },
+          {
+            "name": ".../water-damaged-documents-dmv.html",
+            "changes": 414,
+            "pattern": "++++++"
+          },
+          {
+            "name": "...fire-recovery-montgomery-county-seo-summary.txt",
+            "changes": 195,
+            "pattern": "+++"
+          },
+          {
+            "name": ".../church-musical-electronics-dmv-seo-summary.txt",
+            "changes": 203,
+            "pattern": "+++"
+          },
+          {
+            "name": ".../church-musical-electronics-dmv.html",
+            "changes": 549,
+            "pattern": "+++++++"
+          },
+          {
+            "name": ".../fire-damage-restoration-dmv.html",
+            "changes": 334,
+            "pattern": "+++++"
+          },
+          {
+            "name": ".../mold-remediation-dmv.html",
+            "changes": 394,
+            "pattern": "+++++"
+          },
+          {
+            "name": ".../storm-disaster-recovery-dmv.html",
+            "changes": 410,
+            "pattern": "++++++"
+          },
+          {
+            "name": ".../blog-broken/example-blog-with-form.html",
+            "changes": 272,
+            "pattern": "++++"
+          },
+          {
+            "name": ".../fire-damage-restoration-dmv-emergency.html",
+            "changes": 567,
+            "pattern": "++++++++"
+          },
+          {
+            "name": "...overnment-document-preservation-dc-federal.html",
+            "changes": 615,
+            "pattern": "++++++++"
+          },
+          {
+            "name": ".../20250920_043248/blog-broken/index.html",
+            "changes": 295,
+            "pattern": "++++"
+          },
+          {
+            "name": ".../20250920_043248/blog-broken/index.html.backup",
+            "changes": 271,
+            "pattern": "++++"
+          },
+          {
+            "name": ".../photo-restoration-dmv-family-legacy.html",
+            "changes": 727,
+            "pattern": "++++++++++"
+          },
+          {
+            "name": ".../blog-broken/test-automation.html",
+            "changes": 715,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": ".../blog-broken/test-phone-display.html",
+            "changes": 357,
+            "pattern": "+++++"
+          },
+          {
+            "name": ".../20250920_043248/blog-broken/test-tracking.html",
+            "changes": 190,
+            "pattern": "+++"
+          },
+          {
+            "name": ".../military-uniform-restoration-dmv.html",
+            "changes": 384,
+            "pattern": "+++++"
+          },
+          {
+            "name": ".../wedding-dress-preservation-dmv.html",
+            "changes": 292,
+            "pattern": "++++"
+          },
+          {
+            "name": ".../vintage-electronics-restoration-dmv-retro.html",
+            "changes": 678,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": ".../water-damage-restoration-dmv-emergency.html",
+            "changes": 466,
+            "pattern": "++++++"
+          },
+          {
+            "name": ".../public-broken/about-us-backup.html",
+            "changes": 1233,
+            "pattern": "++++++++++++++++"
+          },
+          {
+            "name": ".../public-broken/about-us-broken.html",
+            "changes": 198,
+            "pattern": "+++"
+          },
+          {
+            "name": ".../public-broken/about-us-old.html",
+            "changes": 283,
+            "pattern": "++++"
+          },
+          {
+            "name": ".../public-broken/about-us-test.html",
+            "changes": 14,
+            "pattern": "+"
+          },
+          {
+            "name": ".../20250920_043248/public-broken/about-us.html",
+            "changes": 244,
+            "pattern": "++++"
+          },
+          {
+            "name": ".../public-broken/about-us.html.backup",
+            "changes": 249,
+            "pattern": "++++"
+          },
+          {
+            "name": ".../public-broken/about-us.html.backup-header",
+            "changes": 283,
+            "pattern": "++++"
+          },
+          {
+            "name": ".../public-broken/about-us.html.backup-logo",
+            "changes": 272,
+            "pattern": "++++"
+          },
+          {
+            "name": ".../public-broken/about-us.html.backup-nav",
+            "changes": 283,
+            "pattern": "++++"
+          },
+          {
+            "name": ".../public-broken/about-us.html.backup-styling",
+            "changes": 267,
+            "pattern": "++++"
+          },
+          {
+            "name": ".../public-broken/assets/js/global.js",
+            "changes": 189,
+            "pattern": "+++"
+          },
+          {
+            "name": ".../checklists/assets/css/checklist-library.css",
+            "changes": 335,
+            "pattern": "+++++"
+          },
+          {
+            "name": ".../public-broken/checklists/index.html",
+            "changes": 495,
+            "pattern": "+++++++"
+          },
+          {
+            "name": ".../20250920_043248/public-broken/contact.html",
+            "changes": 524,
+            "pattern": "+++++++"
+          },
+          {
+            "name": ".../public-broken/css/brand-styles.css",
+            "changes": 578,
+            "pattern": "++++++++"
+          },
+          {
+            "name": ".../public-broken/css/emergency-alerts.css",
+            "changes": 289,
+            "pattern": "++++"
+          },
+          {
+            "name": ".../public-broken/emergency-dc.html",
+            "changes": 517,
+            "pattern": "+++++++"
+          },
+          {
+            "name": ".../20250920_043248/public-broken/emergency.html",
+            "changes": 643,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": ".../fairfax-county/art-restoration/index.html",
+            "changes": 678,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": ".../fairfax-county/document-restoration/index.html",
+            "changes": 678,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": ".../electronics-restoration/index.html",
+            "changes": 678,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": ".../public-broken/fairfax-county/index.html",
+            "changes": 699,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": ".../fairfax-county/textile-restoration/index.html",
+            "changes": 716,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": ".../images/damage-types/vintage-damaged-art.jpg",
+            "changes": 1,
+            "pattern": "+"
+          },
+          {
+            "name": ".../public-broken/images/images/.htaccess",
+            "changes": 47,
+            "pattern": "+"
+          },
+          {
+            "name": ".../images/images/LOGO-SPECIFICATIONS.md",
+            "changes": 118,
+            "pattern": "++"
+          },
+          {
+            "name": ".../public-broken/images/images/logos/.gitkeep",
+            "changes": 2,
+            "pattern": "+"
+          },
+          {
+            "name": ".../public-broken/images/images/logos/README.md",
+            "changes": 31,
+            "pattern": "+"
+          },
+          {
+            "name": ".../public-broken/index-original-hero.html",
+            "changes": 1238,
+            "pattern": "++++++++++++++++"
+          },
+          {
+            "name": ".../20250920_043248/public-broken/index.html",
+            "changes": 1515,
+            "pattern": "++++++++++++++++++++"
+          },
+          {
+            "name": ".../public-broken/index.html.backup",
+            "changes": 1443,
+            "pattern": "+++++++++++++++++++"
+          },
+          {
+            "name": ".../public-broken/index.html.backup-20250917-2038",
+            "changes": 1495,
+            "pattern": "+++++++++++++++++++"
+          },
+          {
+            "name": ".../public-broken/index.html.backup-blog-links-fix",
+            "changes": 1495,
+            "pattern": "+++++++++++++++++++"
+          },
+          {
+            "name": ".../index.html.backup-blog-reposition",
+            "changes": 1496,
+            "pattern": "+++++++++++++++++++"
+          },
+          {
+            "name": ".../loudoun-county/art-restoration/index.html",
+            "changes": 492,
+            "pattern": "+++++++"
+          },
+          {
+            "name": ".../loudoun-county/document-restoration/index.html",
+            "changes": 492,
+            "pattern": "+++++++"
+          },
+          {
+            "name": ".../electronics-restoration/index.html",
+            "changes": 492,
+            "pattern": "+++++++"
+          },
+          {
+            "name": ".../public-broken/loudoun-county/index.html",
+            "changes": 514,
+            "pattern": "+++++++"
+          },
+          {
+            "name": ".../loudoun-county/textile-restoration/index.html",
+            "changes": 492,
+            "pattern": "+++++++"
+          },
+          {
+            "name": ".../public-broken/main_page_header.txt",
+            "changes": 488,
+            "pattern": "+++++++"
+          },
+          {
+            "name": ".../montgomery-county/art-restoration/index.html",
+            "changes": 719,
+            "pattern": "++++++++++"
+          },
+          {
+            "name": ".../document-restoration/index.html",
+            "changes": 587,
+            "pattern": "++++++++"
+          },
+          {
+            "name": ".../electronics-restoration/index.html",
+            "changes": 587,
+            "pattern": "++++++++"
+          },
+          {
+            "name": ".../public-broken/montgomery-county/index.html",
+            "changes": 518,
+            "pattern": "+++++++"
+          },
+          {
+            "name": ".../textile-restoration/index.html",
+            "changes": 587,
+            "pattern": "++++++++"
+          },
+          {
+            "name": ".../northern-virginia/art-restoration/index.html",
+            "changes": 719,
+            "pattern": "++++++++++"
+          },
+          {
+            "name": ".../document-restoration/index.html",
+            "changes": 587,
+            "pattern": "++++++++"
+          },
+          {
+            "name": ".../electronics-restoration/index.html",
+            "changes": 587,
+            "pattern": "++++++++"
+          },
+          {
+            "name": ".../public-broken/northern-virginia/index.html",
+            "changes": 514,
+            "pattern": "+++++++"
+          },
+          {
+            "name": ".../textile-restoration/index.html",
+            "changes": 587,
+            "pattern": "++++++++"
+          },
+          {
+            "name": ".../art-restoration/index.html",
+            "changes": 719,
+            "pattern": "++++++++++"
+          },
+          {
+            "name": ".../document-restoration/index.html",
+            "changes": 719,
+            "pattern": "++++++++++"
+          },
+          {
+            "name": ".../electronics-restoration/index.html",
+            "changes": 719,
+            "pattern": "++++++++++"
+          },
+          {
+            "name": ".../public-broken/prince-william-county/index.html",
+            "changes": 514,
+            "pattern": "+++++++"
+          },
+          {
+            "name": ".../textile-restoration/index.html",
+            "changes": 719,
+            "pattern": "++++++++++"
+          },
+          {
+            "name": ".../public-broken/privacy-policy.html",
+            "changes": 588,
+            "pattern": "++++++++"
+          },
+          {
+            "name": ".../20250920_043248/public-broken/services.html",
+            "changes": 549,
+            "pattern": "+++++++"
+          },
+          {
+            "name": ".../20250920_043248/public-broken/sitemap.xml",
+            "changes": 8,
+            "pattern": "+"
+          },
+          {
+            "name": ".../public-broken/terms-conditions.html",
+            "changes": 685,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": ".../washington-dc/art-restoration/index.html",
+            "changes": 678,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": ".../washington-dc/document-restoration/index.html",
+            "changes": 678,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": ".../electronics-restoration/index.html",
+            "changes": 678,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": ".../public-broken/washington-dc/index.html",
+            "changes": 112,
+            "pattern": "++"
+          },
+          {
+            "name": ".../washington-dc/textile-restoration/index.html",
+            "changes": 667,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": ".../western-maryland/art-restoration/index.html",
+            "changes": 719,
+            "pattern": "++++++++++"
+          },
+          {
+            "name": ".../document-restoration/index.html",
+            "changes": 587,
+            "pattern": "++++++++"
+          },
+          {
+            "name": ".../electronics-restoration/index.html",
+            "changes": 587,
+            "pattern": "++++++++"
+          },
+          {
+            "name": ".../public-broken/western-maryland/index.html",
+            "changes": 514,
+            "pattern": "+++++++"
+          },
+          {
+            "name": ".../textile-restoration/index.html",
+            "changes": 587,
+            "pattern": "++++++++"
+          },
+          {
+            "name": "faq.html",
+            "changes": 155,
+            "pattern": "+-"
+          },
+          {
+            "name": "fix-templates/styled-navigation.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": ".../art-collectibles-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../document-photo-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../electronics-data-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": "geographic/northern-virginia/fairfax/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../northern-virginia/fire-damage/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": "geographic/northern-virginia/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../northern-virginia/loudoun-county/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../prince-william-county/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../textile-fabric-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../art-collectibles-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../document-photo-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../electronics-data-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": "geographic/washington-dc/emergency/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": "geographic/washington-dc/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../textile-fabric-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../art-collectibles-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../document-photo-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../electronics-data-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": "geographic/western-maryland/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../western-maryland/montgomery-county/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../textile-fabric-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": "privacy-policy.html",
+            "changes": 115,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/about-us-backup.html",
+            "changes": 132,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/about-us-broken.html",
+            "changes": 130,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/about-us-old.html",
+            "changes": 130,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/about-us-test.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "public/about-us.html",
+            "changes": 130,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/checklists/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/contact.html",
+            "changes": 94,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/emergency-dc.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/emergency.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/fairfax-county/art-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../fairfax-county/document-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../electronics-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/fairfax-county/index.html",
+            "changes": 92,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../fairfax-county/textile-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/index-original-hero.html",
+            "changes": 130,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/index.html",
+            "changes": 94,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/loudoun-county/art-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../loudoun-county/document-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../electronics-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/loudoun-county/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../loudoun-county/textile-restoration/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../montgomery-county/art-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../document-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../electronics-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/montgomery-county/index.html",
+            "changes": 94,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../textile-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../northern-virginia/art-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../document-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../electronics-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/northern-virginia/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../textile-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../art-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../document-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../electronics-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/prince-william-county/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../textile-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/privacy-policy.html",
+            "changes": 132,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/services.html",
+            "changes": 94,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/terms-conditions.html",
+            "changes": 132,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/washington-dc/art-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../washington-dc/document-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../electronics-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/washington-dc/index.html",
+            "changes": 92,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../washington-dc/textile-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/western-maryland/art-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../document-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../electronics-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/western-maryland/index.html",
+            "changes": 119,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../textile-restoration/index.html",
+            "changes": 117,
+            "pattern": "+-"
+          },
+          {
+            "name": "scripts/emergency-verify.js",
+            "changes": 60,
+            "pattern": "+"
+          },
+          {
+            "name": "scripts/fix-navigation-emergency.js",
+            "changes": 70,
+            "pattern": "+"
+          },
+          {
+            "name": ".../art-collectibles-restoration/index.html",
+            "changes": 120,
+            "pattern": "+-"
+          },
+          {
+            "name": "specialties/document-photo-restoration/index.html",
+            "changes": 120,
+            "pattern": "+-"
+          },
+          {
+            "name": ".../electronics-data-restoration/index.html",
+            "changes": 120,
+            "pattern": "+-"
+          },
+          {
+            "name": "specialties/textile-fabric-restoration/index.html",
+            "changes": 120,
+            "pattern": "+-"
+          },
+          {
+            "name": "temp-content/privacy-raw.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "temp-content/privacy-raw2.html",
+            "changes": 128,
+            "pattern": "+-"
+          },
+          {
+            "name": "temp-content/terms-raw.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "temp-content/terms-raw2.html",
+            "changes": 130,
+            "pattern": "+-"
+          },
+          {
+            "name": "templates/proper-landing-page-template.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "terms-conditions.html",
+            "changes": 115,
+            "pattern": "+-"
+          },
+          {
+            "name": "test-ghl-integration.html",
+            "changes": 107,
+            "pattern": "++"
+          },
+          {
+            "name": "ux-enhancement-demo.html",
+            "changes": 107,
+            "pattern": "++"
+          }
+        ]
+      },
+      {
+        "hash": "1adb420",
+        "message": "🎯 SYSTEMATIC CONSOLIDATION: Navigation, duplicates, phone fixes",
+        "date": "",
+        "filesChanged": 18,
+        "insertions": 788,
+        "deletions": 0,
+        "files": [
+          {
+            "name": "blog/index.html",
+            "changes": 64,
+            "pattern": "+--"
+          },
+          {
+            "name": "fix-templates/standard-navigation.html",
+            "changes": 21,
+            "pattern": "+"
+          },
+          {
+            "name": "package-lock.json",
+            "changes": 457,
+            "pattern": "++++++++++++++++++++-"
+          },
+          {
+            "name": "package.json",
+            "changes": 1,
+            "pattern": "+"
+          },
+          {
+            "name": "public/contact.html",
+            "changes": 35,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/fairfax-county/index.html",
+            "changes": 37,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/index.html",
+            "changes": 53,
+            "pattern": "+--"
+          },
+          {
+            "name": "public/montgomery-county/index.html",
+            "changes": 36,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/services.html",
+            "changes": 35,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/washington-dc/index.html",
+            "changes": 44,
+            "pattern": "+-"
+          },
+          {
+            "name": "scripts/fix-phone-numbers.js",
+            "changes": 40,
+            "pattern": "++"
+          },
+          {
+            "name": "scripts/update-navigation.js",
+            "changes": 47,
+            "pattern": "+++"
+          },
+          {
+            "name": "scripts/verify-consolidation.js",
+            "changes": 62,
+            "pattern": "+++"
+          }
+        ]
+      },
+      {
+        "hash": "e07e49f",
+        "message": "🔍 PLAYWRIGHT VISUAL AUDIT COMPLETE - Critical Navigation Issues Identified",
+        "date": "",
+        "filesChanged": 21,
+        "insertions": 547,
+        "deletions": 0,
+        "files": [
+          {
+            "name": "package.json",
+            "changes": 4,
+            "pattern": "+"
+          },
+          {
+            "name": "visual-audit/analysis/page-analysis.json",
+            "changes": 202,
+            "pattern": "+++++++++++++++++++++++++"
+          },
+          {
+            "name": "visual-audit/analyze-navigation.js",
+            "changes": 88,
+            "pattern": "+++++++++++"
+          },
+          {
+            "name": "visual-audit/reports/consolidation-plan.md",
+            "changes": 85,
+            "pattern": "+++++++++++"
+          },
+          {
+            "name": "visual-audit/reports/url-audit.md",
+            "changes": 37,
+            "pattern": "+++++"
+          },
+          {
+            "name": "visual-audit/screenshot-audit.js",
+            "changes": 131,
+            "pattern": "++++++++++++++++"
+          }
+        ]
+      },
+      {
+        "hash": "8520b84",
+        "message": "🔧 CRITICAL INTEGRATION FIXES: Navigation, blog logo, regional pages",
+        "date": "",
+        "filesChanged": 6,
+        "insertions": 417,
+        "deletions": 0,
+        "files": [
+          {
+            "name": "backups/pre-navigation-fix/index.html",
+            "changes": 276,
+            "pattern": "++++++++++++++++++++++++++++++"
+          },
+          {
+            "name": "blog/index.html",
+            "changes": 1,
+            "pattern": "+"
+          },
+          {
+            "name": "content-recovery/missing-content-list.txt",
+            "changes": 14,
+            "pattern": "++"
+          },
+          {
+            "name": "content-recovery/today-blog-search.txt",
+            "changes": 93,
+            "pattern": "++++++++++"
+          },
+          {
+            "name": "public/index.html",
+            "changes": 33,
+            "pattern": "++++"
+          }
+        ]
+      },
+      {
+        "hash": "7058cd8",
+        "message": "🚀 ADDITIVE ENHANCEMENTS: Navigation, blog header, checklist foundation",
+        "date": "",
+        "filesChanged": 5,
+        "insertions": 412,
+        "deletions": 0,
+        "files": [
+          {
+            "name": "blog/assets/components/enhanced-header.html",
+            "changes": 12,
+            "pattern": "+"
+          },
+          {
+            "name": "blog/assets/css/enhanced-header.css",
+            "changes": 42,
+            "pattern": "+++"
+          },
+          {
+            "name": "public/checklists/assets/css/checklist-library.css",
+            "changes": 335,
+            "pattern": "+++++++++++++++++++++"
+          },
+          {
+            "name": "scripts/enhance-navigation.js",
+            "changes": 20,
+            "pattern": "++"
+          },
+          {
+            "name": "templates/navigation-template.html",
+            "changes": 3,
+            "pattern": "+"
+          }
+        ]
+      },
+      {
+        "hash": "541122e",
+        "message": "📊 Comprehensive site assessment - Fri Sep 19 14:03:28 EDT 2025",
+        "date": "",
+        "filesChanged": 5,
+        "insertions": 467,
+        "deletions": 0,
+        "files": [
+          {
+            "name": "assessment-reports/COMPREHENSIVE-SUMMARY.md",
+            "changes": 18,
+            "pattern": "+++"
+          },
+          {
+            "name": "assessment-reports/blog-status.md",
+            "changes": 37,
+            "pattern": "+++++"
+          },
+          {
+            "name": "assessment-reports/checklist-status.md",
+            "changes": 25,
+            "pattern": "+++"
+          },
+          {
+            "name": "assessment-reports/current-state.md",
+            "changes": 150,
+            "pattern": "++++++++++++++++++"
+          },
+          {
+            "name": "assessment-reports/navigation-analysis.md",
+            "changes": 237,
+            "pattern": "++++++++++++++++++++++++++++"
+          }
+        ]
+      },
+      {
+        "hash": "9d1f206",
+        "message": "MAJOR UPDATE: Complete blog system + GHL integration + specialized content",
+        "date": "",
+        "filesChanged": 47,
+        "insertions": 17504,
+        "deletions": 0,
+        "files": [
+          {
+            "name": "GHL-Automation-System-Complete.md",
+            "changes": 292,
+            "pattern": "++++"
+          },
+          {
+            "name": "GHL-Integration-Summary.md",
+            "changes": 191,
+            "pattern": "+++"
+          },
+          {
+            "name": "Regional-Phone-System-Complete.md",
+            "changes": 201,
+            "pattern": "+++"
+          },
+          {
+            "name": ".../dc-art-restoration-success-stories.html",
+            "changes": 3,
+            "pattern": "+"
+          },
+          {
+            "name": "blog/assets/components/contact-form-component.js",
+            "changes": 768,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": "blog/assets/js/ghl-blog-integration.js",
+            "changes": 398,
+            "pattern": "+++++"
+          },
+          {
+            "name": ".../civil-war-restoration-virginia-historical.html",
+            "changes": 653,
+            "pattern": "++++++++"
+          },
+          {
+            "name": "blog/contact-form-enhanced.html",
+            "changes": 848,
+            "pattern": "++++++++++"
+          },
+          {
+            "name": ".../water-damaged-documents-dmv.html",
+            "changes": 414,
+            "pattern": "+++++"
+          },
+          {
+            "name": ".../fire-damage-restoration-dmv.html",
+            "changes": 334,
+            "pattern": "++++"
+          },
+          {
+            "name": ".../mold-remediation-dmv.html",
+            "changes": 394,
+            "pattern": "+++++"
+          },
+          {
+            "name": ".../storm-disaster-recovery-dmv.html",
+            "changes": 410,
+            "pattern": "+++++"
+          },
+          {
+            "name": "blog/example-blog-with-form.html",
+            "changes": 272,
+            "pattern": "++++"
+          },
+          {
+            "name": "blog/fire-damage-restoration-dmv-emergency.html",
+            "changes": 567,
+            "pattern": "+++++++"
+          },
+          {
+            "name": "...overnment-document-preservation-dc-federal.html",
+            "changes": 615,
+            "pattern": "++++++++"
+          },
+          {
+            "name": "blog/index.html",
+            "changes": 5,
+            "pattern": "+"
+          },
+          {
+            "name": "blog/index.html.backup",
+            "changes": 271,
+            "pattern": "++++"
+          },
+          {
+            "name": "blog/photo-restoration-dmv-family-legacy.html",
+            "changes": 727,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": "blog/test-automation.html",
+            "changes": 715,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": "blog/test-phone-display.html",
+            "changes": 357,
+            "pattern": "+++++"
+          },
+          {
+            "name": "blog/test-tracking.html",
+            "changes": 190,
+            "pattern": "+++"
+          },
+          {
+            "name": ".../military-uniform-restoration-dmv.html",
+            "changes": 384,
+            "pattern": "+++++"
+          },
+          {
+            "name": ".../wedding-dress-preservation-dmv.html",
+            "changes": 292,
+            "pattern": "++++"
+          },
+          {
+            "name": ".../vintage-electronics-restoration-dmv-retro.html",
+            "changes": 678,
+            "pattern": "++++++++"
+          },
+          {
+            "name": "blog/water-damage-restoration-dmv-emergency.html",
+            "changes": 466,
+            "pattern": "++++++"
+          },
+          {
+            "name": "content-gaps-analysis.txt",
+            "changes": 143,
+            "pattern": "++"
+          },
+          {
+            "name": "dashboard/lead-monitoring.html",
+            "changes": 1632,
+            "pattern": "++++++++++++++++++++"
+          },
+          {
+            "name": "decision-helper.txt",
+            "changes": 8,
+            "pattern": "+"
+          },
+          {
+            "name": "deploy-production.sh",
+            "changes": 101,
+            "pattern": "++"
+          },
+          {
+            "name": "functionality-audit.txt",
+            "changes": 8,
+            "pattern": "+"
+          },
+          {
+            "name": "integrations/ghl/automation/sequence-triggers.js",
+            "changes": 707,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": "integrations/ghl/automation/workflow-triggers.js",
+            "changes": 487,
+            "pattern": "++++++"
+          },
+          {
+            "name": "integrations/ghl/config/ghl-config.js",
+            "changes": 726,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": "integrations/ghl/config/production-config.js",
+            "changes": 77,
+            "pattern": "+"
+          },
+          {
+            "name": "integrations/ghl/ghl-integration.js",
+            "changes": 486,
+            "pattern": "++++++"
+          },
+          {
+            "name": "integrations/ghl/scoring/lead-scoring-engine.js",
+            "changes": 353,
+            "pattern": "+++++"
+          },
+          {
+            "name": ".../ghl/tracking/blog-engagement-tracker.js",
+            "changes": 298,
+            "pattern": "++++"
+          },
+          {
+            "name": "integrations/ghl/tracking/inject-tracking.js",
+            "changes": 30,
+            "pattern": "+"
+          },
+          {
+            "name": "integrations/ghl/tracking/lead-tracker.js",
+            "changes": 375,
+            "pattern": "+++++"
+          },
+          {
+            "name": "integrations/ghl/tracking/phone-display.js",
+            "changes": 417,
+            "pattern": "+++++"
+          },
+          {
+            "name": "production-deployment-guide.md",
+            "changes": 169,
+            "pattern": "++"
+          },
+          {
+            "name": "search-results-comprehensive.txt",
+            "changes": 145,
+            "pattern": "++"
+          },
+          {
+            "name": "test-automation-system.js",
+            "changes": 301,
+            "pattern": "++++"
+          },
+          {
+            "name": "test-ghl-integration.html",
+            "changes": 73,
+            "pattern": "+"
+          },
+          {
+            "name": "test-phone-system.js",
+            "changes": 221,
+            "pattern": "+++"
+          },
+          {
+            "name": "test-tracking-browser.js",
+            "changes": 135,
+            "pattern": "++"
+          },
+          {
+            "name": "validate-tracking.js",
+            "changes": 167,
+            "pattern": "++"
+          }
+        ]
+      },
+      {
+        "hash": "10025bc",
+        "message": "🛡️ MULTI-PRONGED RECOVERY SESSION START - All functionality protected",
+        "date": "",
+        "filesChanged": 29,
+        "insertions": 2635,
+        "deletions": 0,
+        "files": [
+          {
+            "name": "blog-assessment.txt",
+            "changes": 64,
+            "pattern": "+"
+          },
+          {
+            "name": "blog-completion-plan.txt",
+            "changes": 26,
+            "pattern": "+"
+          },
+          {
+            "name": "blog/assets/data_1_elegant_styles.txt",
+            "changes": 30,
+            "pattern": "+"
+          },
+          {
+            "name": "blog/assets/data_3_document_content.txt",
+            "changes": 50,
+            "pattern": "+"
+          },
+          {
+            "name": ".../document-restoration/image-requirements.md",
+            "changes": 20,
+            "pattern": "+"
+          },
+          {
+            "name": ".../textile-restoration/image-requirements.md",
+            "changes": 20,
+            "pattern": "+"
+          },
+          {
+            "name": "blog/cache-recovery-summary.txt",
+            "changes": 29,
+            "pattern": "+"
+          },
+          {
+            "name": "local-search-results.txt",
+            "changes": 124,
+            "pattern": "++"
+          },
+          {
+            "name": "public/checklists/index.html",
+            "changes": 495,
+            "pattern": "+++++++"
+          },
+          {
+            "name": "public/index.html.backup-20250917-2038",
+            "changes": 1495,
+            "pattern": "++++++++++++++++++++"
+          },
+          {
+            "name": "ux-enhancement-demo.html",
+            "changes": 282,
+            "pattern": "++++"
+          }
+        ]
+      },
+      {
+        "hash": "5093abb",
+        "message": "📋 Phase 1 Achievement Archive - Ready for Phase 2",
+        "date": "",
+        "filesChanged": 1,
+        "insertions": 7,
+        "deletions": 0,
+        "files": [
+          {
+            "name": "PHASE-1-COMPLETE.md",
+            "changes": 7,
+            "pattern": "+++++++"
+          }
+        ]
+      },
+      {
+        "hash": "a910481",
+        "message": "✅ CRITICAL FIX: Blog navigation 404 resolved",
+        "date": "",
+        "filesChanged": 37,
+        "insertions": 10376,
+        "deletions": 0,
+        "files": [
+          {
+            "name": "BLOG_INTEGRATION_MANUAL_STEPS.md",
+            "changes": 97,
+            "pattern": "++"
+          },
+          {
+            "name": "DEPLOYMENT_CHECKLIST.md",
+            "changes": 92,
+            "pattern": "++"
+          },
+          {
+            "name": ".../dc-art-restoration-success-stories-backup.html",
+            "changes": 356,
+            "pattern": "+++++"
+          },
+          {
+            "name": ".../dc-art-restoration-success-stories.html",
+            "changes": 266,
+            "pattern": "++++"
+          },
+          {
+            "name": "...gency-art-restoration-annapolis-seo-summary.txt",
+            "changes": 195,
+            "pattern": "+++"
+          },
+          {
+            "name": ".../emergency-art-restoration-annapolis.html",
+            "changes": 574,
+            "pattern": "++++++++"
+          },
+          {
+            "name": ".../northern-va-fine-art-recovery-backup.html",
+            "changes": 461,
+            "pattern": "++++++"
+          },
+          {
+            "name": ".../northern-va-fine-art-recovery-seo-summary.txt",
+            "changes": 179,
+            "pattern": "+++"
+          },
+          {
+            "name": ".../northern-va-fine-art-recovery.html",
+            "changes": 461,
+            "pattern": "++++++"
+          },
+          {
+            "name": "blog/assets/css/blog-styles.css",
+            "changes": 637,
+            "pattern": "+++++++++"
+          },
+          {
+            "name": ".../annapolis-emergency-image-requirements.md",
+            "changes": 112,
+            "pattern": "++"
+          },
+          {
+            "name": ".../church-electronics-image-requirements.md",
+            "changes": 134,
+            "pattern": "++"
+          },
+          {
+            "name": ".../church-fire-damage-image-requirements.md",
+            "changes": 134,
+            "pattern": "++"
+          },
+          {
+            "name": "blog/assets/images/image-requirements.md",
+            "changes": 194,
+            "pattern": "+++"
+          },
+          {
+            "name": ".../images/northern-va-image-requirements.md",
+            "changes": 89,
+            "pattern": "++"
+          },
+          {
+            "name": "blog/assets/images/placeholders/README.md",
+            "changes": 20,
+            "pattern": "+"
+          },
+          {
+            "name": "blog/blog-style-guide.md",
+            "changes": 268,
+            "pattern": "++++"
+          },
+          {
+            "name": "...fire-recovery-montgomery-county-seo-summary.txt",
+            "changes": 195,
+            "pattern": "+++"
+          },
+          {
+            "name": ".../church-musical-electronics-dmv-seo-summary.txt",
+            "changes": 203,
+            "pattern": "+++"
+          },
+          {
+            "name": ".../church-musical-electronics-dmv.html",
+            "changes": 549,
+            "pattern": "+++++++"
+          },
+          {
+            "name": "blog/index.html",
+            "changes": 271,
+            "pattern": "++++"
+          },
+          {
+            "name": "css/blog-preview-styles.css",
+            "changes": 155,
+            "pattern": "++"
+          },
+          {
+            "name": "css/faq-styles.css",
+            "changes": 353,
+            "pattern": "+++++"
+          },
+          {
+            "name": "css/header-fix.css",
+            "changes": 152,
+            "pattern": "++"
+          },
+          {
+            "name": "faq.html",
+            "changes": 576,
+            "pattern": "++++++++"
+          },
+          {
+            "name": "homepage-blog-section.html",
+            "changes": 52,
+            "pattern": "+"
+          },
+          {
+            "name": "public/about-us.html",
+            "changes": 1,
+            "pattern": "+"
+          },
+          {
+            "name": "public/contact.html",
+            "changes": 1,
+            "pattern": "+"
+          },
+          {
+            "name": "public/index.html",
+            "changes": 63,
+            "pattern": "+-"
+          },
+          {
+            "name": "public/index.html.backup",
+            "changes": 302,
+            "pattern": "+++-"
+          },
+          {
+            "name": "public/index.html.backup-blog-links-fix",
+            "changes": 1495,
+            "pattern": "+++++++++++++++++++"
+          },
+          {
+            "name": "public/index.html.backup-blog-reposition",
+            "changes": 1496,
+            "pattern": "++++++++++++++++++++"
+          },
+          {
+            "name": "public/services.html",
+            "changes": 1,
+            "pattern": "+"
+          },
+          {
+            "name": "rollback-homepage-integration.sh",
+            "changes": 38,
+            "pattern": "+"
+          },
+          {
+            "name": "sitemap.xml",
+            "changes": 45,
+            "pattern": "+"
+          },
+          {
+            "name": "verify-blog-integration.sh",
+            "changes": 177,
+            "pattern": "+++"
+          },
+          {
+            "name": "working-header.txt",
+            "changes": 33,
+            "pattern": "+"
+          }
+        ]
+      }
+    ],
+    "reversionStrategy": [
+      {
+        "action": "CONSIDER REVERTING",
+        "commit": "86e25a2 - 🚨 EMERGENCY FIX: Restore professional navigation styling",
+        "reason": "Emergency fix that may have introduced issues",
+        "risk": "HIGH - May break current functionality"
+      },
+      {
+        "action": "REVIEW",
+        "commit": "7058cd8 - 🚀 ADDITIVE ENHANCEMENTS: Navigation, blog header, checklist foundation",
+        "reason": "Standard commit - evaluate based on current issues",
+        "risk": "LOW - Normal development activity"
+      },
+      {
+        "action": "REVIEW",
+        "commit": "541122e - 📊 Comprehensive site assessment - Fri Sep 19 14:03:28 EDT 2025",
+        "reason": "Standard commit - evaluate based on current issues",
+        "risk": "LOW - Normal development activity"
+      },
+      {
+        "action": "REVIEW",
+        "commit": "10025bc - 🛡️ MULTI-PRONGED RECOVERY SESSION START - All functionality protected",
+        "reason": "Standard commit - evaluate based on current issues",
+        "risk": "LOW - Normal development activity"
+      },
+      {
+        "action": "REVIEW",
+        "commit": "5093abb - 📋 Phase 1 Achievement Archive - Ready for Phase 2",
+        "reason": "Standard commit - evaluate based on current issues",
+        "risk": "LOW - Normal development activity"
+      }
+    ],
+    "fileAnalysis": {
+      "analytics-dashboard.html": {
+        "changeCount": 107,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../dc-art-restoration-success-stories-backup.html": {
+        "changeCount": 834,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "a910481"
+        ]
+      },
+      ".../dc-art-restoration-success-stories.html": {
+        "changeCount": 655,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "9d1f206",
+          "a910481"
+        ]
+      },
+      ".../emergency-art-restoration-annapolis.html": {
+        "changeCount": 1265,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "a910481"
+        ]
+      },
+      ".../northern-va-fine-art-recovery-backup.html": {
+        "changeCount": 1039,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "a910481"
+        ]
+      },
+      ".../northern-va-fine-art-recovery.html": {
+        "changeCount": 1039,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "a910481"
+        ]
+      },
+      ".../civil-war-restoration-virginia-historical.html": {
+        "changeCount": 1413,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      "blog/contact-form-enhanced.html": {
+        "changeCount": 957,
+        "commits": [
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      ".../water-damaged-documents-dmv.html": {
+        "changeCount": 946,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      ".../church-musical-electronics-dmv.html": {
+        "changeCount": 1215,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "a910481"
+        ]
+      },
+      ".../fire-damage-restoration-dmv.html": {
+        "changeCount": 786,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      ".../mold-remediation-dmv.html": {
+        "changeCount": 906,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      ".../storm-disaster-recovery-dmv.html": {
+        "changeCount": 938,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      "blog/example-blog-with-form.html": {
+        "changeCount": 379,
+        "commits": [
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      "blog/fire-damage-restoration-dmv-emergency.html": {
+        "changeCount": 674,
+        "commits": [
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      "...overnment-document-preservation-dc-federal.html": {
+        "changeCount": 1337,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      "blog/index.html": {
+        "changeCount": 456,
+        "commits": [
+          "86e25a2",
+          "1adb420",
+          "8520b84",
+          "9d1f206",
+          "a910481"
+        ]
+      },
+      "blog/photo-restoration-dmv-family-legacy.html": {
+        "changeCount": 834,
+        "commits": [
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      "blog/test-automation.html": {
+        "changeCount": 824,
+        "commits": [
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      "blog/test-phone-display.html": {
+        "changeCount": 468,
+        "commits": [
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      "blog/test-tracking.html": {
+        "changeCount": 297,
+        "commits": [
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      ".../military-uniform-restoration-dmv.html": {
+        "changeCount": 886,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      ".../wedding-dress-preservation-dmv.html": {
+        "changeCount": 702,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      ".../vintage-electronics-restoration-dmv-retro.html": {
+        "changeCount": 1463,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      "blog/water-damage-restoration-dmv-emergency.html": {
+        "changeCount": 573,
+        "commits": [
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      "campaigns/emergency/index.html": {
+        "changeCount": 107,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "campaigns/index.html": {
+        "changeCount": 107,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "campaigns/insurance/index.html": {
+        "changeCount": 107,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "campaigns/seasonal/index.html": {
+        "changeCount": 107,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "dashboard/lead-monitoring.html": {
+        "changeCount": 1753,
+        "commits": [
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      "...gency-art-restoration-annapolis-seo-summary.txt": {
+        "changeCount": 390,
+        "commits": [
+          "86e25a2",
+          "a910481"
+        ]
+      },
+      ".../northern-va-fine-art-recovery-seo-summary.txt": {
+        "changeCount": 358,
+        "commits": [
+          "86e25a2",
+          "a910481"
+        ]
+      },
+      ".../assets/components/contact-form-component.js": {
+        "changeCount": 768,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../assets/components/enhanced-header.html": {
+        "changeCount": 12,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../blog-broken/assets/css/blog-styles.css": {
+        "changeCount": 637,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../blog-broken/assets/css/enhanced-header.css": {
+        "changeCount": 42,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../blog-broken/assets/data_1_elegant_styles.txt": {
+        "changeCount": 30,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../blog-broken/assets/data_3_document_content.txt": {
+        "changeCount": 50,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../annapolis-emergency-image-requirements.md": {
+        "changeCount": 224,
+        "commits": [
+          "86e25a2",
+          "a910481"
+        ]
+      },
+      ".../church-electronics-image-requirements.md": {
+        "changeCount": 268,
+        "commits": [
+          "86e25a2",
+          "a910481"
+        ]
+      },
+      ".../church-fire-damage-image-requirements.md": {
+        "changeCount": 268,
+        "commits": [
+          "86e25a2",
+          "a910481"
+        ]
+      },
+      ".../document-restoration/image-requirements.md": {
+        "changeCount": 40,
+        "commits": [
+          "86e25a2",
+          "10025bc"
+        ]
+      },
+      ".../assets/images/image-requirements.md": {
+        "changeCount": 194,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../images/northern-va-image-requirements.md": {
+        "changeCount": 178,
+        "commits": [
+          "86e25a2",
+          "a910481"
+        ]
+      },
+      ".../assets/images/placeholders/README.md": {
+        "changeCount": 20,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../textile-restoration/image-requirements.md": {
+        "changeCount": 40,
+        "commits": [
+          "86e25a2",
+          "10025bc"
+        ]
+      },
+      ".../blog-broken/assets/js/ghl-blog-integration.js": {
+        "changeCount": 398,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../blog-broken/blog-style-guide.md": {
+        "changeCount": 268,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../blog-broken/cache-recovery-summary.txt": {
+        "changeCount": 29,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../blog-broken/contact-form-enhanced.html": {
+        "changeCount": 848,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "...fire-recovery-montgomery-county-seo-summary.txt": {
+        "changeCount": 390,
+        "commits": [
+          "86e25a2",
+          "a910481"
+        ]
+      },
+      ".../church-musical-electronics-dmv-seo-summary.txt": {
+        "changeCount": 406,
+        "commits": [
+          "86e25a2",
+          "a910481"
+        ]
+      },
+      ".../blog-broken/example-blog-with-form.html": {
+        "changeCount": 272,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../fire-damage-restoration-dmv-emergency.html": {
+        "changeCount": 567,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../20250920_043248/blog-broken/index.html": {
+        "changeCount": 295,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../20250920_043248/blog-broken/index.html.backup": {
+        "changeCount": 271,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../photo-restoration-dmv-family-legacy.html": {
+        "changeCount": 727,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../blog-broken/test-automation.html": {
+        "changeCount": 715,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../blog-broken/test-phone-display.html": {
+        "changeCount": 357,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../20250920_043248/blog-broken/test-tracking.html": {
+        "changeCount": 190,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../water-damage-restoration-dmv-emergency.html": {
+        "changeCount": 466,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/about-us-backup.html": {
+        "changeCount": 1233,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/about-us-broken.html": {
+        "changeCount": 198,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/about-us-old.html": {
+        "changeCount": 283,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/about-us-test.html": {
+        "changeCount": 14,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../20250920_043248/public-broken/about-us.html": {
+        "changeCount": 244,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/about-us.html.backup": {
+        "changeCount": 249,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/about-us.html.backup-header": {
+        "changeCount": 283,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/about-us.html.backup-logo": {
+        "changeCount": 272,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/about-us.html.backup-nav": {
+        "changeCount": 283,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/about-us.html.backup-styling": {
+        "changeCount": 267,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/assets/js/global.js": {
+        "changeCount": 189,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../checklists/assets/css/checklist-library.css": {
+        "changeCount": 335,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/checklists/index.html": {
+        "changeCount": 495,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../20250920_043248/public-broken/contact.html": {
+        "changeCount": 524,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/css/brand-styles.css": {
+        "changeCount": 578,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/css/emergency-alerts.css": {
+        "changeCount": 289,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/emergency-dc.html": {
+        "changeCount": 517,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../20250920_043248/public-broken/emergency.html": {
+        "changeCount": 643,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../fairfax-county/art-restoration/index.html": {
+        "changeCount": 678,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../fairfax-county/document-restoration/index.html": {
+        "changeCount": 795,
+        "commits": [
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      ".../electronics-restoration/index.html": {
+        "changeCount": 5149,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/fairfax-county/index.html": {
+        "changeCount": 699,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../fairfax-county/textile-restoration/index.html": {
+        "changeCount": 833,
+        "commits": [
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      ".../images/damage-types/vintage-damaged-art.jpg": {
+        "changeCount": 1,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/images/images/.htaccess": {
+        "changeCount": 47,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../images/images/LOGO-SPECIFICATIONS.md": {
+        "changeCount": 118,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/images/images/logos/.gitkeep": {
+        "changeCount": 2,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/images/images/logos/README.md": {
+        "changeCount": 31,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/index-original-hero.html": {
+        "changeCount": 1238,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../20250920_043248/public-broken/index.html": {
+        "changeCount": 1515,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/index.html.backup": {
+        "changeCount": 1443,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/index.html.backup-20250917-2038": {
+        "changeCount": 1495,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/index.html.backup-blog-links-fix": {
+        "changeCount": 1495,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../index.html.backup-blog-reposition": {
+        "changeCount": 1496,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../loudoun-county/art-restoration/index.html": {
+        "changeCount": 492,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../loudoun-county/document-restoration/index.html": {
+        "changeCount": 611,
+        "commits": [
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/loudoun-county/index.html": {
+        "changeCount": 514,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../loudoun-county/textile-restoration/index.html": {
+        "changeCount": 611,
+        "commits": [
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/main_page_header.txt": {
+        "changeCount": 488,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../montgomery-county/art-restoration/index.html": {
+        "changeCount": 836,
+        "commits": [
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      ".../document-restoration/index.html": {
+        "changeCount": 2948,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/montgomery-county/index.html": {
+        "changeCount": 518,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../textile-restoration/index.html": {
+        "changeCount": 2948,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      ".../northern-virginia/art-restoration/index.html": {
+        "changeCount": 836,
+        "commits": [
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/northern-virginia/index.html": {
+        "changeCount": 514,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../art-restoration/index.html": {
+        "changeCount": 836,
+        "commits": [
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/prince-william-county/index.html": {
+        "changeCount": 514,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/privacy-policy.html": {
+        "changeCount": 588,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../20250920_043248/public-broken/services.html": {
+        "changeCount": 549,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../20250920_043248/public-broken/sitemap.xml": {
+        "changeCount": 8,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/terms-conditions.html": {
+        "changeCount": 685,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../washington-dc/art-restoration/index.html": {
+        "changeCount": 678,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../washington-dc/document-restoration/index.html": {
+        "changeCount": 795,
+        "commits": [
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/washington-dc/index.html": {
+        "changeCount": 112,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../washington-dc/textile-restoration/index.html": {
+        "changeCount": 784,
+        "commits": [
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      ".../western-maryland/art-restoration/index.html": {
+        "changeCount": 719,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../public-broken/western-maryland/index.html": {
+        "changeCount": 514,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "faq.html": {
+        "changeCount": 731,
+        "commits": [
+          "86e25a2",
+          "a910481"
+        ]
+      },
+      "fix-templates/styled-navigation.html": {
+        "changeCount": 107,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../art-collectibles-restoration/index.html": {
+        "changeCount": 477,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      ".../document-photo-restoration/index.html": {
+        "changeCount": 357,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      ".../electronics-data-restoration/index.html": {
+        "changeCount": 477,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      "geographic/northern-virginia/fairfax/index.html": {
+        "changeCount": 119,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../northern-virginia/fire-damage/index.html": {
+        "changeCount": 119,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "geographic/northern-virginia/index.html": {
+        "changeCount": 119,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../northern-virginia/loudoun-county/index.html": {
+        "changeCount": 119,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../prince-william-county/index.html": {
+        "changeCount": 119,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../textile-fabric-restoration/index.html": {
+        "changeCount": 357,
+        "commits": [
+          "86e25a2",
+          "86e25a2",
+          "86e25a2"
+        ]
+      },
+      "geographic/washington-dc/emergency/index.html": {
+        "changeCount": 119,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "geographic/washington-dc/index.html": {
+        "changeCount": 119,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "geographic/western-maryland/index.html": {
+        "changeCount": 119,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      ".../western-maryland/montgomery-county/index.html": {
+        "changeCount": 119,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "privacy-policy.html": {
+        "changeCount": 115,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/about-us-backup.html": {
+        "changeCount": 132,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/about-us-broken.html": {
+        "changeCount": 130,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/about-us-old.html": {
+        "changeCount": 130,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/about-us-test.html": {
+        "changeCount": 107,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/about-us.html": {
+        "changeCount": 131,
+        "commits": [
+          "86e25a2",
+          "a910481"
+        ]
+      },
+      "public/checklists/index.html": {
+        "changeCount": 614,
+        "commits": [
+          "86e25a2",
+          "10025bc"
+        ]
+      },
+      "public/contact.html": {
+        "changeCount": 130,
+        "commits": [
+          "86e25a2",
+          "1adb420",
+          "a910481"
+        ]
+      },
+      "public/emergency-dc.html": {
+        "changeCount": 117,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/emergency.html": {
+        "changeCount": 119,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/fairfax-county/art-restoration/index.html": {
+        "changeCount": 117,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/fairfax-county/index.html": {
+        "changeCount": 129,
+        "commits": [
+          "86e25a2",
+          "1adb420"
+        ]
+      },
+      "public/index-original-hero.html": {
+        "changeCount": 130,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/index.html": {
+        "changeCount": 243,
+        "commits": [
+          "86e25a2",
+          "1adb420",
+          "8520b84",
+          "a910481"
+        ]
+      },
+      "public/loudoun-county/art-restoration/index.html": {
+        "changeCount": 119,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/loudoun-county/index.html": {
+        "changeCount": 119,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/montgomery-county/index.html": {
+        "changeCount": 130,
+        "commits": [
+          "86e25a2",
+          "1adb420"
+        ]
+      },
+      "public/northern-virginia/index.html": {
+        "changeCount": 119,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/prince-william-county/index.html": {
+        "changeCount": 119,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/privacy-policy.html": {
+        "changeCount": 132,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/services.html": {
+        "changeCount": 130,
+        "commits": [
+          "86e25a2",
+          "1adb420",
+          "a910481"
+        ]
+      },
+      "public/terms-conditions.html": {
+        "changeCount": 132,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/washington-dc/art-restoration/index.html": {
+        "changeCount": 117,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/washington-dc/index.html": {
+        "changeCount": 136,
+        "commits": [
+          "86e25a2",
+          "1adb420"
+        ]
+      },
+      "public/western-maryland/art-restoration/index.html": {
+        "changeCount": 117,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "public/western-maryland/index.html": {
+        "changeCount": 119,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "scripts/emergency-verify.js": {
+        "changeCount": 60,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "scripts/fix-navigation-emergency.js": {
+        "changeCount": 70,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "specialties/document-photo-restoration/index.html": {
+        "changeCount": 120,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "specialties/textile-fabric-restoration/index.html": {
+        "changeCount": 120,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "temp-content/privacy-raw.html": {
+        "changeCount": 107,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "temp-content/privacy-raw2.html": {
+        "changeCount": 128,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "temp-content/terms-raw.html": {
+        "changeCount": 107,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "temp-content/terms-raw2.html": {
+        "changeCount": 130,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "templates/proper-landing-page-template.html": {
+        "changeCount": 107,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "terms-conditions.html": {
+        "changeCount": 115,
+        "commits": [
+          "86e25a2"
+        ]
+      },
+      "test-ghl-integration.html": {
+        "changeCount": 180,
+        "commits": [
+          "86e25a2",
+          "9d1f206"
+        ]
+      },
+      "ux-enhancement-demo.html": {
+        "changeCount": 389,
+        "commits": [
+          "86e25a2",
+          "10025bc"
+        ]
+      },
+      "fix-templates/standard-navigation.html": {
+        "changeCount": 21,
+        "commits": [
+          "1adb420"
+        ]
+      },
+      "package-lock.json": {
+        "changeCount": 457,
+        "commits": [
+          "1adb420"
+        ]
+      },
+      "package.json": {
+        "changeCount": 5,
+        "commits": [
+          "1adb420",
+          "e07e49f"
+        ]
+      },
+      "scripts/fix-phone-numbers.js": {
+        "changeCount": 40,
+        "commits": [
+          "1adb420"
+        ]
+      },
+      "scripts/update-navigation.js": {
+        "changeCount": 47,
+        "commits": [
+          "1adb420"
+        ]
+      },
+      "scripts/verify-consolidation.js": {
+        "changeCount": 62,
+        "commits": [
+          "1adb420"
+        ]
+      },
+      "visual-audit/analysis/page-analysis.json": {
+        "changeCount": 202,
+        "commits": [
+          "e07e49f"
+        ]
+      },
+      "visual-audit/analyze-navigation.js": {
+        "changeCount": 88,
+        "commits": [
+          "e07e49f"
+        ]
+      },
+      "visual-audit/reports/consolidation-plan.md": {
+        "changeCount": 85,
+        "commits": [
+          "e07e49f"
+        ]
+      },
+      "visual-audit/reports/url-audit.md": {
+        "changeCount": 37,
+        "commits": [
+          "e07e49f"
+        ]
+      },
+      "visual-audit/screenshot-audit.js": {
+        "changeCount": 131,
+        "commits": [
+          "e07e49f"
+        ]
+      },
+      "backups/pre-navigation-fix/index.html": {
+        "changeCount": 276,
+        "commits": [
+          "8520b84"
+        ]
+      },
+      "content-recovery/missing-content-list.txt": {
+        "changeCount": 14,
+        "commits": [
+          "8520b84"
+        ]
+      },
+      "content-recovery/today-blog-search.txt": {
+        "changeCount": 93,
+        "commits": [
+          "8520b84"
+        ]
+      },
+      "blog/assets/components/enhanced-header.html": {
+        "changeCount": 12,
+        "commits": [
+          "7058cd8"
+        ]
+      },
+      "blog/assets/css/enhanced-header.css": {
+        "changeCount": 42,
+        "commits": [
+          "7058cd8"
+        ]
+      },
+      "public/checklists/assets/css/checklist-library.css": {
+        "changeCount": 335,
+        "commits": [
+          "7058cd8"
+        ]
+      },
+      "scripts/enhance-navigation.js": {
+        "changeCount": 20,
+        "commits": [
+          "7058cd8"
+        ]
+      },
+      "templates/navigation-template.html": {
+        "changeCount": 3,
+        "commits": [
+          "7058cd8"
+        ]
+      },
+      "assessment-reports/COMPREHENSIVE-SUMMARY.md": {
+        "changeCount": 18,
+        "commits": [
+          "541122e"
+        ]
+      },
+      "assessment-reports/blog-status.md": {
+        "changeCount": 37,
+        "commits": [
+          "541122e"
+        ]
+      },
+      "assessment-reports/checklist-status.md": {
+        "changeCount": 25,
+        "commits": [
+          "541122e"
+        ]
+      },
+      "assessment-reports/current-state.md": {
+        "changeCount": 150,
+        "commits": [
+          "541122e"
+        ]
+      },
+      "assessment-reports/navigation-analysis.md": {
+        "changeCount": 237,
+        "commits": [
+          "541122e"
+        ]
+      },
+      "GHL-Automation-System-Complete.md": {
+        "changeCount": 292,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "GHL-Integration-Summary.md": {
+        "changeCount": 191,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "Regional-Phone-System-Complete.md": {
+        "changeCount": 201,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "blog/assets/components/contact-form-component.js": {
+        "changeCount": 768,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "blog/assets/js/ghl-blog-integration.js": {
+        "changeCount": 398,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "blog/index.html.backup": {
+        "changeCount": 271,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "content-gaps-analysis.txt": {
+        "changeCount": 143,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "decision-helper.txt": {
+        "changeCount": 8,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "deploy-production.sh": {
+        "changeCount": 101,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "functionality-audit.txt": {
+        "changeCount": 8,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "integrations/ghl/automation/sequence-triggers.js": {
+        "changeCount": 707,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "integrations/ghl/automation/workflow-triggers.js": {
+        "changeCount": 487,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "integrations/ghl/config/ghl-config.js": {
+        "changeCount": 726,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "integrations/ghl/config/production-config.js": {
+        "changeCount": 77,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "integrations/ghl/ghl-integration.js": {
+        "changeCount": 486,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "integrations/ghl/scoring/lead-scoring-engine.js": {
+        "changeCount": 353,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      ".../ghl/tracking/blog-engagement-tracker.js": {
+        "changeCount": 298,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "integrations/ghl/tracking/inject-tracking.js": {
+        "changeCount": 30,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "integrations/ghl/tracking/lead-tracker.js": {
+        "changeCount": 375,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "integrations/ghl/tracking/phone-display.js": {
+        "changeCount": 417,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "production-deployment-guide.md": {
+        "changeCount": 169,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "search-results-comprehensive.txt": {
+        "changeCount": 145,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "test-automation-system.js": {
+        "changeCount": 301,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "test-phone-system.js": {
+        "changeCount": 221,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "test-tracking-browser.js": {
+        "changeCount": 135,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "validate-tracking.js": {
+        "changeCount": 167,
+        "commits": [
+          "9d1f206"
+        ]
+      },
+      "blog-assessment.txt": {
+        "changeCount": 64,
+        "commits": [
+          "10025bc"
+        ]
+      },
+      "blog-completion-plan.txt": {
+        "changeCount": 26,
+        "commits": [
+          "10025bc"
+        ]
+      },
+      "blog/assets/data_1_elegant_styles.txt": {
+        "changeCount": 30,
+        "commits": [
+          "10025bc"
+        ]
+      },
+      "blog/assets/data_3_document_content.txt": {
+        "changeCount": 50,
+        "commits": [
+          "10025bc"
+        ]
+      },
+      "blog/cache-recovery-summary.txt": {
+        "changeCount": 29,
+        "commits": [
+          "10025bc"
+        ]
+      },
+      "local-search-results.txt": {
+        "changeCount": 124,
+        "commits": [
+          "10025bc"
+        ]
+      },
+      "public/index.html.backup-20250917-2038": {
+        "changeCount": 1495,
+        "commits": [
+          "10025bc"
+        ]
+      },
+      "PHASE-1-COMPLETE.md": {
+        "changeCount": 7,
+        "commits": [
+          "5093abb"
+        ]
+      },
+      "BLOG_INTEGRATION_MANUAL_STEPS.md": {
+        "changeCount": 97,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "DEPLOYMENT_CHECKLIST.md": {
+        "changeCount": 92,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "blog/assets/css/blog-styles.css": {
+        "changeCount": 637,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "blog/assets/images/image-requirements.md": {
+        "changeCount": 194,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "blog/assets/images/placeholders/README.md": {
+        "changeCount": 20,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "blog/blog-style-guide.md": {
+        "changeCount": 268,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "css/blog-preview-styles.css": {
+        "changeCount": 155,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "css/faq-styles.css": {
+        "changeCount": 353,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "css/header-fix.css": {
+        "changeCount": 152,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "homepage-blog-section.html": {
+        "changeCount": 52,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "public/index.html.backup": {
+        "changeCount": 302,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "public/index.html.backup-blog-links-fix": {
+        "changeCount": 1495,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "public/index.html.backup-blog-reposition": {
+        "changeCount": 1496,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "rollback-homepage-integration.sh": {
+        "changeCount": 38,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "sitemap.xml": {
+        "changeCount": 45,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "verify-blog-integration.sh": {
+        "changeCount": 177,
+        "commits": [
+          "a910481"
+        ]
+      },
+      "working-header.txt": {
+        "changeCount": 33,
+        "commits": [
+          "a910481"
+        ]
+      }
+    }
+  },
+  "summary": {
+    "totalCommits": 10,
+    "emergencyFixes": 6,
+    "recommendedReversions": 1
+  }
+}

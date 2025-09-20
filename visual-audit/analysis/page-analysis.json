@@ -1,0 +1,202 @@
+[
+  {
+    "url": "http://localhost:8001/public/",
+    "name": "homepage",
+    "description": "Homepage with navigation",
+    "analysis": {
+      "title": "Prism Specialties DMV | Premier Specialty Restoration - Art, Electronics, Textiles & Documents",
+      "h1": "Premier Specialty Restoration Experts",
+      "navLinks": [
+        "Services",
+        "Art & Collectibles",
+        "Electronics & Data Recovery",
+        "Textile & Fabric Restoration",
+        "Document Recovery",
+        "Commercial & Large Loss",
+        "Lightning Strike Validation",
+        "About Us",
+        "Blog",
+        "Checklists",
+        "Service Areas",
+        "Contact"
+      ],
+      "phoneNumbers": [
+        "tel:301-215-3191",
+        "tel:301-215-3191",
+        "tel:301-215-3191"
+      ],
+      "hasLogo": true,
+      "logoSrc": "http://localhost:8001/public/images/logos/prism-logo-1000.png",
+      "url": "http://localhost:8001/public/"
+    },
+    "status": "success"
+  },
+  {
+    "url": "http://localhost:8001/blog/",
+    "name": "blog-index",
+    "description": "Blog index page",
+    "analysis": {
+      "title": "Restoration Stories & Expertise Blog | Prism Specialties DMV",
+      "h1": "Restoration Stories & Expert Insights",
+      "navLinks": [
+        "Services",
+        "Blog",
+        "Checklists",
+        "All Services",
+        "Contact",
+        "301-215-3191"
+      ],
+      "phoneNumbers": [
+        "tel:301-215-3191",
+        "tel:301-215-3191",
+        "tel:202-335-4240",
+        "tel:301-215-3191",
+        "tel:703-229-1321"
+      ],
+      "hasLogo": true,
+      "logoSrc": "http://localhost:8001/public/images/logos/prism-logo-1000.png",
+      "url": "http://localhost:8001/blog/"
+    },
+    "status": "success"
+  },
+  {
+    "url": "http://localhost:8001/public/checklists/",
+    "name": "checklists",
+    "description": "Checklist library",
+    "analysis": {
+      "title": "Emergency Restoration Checklists | Free DMV Resources | Prism Specialties",
+      "h1": "Emergency Restoration Checklists",
+      "navLinks": [
+        "Home",
+        "Services",
+        "Contact",
+        "About",
+        "Emergency"
+      ],
+      "phoneNumbers": [
+        "tel:301-215-3191",
+        "tel:301-215-3191"
+      ],
+      "hasLogo": true,
+      "logoSrc": "http://localhost:8001/public/images/logos/prism-logo-1000.png",
+      "url": "http://localhost:8001/public/checklists/"
+    },
+    "status": "success"
+  },
+  {
+    "url": "http://localhost:8001/public/washington-dc/",
+    "name": "dc-version-1",
+    "description": "DC page version 1",
+    "analysis": {
+      "title": "Washington DC Specialty Restoration Services | Urban Restoration Experts | Prism Specialties",
+      "h1": "Washington DC Specialty Restoration",
+      "navLinks": [
+        "Home",
+        "Services",
+        "Contact",
+        "About",
+        "Emergency"
+      ],
+      "phoneNumbers": [
+        "tel:202-215-3191",
+        "tel:202-215-3191"
+      ],
+      "hasLogo": true,
+      "logoSrc": "http://localhost:8001/public/images/logos/prism-logo-1000.png",
+      "url": "http://localhost:8001/public/washington-dc/"
+    },
+    "status": "success"
+  },
+  {
+    "url": "http://localhost:8001/public/washington-dc.html",
+    "name": "dc-version-2",
+    "description": "DC page version 2 (if exists)",
+    "analysis": {
+      "title": "Error response",
+      "h1": "Error response",
+      "navLinks": [],
+      "phoneNumbers": [],
+      "hasLogo": false,
+      "logoSrc": "No logo found",
+      "url": "http://localhost:8001/public/washington-dc.html"
+    },
+    "status": "success"
+  },
+  {
+    "url": "http://localhost:8001/public/northern-virginia/",
+    "name": "northern-va",
+    "description": "Northern Virginia page",
+    "analysis": {
+      "title": "Northern Virginia Specialty Restoration | Alexandria Arlington Fairfax McLean | Prism Specialties DMV",
+      "h1": "Would you trust your family's priceless memories to someone who treats them like insurance paperwork?",
+      "navLinks": [
+        "Home",
+        "Services",
+        "Contact",
+        "About",
+        "Emergency"
+      ],
+      "phoneNumbers": [
+        "tel:301-215-3191"
+      ],
+      "hasLogo": true,
+      "logoSrc": "http://localhost:8001/public/images/logos/prism-logo-1000.png",
+      "url": "http://localhost:8001/public/northern-virginia/"
+    },
+    "status": "success"
+  },
+  {
+    "url": "http://localhost:8001/public/fairfax-county/",
+    "name": "fairfax",
+    "description": "Fairfax County page",
+    "analysis": {
+      "title": "Fairfax County Specialty Restoration | Vienna McLean Burke Springfield | Prism Specialties",
+      "h1": "Would you let your funeral director pick your doctor?",
+      "navLinks": [
+        "Home",
+        "Services",
+        "Contact",
+        "About",
+        "Emergency"
+      ],
+      "phoneNumbers": [
+        "tel:703-229-1321",
+        "tel:703-229-1321",
+        "tel:703-229-1321",
+        "tel:703-229-1321",
+        "tel:703-229-1321",
+        "tel:703-229-1321"
+      ],
+      "hasLogo": true,
+      "logoSrc": "http://localhost:8001/public/images/logos/prism-logo-1000.png",
+      "url": "http://localhost:8001/public/fairfax-county/"
+    },
+    "status": "success"
+  },
+  {
+    "url": "http://localhost:8001/public/services.html",
+    "name": "services",
+    "description": "Services page",
+    "analysis": {
+      "title": "Your Treasures Deserve Expert Care | Restoration Services | Prism Specialties DMV",
+      "h1": "Would you trust your family's irreplaceable treasures to someone who \"does restoration on the side\"?",
+      "navLinks": [
+        "Home",
+        "Services",
+        "Blog",
+        "Contact",
+        "About",
+        "Emergency"
+      ],
+      "phoneNumbers": [
+        "tel:301-215-3191",
+        "tel:703-229-1321",
+        "tel:301-215-3191"
+      ],
+      "hasLogo": true,
+      "logoSrc": "http://localhost:8001/public/images/logos/prism-logo-1000.png",
+      "url": "http://localhost:8001/public/services.html"
+    },
+    "status": "success"
+  }
+]

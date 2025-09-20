@@ -21,6 +21,7 @@
   "author": "Prism Specialties DMV",
   "license": "ISC",
   "dependencies": {
+    "glob": "^10.4.5",
     "live-server": "^1.2.2",
     "netlify-cli": "^17.0.0",
     "playwright": "^1.55.0"

@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy - Prism Specialties DMV | How we collect, use, and protect your personal information for our specialty restoration services.">
+    <title>Privacy Policy - Prism Specialties DMV | Specialty Restoration Experts</title>
+
+    <style>
+        /* Brand Color Variables */
+        :root {
+            --brand-primary: #00a0df;    /* Headers */
+            --brand-accent: #7c878f;     /* Secondary */
+            --brand-tertiary: #e8eaed;   /* Backgrounds */
+            --brand-text: #666666;       /* Body text */
+            --brand-light: #f8f9fa;      /* Light backgrounds */
+            --brand-white: #ffffff;
+        }
+
+        /* Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica', sans-serif;
+            line-height: 1.6;
+            color: var(--brand-text);
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            color: var(--brand-primary);
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.2;
+        }
+
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; }
+        h3 { font-size: 1.5rem; }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--brand-white);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 0;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--brand-primary);
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 85px;
+            width: auto;
+            margin-right: 15px;
+            vertical-align: middle;
+            object-fit: contain;
+            clip-path: inset(0 0 12% 0);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--brand-primary);
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-menu a:hover {
+            background: var(--brand-light);
+            color: var(--brand-accent);
+        }
+
+        .services-dropdown {
+            position: relative;
+        }
+
+        .services-dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            border-radius: 5px;
+            min-width: 220px;
+            padding: 10px 0;
+            z-index: 1000;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 20px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            border-radius: 0;
+        }
+
+        .dropdown-menu a:hover {
+            background: #f8f9fa;
+            color: #00a0df;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 80px 0;
+            background: var(--brand-white);
+        }
+
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .legal-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 0;
+            background: linear-gradient(135deg, var(--brand-primary) 0%, #004080 100%);
+            color: var(--brand-white);
+            border-radius: 10px;
+        }
+
+        .legal-header h1 {
+            color: var(--brand-white);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .legal-header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background: var(--brand-light);
+            border-radius: 8px;
+            border-left: 4px solid var(--brand-primary);
+        }
+
+        .section h2 {
+            color: var(--brand-primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .section h3 {
+            color: var(--brand-accent);
+            margin-bottom: 15px;
+            margin-top: 25px;
+            font-size: 1.2rem;
+        }
+
+        .section ul {
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .section li {
+            margin-bottom: 8px;
+            color: var(--brand-text);
+        }
+
+        .contact-info {
+            background: var(--brand-primary);
+            color: var(--brand-white);
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 40px 0;
+        }
+
+        .contact-info h3 {
+            color: var(--brand-white);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+        }
+
+        .contact-info a {
+            color: var(--brand-white);
+            font-weight: bold;
+        }
+
+        .effective-date {
+            background: var(--brand-tertiary);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 2px solid var(--brand-primary);
+        }
+
+        .back-link {
+            display: inline-block;
+            background: var(--brand-primary);
+            color: var(--brand-white);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: var(--brand-accent);
+            transform: translateY(-2px);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--brand-primary);
+            color: var(--brand-white);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        .footer h4 {
+            color: var(--brand-white);
+            margin-bottom: 15px;
+        }
+
+        .footer p, .footer a {
+            color: #b3d9ff;
+            text-decoration: none;
+            margin-bottom: 10px;
+        }
+
+        .footer a:hover {
+            color: var(--brand-white);
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .nav-menu {
+                display: none;
+            }
+
+            .legal-header h1 {
+                font-size: 2rem;
+            }
+
+            .legal-header p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 20px;
+                margin: 20px 0;
+            }
+
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="index.html" class="logo">
+                    <img src="images/logos/prism-logo-1000.png"
+                         alt="Prism Specialties DMV"
+                         class="logo-img">
+                    <span class="brand-text">Prism Specialties DMV</span>
+                </a>
+
+                <nav>
+                    <ul class="nav-menu">
+                        <li class="services-dropdown">
+                            <a href="index.html#services">Services</a>
+                            <div class="dropdown-menu">
+                                <a href="index.html#services">Art & Collectibles</a>
+                                <a href="index.html#services">Electronics & Data Recovery</a>
+                                <a href="index.html#services">Textile & Fabric Restoration</a>
+                                <a href="index.html#services">Document Recovery</a>
+                                <a href="index.html#services">Commercial & Large Loss</a>
+                                <a href="index.html#services">Lightning Strike Validation</a>
+                            </div>
+                        </li>
+                        <li><a href="about-us.html">About Us</a></li>
+                        <li><a href="index.html#service-areas">Service Areas</a></li>
+                        <li><a href="index.html#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="legal-container">
+
+                <!-- Back Navigation -->
+                <a href="index.html" class="back-link">← Back to Home</a>
+
+                <!-- Legal Header -->
+                <div class="legal-header">
+                    <h1>Privacy Policy</h1>
+                    <p>How Prism Specialties DMV collects, uses, and protects your personal information</p>
+                </div>
+
+                <!-- Effective Date -->
+                <div class="effective-date">
+                    <p><strong>Effective Date:</strong> September 13, 2025</p>
+                    <p><strong>Last Updated:</strong> September 13, 2025</p>
+                </div>
+
+                <!-- Introduction Section -->
+                <div class="section">
+                    <h2>1. Introduction</h2>
+                    <p>Prism Specialties DMV ("we," "our," or "us") is an independently owned and operated franchise providing professional specialty restoration services throughout the Washington DC, Maryland, and Northern Virginia region. We are committed to protecting your privacy and handling your personal information with care and transparency.</p>
+                    <p>This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, use our services, or interact with us in connection with our restoration services including art, electronics, textiles, documents, and commercial restoration.</p>
+                </div>
+
+                <!-- Information We Collect -->
+                <div class="section">
+                    <h2>2. Information We Collect</h2>
+
+                    <h3>Personal Information</h3>
+                    <p>We may collect the following personal information when you:</p>
+                    <ul>
+                        <li>Request restoration services or emergency response</li>
+                        <li>Submit insurance claims or assessment requests</li>
+                        <li>Contact us via phone, email, or website forms</li>
+                        <li>Schedule appointments or consultations</li>
+                    </ul>
+
+                    <p>This information may include:</p>
+                    <ul>
+                        <li>Name and contact information (address, phone, email)</li>
+                        <li>Property information and damage details</li>
+                        <li>Insurance company and policy information</li>
+                        <li>Photos and documentation of damaged items</li>
+                        <li>Payment and billing information</li>
+                        <li>Service preferences and restoration needs</li>
+                    </ul>
+
+                    <h3>Automatically Collected Information</h3>
+                    <p>When you visit our website, we may automatically collect:</p>
+                    <ul>
+                        <li>IP address and browser information</li>
+                        <li>Device information and operating system</li>
+                        <li>Website usage patterns and preferences</li>
+                        <li>Cookies and similar tracking technologies</li>
+                        <li>Referring website and search terms</li>
+                    </ul>
+                </div>
+
+                <!-- How We Use Your Information -->
+                <div class="section">
+                    <h2>3. How We Use Your Information</h2>
+                    <p>We use your personal information for the following purposes:</p>
+
+                    <h3>Service Delivery</h3>
+                    <ul>
+                        <li>Providing specialty restoration services</li>
+                        <li>Emergency response and damage assessment</li>
+                        <li>Coordinating with insurance companies and adjusters</li>
+                        <li>Processing payments and billing</li>
+                        <li>Scheduling appointments and follow-up services</li>
+                    </ul>
+
+                    <h3>Communication</h3>
+                    <ul>
+                        <li>Responding to inquiries and service requests</li>
+                        <li>Providing service updates and project status</li>
+                        <li>Sending appointment reminders and notifications</li>
+                        <li>Emergency communication regarding your property</li>
+                    </ul>
+
+                    <h3>Business Operations</h3>
+                    <ul>
+                        <li>Improving our restoration services and processes</li>
+                        <li>Training staff and quality assurance</li>
+                        <li>Legal compliance and record keeping</li>
+                        <li>Franchise reporting and business analysis</li>
+                    </ul>
+                </div>
+
+                <!-- Information Sharing and Disclosure -->
+                <div class="section">
+                    <h2>4. Information Sharing and Disclosure</h2>
+                    <p>We do not sell your personal information. We may share your information in the following circumstances:</p>
+
+                    <h3>Service Providers</h3>
+                    <ul>
+                        <li>Insurance companies and adjusters (with your consent)</li>
+                        <li>Subcontractors and restoration specialists</li>
+                        <li>Payment processors and billing services</li>
+                        <li>Professional consultants (legal, accounting)</li>
+                    </ul>
+
+                    <h3>Franchise Network</h3>
+                    <ul>
+                        <li>Prism Specialties franchisor for training and support</li>
+                        <li>Other Prism Specialties locations for referrals</li>
+                        <li>Quality assurance and certification purposes</li>
+                    </ul>
+
+                    <h3>Legal Requirements</h3>
+                    <ul>
+                        <li>Compliance with applicable laws and regulations</li>
+                        <li>Response to legal process or court orders</li>
+                        <li>Protection of our rights and safety</li>
+                        <li>Emergency situations requiring immediate action</li>
+                    </ul>
+                </div>
+
+                <!-- Data Security -->
+                <div class="section">
+                    <h2>5. Data Security</h2>
+                    <p>We implement appropriate technical and organizational measures to protect your personal information:</p>
+                    <ul>
+                        <li>Encrypted data transmission and storage</li>
+                        <li>Access controls and employee training</li>
+                        <li>Regular security assessments and updates</li>
+                        <li>Secure disposal of physical and electronic records</li>
+                        <li>Industry-standard cybersecurity protocols</li>
+                    </ul>
+                    <p>However, no method of transmission or storage is 100% secure. We cannot guarantee absolute security but are committed to protecting your information using industry best practices.</p>
+                </div>
+
+                <!-- Data Retention -->
+                <div class="section">
+                    <h2>6. Data Retention</h2>
+                    <p>We retain your personal information for the following periods:</p>
+                    <ul>
+                        <li>Service records: 7 years for insurance and legal compliance</li>
+                        <li>Financial records: 7 years for tax and accounting purposes</li>
+                        <li>Photos and damage documentation: Duration of insurance claims plus 5 years</li>
+                        <li>Communication records: 3 years for service quality purposes</li>
+                        <li>Website data: 2 years unless longer retention is required by law</li>
+                    </ul>
+                </div>
+
+                <!-- Your Privacy Rights -->
+                <div class="section">
+                    <h2>7. Your Privacy Rights</h2>
+                    <p>You have the following rights regarding your personal information:</p>
+
+                    <h3>Access and Correction</h3>
+                    <ul>
+                        <li>Request copies of your personal information</li>
+                        <li>Correct inaccurate or incomplete information</li>
+                        <li>Update your contact preferences</li>
+                    </ul>
+
+                    <h3>Deletion and Restriction</h3>
+                    <ul>
+                        <li>Request deletion of your personal information (subject to legal requirements)</li>
+                        <li>Restrict processing for specific purposes</li>
+                        <li>Object to certain uses of your information</li>
+                    </ul>
+
+                    <p>To exercise these rights, please contact us using the information provided below. We will respond within 30 days of receiving your request.</p>
+                </div>
+
+                <!-- Cookies and Tracking -->
+                <div class="section">
+                    <h2>8. Cookies and Tracking Technologies</h2>
+                    <p>Our website uses cookies and similar technologies to:</p>
+                    <ul>
+                        <li>Remember your preferences and settings</li>
+                        <li>Analyze website traffic and usage patterns</li>
+                        <li>Improve website functionality and user experience</li>
+                        <li>Provide relevant content and service information</li>
+                    </ul>
+                    <p>You can control cookies through your browser settings. However, disabling cookies may affect website functionality.</p>
+                </div>
+
+                <!-- Third-Party Links -->
+                <div class="section">
+                    <h2>9. Third-Party Links and Services</h2>
+                    <p>Our website may contain links to third-party websites, including:</p>
+                    <ul>
+                        <li>Insurance company portals</li>
+                        <li>Industry certification organizations</li>
+                        <li>Vendor and supplier websites</li>
+                        <li>Social media platforms</li>
+                    </ul>
+                    <p>We are not responsible for the privacy practices of these third parties. Please review their privacy policies before providing any information.</p>
+                </div>
+
+                <!-- Changes to Privacy Policy -->
+                <div class="section">
+                    <h2>10. Changes to This Privacy Policy</h2>
+                    <p>We may update this Privacy Policy periodically to reflect changes in our practices, technology, or legal requirements. We will:</p>
+                    <ul>
+                        <li>Post updated policies on our website with the effective date</li>
+                        <li>Notify customers of material changes via email or direct communication</li>
+                        <li>Provide reasonable notice before implementing significant changes</li>
+                    </ul>
+                    <p>Your continued use of our services after any changes indicates your acceptance of the updated Privacy Policy.</p>
+                </div>
+
+                <!-- Contact Information -->
+                <div class="contact-info">
+                    <h3>Privacy Questions or Concerns?</h3>
+                    <p><strong>Prism Specialties DMV</strong></p>
+                    <p>Independently Owned and Operated Franchise</p>
+                    <p><strong>Phone:</strong> <a href="tel:301-215-3191">301-215-3191</a></p>
+                    <p><strong>Email:</strong> <a href="mailto:info@prismspecialtiesdmv.com">info@prismspecialtiesdmv.com</a></p>
+                    <p><strong>Service Area:</strong> Washington DC, Maryland, Northern Virginia</p>
+                    <p>For privacy-related inquiries, please include "Privacy Policy" in your subject line.</p>
+                </div>
+
+                <!-- Franchise Disclosure -->
+                <div class="section">
+                    <h2>11. Franchise Disclosure</h2>
+                    <p>Prism Specialties DMV is an independently owned and operated franchise. This Privacy Policy applies specifically to our DMV location and services. For information about the Prism Specialties franchise network's privacy practices, please visit <a href="https://www.prismspecialties.com" target="_blank">www.prismspecialties.com</a>.</p>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <h4>Prism Specialties DMV</h4>
+            <p>Professional Specialty Restoration Services</p>
+            <p>Licensed & Insured | 24/7 Emergency Response</p>
+            <p>Independently Owned and Operated Franchise</p>
+            <p>&copy; 2025 Prism Specialties DMV. All rights reserved.</p>
+            <p style="margin-top: 15px;">
+                <a href="index.html">Home</a> |
+                <a href="about-us.html">About Us</a> |
+                <a href="terms-conditions.html">Terms & Conditions</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

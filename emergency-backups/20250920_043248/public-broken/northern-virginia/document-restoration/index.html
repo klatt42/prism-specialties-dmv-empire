@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Document restoration and photo recovery in Northern Virginia. Professional restoration of family archives, historical documents, and photographs in Alexandria, Arlington, Fairfax, McLean, Vienna.">
+    <title>Document & Photo Restoration | Northern Virginia | Alexandria Arlington Fairfax McLean</title>
+
+    <style>
+        :root {
+            --primary-blue: #00a0df;
+            --warm-gray: #7c878f;
+            --light-gray: #e8eaed;
+            --text-dark: #333333;
+            --text-medium: #666666;
+            --text-light: #999999;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+            --emergency-red: #dc3545;
+            --success-green: #28a745;
+            --gold-accent: #d4af37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 85%;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-brand img {
+            height: 85px;
+            width: auto;
+            clip-path: inset(0 0 12% 0);
+            margin-right: 20px;
+        }
+
+        .brand-text {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--warm-gray) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-100px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section h1 {
+            font-size: 3.8rem;
+            margin-bottom: 35px;
+            font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .hero-section .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 45px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .hero-answer {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Story Hook Section */
+        .story-hook {
+            background: var(--background-light);
+            padding: 80px 0;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            max-width: 900px;
+            margin: 0 auto;
+            border-left: 6px solid var(--gold-accent);
+        }
+
+        .story-card .hook {
+            font-size: 1.4rem;
+            color: var(--emergency-red);
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .story-card .story-text {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .story-card .outcome {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--gold-accent);
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold-accent), var(--primary-blue));
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .service-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process-section {
+            background: var(--background-light);
+            padding: 80px 0;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step .step-number {
+            background: var(--gold-accent);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .process-step p {
+            color: var(--text-medium);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-blue);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .emergency-call {
+            background: white;
+            color: var(--primary-blue);
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.8rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .emergency-call:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .hero-content {
+                max-width: 95%;
+            }
+
+            .hero-section h1 {
+                font-size: 2.8rem;
+                line-height: 1.2;
+            }
+
+            .hero-section .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .hero-answer {
+                font-size: 1.1rem;
+            }
+
+            .story-card {
+                padding: 30px 25px;
+                margin: 0 10px;
+            }
+
+            .story-card .hook {
+                font-size: 1.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .header-content {
+                justify-content: center;
+            }
+
+            .emergency-call {
+                font-size: 1.5rem;
+                padding: 15px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .story-card {
+                padding: 25px 20px;
+            }
+
+            .service-card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo-brand">
+                    <img src="../../images/logos/prism-logo-1000.png" alt="Prism Specialties DMV">
+                    <span class="brand-text">Prism Specialties DMV</span>
+                </a>
+                <nav>
+                    <a href="../index.html">Northern Virginia</a>
+                    <a href="../../all-services.html">Services</a>
+                    <a href="../../contact.html">Contact</a>
+                    <a href="../../about-us.html">About</a>
+                    <a href="../../emergency.html">Emergency</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Would you trust your family's irreplaceable memories to someone who treats photos like printer paper?</h1>
+                <p class="subtitle">Then why trust your document restoration to anyone but archival specialists?</p>
+                <p class="hero-answer">When your Northern Virginia family's precious documents and photographs are damaged, you need restoration specialists who understand that <strong><em>some memories are priceless - they can only be preserved by experts.</em></strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Hook Section -->
+    <section class="story-hook">
+        <div class="container">
+            <div class="story-card">
+                <p class="hook">"The insurance adjuster looked at our fire-damaged military documents and said 'We can get you copies from the Pentagon for $50.' But what about the personal photos and letters that can never be replaced?"</p>
+                <p class="story-text">A Fairfax military family called us devastated after a house fire destroyed their home office. The fire consumed decades of military service records, deployment photos, and handwritten letters from overseas - irreplaceable documentation of 25 years of service to our country.</p>
+                <p class="story-text">The insurance adjuster saw damaged paperwork. We saw the documented story of a family's sacrifice and service - photos from Afghanistan, commendation letters, personal journals, and family correspondence that sustained them through multiple deployments. These weren't just documents; they were proof of dedication to duty and country.</p>
+                <div class="outcome">
+                    <strong>The Restoration:</strong> Using specialized military document conservation techniques, we carefully restored service records, digitally recovered deployment photographs, and preserved personal correspondence. Their legacy of service now continues in their Vienna home, inspiring their children to understand the meaning of sacrifice and honor.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Document Restoration Specialties</h2>
+                <p>Professional preservation of your family's documentary heritage</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="icon">📸</span>
+                    <h3>Family Photo Restoration</h3>
+                    <p>Water-damaged, faded, or torn family photographs restored using archival-quality techniques and materials for lasting preservation.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">📄</span>
+                    <h3>Historical Document Recovery</h3>
+                    <p>Birth certificates, marriage licenses, deeds, wills, and other vital documents professionally restored with legal authenticity preserved.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">📚</span>
+                    <h3>Book & Archive Preservation</h3>
+                    <p>Family Bibles, journals, scrapbooks, and personal archives treated with museum-quality conservation methods.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">🎓</span>
+                    <h3>Academic & Professional Records</h3>
+                    <p>Diplomas, certifications, awards, and professional documents restored to maintain their official value and significance.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">📰</span>
+                    <h3>Newspaper & Media Clippings</h3>
+                    <p>Vintage newspaper articles, magazine clippings, and media documentation preserved using acid-free archival processes.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">🗂️</span>
+                    <h3>Digital Archive Creation</h3>
+                    <p>Professional digitization services to create lasting digital copies of restored documents for family sharing and security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Document Restoration Process</h2>
+                <p>Every document receives careful analysis and archival-quality treatment</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Emergency Stabilization</h3>
+                    <p>Immediate environmental control to halt deterioration. Documents are carefully secured in controlled atmospheric conditions.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Professional Assessment</h3>
+                    <p>Detailed analysis of damage extent, document composition, and historical significance to plan appropriate restoration approach.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Archival Restoration</h3>
+                    <p>Specialized cleaning, repair, and stabilization using museum-quality materials and conservation-grade techniques.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Protective Preservation</h3>
+                    <p>Archival housing and digital backup creation to ensure documents remain preserved for generations to come.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Your Family's History Deserves Expert Care</h2>
+                <p>Don't let insurance adjusters decide the value of your family's documentary heritage.<br>Choose archival specialists who understand memories' true worth.</p>
+                <p><strong>Serving:</strong> Alexandria • Arlington • Fairfax • Vienna • McLean • Reston • Herndon • Burke • Springfield • Annandale</p>
+
+                <a href="tel:301-215-3191" class="emergency-call">📞 Call Now: 301-215-3191</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Prism Specialties DMV - Northern Virginia Document Restoration</p>
+            <p><strong>Emergency Response:</strong> 301-215-3191 | <strong>Claims:</strong> claims.dcandmdmetro@prismspecialties.com</p>
+            <p>Alexandria • Arlington • Fairfax • Vienna • McLean • Reston • Herndon • Burke • Springfield • Annandale</p>
+        </div>
+    </footer>
+</body>
+</html>

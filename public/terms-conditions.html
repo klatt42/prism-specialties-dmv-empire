@@ -333,6 +333,113 @@
     </style>
 </head>
 <body>
+<!-- PROFESSIONAL STYLED NAVIGATION -->
+<style>
+.main-navigation {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo-section .logo {
+    height: 60px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: #f0f8ff;
+    color: #007bff;
+}
+
+.phone-section {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.phone-section a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.phone-section a:hover {
+    background: #007bff;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .phone-section {
+        justify-content: center;
+    }
+}
+</style>
+
+<nav class="main-navigation">
+    <div class="nav-container">
+        <div class="logo-section">
+            <img src="../images/prism-logo.png" alt="Prism Specialties DMV" class="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../../blog/">Blog</a></li>
+            <li><a href="../checklists/">Checklists</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <div class="phone-section">
+            <a href="tel:202-335-4240" class="phone-dc">DC: (202) 335-4240</a>
+            <a href="tel:301-215-3191" class="phone-md">MD: (301) 215-3191</a>
+            <a href="tel:703-229-1321" class="phone-va">VA: (703) 229-1321</a>
+        </div>
+    </div>
+</nav>
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -341,27 +448,10 @@
                     <img src="images/logos/prism-logo-1000.png"
                          alt="Prism Specialties DMV"
                          class="logo-img">
-                    <span class="brand-text">Prism Specialties DMV</span>
+                    <span class="brand-text">
                 </a>
 
-                <nav>
-                    <ul class="nav-menu">
-                        <li class="services-dropdown">
-                            <a href="index.html#services">Services</a>
-                            <div class="dropdown-menu">
-                                <a href="index.html#services">Art & Collectibles</a>
-                                <a href="index.html#services">Electronics & Data Recovery</a>
-                                <a href="index.html#services">Textile & Fabric Restoration</a>
-                                <a href="index.html#services">Document Recovery</a>
-                                <a href="index.html#services">Commercial & Large Loss</a>
-                                <a href="index.html#services">Lightning Strike Validation</a>
-                            </div>
-                        </li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="index.html#service-areas">Service Areas</a></li>
-                        <li><a href="index.html#contact">Contact</a></li>
-                    </ul>
-                </nav>
+                
             </div>
         </div>
     </header>
@@ -647,7 +737,7 @@
                 <!-- Contact Information -->
                 <div class="contact-info">
                     <h3>Questions About These Terms?</h3>
-                    <p><strong>Prism Specialties DMV</strong></p>
+                    <p><strong></p>
                     <p>Independently Owned and Operated Franchise</p>
                     <p><strong>Emergency 24/7:</strong> <a href="tel:301-215-3191">301-215-3191</a></p>
                     <p><strong>Business Inquiries:</strong> <a href="mailto:info@prismspecialtiesdmv.com">info@prismspecialtiesdmv.com</a></p>
@@ -669,7 +759,7 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <h4>Prism Specialties DMV</h4>
+            <h4>
             <p>Professional Specialty Restoration Services</p>
             <p>Licensed & Insured | 24/7 Emergency Response</p>
             <p>Independently Owned and Operated Franchise</p>

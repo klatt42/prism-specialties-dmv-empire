@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Electronics restoration and data recovery in Washington DC. Professional recovery of computers, phones, and digital memories in Georgetown, Capitol Hill, Dupont Circle, Adams Morgan.">
+    <title>Electronics & Data Recovery | Washington DC | Georgetown Capitol Hill Dupont Circle</title>
+
+    <style>
+        :root {
+            --primary-blue: #00a0df;
+            --warm-gray: #7c878f;
+            --light-gray: #e8eaed;
+            --text-dark: #333333;
+            --text-medium: #666666;
+            --text-light: #999999;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+            --emergency-red: #dc3545;
+            --success-green: #28a745;
+            --tech-purple: #6f42c1;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 85%;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-brand img {
+            height: 85px;
+            width: auto;
+            clip-path: inset(0 0 12% 0);
+            margin-right: 20px;
+        }
+
+        .brand-text {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--tech-purple) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-100px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section h1 {
+            font-size: 3.8rem;
+            margin-bottom: 35px;
+            font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .hero-section .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 45px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .hero-answer {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Story Hook Section */
+        .story-hook {
+            background: var(--background-light);
+            padding: 80px 0;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            max-width: 900px;
+            margin: 0 auto;
+            border-left: 6px solid var(--tech-purple);
+        }
+
+        .story-card .hook {
+            font-size: 1.4rem;
+            color: var(--emergency-red);
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .story-card .story-text {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .story-card .outcome {
+            background: rgba(111, 66, 193, 0.1);
+            border-left: 4px solid var(--tech-purple);
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--tech-purple), var(--primary-blue));
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .service-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+
+        /* Process Section */
+        .process-section {
+            background: var(--background-light);
+            padding: 80px 0;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+        }
+
+        .process-step .step-number {
+            background: var(--tech-purple);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+
+        .process-step h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        .process-step p {
+            color: var(--text-medium);
+        }
+
+        /* Data Types Section */
+        .data-types-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .data-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .data-card {
+            background: var(--background-light);
+            border-radius: 15px;
+            padding: 35px;
+            text-align: center;
+            border-top: 4px solid var(--tech-purple);
+        }
+
+        .data-card .icon {
+            font-size: 3rem;
+            color: var(--tech-purple);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .data-card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-blue);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .emergency-call {
+            background: white;
+            color: var(--primary-blue);
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.8rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .emergency-call:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .hero-content {
+                max-width: 95%;
+            }
+
+            .hero-section h1 {
+                font-size: 2.8rem;
+                line-height: 1.2;
+            }
+
+            .hero-section .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .hero-answer {
+                font-size: 1.1rem;
+            }
+
+            .story-card {
+                padding: 30px 25px;
+                margin: 0 10px;
+            }
+
+            .story-card .hook {
+                font-size: 1.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .header-content {
+                justify-content: center;
+            }
+
+            .emergency-call {
+                font-size: 1.5rem;
+                padding: 15px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .story-card {
+                padding: 25px 20px;
+            }
+
+            .service-card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../index.html" class="logo-brand">
+                    <img src="../../images/logos/prism-logo-1000.png" alt="Prism Specialties DMV">
+                    <span class="brand-text">Prism Specialties DMV</span>
+                </a>
+                <nav>
+                    <a href="../index.html">Washington DC</a>
+                    <a href="../../all-services.html">Services</a>
+                    <a href="../../contact.html">Contact</a>
+                    <a href="../../about-us.html">About</a>
+                    <a href="../../emergency.html">Emergency</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Would you trust 20 years of family photos to someone who usually fixes smartphones?</h1>
+                <p class="subtitle">Then why trust your data recovery to anyone but digital specialists?</p>
+                <p class="hero-answer">When your Washington DC family's digital memories are trapped in damaged devices, you need recovery specialists who understand that <strong><em>some data holds irreplaceable moments that insurance can't measure - they can only be recovered.</em></strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Hook Section -->
+    <section class="story-hook">
+        <div class="container">
+            <div class="story-card">
+                <p class="hook">"Twenty years of our family photos were trapped on a water-damaged computer. The technician said everything was lost forever."</p>
+                <p class="story-text">A homeowner from Capitol Hill called us in panic after their Victorian rowhouse basement flooded during a summer storm. Their family's only computer, containing two decades of irreplaceable photos - first steps, birthdays, graduations - had been sitting in three feet of water for 6 hours.</p>
+                <p class="story-text">The local repair shop had given up, calling it "completely destroyed." But we specialize in the impossible. We know that even when a computer won't turn on, the memories inside often survive.</p>
+                <div class="outcome">
+                    <strong>The Recovery:</strong> After careful hard drive extraction and specialized data recovery techniques, we recovered 99.7% of their family photos, including videos of their son's first words that existed nowhere else.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proof Section -->
+    <section class="proof-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Georgetown families trust us with their digital memories</h2>
+                <p>From Dupont Circle to Adams Morgan, we recover what others call "impossible"</p>
+            </div>
+            <div class="proof-grid">
+                <div class="proof-card">
+                    <div class="proof-number">99.7%</div>
+                    <h3>Data Recovery Success Rate</h3>
+                    <p>Even when local repair shops say "total loss," we often succeed</p>
+                </div>
+                <div class="proof-card">
+                    <span class="icon">💻</span>
+                    <h3>Clean-Room Recovery</h3>
+                    <p>Professional data recovery labs with specialized equipment</p>
+                </div>
+                <div class="proof-card">
+                    <span class="icon">⚡</span>
+                    <h3>Emergency Response</h3>
+                    <p>24/7 immediate stabilization prevents further data loss</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Electronics Recovery Specialties</h2>
+                <p>Professional recovery of your digital life and electronic devices</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="icon">💻</span>
+                    <h3>Computer & Laptop Recovery</h3>
+                    <p>Water-damaged, fire-damaged, or failed computers and laptops. We recover your files, photos, and digital memories using advanced data recovery techniques.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">📱</span>
+                    <h3>Phone & Tablet Recovery</h3>
+                    <p>Smartphones and tablets containing family photos, contacts, and messages. We specialize in water damage, screen damage, and system failure recovery.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">💾</span>
+                    <h3>Hard Drive Data Recovery</h3>
+                    <p>Failed, damaged, or corrupted hard drives containing years of family memories. Professional clean-room data recovery for seemingly impossible cases.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">🎮</span>
+                    <h3>Gaming System Recovery</h3>
+                    <p>PlayStation, Xbox, Nintendo systems with save files and digital game libraries. We recover gaming memories and restore functionality when possible.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">📸</span>
+                    <h3>Digital Camera Recovery</h3>
+                    <p>Memory cards, cameras, and digital storage devices containing precious photos and videos. We handle corrupted files and physical damage recovery.</p>
+                </div>
+
+                <div class="service-card">
+                    <span class="icon">🏠</span>
+                    <h3>Smart Home Device Recovery</h3>
+                    <p>Smart TVs, home automation systems, and connected devices damaged by power surges, water, or system failures requiring professional restoration.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Data Recovery Process</h2>
+                <p>Advanced techniques to recover your irreplaceable digital memories</p>
+            </div>
+
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <h3>Emergency Assessment</h3>
+                    <p>Immediate evaluation to prevent further data loss. We stabilize damaged devices and determine the best recovery approach.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <h3>Professional Analysis</h3>
+                    <p>Advanced diagnostics using specialized equipment to identify recoverable data and determine the extent of damage to storage systems.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <h3>Data Extraction</h3>
+                    <p>Clean-room data recovery techniques to extract files from damaged drives and devices using industry-leading recovery tools and methods.</p>
+                </div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <h3>Data Restoration</h3>
+                    <p>Careful reconstruction and verification of recovered files, ensuring your photos, documents, and memories are intact and accessible.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Types Section -->
+    <section class="data-types-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>What We Recover</h2>
+                <p>Every type of digital memory that matters to your family</p>
+            </div>
+
+            <div class="data-grid">
+                <div class="data-card">
+                    <span class="icon">📷</span>
+                    <h3>Family Photos & Videos</h3>
+                    <p>Irreplaceable family memories, vacation photos, and milestone videos from damaged devices and storage media.</p>
+                </div>
+
+                <div class="data-card">
+                    <span class="icon">📊</span>
+                    <h3>Important Documents</h3>
+                    <p>Tax records, financial files, work documents, and legal papers stored on damaged computers and devices.</p>
+                </div>
+
+                <div class="data-card">
+                    <span class="icon">🎵</span>
+                    <h3>Music & Media Collections</h3>
+                    <p>Digital music libraries, home videos, and media collections that represent years of careful curation and memories.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Your Digital Memories Can Be Saved</h2>
+                <p>Don't let insurance adjusters decide the value of your irreplaceable family memories.<br>Choose data recovery specialists who understand what truly matters.</p>
+                <p><strong>Serving:</strong> Georgetown • Capitol Hill • Dupont Circle • Adams Morgan • Foggy Bottom • Penn Quarter</p>
+
+                <a href="tel:301-215-3191" class="emergency-call">📞 Call Now: 301-215-3191</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Prism Specialties DMV - Washington DC Electronics & Data Recovery</p>
+            <p><strong>Emergency Response:</strong> 301-215-3191 | <strong>Claims:</strong> claims.dcandmdmetro@prismspecialties.com</p>
+            <p>Georgetown • Capitol Hill • Dupont Circle • Adams Morgan • Foggy Bottom • Penn Quarter</p>
+        </div>
+    </footer>
+</body>
+</html>

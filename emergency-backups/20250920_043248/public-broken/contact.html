@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="When your precious belongings are damaged, you need compassionate specialists who understand your loss. Contact our restoration experts for immediate help and free consultations.">
+    <title>We're Here to Help | Compassionate Restoration Specialists | Prism Specialties DMV</title>
+    
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Prism Specialties DMV",
+        "description": "Professional specialty restoration services",
+        "telephone": ["301-215-3191", "703-229-1321"],
+        "email": "info@prismspecialtiesdmv.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressRegion": "MD, VA, DC"
+        },
+        "areaServed": ["Washington DC", "Maryland", "Virginia"],
+        "openingHours": "Mo-Su 00:00-23:59"
+    }
+    </script>
+    
+    <style>
+        /* Brand Color Variables */
+        :root {
+            --brand-primary: #00a0df;
+            --brand-accent: #7c878f;
+            --brand-tertiary: #e8eaed;
+            --brand-text: #666666;
+            --brand-light: #f8f9fa;
+            --brand-white: #ffffff;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--brand-text);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-brand img {
+            height: 85px;
+            width: auto;
+            clip-path: inset(0 0 12% 0);
+            margin-right: 15px;
+        }
+        
+        .brand-text {
+            color: var(--brand-primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav a:hover, nav a.active {
+            color: var(--brand-primary);
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+        
+        .hero-section p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        /* Contact Sections */
+        .contact-section {
+            padding: 80px 0;
+        }
+        
+        .contact-section:nth-child(even) {
+            background: var(--brand-light);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            color: var(--brand-primary);
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        /* Regional Contact Grid */
+        .regional-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+        
+        .region-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            border: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .region-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--brand-primary);
+        }
+        
+        .region-emoji {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .region-card h3 {
+            color: var(--brand-primary);
+            font-size: 2rem;
+            margin-bottom: 25px;
+        }
+        
+        .main-phone {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin: 25px 0;
+            display: block;
+        }
+        
+        .main-phone a {
+            color: var(--brand-accent);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .main-phone a:hover {
+            color: var(--brand-primary);
+        }
+        
+        .coverage-areas {
+            color: var(--brand-text);
+            font-size: 1rem;
+            line-height: 1.5;
+            margin: 20px 0;
+        }
+        
+        .emergency-note {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 20px;
+            font-weight: 500;
+        }
+        
+        /* Contact Methods Grid */
+        .contact-methods {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+        
+        .contact-method {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+        
+        .contact-icon {
+            font-size: 2.5rem;
+            color: var(--brand-primary);
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .contact-method h3 {
+            color: var(--brand-primary);
+            margin-bottom: 15px;
+        }
+        
+        .contact-method a {
+            color: var(--brand-accent);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .contact-method a:hover {
+            color: var(--brand-primary);
+        }
+        
+        /* Emergency CTA */
+        .emergency-cta {
+            background: linear-gradient(45deg, #dc3545, #c82333);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+        
+        .emergency-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .emergency-phones {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+        
+        .emergency-phone {
+            background: rgba(255,255,255,0.1);
+            padding: 20px 30px;
+            border-radius: 10px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .emergency-phone a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+        
+        .emergency-phone .region-label {
+            display: block;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 5px;
+        }
+        
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .regional-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            
+            .main-phone {
+                font-size: 2rem;
+            }
+            
+            .emergency-phones {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            .region-card {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <!-- STANDARD NAVIGATION - Apply to ALL pages -->
+<nav class="main-navigation">
+    <div class="nav-container">
+        <div class="logo-section">
+            <img src="../images/prism-logo.png" alt="Prism Specialties DMV" class="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../../blog/">Blog</a></li>
+            <li><a href="../checklists/">Checklists</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <div class="phone-section">
+            <a href="tel:202-335-4240" class="phone-dc">DC: (202) 335-4240</a>
+            <a href="tel:301-215-3191" class="phone-md">MD: (301) 215-3191</a>
+            <a href="tel:703-229-1321" class="phone-va">VA: (703) 229-1321</a>
+        </div>
+    </div>
+</nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>You Don't Have to Face This Alone</h1>
+            <p>When disaster damages your precious belongings, compassionate experts are just a phone call away</p>
+            <p style="font-size: 1rem; opacity: 0.9; margin-top: 20px;"><em>"We understand that behind every damaged item is a story, a memory, and someone who cares. That's why we're here to help, not just restore."</em></p>
+        </div>
+    </section>
+
+    <!-- Regional Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Immediate Help Available - You're Not Alone</h2>
+                <p>Compassionate specialists standing by to help save what matters most to you</p>
+            </div>
+
+            <div class="regional-grid">
+                <!-- Maryland -->
+                <div class="region-card">
+                    <span class="region-emoji">🏛️</span>
+                    <h3>Maryland</h3>
+                    <div class="main-phone">
+                        <a href="tel:301-215-3191">301-215-3191</a>
+                    </div>
+                    <div class="coverage-areas">
+                        <strong>Counties Served:</strong><br>
+                        Montgomery • Prince George's • Anne Arundel<br>
+                        Frederick • Charles • Calvert • St. Mary's
+                    </div>
+                    <div class="emergency-note">
+                        <strong>Free Consultation:</strong> "Let us assess what can be saved - there's often more hope than you think"
+                    </div>
+                    <div class="emergency-note" style="background: #d1ecf1; border-color: #bee5eb; color: #0c5460; margin-top: 10px;">
+                        24/7 Emergency Response - Every minute matters
+                    </div>
+                </div>
+
+                <!-- Virginia -->
+                <div class="region-card">
+                    <span class="region-emoji">🌄</span>
+                    <h3>Northern Virginia</h3>
+                    <div class="main-phone">
+                        <a href="tel:703-229-1321">703-229-1321</a>
+                    </div>
+                    <div class="coverage-areas">
+                        <strong>Counties Served:</strong><br>
+                        Fairfax • Arlington • Loudoun<br>
+                        Prince William • City of Alexandria
+                    </div>
+                    <div class="emergency-note">
+                        <strong>Immediate Response:</strong> "We understand the panic - let us help you through this"
+                    </div>
+                    <div class="emergency-note" style="background: #d1ecf1; border-color: #bee5eb; color: #0c5460; margin-top: 10px;">
+                        24/7 Emergency Response - We're always here
+                    </div>
+                </div>
+
+                <!-- Washington DC -->
+                <div class="region-card">
+                    <span class="region-emoji">🏛️</span>
+                    <h3>Washington DC</h3>
+                    <div class="main-phone">
+                        <a href="tel:202-335-4240">202-335-4240</a>
+                    </div>
+                    <div class="coverage-areas">
+                        <strong>Areas Served:</strong><br>
+                        All DC Quadrants • Capitol Hill<br>
+                        Georgetown • Dupont Circle • Adams Morgan
+                    </div>
+                    <div class="emergency-note">
+                        <strong>Same-Day Help:</strong> "In the city that never sleeps, neither do our restoration specialists"
+                    </div>
+                    <div class="emergency-note" style="background: #d1ecf1; border-color: #bee5eb; color: #0c5460; margin-top: 10px;">
+                        24/7 Urban Emergency Response - Always accessible
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Methods Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Choose How You'd Like to Connect</h2>
+                <p>Whether you need immediate phone support or prefer email, we're here to help</p>
+            </div>
+
+            <div class="contact-methods">
+                <div class="contact-method">
+                    <span class="contact-icon">📧</span>
+                    <h3>All Claims & Inquiries</h3>
+                    <p><strong>Send photos of damage for immediate assessment</strong></p>
+                    <p><a href="mailto:claims.dcandmdmetro@prismspecialties.com">claims.dcandmdmetro@prismspecialties.com</a></p>
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 5px;">"Include photos - we can often provide hope within hours"</p>
+                </div>
+
+                <div class="contact-method">
+                    <span class="contact-icon">🎨</span>
+                    <h3>Art Restoration Claims</h3>
+                    <p><a href="mailto:claims.dcandmdmetro@prismspecialties.com">claims.dcandmdmetro@prismspecialties.com</a></p>
+                </div>
+
+                <div class="contact-method">
+                    <span class="contact-icon">💻</span>
+                    <h3>Electronics & Data Recovery</h3>
+                    <p><a href="mailto:claims.dcandmdmetro@prismspecialties.com">claims.dcandmdmetro@prismspecialties.com</a></p>
+                </div>
+
+                <div class="contact-method">
+                    <span class="contact-icon">🧵</span>
+                    <h3>Textile Restoration Claims</h3>
+                    <p><a href="mailto:claims.dcandmdmetro@prismspecialties.com">claims.dcandmdmetro@prismspecialties.com</a></p>
+                </div>
+
+                <div class="contact-method">
+                    <span class="contact-icon">📄</span>
+                    <h3>Document Recovery Claims</h3>
+                    <p><a href="mailto:claims.dcandmdmetro@prismspecialties.com">claims.dcandmdmetro@prismspecialties.com</a></p>
+                </div>
+
+                <div class="contact-method">
+                    <span class="contact-icon">🏢</span>
+                    <h3>Commercial Services</h3>
+                    <p><a href="mailto:claims.dcandmdmetro@prismspecialties.com">claims.dcandmdmetro@prismspecialties.com</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact CTA -->
+    <section class="emergency-cta">
+        <div class="container">
+            <h2>🚨 Don't Panic - We're Here to Help</h2>
+            <p><strong>When disaster strikes, remember: You're not facing this alone.</strong></p>
+            <p>Our 24/7 emergency specialists understand the overwhelming feeling when precious belongings are damaged. Take a deep breath - help is just a phone call away.</p>
+            
+            <div class="emergency-phones">
+                <div class="emergency-phone">
+                    <span class="region-label">Maryland</span>
+                    <a href="tel:301-215-3191">301-215-3191</a>
+                </div>
+                <div class="emergency-phone">
+                    <span class="region-label">Washington DC</span>
+                    <a href="tel:202-335-4240">202-335-4240</a>
+                </div>
+                <div class="emergency-phone">
+                    <span class="region-label">Northern Virginia</span>
+                    <a href="tel:703-229-1321">703-229-1321</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Prism Specialties DMV - Compassionate Restoration Specialists</p>
+            <p><strong>Remember:</strong> Behind every damaged item is a story worth saving</p>
+            <p>Maryland: 301-215-3191 | Washington DC: 202-335-4240 | Northern Virginia: 703-229-1321</p>
+        </div>
+    </footer>
+</body>
+</html>

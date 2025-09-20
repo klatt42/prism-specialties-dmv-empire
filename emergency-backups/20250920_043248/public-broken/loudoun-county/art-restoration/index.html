@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Loudoun County's premier art restoration experts specializing in fine art conservation. Professional restoration for Leesburg, Ashburn, Sterling, and Middleburg collections.">
+    <title>Art Restoration Loudoun County | Fine Art Conservation | Prism Specialties DMV</title>
+
+    <style>
+        :root {
+            --primary-blue: #00a0df;
+            --warm-gray: #7c878f;
+            --light-gray: #e8eaed;
+            --text-dark: #333333;
+            --text-medium: #666666;
+            --text-light: #999999;
+            --background-light: #f8f9fa;
+            --white: #ffffff;
+            --emergency-red: #dc3545;
+            --success-green: #28a745;
+            --gold-accent: #d4af37;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 85%;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        header {
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-brand img {
+            height: 85px;
+            width: auto;
+            clip-path: inset(0 0 12% 0);
+            margin-right: 20px;
+        }
+
+        .brand-text {
+            color: var(--primary-blue);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary-blue);
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--warm-gray) 100%);
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="80" cy="80" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="60" cy="30" r="1.5" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-100px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-section h1 {
+            font-size: 3.8rem;
+            margin-bottom: 35px;
+            font-weight: 400;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            line-height: 1.1;
+        }
+
+        .hero-section .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 45px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .hero-answer {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Story Hook Section */
+        .story-hook {
+            background: var(--background-light);
+            padding: 80px 0;
+        }
+
+        .story-card {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            max-width: 900px;
+            margin: 0 auto;
+            border-left: 6px solid var(--gold-accent);
+        }
+
+        .story-card .hook {
+            font-size: 1.4rem;
+            color: var(--emergency-red);
+            font-weight: 600;
+            margin-bottom: 20px;
+            line-height: 1.4;
+        }
+
+        .story-card .story-text {
+            font-size: 1.1rem;
+            color: var(--text-medium);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .story-card .outcome {
+            background: rgba(212, 175, 55, 0.1);
+            border-left: 4px solid var(--gold-accent);
+            padding: 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        /* Services Grid */
+        .services-section {
+            padding: 80px 0;
+            background: white;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .section-title p {
+            font-size: 1.2rem;
+            color: var(--text-medium);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            border: 1px solid var(--light-gray);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--gold-accent), var(--primary-blue));
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+
+        .service-card h3 {
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--text-medium);
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: var(--primary-blue);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .cta-content p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+
+        .emergency-call {
+            background: white;
+            color: var(--primary-blue);
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.8rem;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+
+        .emergency-call:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.3);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+
+            .hero-content {
+                max-width: 95%;
+            }
+
+            .hero-section h1 {
+                font-size: 2.8rem;
+                line-height: 1.2;
+            }
+
+            .hero-section .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .hero-answer {
+                font-size: 1.1rem;
+            }
+
+            .story-card {
+                padding: 30px 25px;
+                margin: 0 10px;
+            }
+
+            .story-card .hook {
+                font-size: 1.2rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .header-content {
+                justify-content: center;
+            }
+
+            .emergency-call {
+                font-size: 1.5rem;
+                padding: 15px 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                padding: 60px 0;
+            }
+
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+
+            .story-card {
+                padding: 25px 20px;
+            }
+
+            .service-card {
+                padding: 25px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <a href="../../index.html" class="logo-brand">
+                    <img src="../../images/logos/prism-logo-1000.png" alt="Prism Specialties DMV">
+                    <span class="brand-text">Prism Specialties DMV</span>
+                </a>
+                <nav>
+                    <a href="../index.html">Loudoun County</a>
+                    <a href="../../all-services.html">Services</a>
+                    <a href="../../contact.html">Contact</a>
+                    <a href="../../about-us.html">About</a>
+                    <a href="../../emergency.html">Emergency</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Would you trust a contractor who sees your family's artwork as "just pictures on the wall"?</h1>
+                <p class="subtitle">Then why trust your art restoration to anyone but Loudoun County's conservation specialists?</p>
+                <p class="hero-answer">When fire, water, or age threatens your precious artwork, you need conservators who understand that <strong><em>every brushstroke tells a story that can never be replicated - only carefully preserved.</em></strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Hook Section -->
+    <section class="story-hook">
+        <div class="container">
+            <div class="story-card">
+                <p class="hook">"The insurance company said my great-grandmother's portraits were 'just old paintings' and offered me $300 for both of them."</p>
+                <p class="story-text">A Leesburg family called us devastated after a house fire in their historic colonial home. The "old paintings" were 1890s oil portraits of their great-grandmother and great-grandfather - the original settlers who founded their family's legacy in Virginia. The portraits had hung in the same spot for over 130 years, surviving the Civil War, two World Wars, and countless family celebrations.</p>
+                <p class="story-text">The insurance adjuster saw smoke-damaged canvases with darkened varnish. We saw irreplaceable family history - the faces of the pioneers who built Loudoun County, their expressions captured in oil paint when photography was still rare. These weren't just paintings; they were the visual DNA of a Virginia family.</p>
+                <div class="outcome">
+                    <strong>The Restoration:</strong> Through museum-quality conservation, we removed 130 years of accumulated grime, stabilized the original canvas, and restored the vibrant colors that revealed the strength in their ancestors' eyes. Today, these portraits hang proudly in their restored Leesburg home, where the fifth generation can see exactly where their determination and character came from.
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Fine Art Conservation Services</h2>
+                <p>Museum-quality restoration for Loudoun County's treasured collections</p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Oil Paintings & Portraits</h3>
+                    <p>Family portraits, landscapes, and fine art paintings restored using traditional conservation techniques. Canvas repair, cleaning, and revarnishing with archival materials.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Watercolors & Works on Paper</h3>
+                    <p>Delicate watercolor paintings, drawings, and prints require specialized treatment. Water damage recovery, acid neutralization, and proper mounting.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Antique Frames & Gilding</h3>
+                    <p>Historic frames are artworks themselves. Gold leaf restoration, ornate molding repair, and period-appropriate refinishing to complement your artwork.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Contemporary & Modern Art</h3>
+                    <p>Modern materials require modern solutions. Acrylic paintings, mixed media, and contemporary works restored with cutting-edge conservation methods.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Insurance Claims Support</h3>
+                    <p>Professional documentation and condition reports for insurance claims. We work with your adjuster to ensure proper valuation and restoration coverage.</p>
+                </div>
+
+                <div class="service-card">
+                    <h3>Emergency Stabilization</h3>
+                    <p>Immediate response to prevent further damage from fire, water, or environmental factors. 24/7 emergency service to secure your artwork's future.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Your Art Deserves Museum-Quality Care</h2>
+                <p>Don't let insurance adjusters decide the value of irreplaceable family artwork.<br>Choose Loudoun County's conservation specialists who understand their true worth.</p>
+                <p><strong>Serving:</strong> Leesburg • Ashburn • Sterling • Purcellville • Middleburg • South Riding • Brambleton • Lansdowne</p>
+
+                <a href="tel:301-215-3191" class="emergency-call">📞 Call Now: 301-215-3191</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Prism Specialties DMV - Loudoun County Art Restoration Experts</p>
+            <p><strong>Emergency Response:</strong> 301-215-3191 | <strong>Claims:</strong> claims.dcandmdmetro@prismspecialties.com</p>
+            <p>Professional art conservation serving all of Loudoun County</p>
+        </div>
+    </footer>
+</body>
+</html>

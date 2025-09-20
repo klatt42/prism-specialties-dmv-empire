@@ -613,6 +613,113 @@
     </style>
 </head>
 <body>
+<!-- PROFESSIONAL STYLED NAVIGATION -->
+<style>
+.main-navigation {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo-section .logo {
+    height: 60px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: #f0f8ff;
+    color: #007bff;
+}
+
+.phone-section {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.phone-section a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.phone-section a:hover {
+    background: #007bff;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .phone-section {
+        justify-content: center;
+    }
+}
+</style>
+
+<nav class="main-navigation">
+    <div class="nav-container">
+        <div class="logo-section">
+            <img src="../images/prism-logo.png" alt="Prism Specialties DMV" class="logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../../blog/">Blog</a></li>
+            <li><a href="../checklists/">Checklists</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+        </ul>
+        <div class="phone-section">
+            <a href="tel:202-335-4240" class="phone-dc">DC: (202) 335-4240</a>
+            <a href="tel:301-215-3191" class="phone-md">MD: (301) 215-3191</a>
+            <a href="tel:703-229-1321" class="phone-va">VA: (703) 229-1321</a>
+        </div>
+    </div>
+</nav>
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -622,27 +729,10 @@
      alt="Prism Specialties" 
      style="height: 85px !important; width: auto !important; clip-path: inset(0 0 12% 0);"
      class="logo-img">
-                    <span class="brand-text">Prism Specialties DMV</span>
+                    <span class="brand-text">
                 </a>
                 
-                <nav>
-                    <ul class="nav-menu">
-                        <li class="services-dropdown">
-                            <a href="#services">Services</a>
-                            <div class="dropdown-menu">
-                                <a href="#services">Art & Collectibles</a>
-                                <a href="#services">Electronics & Data Recovery</a>
-                                <a href="#services">Textile & Fabric Restoration</a>
-                                <a href="#services">Document Recovery</a>
-                                <a href="#services">Commercial & Large Loss</a>
-                                <a href="#services">Lightning Strike Validation</a>
-                            </div>
-                        </li>
-                        <li><a href="about-us.html">About Us</a></li>
-                        <li><a href="#service-areas">Service Areas</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </nav>
+                
             </div>
         </div>
     </header>
@@ -1221,7 +1311,7 @@
             <!-- Bottom Bar -->
             <div class="footer-bottom" style="padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
                 <p style="color: #888; font-size: 0.9rem; margin: 10px 0;">
-                    ©2025 <span style="color: #00a0df;">Prism Specialties DMV</span>. All rights reserved. | Powered by Excellence
+                    ©2025 <span style="color: #00a0df;">. All rights reserved. | Powered by Excellence
                 </p>
                 
                 <div class="legal-links" style="display: flex; gap: 20px; flex-wrap: wrap;">

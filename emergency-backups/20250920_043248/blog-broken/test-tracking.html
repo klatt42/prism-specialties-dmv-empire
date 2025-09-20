@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GHL Tracking Test Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .test-section {
+            background: #f5f5f5;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+        .emergency-phone-cta {
+            display: inline-block;
+            background: #d32f2f;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+        .emergency-phone-cta:hover {
+            background: #b71c1c;
+            transform: translateY(-2px);
+        }
+        .test-button {
+            background: #1976D2;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        .test-results {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <h1>GHL Tracking Integration Test</h1>
+
+    <div class="test-section">
+        <h2>Test 1: Emergency Phone CTAs</h2>
+        <p>Click these emergency phone numbers to test immediate response tracking:</p>
+        <a href="tel:202-335-4240" class="emergency-phone-cta">DC Emergency: 202-335-4240</a><br>
+        <a href="tel:703-229-1321" class="emergency-phone-cta">VA Emergency: 703-229-1321</a><br>
+        <a href="tel:301-215-3191" class="emergency-phone-cta">MD Emergency: 301-215-3191</a>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 2: Content Type Detection</h2>
+        <p>This page should be detected as general content type. Check console for tracking data.</p>
+        <button class="test-button" onclick="checkStatus()">Check Current Status</button>
+        <button class="test-button" onclick="simulateScroll()">Simulate Deep Scroll</button>
+        <button class="test-button" onclick="simulateTimeSpent()">Fast-Forward Time Tracking</button>
+    </div>
+
+    <div class="test-section">
+        <h2>Test 3: Local Storage Data</h2>
+        <button class="test-button" onclick="showLocalStorage()">Show Stored Data</button>
+        <button class="test-button" onclick="clearLocalStorage()">Clear Test Data</button>
+    </div>
+
+    <div id="test-results" class="test-results">
+        <strong>Test Results:</strong><br>
+        <span id="results-content">Click buttons above to run tests...</span>
+    </div>
+
+    <!-- Add lots of content for scroll testing -->
+    <div style="height: 2000px; background: linear-gradient(180deg, #e3f2fd 0%, #fff 100%); padding: 40px; margin: 40px 0; border-radius: 10px;">
+        <h3>Content for Scroll Testing</h3>
+        <p>This section provides enough content to test scroll depth tracking. The tracking system should detect when users scroll past 25%, 50%, 75%, and 90% of the page.</p>
+
+        <div style="margin: 200px 0; text-align: center;">
+            <h4>25% Scroll Milestone</h4>
+            <p>You should see a scroll depth event in the console when you reach this point.</p>
+        </div>
+
+        <div style="margin: 200px 0; text-align: center;">
+            <h4>50% Scroll Milestone</h4>
+            <p>Another tracking event should trigger here.</p>
+        </div>
+
+        <div style="margin: 200px 0; text-align: center;">
+            <h4>75% Scroll Milestone</h4>
+            <p>High engagement score points awarded here.</p>
+        </div>
+
+        <div style="margin: 200px 0; text-align: center;">
+            <h4>90% Scroll Milestone</h4>
+            <p>Maximum engagement detected - you've reached the bottom!</p>
+        </div>
+    </div>
+
+    <!-- Include GHL tracking script -->
+    <script src="assets/js/ghl-blog-integration.js"></script>
+
+    <script>
+        function checkStatus() {
+            if (typeof window.ghlBlogStatus === 'function') {
+                const status = window.ghlBlogStatus();
+                document.getElementById('results-content').innerHTML = JSON.stringify(status, null, 2);
+                console.log('Current GHL Status:', status);
+            } else {
+                document.getElementById('results-content').innerHTML = 'GHL tracking not initialized';
+            }
+        }
+
+        function simulateScroll() {
+            // Simulate scroll events
+            window.scrollTo(0, document.documentElement.scrollHeight * 0.8);
+            setTimeout(() => {
+                document.getElementById('results-content').innerHTML = 'Simulated scroll to 80% - check console for events';
+            }, 500);
+        }
+
+        function simulateTimeSpent() {
+            // Add artificial score for time spent
+            if (window.ghlBlogStatus) {
+                document.getElementById('results-content').innerHTML = 'Time tracking simulated - check status after 10 seconds';
+
+                // Simulate time milestones
+                setTimeout(() => {
+                    console.log('Simulating 3-minute milestone');
+                }, 2000);
+
+                setTimeout(() => {
+                    console.log('Simulating 5-minute milestone');
+                }, 4000);
+            }
+        }
+
+        function showLocalStorage() {
+            const ghlData = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('ghl_')) {
+                    ghlData.push({
+                        key: key,
+                        data: JSON.parse(localStorage.getItem(key))
+                    });
+                }
+            }
+
+            if (ghlData.length > 0) {
+                document.getElementById('results-content').innerHTML = JSON.stringify(ghlData, null, 2);
+            } else {
+                document.getElementById('results-content').innerHTML = 'No GHL data found in localStorage';
+            }
+        }
+
+        function clearLocalStorage() {
+            const keys = [];
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                if (key.startsWith('ghl_')) {
+                    keys.push(key);
+                }
+            }
+
+            keys.forEach(key => localStorage.removeItem(key));
+            document.getElementById('results-content').innerHTML = `Cleared ${keys.length} GHL entries from localStorage`;
+        }
+
+        // Auto-check status every 5 seconds
+        setInterval(() => {
+            if (window.ghlBlogStatus) {
+                console.log('Auto Status Check:', window.ghlBlogStatus());
+            }
+        }, 5000);
+    </script>
+</body>
+</html>

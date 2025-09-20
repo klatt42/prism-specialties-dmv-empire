@@ -750,8 +750,93 @@
     <link rel="stylesheet" href="../css/blog-preview-styles.css">
 </head>
 <body>
-    <!-- Header -->
-    <!-- STANDARD NAVIGATION - Apply to ALL pages -->
+<!-- PROFESSIONAL STYLED NAVIGATION -->
+<style>
+.main-navigation {
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.logo-section .logo {
+    height: 60px;
+    width: auto;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: #f0f8ff;
+    color: #007bff;
+}
+
+.phone-section {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.phone-section a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 2px solid #007bff;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+}
+
+.phone-section a:hover {
+    background: #007bff;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .phone-section {
+        justify-content: center;
+    }
+}
+</style>
+
 <nav class="main-navigation">
     <div class="nav-container">
         <div class="logo-section">
@@ -772,6 +857,9 @@
         </div>
     </div>
 </nav>
+    <!-- Header -->
+    <!-- STANDARD NAVIGATION - Apply to ALL pages -->
+
 
     <!-- Hero Section -->
     <section class="hero">
@@ -1430,7 +1518,7 @@
             <!-- Bottom Bar -->
             <div class="footer-bottom" style="padding-top: 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
                 <p style="color: #888; font-size: 0.9rem; margin: 10px 0;">
-                    ©2025 <span style="color: #00a0df;">Prism Specialties DMV</span>. All rights reserved. | Powered by Excellence
+                    ©2025 <span style="color: #00a0df;">. All rights reserved. | Powered by Excellence
                 </p>
                 
                 <div class="legal-links" style="display: flex; gap: 20px; flex-wrap: wrap;">

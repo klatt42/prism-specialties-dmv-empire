@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vintage Electronics Restoration DMV | Antique Radio Repair | Retro Gaming Restoration | Free Diagnostic</title>
+    <meta name="description" content="Expert vintage electronics restoration and antique radio repair in the DMV area. Retro gaming restoration, component sourcing, functionality restoration. Free diagnostic evaluation for collectors.">
+    <meta name="keywords" content="vintage electronics restoration, antique radio repair, retro gaming restoration, vintage electronics DMV, component sourcing, free diagnostic evaluation, retro electronics repair">
+    <link rel="stylesheet" href="assets/css/blog-styles.css">
+    <style>
+        /* Brand Color Variables */
+        :root {
+            --brand-primary: #00a0df;
+            --brand-accent: #7c878f;
+            --brand-text: #666666;
+            --brand-light: #f8f9fa;
+            --brand-white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Vintage electronics/retro styling */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-brand img {
+            height: 85px;
+            width: auto;
+            clip-path: inset(0 0 12% 0);
+            margin-right: 15px;
+        }
+
+        .brand-text {
+            color: var(--brand-primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--brand-primary);
+        }
+
+        /* Emergency Banner */
+        .emergency-banner {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: 600;
+        }
+
+        .emergency-banner a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .emergency-banner a:hover {
+            text-decoration: underline;
+        }
+
+        /* Blog Content Area */
+        .blog-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .vintage-header {
+            background: linear-gradient(135deg, #FF6F00 0%, #E65100 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(255, 111, 0, 0.3);
+        }
+
+        .free-diagnostic-alert {
+            background: linear-gradient(135deg, #2E7D32 0%, #1B5E20 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+            border-left: 6px solid #4CAF50;
+        }
+
+        .vintage-cta {
+            background: linear-gradient(135deg, #FF6F00 0%, #E65100 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(255, 111, 0, 0.4);
+        }
+
+        .vintage-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(255, 111, 0, 0.5);
+        }
+
+        .electronics-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .electronics-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid;
+            transition: transform 0.3s ease;
+        }
+
+        .electronics-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .radio-card { border-left-color: #FF6F00; }
+        .gaming-card { border-left-color: #9C27B0; }
+        .hifi-card { border-left-color: #2196F3; }
+        .vintage-card { border-left-color: #795548; }
+
+        .collector-communities {
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #2196F3;
+            margin: 2rem 0;
+        }
+
+        .vintage-shows {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #9C27B0;
+            margin: 2rem 0;
+        }
+
+        .restoration-process {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .process-step {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #FF6F00;
+        }
+
+        .step-icon {
+            background: #FF6F00;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 1rem;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .component-sourcing {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #FF9800;
+            margin: 2rem 0;
+        }
+
+        .case-study-vintage {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 5px solid #E91E63;
+        }
+
+        .specialty-badge {
+            display: inline-block;
+            background: #FF6F00;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 0.25rem;
+        }
+
+        .vintage-timeline {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border: 2px solid #FF6F00;
+        }
+    </style>
+</head>
+<body>
+    <!-- Professional Header -->
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo-brand">
+                <img src="../images/logos/prism-logo-1000.png" alt="Prism Specialties DMV">
+                <span class="brand-text">Prism Specialties DMV</span>
+            </a>
+            <nav id="nav-menu">
+                <a href="../index.html">Home</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../about-us.html">About</a>
+                <a href="index.html">Blog</a>
+                <a href="../emergency.html">Emergency</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            🚨 <strong>Emergency? Call Now:</strong> <a href="tel:301-215-3191">301-215-3191</a> - 24/7 Response
+        </div>
+    </div>
+
+    <!-- Vintage Electronics Header -->
+    <div class="vintage-header">
+        <h1>📻 Vintage Electronics Restoration & Antique Radio Repair</h1>
+        <p>Expert Retro Gaming Restoration • Component Sourcing • DMV Collector Communities</p>
+        <p><strong>Bringing Classic Electronics Back to Life</strong></p>
+    </div>
+
+    <!-- Free Diagnostic Alert -->
+    <div class="free-diagnostic-alert">
+        <h2>🔍 FREE DIAGNOSTIC EVALUATION</h2>
+        <p><strong>Professional Assessment at No Cost:</strong> Our vintage electronics specialists provide comprehensive diagnostic evaluations at no charge for all classic electronics, antique radios, and retro gaming systems. Get expert analysis before committing to restoration.</p>
+
+        <div style="margin: 1.5rem 0;">
+            <span class="specialty-badge">Free Diagnosis</span>
+            <span class="specialty-badge">Component Sourcing</span>
+            <span class="specialty-badge">Functionality Restoration</span>
+            <span class="specialty-badge">Aesthetic Preservation</span>
+        </div>
+
+        <div style="margin: 1.5rem 0;">
+            <a href="tel:703-229-1321" class="vintage-cta vintage-phone-cta">
+                📻 Free Evaluation: 703-229-1321
+            </a>
+        </div>
+
+        <p><strong>DMV Collector Networks • Vintage Electronics Shows • Retro Gaming Communities</strong></p>
+    </div>
+
+    <!-- Blog Content -->
+    <div class="blog-content">
+        <h2>Comprehensive Vintage Electronics Restoration in the DMV</h2>
+        <p>The Washington DC metropolitan area hosts one of the nation's most active vintage electronics collecting communities. From antique radios and classic hi-fi systems to retro gaming consoles and early computers, our specialists understand the unique challenges and rewards of restoring classic electronics to their original glory.</p>
+
+        <p>Prism Specialties provides expert vintage electronics restoration services throughout the DMV region:</p>
+
+        <ul>
+            <li>📻 <strong>Vintage Electronics Restoration</strong> - Classic electronics from the 1920s to 1990s</li>
+            <li>📡 <strong>Antique Radio Repair</strong> - Tube radios, transistor sets, and early solid-state</li>
+            <li>🎮 <strong>Retro Gaming Restoration</strong> - Classic consoles, arcade cabinets, handheld systems</li>
+            <li>🔧 <strong>Component Sourcing</strong> - Hard-to-find parts and custom replacements</li>
+            <li>⚡ <strong>Functionality Restoration</strong> - Complete electrical and mechanical repair</li>
+            <li>🎨 <strong>Aesthetic Preservation</strong> - Original appearance with period-correct materials</li>
+        </ul>
+
+        <!-- Electronics Types Grid -->
+        <h2>Vintage Electronics Restoration Specialties</h2>
+        <div class="electronics-types-grid">
+            <div class="electronics-card radio-card">
+                <h3>📻 Antique Radios & Audio</h3>
+                <p><strong>Tube Radios:</strong> 1920s-1950s cathedral, tombstone, table, and console radios</p>
+                <p><strong>Transistor Radios:</strong> 1960s-1970s portable and pocket radios</p>
+                <p><strong>Hi-Fi Systems:</strong> Vintage amplifiers, receivers, turntables, and speakers</p>
+                <p><strong>Restoration:</strong> Capacitor replacement, tube testing, alignment, cabinet refinishing</p>
+            </div>
+
+            <div class="electronics-card gaming-card">
+                <h3>🎮 Retro Gaming Systems</h3>
+                <p><strong>Classic Consoles:</strong> Atari, Nintendo, Sega, early PlayStation systems</p>
+                <p><strong>Arcade Cabinets:</strong> Coin-op machines, cocktail tables, pinball machines</p>
+                <p><strong>Handheld Games:</strong> Game & Watch, Game Boy, early portable systems</p>
+                <p><strong>Services:</strong> Power supply repair, screen restoration, controller refurbishment</p>
+            </div>
+
+            <div class="electronics-card hifi-card">
+                <h3>🔊 Vintage Hi-Fi & Audio</h3>
+                <p><strong>Amplifiers:</strong> Tube and solid-state vintage amplifiers and receivers</p>
+                <p><strong>Turntables:</strong> Belt-drive and direct-drive record players</p>
+                <p><strong>Speakers:</strong> Vintage bookshelf and floor-standing speakers</p>
+                <p><strong>Restoration:</strong> Recapping, bias adjustment, cartridge alignment, driver restoration</p>
+            </div>
+
+            <div class="electronics-card vintage-card">
+                <h3>💻 Early Computers & Electronics</h3>
+                <p><strong>Personal Computers:</strong> Apple II, Commodore, early IBM-compatible systems</p>
+                <p><strong>Calculators:</strong> Early electronic and scientific calculators</p>
+                <p><strong>Test Equipment:</strong> Vintage oscilloscopes, signal generators, meters</p>
+                <p><strong>Services:</strong> Power supply restoration, CRT rejuvenation, keyboard cleaning</p>
+            </div>
+        </div>
+
+        <!-- DMV Collector Communities -->
+        <div class="collector-communities">
+            <h2>🤝 DMV Vintage Electronics Collector Communities</h2>
+            <p>The Washington DC area hosts a vibrant community of vintage electronics collectors, enthusiasts, and restorers. Our specialists actively participate in these communities and understand the specific needs of DMV-area collectors.</p>
+
+            <h3>Active DMV Collector Groups:</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+                    <h4 style="color: #2196F3;">📻 Capitol Area Radio Club</h4>
+                    <p>Antique radio collectors and restoration enthusiasts</p>
+                </div>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+                    <h4 style="color: #2196F3;">🎮 DC Retro Gaming Society</h4>
+                    <p>Classic gaming console and arcade preservation</p>
+                </div>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+                    <h4 style="color: #2196F3;">🔊 Northern Virginia Hi-Fi Club</h4>
+                    <p>Vintage audio equipment and hi-fi restoration</p>
+                </div>
+                <div style="background: white; padding: 1.5rem; border-radius: 8px; text-align: center;">
+                    <h4 style="color: #2196F3;">💻 Classic Computer Club DC</h4>
+                    <p>Early personal computer preservation and restoration</p>
+                </div>
+            </div>
+
+            <p><strong>Community Benefits:</strong> Access to rare parts, restoration knowledge sharing, technical documentation libraries, and networking with fellow collectors throughout the DMV region.</p>
+        </div>
+
+        <!-- Vintage Electronics Shows -->
+        <div class="vintage-shows">
+            <h2>📅 DMV Vintage Electronics Shows & Events</h2>
+            <p>The DMV region hosts several premier vintage electronics shows and swap meets throughout the year. We participate as exhibitors and provide on-site consultation services for collectors.</p>
+
+            <div class="vintage-timeline">
+                <h3>Annual DMV Vintage Electronics Calendar:</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                    <div><strong>🌸 Spring (March-May)</strong><br>Timonium Radio & Electronics Show, DC Hamfest</div>
+                    <div><strong>☀️ Summer (June-August)</strong><br>Northern VA Vintage Computer Show, Arcade Expo</div>
+                    <div><strong>🍂 Fall (September-November)</strong><br>Capitol Area Radio Show, Retro Gaming Convention</div>
+                    <div><strong>❄️ Winter (December-February)</strong><br>Holiday Electronics Swap, Vintage Hi-Fi Show</div>
+                </div>
+            </div>
+
+            <p><strong>Show Services:</strong> On-site consultations, immediate diagnostic evaluations, parts identification, restoration estimates, and networking with regional specialists and parts dealers.</p>
+        </div>
+
+        <!-- Restoration Process -->
+        <div class="restoration-process">
+            <h2>🔧 Professional Restoration Process</h2>
+            <p>Our vintage electronics restoration follows a systematic approach that prioritizes functionality while preserving the original aesthetic character and historical authenticity of each piece.</p>
+
+            <div class="process-step">
+                <div class="step-icon">1</div>
+                <div>
+                    <strong>Free Diagnostic Evaluation</strong><br>
+                    Comprehensive assessment, functionality testing, component analysis, restoration feasibility determination
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-icon">2</div>
+                <div>
+                    <strong>Historical Research & Documentation</strong><br>
+                    Schematic acquisition, service manual research, original specifications verification, period-correct parts identification
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-icon">3</div>
+                <div>
+                    <strong>Component Sourcing & Acquisition</strong><br>
+                    New-old-stock parts location, compatible substitutions, custom component manufacturing when necessary
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-icon">4</div>
+                <div>
+                    <strong>Electrical Restoration & Repair</strong><br>
+                    Capacitor replacement, tube testing and replacement, circuit board repair, power supply restoration
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-icon">5</div>
+                <div>
+                    <strong>Mechanical & Aesthetic Restoration</strong><br>
+                    Cabinet refinishing, control cleaning and lubrication, dial restoration, original appearance preservation
+                </div>
+            </div>
+
+            <div class="process-step">
+                <div class="step-icon">6</div>
+                <div>
+                    <strong>Testing & Quality Assurance</strong><br>
+                    Performance verification, safety testing, long-term reliability assessment, documentation and warranty
+                </div>
+            </div>
+        </div>
+
+        <!-- Component Sourcing -->
+        <div class="component-sourcing">
+            <h2>🔍 Specialized Component Sourcing</h2>
+            <p>Finding authentic replacement parts for vintage electronics often requires extensive network connections and specialized knowledge. Our component sourcing capabilities span decades of electronics history.</p>
+
+            <h3>Our Component Sourcing Network:</h3>
+            <ul>
+                <li><strong>New-Old-Stock (NOS) Dealers</strong> - Original unused components from factory stock</li>
+                <li><strong>Tube Suppliers</strong> - Vintage and new-production vacuum tubes for all applications</li>
+                <li><strong>Capacitor Specialists</strong> - Period-correct capacitors in original form factors</li>
+                <li><strong>Semiconductor Sources</strong> - Obsolete transistors, ICs, and solid-state components</li>
+                <li><strong>Mechanical Parts</strong> - Switches, potentiometers, transformers, and hardware</li>
+                <li><strong>Custom Manufacturing</strong> - Reproduction of unavailable components when necessary</li>
+            </ul>
+
+            <h3>Component Categories We Source:</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin: 1rem 0;">
+                <div style="background: white; padding: 1rem; border-radius: 8px;">
+                    <strong>📻 Radio Components</strong><br>
+                    IF transformers, variable capacitors, tuning coils
+                </div>
+                <div style="background: white; padding: 1rem; border-radius: 8px;">
+                    <strong>🎮 Gaming Parts</strong><br>
+                    Power supplies, controllers, screens, cartridge connectors
+                </div>
+                <div style="background: white; padding: 1rem; border-radius: 8px;">
+                    <strong>🔊 Audio Components</strong><br>
+                    Speakers, transformers, tone arms, cartridges
+                </div>
+                <div style="background: white; padding: 1rem; border-radius: 8px;">
+                    <strong>💻 Computer Parts</strong><br>
+                    Keyboards, CRT monitors, floppy drives, power supplies
+                </div>
+            </div>
+
+            <p><strong>Authenticity Guarantee:</strong> All sourced components are verified for period authenticity and electrical specifications to ensure proper functionality and historical accuracy.</p>
+        </div>
+
+        <!-- Case Study -->
+        <div class="case-study-vintage">
+            <h3>📋 Case Study: 1955 Zenith Space Command Remote Control TV Restoration</h3>
+            <p><strong>Challenge:</strong> Rare 1955 Zenith Space Command television with ultrasonic remote control system. Non-functional with multiple component failures and severe cabinet damage from storage.</p>
+
+            <p><strong>Restoration Challenges:</strong></p>
+            <ul>
+                <li>Unique ultrasonic remote control system requiring specialized parts</li>
+                <li>CRT picture tube showing age-related brightness loss</li>
+                <li>Multiple failed electrolytic capacitors affecting all circuits</li>
+                <li>Damaged mahogany cabinet requiring period-correct refinishing</li>
+                <li>Rare "Space Command" remote with non-functional ultrasonics</li>
+                <li>Historical significance requiring museum-quality restoration</li>
+            </ul>
+
+            <p><strong>Our Comprehensive Restoration:</strong></p>
+            <ul>
+                <li>Sourced original Zenith ultrasonic receiver modules from NOS dealer</li>
+                <li>CRT rejuvenation using specialized tube restoration equipment</li>
+                <li>Complete recap with period-appropriate Sprague capacitors</li>
+                <li>Cabinet restoration using authentic tung oil and traditional techniques</li>
+                <li>Remote control restoration with ultrasonic tuning fork replacement</li>
+                <li>Created comprehensive documentation for collector's records</li>
+            </ul>
+
+            <p><strong>Result:</strong> Fully functional 1955 Zenith with working ultrasonic remote, museum-quality cabinet restoration, all original functionality restored, appraised value increased from $500 to $4,500.</p>
+
+            <blockquote style="border-left: 4px solid #E91E63; padding-left: 1rem; margin: 1rem 0; font-style: italic;">
+                "I inherited my grandfather's 1955 Zenith TV but it hadn't worked in decades. Prism Specialties brought it back to life completely - even the Space Command remote works perfectly! The restoration is museum quality and now it's the centerpiece of my vintage electronics collection." - Local collector, Fairfax, VA
+            </blockquote>
+        </div>
+
+        <!-- Contact Form Section -->
+        <div class="form-placement" style="margin: 3rem 0; padding: 2rem; border: 2px solid #FF6F00; border-radius: 12px; background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);">
+            <h2 style="text-align: center; color: #FF6F00; margin-bottom: 1rem;">📻 Free Vintage Electronics Evaluation</h2>
+            <p style="text-align: center; margin-bottom: 2rem; font-weight: bold;">Get a comprehensive diagnostic evaluation at no cost. Our specialists assess functionality, parts availability, and restoration feasibility for all vintage electronics.</p>
+
+            <!-- Contact Form Container -->
+            <div id="prism-contact-form"></div>
+        </div>
+
+        <!-- Additional Vintage Services -->
+        <h2>Why Choose Prism Specialties for Vintage Electronics Restoration?</h2>
+        <p>With over 25 years in electronics restoration and deep connections to the DMV collector community, our specialists understand both the technical challenges and emotional significance of vintage electronics. We combine modern diagnostic tools with traditional restoration techniques.</p>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
+            <div style="text-align: center; padding: 1.5rem;">
+                <h4 style="color: #FF6F00;">🔍 Free Diagnostics</h4>
+                <p>Comprehensive evaluation and restoration feasibility assessment at no charge</p>
+            </div>
+            <div style="text-align: center; padding: 1.5rem;">
+                <h4 style="color: #FF6F00;">🔧 Component Sourcing</h4>
+                <p>Extensive network for hard-to-find vintage parts and NOS components</p>
+            </div>
+            <div style="text-align: center; padding: 1.5rem;">
+                <h4 style="color: #FF6F00;">📻 Period Authenticity</h4>
+                <p>Restoration using period-correct materials and original specifications</p>
+            </div>
+            <div style="text-align: center; padding: 1.5rem;">
+                <h4 style="color: #FF6F00;">🤝 Collector Networks</h4>
+                <p>Active participation in DMV vintage electronics collecting communities</p>
+            </div>
+        </div>
+
+        <h2>Vintage Electronics Collecting & Investment</h2>
+        <p>Beyond restoration, we provide comprehensive services for vintage electronics collectors and investors in the DMV region:</p>
+
+        <ul>
+            <li><strong>Collection Assessment</strong> - Professional evaluation and market analysis</li>
+            <li><strong>Investment Consultation</strong> - Guidance on collectible electronics acquisition</li>
+            <li><strong>Estate Services</strong> - Probate evaluations and collection liquidation</li>
+            <li><strong>Insurance Documentation</strong> - Detailed cataloging and valuation</li>
+            <li><strong>Display Consultation</strong> - Museum-quality presentation and preservation</li>
+            <li><strong>Technical Documentation</strong> - Service manuals and historical research</li>
+        </ul>
+
+        <h2>Functional vs. Aesthetic Restoration</h2>
+        <p>We offer flexible restoration approaches based on collector preferences and intended use:</p>
+
+        <ul>
+            <li><strong>Full Restoration</strong> - Complete functionality and aesthetic restoration</li>
+            <li><strong>Functional Only</strong> - Electrical restoration with original patina preservation</li>
+            <li><strong>Cosmetic Enhancement</strong> - Cabinet restoration with selective electrical work</li>
+            <li><strong>Museum Preservation</strong> - Stabilization and documentation without alteration</li>
+            <li><strong>Custom Modifications</strong> - Period-appropriate improvements for daily use</li>
+        </ul>
+
+        <div class="free-diagnostic-alert">
+            <h3>📻 Bringing Classic Electronics Back to Life</h3>
+            <p>Every vintage electronic device tells a story of innovation and craftsmanship. Our restoration services ensure these technological treasures continue to function and inspire for generations to come. The DMV area's rich collecting community deserves expert restoration services that understand both the technical and historical significance of vintage electronics.</p>
+
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <a href="tel:703-229-1321" class="vintage-cta vintage-phone-cta">
+                    📻 Free Vintage Electronics Evaluation: 703-229-1321
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include GHL Scripts -->
+    <script src="../integrations/ghl/config/ghl-config.js"></script>
+    <script src="assets/js/ghl-blog-integration.js"></script>
+    <script src="assets/components/contact-form-component.js"></script>
+
+    <script>
+        // Vintage electronics specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('📻 Vintage electronics restoration blog loaded');
+
+            // Track vintage electronics specialty content engagement
+            if (window.prismTracker) {
+                window.prismTracker.trackPageView('vintageElectronicsRestoration', window.location.href);
+
+                // Add specialty content score
+                window.prismTracker.sessionData.contentScore += 30; // Specialty category
+                window.prismTracker.updateLeadQuality();
+            }
+
+            // Monitor vintage electronics engagement
+            let vintageEngagement = 0;
+            const vintageIndicators = [
+                'vintage-electronics', 'antique-radio', 'retro-gaming', 'restoration',
+                'component-sourcing', 'free-diagnostic', 'collector', 'restoration'
+            ];
+
+            // Track scroll depth on vintage electronics content
+            window.addEventListener('scroll', function() {
+                const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+
+                // Vintage electronics specialty engagement scoring
+                if (scrollPercent >= 25 && vintageEngagement < 1) {
+                    vintageEngagement = 1;
+                    if (window.prismTracker) {
+                        window.prismTracker.sessionData.contentScore += 15; // Specialty content engagement
+                        window.prismTracker.updateLeadQuality();
+                    }
+                }
+
+                if (scrollPercent >= 75 && vintageEngagement < 2) {
+                    vintageEngagement = 2;
+                    if (window.prismTracker) {
+                        window.prismTracker.sessionData.contentScore += 20; // Deep specialty engagement
+                        window.prismTracker.updateLeadQuality();
+                    }
+
+                    // Trigger vintage electronics automation
+                    if (window.prismAutomation) {
+                        window.prismAutomation.triggerExpertConsultationSequence();
+                    }
+                }
+            });
+
+            // Track vintage electronics phone clicks
+            document.querySelectorAll('.vintage-phone-cta').forEach(cta => {
+                cta.addEventListener('click', function(e) {
+                    console.log('📻 Vintage electronics phone CTA clicked:', e.target.textContent);
+
+                    if (window.prismTracker) {
+                        window.prismTracker.sessionData.contentScore += 75; // Vintage electronics phone click
+                        window.prismTracker.updateLeadQuality();
+                    }
+
+                    // Vintage electronics specialty automation trigger
+                    if (window.prismAutomation) {
+                        window.prismAutomation.triggerExpertConsultationSequence();
+                    }
+                });
+            });
+
+            // Auto-populate service type for electronics restoration
+            setTimeout(() => {
+                const serviceSelect = document.getElementById('serviceType');
+                if (serviceSelect && !serviceSelect.value) {
+                    serviceSelect.value = 'electronics_restoration';
+                    serviceSelect.dispatchEvent(new Event('change'));
+                }
+
+                // Auto-populate urgency for consultation
+                const urgencySelect = document.getElementById('urgency');
+                if (urgencySelect && !urgencySelect.value) {
+                    urgencySelect.value = 'consultation';
+                    urgencySelect.dispatchEvent(new Event('change'));
+                }
+            }, 2000);
+
+            // Specialty badges interaction
+            const specialtyBadges = document.querySelectorAll('.specialty-badge');
+            specialtyBadges.forEach(badge => {
+                badge.addEventListener('click', function() {
+                    if (window.prismTracker) {
+                        window.prismTracker.sessionData.contentScore += 10; // Specialty service interest
+                        window.prismTracker.updateLeadQuality();
+                    }
+                });
+            });
+
+            // Collector communities engagement
+            const collectorsSection = document.querySelector('.collector-communities');
+            if (collectorsSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            if (window.prismTracker) {
+                                window.prismTracker.sessionData.contentScore += 15; // Collector community interest
+                                window.prismTracker.updateLeadQuality();
+                            }
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                observer.observe(collectorsSection);
+            }
+
+            // Vintage shows engagement
+            const showsSection = document.querySelector('.vintage-shows');
+            if (showsSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            if (window.prismTracker) {
+                                window.prismTracker.sessionData.contentScore += 10; // Vintage shows interest
+                                window.prismTracker.updateLeadQuality();
+                            }
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                observer.observe(showsSection);
+            }
+
+            // Component sourcing engagement
+            const sourcingSection = document.querySelector('.component-sourcing');
+            if (sourcingSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            if (window.prismTracker) {
+                                window.prismTracker.sessionData.contentScore += 15; // Component sourcing interest
+                                window.prismTracker.updateLeadQuality();
+                            }
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                observer.observe(sourcingSection);
+            }
+
+            // Electronics type cards interaction
+            document.querySelectorAll('.electronics-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    if (window.prismTracker) {
+                        window.prismTracker.sessionData.contentScore += 10; // Electronics type interest
+                        window.prismTracker.updateLeadQuality();
+                    }
+                });
+            });
+
+            // Restoration process engagement
+            const processSection = document.querySelector('.restoration-process');
+            if (processSection) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            if (window.prismTracker) {
+                                window.prismTracker.sessionData.contentScore += 10; // Restoration process interest
+                                window.prismTracker.updateLeadQuality();
+                            }
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                observer.observe(processSection);
+            }
+
+            // Case study engagement tracking
+            const caseStudy = document.querySelector('.case-study-vintage');
+            if (caseStudy) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            if (window.prismTracker) {
+                                window.prismTracker.sessionData.contentScore += 10; // Vintage case study engagement
+                                window.prismTracker.updateLeadQuality();
+                            }
+                        }
+                    });
+                }, { threshold: 0.5 });
+
+                observer.observe(caseStudy);
+            }
+        });
+    </script>
+</body>
+</html>

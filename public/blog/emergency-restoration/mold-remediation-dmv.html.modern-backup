@@ -125,8 +125,8 @@
                 <h1>Emergency Mold Remediation in Washington DC, Maryland & Virginia</h1>
                 <div class="emergency-cta-banner">
                     <h2>🦠 Mold Emergency? We Respond Within 6 Hours</h2>
-                    <a href="tel:301-215-3191" data-phone="regional" class="cta-button emergency-cta">
-                        Call Mold Emergency Line: <span data-phone="regional">301-215-3191</span>
+                    <a href="tel:REGIONAL_PHONE" data-phone="regional" class="cta-button emergency-cta">
+                        Call Mold Emergency Line: <span data-phone="regional">[REGIONAL_PHONE]</span>
                     </a>
                     <p class="emergency-subtitle">Serving DC, MD, VA • Health-Safe Protocols • Insurance Claims Supported • 24/7 Mold Response Team</p>
                 </div>
@@ -414,8 +414,8 @@
                     <div class="contact-options">
                         <div class="phone-contact">
                             <h3>Mold Emergency Hotline</h3>
-                            <a href="tel:301-215-3191" data-phone="regional" class="emergency-phone mold-emergency">
-                                <span data-phone="regional">301-215-3191</span>
+                            <a href="tel:REGIONAL_PHONE" data-phone="regional" class="emergency-phone mold-emergency">
+                                <span data-phone="regional">[REGIONAL_PHONE]</span>
                             </a>
                             <p>Available 24/7/365</p>
                         </div>
@@ -441,7 +441,7 @@
     <footer class="blog-footer">
         <div class="footer-content">
             <p>&copy; 2024 Prism Specialties DMV. Professional mold remediation services across Washington DC, Maryland, and Virginia.</p>
-            <p class="emergency-footer">Mold Emergency Services: <a href="tel:301-215-3191" data-phone="regional" class="emergency-cta">301-215-3191</a></p>
+            <p class="emergency-footer">Mold Emergency Services: <a href="tel:REGIONAL_PHONE" data-phone="regional" class="emergency-cta">[REGIONAL_PHONE]</a></p>
         </div>
     </footer>
 

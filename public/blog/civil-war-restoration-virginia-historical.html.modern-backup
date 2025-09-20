@@ -6,33 +6,169 @@
     <title>Civil War Restoration Virginia | Historical Artifact Preservation | Battlefield Artifacts | Museum Quality</title>
     <meta name="description" content="Expert Civil War restoration and historical artifact preservation in Virginia. Museum-quality restoration of battlefield artifacts with authentication and provenance documentation. Serving collectors and institutions.">
     <meta name="keywords" content="Civil War restoration Virginia, historical artifact preservation, battlefield artifacts, museum quality restoration, artifact authentication, provenance documentation, Virginia battlefields">
-    <meta name="prism-content-type" content="civil-war-restoration">
-    <link href="assets/css/elegant-professional-blog.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/blog-styles.css">
     <style>
-        /* Modern CSS Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        /* Historical/Civil War styling */
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            min-height: 100vh;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
-        /* Modern Header Styles */
+        .civil-war-header {
+            background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(141, 110, 99, 0.3);
+        }
+
+        .museum-quality-alert {
+            background: linear-gradient(135deg, #6A4C93 0%, #4A148C 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+            border-left: 6px solid #9C27B0;
+        }
+
+        .historical-cta {
+            background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: inline-block;
+            margin: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px rgba(141, 110, 99, 0.4);
+        }
+
+        .historical-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(141, 110, 99, 0.5);
+        }
+
+        .artifact-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .artifact-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-left: 5px solid;
+            transition: transform 0.3s ease;
+        }
+
+        .artifact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .weapons-card { border-left-color: #795548; }
+        .uniforms-card { border-left-color: #607D8B; }
+        .documents-card { border-left-color: #FF8F00; }
+        .personal-card { border-left-color: #8D6E63; }
+
+        .battlefield-section {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #9C27B0;
+            margin: 2rem 0;
+        }
+
+        .museum-partnerships {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #4CAF50;
+            margin: 2rem 0;
+        }
+
+        .authentication-process {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .auth-step {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #8D6E63;
+        }
+
+        .step-icon {
+            background: #8D6E63;
+            color: white;
+            padding: 0.5rem;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 1rem;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .provenance-documentation {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 5px solid #FF9800;
+            margin: 2rem 0;
+        }
+
+        .case-study-civil-war {
+            background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border-left: 5px solid #8D6E63;
+        }
+
+        .expertise-badge {
+            display: inline-block;
+            background: #6A4C93;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            margin: 0.25rem;
+        }
+
+        .battlefield-map {
+            background: #f5f5f5;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border: 2px solid #8D6E63;
+        }
+
+        /* Header Styles */
         header {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.2);
         }
 
         .header-content {
@@ -41,18 +177,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 30px;
+            padding: 15px 20px;
         }
 
         .logo-brand {
             display: flex;
             align-items: center;
             text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-brand:hover {
-            transform: translateY(-2px);
         }
 
         .logo-brand img {
@@ -60,365 +191,55 @@
             width: auto;
             clip-path: inset(0 0 12% 0);
             margin-right: 15px;
-            filter: drop-shadow(0 2px 4px rgba(0,160,223,0.2));
         }
 
         .brand-text {
-            background: linear-gradient(135deg, #00a0df 0%, #0078a8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #00a0df;
             font-size: 1.8rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
         }
 
         nav {
             display: flex;
-            gap: 35px;
+            gap: 30px;
             align-items: center;
         }
 
         nav a {
             text-decoration: none;
-            color: #495057;
-            font-weight: 600;
-            font-size: 15px;
-            padding: 10px 16px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        nav a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0,160,223,0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        nav a:hover::before {
-            left: 100%;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
         nav a:hover {
             color: #00a0df;
-            background: rgba(0,160,223,0.05);
-            transform: translateY(-1px);
         }
 
-        /* Modern Emergency Banner */
+        /* Emergency Banner */
         .emergency-banner {
-            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
             text-align: center;
-            padding: 15px 0;
+            padding: 10px 0;
             font-weight: 600;
-            box-shadow: 0 2px 10px rgba(0,123,255,0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .emergency-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
         }
 
         .emergency-banner a {
             color: white;
             text-decoration: none;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 4px;
-            transition: background 0.3s ease;
         }
 
         .emergency-banner a:hover {
-            background: rgba(255,255,255,0.2);
-            text-decoration: none;
+            text-decoration: underline;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 30px;
-        }
-
-        /* Modern Hero Section Styles */
-        .hero-section {
-            background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.05"><polygon points="0,0 1000,100 1000,0"/></svg>');
-            background-size: cover;
-        }
-
-        .hero-section h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            margin-bottom: 30px;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            line-height: 1.2;
-        }
-
-        /* Modern Content Section Styles */
-        .content-section {
-            background: white;
-            margin: 30px 0;
-            padding: 50px;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .content-section:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 48px rgba(0,0,0,0.12);
-        }
-
-        .content-section h2 {
-            color: #2c3e50;
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            background: linear-gradient(135deg, #2c3e50 0%, #8D6E63 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Modern Button Styles */
-        .cta-button {
-            background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%);
-            color: white;
-            padding: 18px 36px;
-            border: none;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(141,110,99,0.3);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(141,110,99,0.4);
-            background: linear-gradient(135deg, #795548 0%, #4e342e 100%);
-        }
-
-        /* Civil War Artifact Categories */
-        .artifact-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
-            margin: 30px 0;
-        }
-
-        .artifact-type {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            padding: 30px;
-            border-radius: 12px;
-            border-left: 5px solid #8D6E63;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-        }
-
-        .artifact-type:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-            border-left-color: #5D4037;
-        }
-
-        .artifact-type h3 {
-            color: #2c3e50;
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        /* Modern Footer Styles */
-        .blog-footer {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        .blog-footer a {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .blog-footer a:hover {
-            color: #5dade2;
-        }
-
-        /* Testimonial Section */
-        .testimonial-section {
-            background: linear-gradient(135deg, #efebe9 0%, #d7ccc8 100%);
-            padding: 60px 0;
-            margin: 50px 0;
-            border-radius: 20px;
-        }
-
-        .artifact-testimonials {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 30px;
-        }
-
-        .testimonial {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-            border-top: 4px solid #8D6E63;
-        }
-
-        .testimonial blockquote {
-            font-style: italic;
-            color: #495057;
-            margin-bottom: 20px;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .testimonial cite {
-            color: #8D6E63;
-            font-weight: 600;
-            font-style: normal;
-        }
-
-        /* Expertise badges */
-        .expertise-badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #6A4C93 0%, #4A148C 100%);
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin: 4px;
-            transition: transform 0.3s ease;
-        }
-
-        .expertise-badge:hover {
-            transform: translateY(-2px);
-        }
-
-        /* Authentication process styling */
-        .authentication-process {
-            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
-            padding: 40px;
-            border-radius: 16px;
-            margin: 30px 0;
-            border-left: 5px solid #FF9800;
-        }
-
-        .auth-step {
-            display: flex;
-            align-items: center;
-            margin: 20px 0;
-            padding: 20px;
-            background: white;
-            border-radius: 12px;
-            border-left: 4px solid #8D6E63;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .step-icon {
-            background: linear-gradient(135deg, #8D6E63 0%, #5D4037 100%);
-            color: white;
-            padding: 12px;
-            border-radius: 50%;
-            font-weight: bold;
-            margin-right: 20px;
-            min-width: 50px;
-            text-align: center;
-            font-size: 1.1rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-                padding: 20px;
-            }
-
-            nav {
-                gap: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero-section h1 {
-                font-size: 2.2rem;
-            }
-
-            .content-section {
-                padding: 30px 20px;
-                margin: 20px 10px;
-            }
-
-            .container {
-                padding: 0 20px;
-            }
-
-            .artifact-categories {
-                grid-template-columns: 1fr;
-            }
-
-            .artifact-testimonials {
-                grid-template-columns: 1fr;
-                padding: 0 20px;
-            }
+            padding: 0 20px;
         }
     </style>
-
-    <!-- Prism GHL Integration -->
-    <script src="/integrations/ghl/config/ghl-config.js"></script>
-    <script src="/integrations/ghl/tracking/lead-tracker.js"></script>
-    <script src="/blog/assets/js/ghl-blog-integration.js"></script>
 </head>
 <body>
     <!-- Header -->
@@ -446,84 +267,88 @@
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <div class="hero-section">
-        <div class="container">
-            <h1>Civil War Restoration & Historical Artifact Preservation</h1>
-            <p style="font-size: 1.3rem; margin-bottom: 30px; opacity: 0.95;">Museum-Quality Restoration • Virginia Battlefields • Authentication & Provenance</p>
-
-            <div style="margin: 30px 0;">
-                <span class="expertise-badge">Museum Standards</span>
-                <span class="expertise-badge">Authentication</span>
-                <span class="expertise-badge">Provenance Docs</span>
-                <span class="expertise-badge">Virginia Battlefields</span>
-            </div>
-
-            <a href="tel:301-215-3191" class="cta-button">
-                Call Expert Historians: 301-215-3191
-            </a>
-        </div>
+    <!-- Civil War Header -->
+    <div class="civil-war-header">
+        <h1>⚔️ Civil War Restoration & Historical Artifact Preservation</h1>
+        <p>Museum-Quality Restoration • Virginia Battlefields • Authentication & Provenance</p>
+        <p><strong>Preserving American History for Future Generations</strong></p>
     </div>
 
-    <!-- Main Content Container -->
-    <div class="container">
-        <!-- Introduction Section -->
-        <div class="content-section">
-            <h2>Comprehensive Civil War Restoration Across Virginia</h2>
-            <p>Virginia's landscape holds more Civil War history than any other state, with over 2,000 battles and skirmishes fought on Virginia soil. The artifacts recovered from these historic battlefields require specialized knowledge, museum-quality restoration techniques, and meticulous documentation to preserve their historical significance.</p>
+    <!-- Museum Quality Alert -->
+    <div class="museum-quality-alert">
+        <h2>🏛️ MUSEUM-QUALITY RESTORATION & AUTHENTICATION</h2>
+        <p><strong>Expert Historical Preservation:</strong> Our Civil War restoration specialists provide museum-quality preservation services with professional authentication and comprehensive provenance documentation for collectors, museums, and historical institutions.</p>
 
-            <p>Prism Specialties provides expert Civil War restoration and historical artifact preservation services throughout Virginia:</p>
-
-            <ul>
-                <li>⚔️ <strong>Civil War Restoration Virginia</strong> - Battlefield artifacts and military relics</li>
-                <li>🏛️ <strong>Historical Artifact Preservation</strong> - Museum-standard conservation techniques</li>
-                <li>📜 <strong>Authentication Services</strong> - Professional verification and documentation</li>
-                <li>📋 <strong>Provenance Documentation</strong> - Comprehensive historical research and certification</li>
-                <li>🗺️ <strong>Battlefield Artifacts</strong> - Specialized handling of excavated relics</li>
-                <li>🏆 <strong>Collector Services</strong> - Private collection preservation and enhancement</li>
-            </ul>
+        <div style="margin: 1.5rem 0;">
+            <span class="expertise-badge">Museum Standards</span>
+            <span class="expertise-badge">Authentication</span>
+            <span class="expertise-badge">Provenance Docs</span>
+            <span class="expertise-badge">Virginia Battlefields</span>
         </div>
 
-        <!-- Artifact Types Section -->
-        <div class="content-section">
-            <h2>Civil War Artifact Restoration Specialties</h2>
-            <div class="artifact-categories">
-                <div class="artifact-type">
-                    <h3>⚔️ Weapons & Military Equipment</h3>
-                    <p><strong>Firearms:</strong> Muskets, rifles, pistols, cannon components, ammunition</p>
-                    <p><strong>Edged Weapons:</strong> Swords, bayonets, knives, sabers</p>
-                    <p><strong>Equipment:</strong> Cartridge boxes, haversacks, canteens, belt plates</p>
-                    <p><strong>Restoration:</strong> De-rusting, stabilization, conservation coating, display mounting</p>
-                </div>
+        <div style="margin: 1.5rem 0;">
+            <a href="tel:703-229-1321" class="historical-cta historical-phone-cta">
+                ⚔️ Virginia Historical: 703-229-1321
+            </a>
+        </div>
 
-                <div class="artifact-type">
-                    <h3>👕 Uniforms & Textiles</h3>
-                    <p><strong>Military Uniforms:</strong> Federal and Confederate jackets, trousers, headgear</p>
-                    <p><strong>Insignia & Badges:</strong> Rank chevrons, unit badges, buttons, belt buckles</p>
-                    <p><strong>Personal Items:</strong> Haversacks, blankets, flags, banners</p>
-                    <p><strong>Conservation:</strong> Textile stabilization, cleaning, archival mounting, UV protection</p>
-                </div>
+        <p><strong>Battlefield Artifact Expertise • Collector Networks • Museum Partnerships</strong></p>
+    </div>
 
-                <div class="artifact-type">
-                    <h3>📜 Documents & Paper Artifacts</h3>
-                    <p><strong>Military Records:</strong> Muster rolls, discharge papers, commissions</p>
-                    <p><strong>Personal Letters:</strong> Soldier correspondence, family letters, diaries</p>
-                    <p><strong>Official Documents:</strong> Orders, maps, field reports, medical records</p>
-                    <p><strong>Preservation:</strong> Deacidification, flattening, encapsulation, digitization</p>
-                </div>
+    <!-- Blog Content -->
+    <div class="blog-content">
+        <h2>Comprehensive Civil War Restoration Across Virginia</h2>
+        <p>Virginia's landscape holds more Civil War history than any other state, with over 2,000 battles and skirmishes fought on Virginia soil. The artifacts recovered from these historic battlefields require specialized knowledge, museum-quality restoration techniques, and meticulous documentation to preserve their historical significance.</p>
 
-                <div class="artifact-type">
-                    <h3>👤 Personal Effects & Memorabilia</h3>
-                    <p><strong>Personal Items:</strong> Photographs, jewelry, religious items, pocket watches</p>
-                    <p><strong>Camp Equipment:</strong> Mess kits, cooking utensils, medical instruments</p>
-                    <p><strong>Commemorative Items:</strong> Medals, ribbons, reunion badges, GAR items</p>
-                    <p><strong>Treatment:</strong> Cleaning, stabilization, protective housing, display preparation</p>
-                </div>
+        <p>Prism Specialties provides expert Civil War restoration and historical artifact preservation services throughout Virginia:</p>
+
+        <ul>
+            <li>⚔️ <strong>Civil War Restoration Virginia</strong> - Battlefield artifacts and military relics</li>
+            <li>🏛️ <strong>Historical Artifact Preservation</strong> - Museum-standard conservation techniques</li>
+            <li>📜 <strong>Authentication Services</strong> - Professional verification and documentation</li>
+            <li>📋 <strong>Provenance Documentation</strong> - Comprehensive historical research and certification</li>
+            <li>🗺️ <strong>Battlefield Artifacts</strong> - Specialized handling of excavated relics</li>
+            <li>🏆 <strong>Collector Services</strong> - Private collection preservation and enhancement</li>
+        </ul>
+
+        <!-- Artifact Types Grid -->
+        <h2>Civil War Artifact Restoration Specialties</h2>
+        <div class="artifact-types-grid">
+            <div class="artifact-card weapons-card">
+                <h3>⚔️ Weapons & Military Equipment</h3>
+                <p><strong>Firearms:</strong> Muskets, rifles, pistols, cannon components, ammunition</p>
+                <p><strong>Edged Weapons:</strong> Swords, bayonets, knives, sabers</p>
+                <p><strong>Equipment:</strong> Cartridge boxes, haversacks, canteens, belt plates</p>
+                <p><strong>Restoration:</strong> De-rusting, stabilization, conservation coating, display mounting</p>
+            </div>
+
+            <div class="artifact-card uniforms-card">
+                <h3>👕 Uniforms & Textiles</h3>
+                <p><strong>Military Uniforms:</strong> Federal and Confederate jackets, trousers, headgear</p>
+                <p><strong>Insignia & Badges:</strong> Rank chevrons, unit badges, buttons, belt buckles</p>
+                <p><strong>Personal Items:</strong> Haversacks, blankets, flags, banners</p>
+                <p><strong>Conservation:</strong> Textile stabilization, cleaning, archival mounting, UV protection</p>
+            </div>
+
+            <div class="artifact-card documents-card">
+                <h3>📜 Documents & Paper Artifacts</h3>
+                <p><strong>Military Records:</strong> Muster rolls, discharge papers, commissions</p>
+                <p><strong>Personal Letters:</strong> Soldier correspondence, family letters, diaries</p>
+                <p><strong>Official Documents:</strong> Orders, maps, field reports, medical records</p>
+                <p><strong>Preservation:</strong> Deacidification, flattening, encapsulation, digitization</p>
+            </div>
+
+            <div class="artifact-card personal-card">
+                <h3>👤 Personal Effects & Memorabilia</h3>
+                <p><strong>Personal Items:</strong> Photographs, jewelry, religious items, pocket watches</p>
+                <p><strong>Camp Equipment:</strong> Mess kits, cooking utensils, medical instruments</p>
+                <p><strong>Commemorative Items:</strong> Medals, ribbons, reunion badges, GAR items</p>
+                <p><strong>Treatment:</strong> Cleaning, stabilization, protective housing, display preparation</p>
             </div>
         </div>
 
         <!-- Virginia Battlefields -->
-        <div class="content-section">
+        <div class="battlefield-section">
             <h2>⚔️ Virginia Civil War Battlefield Expertise</h2>
             <p>Our restoration specialists have extensive experience with artifacts recovered from Virginia's most significant Civil War battlefields, providing context-specific preservation that honors the historical significance of each site.</p>
 
@@ -545,7 +370,7 @@
         </div>
 
         <!-- Museum Partnerships -->
-        <div class="content-section">
+        <div class="museum-partnerships">
             <h2>🏛️ Museum Partnerships & Institutional Services</h2>
             <p>Prism Specialties maintains strategic partnerships with Virginia's premier Civil War museums, historical societies, and preservation organizations, ensuring our restoration work meets the highest institutional standards.</p>
 
@@ -677,83 +502,62 @@
         </div>
 
         <!-- Additional Historical Services -->
-        <div class="content-section">
-            <h2>Why Choose Prism Specialties for Civil War Restoration?</h2>
-            <p>With over 25 years preserving Virginia's Civil War heritage, our specialists combine advanced conservation techniques with deep historical knowledge. We understand the unique challenges of Civil War artifacts and the importance of preserving their stories for future generations.</p>
+        <h2>Why Choose Prism Specialties for Civil War Restoration?</h2>
+        <p>With over 25 years preserving Virginia's Civil War heritage, our specialists combine advanced conservation techniques with deep historical knowledge. We understand the unique challenges of Civil War artifacts and the importance of preserving their stories for future generations.</p>
 
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
-                <div style="text-align: center; padding: 1.5rem;">
-                    <h4 style="color: #8D6E63;">🏛️ Museum Standards</h4>
-                    <p>AAM and NPS-compliant conservation techniques for institutional-quality preservation</p>
-                </div>
-                <div style="text-align: center; padding: 1.5rem;">
-                    <h4 style="color: #8D6E63;">🔍 Authentication Experts</h4>
-                    <p>Professional authentication services with comprehensive research and documentation</p>
-                </div>
-                <div style="text-align: center; padding: 1.5rem;">
-                    <h4 style="color: #8D6E63;">⚔️ Battlefield Expertise</h4>
-                    <p>Specialized knowledge of Virginia Civil War battlefields and regional artifact types</p>
-                </div>
-                <div style="text-align: center; padding: 1.5rem;">
-                    <h4 style="color: #8D6E63;">📋 Provenance Research</h4>
-                    <p>Comprehensive historical research and documentation services for collector confidence</p>
-                </div>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; margin: 2rem 0;">
+            <div style="text-align: center; padding: 1.5rem;">
+                <h4 style="color: #8D6E63;">🏛️ Museum Standards</h4>
+                <p>AAM and NPS-compliant conservation techniques for institutional-quality preservation</p>
+            </div>
+            <div style="text-align: center; padding: 1.5rem;">
+                <h4 style="color: #8D6E63;">🔍 Authentication Experts</h4>
+                <p>Professional authentication services with comprehensive research and documentation</p>
+            </div>
+            <div style="text-align: center; padding: 1.5rem;">
+                <h4 style="color: #8D6E63;">⚔️ Battlefield Expertise</h4>
+                <p>Specialized knowledge of Virginia Civil War battlefields and regional artifact types</p>
+            </div>
+            <div style="text-align: center; padding: 1.5rem;">
+                <h4 style="color: #8D6E63;">📋 Provenance Research</h4>
+                <p>Comprehensive historical research and documentation services for collector confidence</p>
             </div>
         </div>
 
-        <div class="content-section">
-            <h2>Civil War Collector Networks & Services</h2>
-            <p>We maintain extensive connections within Virginia's Civil War collecting community, providing specialized services for private collectors, estate evaluations, and collection management:</p>
+        <h2>Civil War Collector Networks & Services</h2>
+        <p>We maintain extensive connections within Virginia's Civil War collecting community, providing specialized services for private collectors, estate evaluations, and collection management:</p>
 
-            <ul>
-                <li><strong>Collection Assessment</strong> - Professional evaluation and preservation planning</li>
-                <li><strong>Estate Services</strong> - Probate appraisals and family collection division</li>
-                <li><strong>Insurance Documentation</strong> - Detailed cataloging and valuation for coverage</li>
-                <li><strong>Display Consultation</strong> - Museum-quality mounting and environmental control</li>
-                <li><strong>Research Services</strong> - Unit histories, veteran biographies, battle documentation</li>
-                <li><strong>Educational Programs</strong> - Collection interpretation and historical context</li>
-            </ul>
+        <ul>
+            <li><strong>Collection Assessment</strong> - Professional evaluation and preservation planning</li>
+            <li><strong>Estate Services</strong> - Probate appraisals and family collection division</li>
+            <li><strong>Insurance Documentation</strong> - Detailed cataloging and valuation for coverage</li>
+            <li><strong>Display Consultation</strong> - Museum-quality mounting and environmental control</li>
+            <li><strong>Research Services</strong> - Unit histories, veteran biographies, battle documentation</li>
+            <li><strong>Educational Programs</strong> - Collection interpretation and historical context</li>
+        </ul>
 
-            <h2>Ethical Collection & Legal Compliance</h2>
-            <p>All Civil War restoration work adheres to strict ethical standards and legal requirements for cultural property preservation:</p>
+        <h2>Ethical Collection & Legal Compliance</h2>
+        <p>All Civil War restoration work adheres to strict ethical standards and legal requirements for cultural property preservation:</p>
 
-            <ul>
-                <li><strong>ARPA Compliance</strong> - Archaeological Resources Protection Act adherence</li>
-                <li><strong>State Regulations</strong> - Virginia cultural property and metal detecting laws</li>
-                <li><strong>Battlefield Permissions</strong> - Proper permits and documentation for recovered artifacts</li>
-                <li><strong>Museum Ethics</strong> - ICOM and AAM professional standards compliance</li>
-                <li><strong>Chain of Custody</strong> - Documented ownership history and legal acquisition</li>
-            </ul>
-        </div>
+        <ul>
+            <li><strong>ARPA Compliance</strong> - Archaeological Resources Protection Act adherence</li>
+            <li><strong>State Regulations</strong> - Virginia cultural property and metal detecting laws</li>
+            <li><strong>Battlefield Permissions</strong> - Proper permits and documentation for recovered artifacts</li>
+            <li><strong>Museum Ethics</strong> - ICOM and AAM professional standards compliance</li>
+            <li><strong>Chain of Custody</strong> - Documented ownership history and legal acquisition</li>
+        </ul>
 
-        <!-- Testimonial Section -->
-        <div class="testimonial-section">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 40px; color: #2c3e50;">Preserving Virginia's Civil War Legacy</h2>
-                <div class="artifact-testimonials">
-                    <div class="testimonial">
-                        <blockquote>Virginia's Civil War artifacts tell the stories of our nation's most defining conflict. Our restoration and authentication services ensure these precious historical resources are preserved with the dignity and expertise they deserve for future generations to study and appreciate.</blockquote>
-                        <cite>Prism Specialties Historical Division</cite>
-                    </div>
-                </div>
+        <div class="museum-quality-alert">
+            <h3>⚔️ Preserving Virginia's Civil War Legacy</h3>
+            <p>Virginia's Civil War artifacts tell the stories of our nation's most defining conflict. Our restoration and authentication services ensure these precious historical resources are preserved with the dignity and expertise they deserve for future generations to study and appreciate.</p>
 
-                <div style="text-align: center; margin-top: 30px;">
-                    <a href="tel:301-215-3191" class="cta-button">
-                        Civil War Consultation: 301-215-3191
-                    </a>
-                </div>
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <a href="tel:703-229-1321" class="historical-cta historical-phone-cta">
+                    ⚔️ Civil War Consultation: 703-229-1321
+                </a>
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="blog-footer">
-        <div class="container">
-            <p>&copy; 2024 Prism Specialties DMV. Expert Civil War restoration and historical artifact preservation services across Virginia, Maryland, and Washington DC.</p>
-            <p>Professional authentication • Museum-quality restoration • Comprehensive provenance documentation</p>
-            <p><a href="../contact.html">Contact Us</a> | <a href="../services.html">Our Services</a> | <a href="../about-us.html">About Prism Specialties</a></p>
-        </div>
-    </footer>
 
     <!-- Include GHL Scripts -->
     <script src="../integrations/ghl/config/ghl-config.js"></script>

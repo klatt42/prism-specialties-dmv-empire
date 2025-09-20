@@ -384,8 +384,8 @@
                     <div class="cta-options">
                         <div class="phone-cta">
                             <h3>Call for Consultation</h3>
-                            <a href="tel:301-215-3191" data-phone="regional" class="cta-button military-cta-btn">
-                                <span data-phone="regional">301-215-3191</span>
+                            <a href="tel:REGIONAL_PHONE" data-phone="regional" class="cta-button military-cta-btn">
+                                <span data-phone="regional">[REGIONAL_PHONE]</span>
                             </a>
                             <p>Complimentary assessment & restoration quote</p>
                         </div>
@@ -411,7 +411,7 @@
     <footer class="blog-footer">
         <div class="footer-content">
             <p>&copy; 2024 Prism Specialties DMV. Military uniform restoration and preservation across Washington DC, Maryland, and Virginia.</p>
-            <p>Honoring service: <a href="tel:301-215-3191" data-phone="regional">301-215-3191</a></p>
+            <p>Honoring service: <a href="tel:REGIONAL_PHONE" data-phone="regional">[REGIONAL_PHONE]</a></p>
         </div>
     </footer>
 

@@ -15,31 +15,6 @@
             line-height: 1.6;
             color: #333;
         }
-
-        /* Emergency Banner */
-        .emergency-banner {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            font-weight: 600;
-        }
-
-        .emergency-banner a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .emergency-banner a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
         
         /* Dropdown Menu Styles */
         .services-dropdown {
@@ -100,20 +75,13 @@
                     </div>
                 </div>
                 <a href="about-us.html" style="text-decoration: none; color: #00a0df; font-weight: 600;">About Us</a>
-                <a href="blog/" style="text-decoration: none; color: #333; font-weight: 500;">Blog</a>
+                <a href="blog/index.html" style="text-decoration: none; color: #333; font-weight: 500;">Blog</a>
                 <a href="index.html#service-areas" style="text-decoration: none; color: #333; font-weight: 500;">Service Areas</a>
                 <a href="index.html#contact" style="text-decoration: none; color: #333; font-weight: 500;">Contact</a>
                 <a href="tel:301-215-3191" style="background: #00a0df; color: white; padding: 12px 24px; border-radius: 5px; text-decoration: none; font-weight: 600;">301-215-3191</a>
             </nav>
         </div>
     </header>
-
-    <!-- Emergency Banner -->
-    <div class="emergency-banner">
-        <div class="container">
-            🚨 <strong>Emergency? Call Now:</strong> <a href="tel:301-215-3191">301-215-3191</a> - 24/7 Response
-        </div>
-    </div>
 
     <!-- Hero Section -->
     <section style="background: linear-gradient(135deg, #00a0df 0%, #0090c9 100%); color: white; padding: 100px 20px; text-align: center;">

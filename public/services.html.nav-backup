@@ -412,7 +412,6 @@
                 <a href="services.html">Services</a>
                 <a href="contact.html">Contact</a>
                 <a href="about-us.html">About</a>
-                <a href="blog/">Blog</a>
                 <a href="emergency.html">Emergency</a>
             </nav>
             <button class="mobile-nav-toggle" onclick="toggleNav()">☰</button>

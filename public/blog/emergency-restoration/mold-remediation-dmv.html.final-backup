@@ -9,30 +9,13 @@
     <meta name="prism-content-type" content="emergency-restoration">
     <link href="../assets/css/elegant-professional-blog.css" rel="stylesheet">
     <style>
-        /* Modern CSS Reset & Foundation */
-        *, *::before, *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            min-height: 100vh;
-            line-height: 1.6;
-            color: #2c3e50;
-        }
-
-        /* Glass Morphism Header */
+        /* Header Styles */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .header-content {
@@ -41,18 +24,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 15px 20px;
         }
 
         .logo-brand {
             display: flex;
             align-items: center;
             text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-brand:hover {
-            transform: translateY(-2px);
         }
 
         .logo-brand img {
@@ -60,750 +38,53 @@
             width: auto;
             clip-path: inset(0 0 12% 0);
             margin-right: 15px;
-            filter: drop-shadow(0 4px 8px rgba(0, 160, 223, 0.3));
         }
 
         .brand-text {
             color: #00a0df;
             font-size: 1.8rem;
             font-weight: 700;
-            text-shadow: 0 2px 4px rgba(0, 160, 223, 0.1);
         }
 
         nav {
             display: flex;
-            gap: 32px;
+            gap: 30px;
             align-items: center;
         }
 
         nav a {
             text-decoration: none;
-            color: #2c3e50;
-            font-weight: 600;
-            font-size: 16px;
-            padding: 12px 16px;
-            border-radius: 8px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
         nav a:hover {
             color: #00a0df;
-            background: rgba(0, 160, 223, 0.1);
-            transform: translateY(-2px);
         }
 
-        nav a::before {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, #00a0df, #0084c7);
-            transition: all 0.3s ease;
-            transform: translateX(-50%);
-        }
-
-        nav a:hover::before {
-            width: 100%;
-        }
-
-        /* Modern Emergency Banner with Shimmer */
+        /* Emergency Banner */
         .emergency-banner {
-            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
             text-align: center;
-            padding: 16px 0;
+            padding: 10px 0;
             font-weight: 600;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .emergency-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
         }
 
         .emergency-banner a {
             color: white;
             text-decoration: none;
-            font-weight: 700;
-            padding: 4px 8px;
-            border-radius: 4px;
-            transition: all 0.3s ease;
         }
 
         .emergency-banner a:hover {
-            background: rgba(255, 255, 255, 0.2);
-            transform: scale(1.05);
+            text-decoration: underline;
         }
 
-        /* Modern Container */
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-        }
-
-        /* Blog Content Styling */
-        .blog-content {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .restoration-post {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 24px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        /* Hero Section */
-        .hero-section {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            padding: 60px 40px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(0, 160, 223, 0.1) 0%, rgba(52, 73, 94, 0.1) 100%);
-        }
-
-        .hero-section h1 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 24px;
-            position: relative;
-            z-index: 1;
-            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .emergency-cta-banner {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 32px;
-            margin-top: 32px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            z-index: 1;
-        }
-
-        .emergency-cta-banner h2 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: #fff;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
-            color: white;
-            padding: 16px 32px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin: 16px 0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 8px 24px rgba(255, 107, 107, 0.3);
-            border: 2px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 12px 32px rgba(255, 107, 107, 0.4);
-            background: linear-gradient(135deg, #ff5252 0%, #d63031 100%);
-        }
-
-        .emergency-subtitle {
-            font-size: 1.1rem;
-            opacity: 0.9;
-            margin-top: 16px;
-        }
-
-        /* Content Sections */
-        .content-section {
-            padding: 48px 40px;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-        }
-
-        .content-section:last-child {
-            border-bottom: none;
-        }
-
-        .content-section h2 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 24px;
-            position: relative;
-            padding-bottom: 16px;
-        }
-
-        .content-section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 4px;
-            background: linear-gradient(90deg, #00a0df, #0084c7);
-            border-radius: 2px;
-        }
-
-        .content-section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 24px;
-            color: #34495e;
-        }
-
-        /* Emergency Stats Grid */
-        .emergency-stats, .mold-stats {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin: 32px 0;
-        }
-
-        .stat-item {
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
-            padding: 32px 24px;
-            border-radius: 16px;
-            text-align: center;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .stat-item:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-        }
-
-        .stat-item h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #00a0df;
-            margin-bottom: 12px;
-        }
-
-        .stat-item p {
-            color: #34495e;
-            margin: 0;
-        }
-
-        /* Mold Types Grid */
-        .mold-types {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-            margin: 32px 0;
-        }
-
-        .mold-type {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 32px 24px;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .mold-type:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-        }
-
-        .mold-type h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: #2c3e50;
-        }
-
-        .mold-type ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .mold-type li {
-            padding: 8px 0;
-            padding-left: 24px;
-            position: relative;
-            color: #34495e;
-        }
-
-        .mold-type li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #00a0df;
-            font-weight: bold;
-        }
-
-        /* Health Symptoms */
-        .health-symptoms {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-            margin: 32px 0;
-        }
-
-        .symptom-category {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 32px 24px;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .symptom-category:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-        }
-
-        .emergency-symptoms {
-            border-left: 4px solid #e74c3c;
-        }
-
-        .warning-symptoms {
-            border-left: 4px solid #f39c12;
-        }
-
-        .prevention-symptoms {
-            border-left: 4px solid #27ae60;
-        }
-
-        .symptom-category h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: #2c3e50;
-        }
-
-        .symptom-category ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .symptom-category li {
-            padding: 8px 0;
-            padding-left: 24px;
-            position: relative;
-            color: #34495e;
-        }
-
-        .symptom-category li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #00a0df;
-            font-weight: bold;
-        }
-
-        /* Process Steps */
-        .process-steps, .mold-process {
-            display: grid;
-            gap: 32px;
-            margin: 32px 0;
-        }
-
-        .step {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 32px;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-left: 4px solid #00a0df;
-        }
-
-        .step:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-        }
-
-        .step h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 16px;
-        }
-
-        .step ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .step li {
-            padding: 8px 0;
-            padding-left: 24px;
-            position: relative;
-            color: #34495e;
-            font-size: 1rem;
-        }
-
-        .step li::before {
-            content: '▶';
-            position: absolute;
-            left: 0;
-            color: #00a0df;
-            font-size: 0.8rem;
-        }
-
-        /* Regional Focus */
-        .regional-expertise {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-            margin: 32px 0;
-        }
-
-        .region-item {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 32px 24px;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .region-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-        }
-
-        .region-item h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 16px;
-        }
-
-        .region-item ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .region-item li {
-            padding: 6px 0;
-            padding-left: 20px;
-            position: relative;
-            color: #34495e;
-        }
-
-        .region-item li::before {
-            content: '●';
-            position: absolute;
-            left: 0;
-            color: #00a0df;
-        }
-
-        /* Salvage Categories */
-        .salvage-categories, .mold-salvage {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-            margin: 32px 0;
-        }
-
-        .category {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 32px 24px;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .category:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-        }
-
-        .category h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 16px;
-        }
-
-        .category ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .category li {
-            padding: 6px 0;
-            padding-left: 20px;
-            position: relative;
-            color: #34495e;
-        }
-
-        .category li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #00a0df;
-            font-weight: bold;
-        }
-
-        .restoration-note {
-            margin-top: 16px;
-            font-style: italic;
-            color: #7f8c8d;
-            font-size: 0.95rem;
-        }
-
-        /* Prevention Strategies */
-        .prevention-strategies {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-            margin: 32px 0;
-        }
-
-        .strategy {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 32px 24px;
-            border-radius: 16px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .strategy:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
-        }
-
-        .strategy h3 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: #2c3e50;
-            margin-bottom: 16px;
-        }
-
-        .strategy ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .strategy li {
-            padding: 6px 0;
-            padding-left: 20px;
-            position: relative;
-            color: #34495e;
-        }
-
-        .strategy li::before {
-            content: '▶';
-            position: absolute;
-            left: 0;
-            color: #00a0df;
-            font-size: 0.8rem;
-        }
-
-        /* Emergency Contact Section */
-        .emergency-contact-section, .mold-contact {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            margin: 48px 0 0 0;
-            padding: 48px 40px;
-        }
-
-        .emergency-contact-box {
-            text-align: center;
-        }
-
-        .emergency-contact-box h2 {
-            font-size: 2.2rem;
-            margin-bottom: 24px;
-            color: white;
-        }
-
-        .emergency-contact-box h2::after {
-            background: linear-gradient(90deg, #ff6b6b, #ee5a24);
-        }
-
-        .contact-options {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-top: 40px;
-        }
-
-        .phone-contact {
-            text-align: center;
-        }
-
-        .phone-contact h3 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            color: #ecf0f1;
-        }
-
-        .emergency-phone, .mold-emergency {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
-            color: white;
-            padding: 20px 40px;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 700;
-            font-size: 1.4rem;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            box-shadow: 0 12px 32px rgba(255, 107, 107, 0.3);
-        }
-
-        .emergency-phone:hover, .mold-emergency:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 16px 40px rgba(255, 107, 107, 0.4);
-        }
-
-        .response-guarantee {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 32px;
-            border-radius: 16px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .response-guarantee h3 {
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-            color: #ecf0f1;
-        }
-
-        .response-guarantee ul {
-            list-style: none;
-            padding: 0;
-            text-align: left;
-        }
-
-        .response-guarantee li {
-            padding: 8px 0;
-            color: #bdc3c7;
-            font-size: 1rem;
-        }
-
-        /* Footer */
-        .blog-footer {
-            background: #2c3e50;
-            color: #bdc3c7;
-            text-align: center;
-            padding: 32px 20px;
-        }
-
-        .footer-content p {
-            margin: 8px 0;
-        }
-
-        .footer-content a {
-            color: #00a0df;
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .footer-content a:hover {
-            color: #0084c7;
-        }
-
-        /* Mobile Responsiveness */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-                padding: 16px;
-            }
-
-            nav {
-                flex-wrap: wrap;
-                gap: 16px;
-                justify-content: center;
-            }
-
-            .hero-section {
-                padding: 40px 20px;
-            }
-
-            .hero-section h1 {
-                font-size: 2.2rem;
-            }
-
-            .content-section {
-                padding: 32px 20px;
-            }
-
-            .content-section h2 {
-                font-size: 1.8rem;
-            }
-
-            .emergency-stats, .mold-types, .health-symptoms {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-options {
-                grid-template-columns: 1fr;
-                gap: 24px;
-            }
-
-            .emergency-contact-section {
-                padding: 32px 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-section h1 {
-                font-size: 1.8rem;
-            }
-
-            .emergency-cta-banner {
-                padding: 24px 16px;
-            }
-
-            .cta-button {
-                padding: 14px 24px;
-                font-size: 1rem;
-            }
-
-            .stat-item, .mold-type, .step, .symptom-category {
-                padding: 24px 16px;
-            }
         }
     </style>
 

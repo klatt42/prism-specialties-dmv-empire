@@ -1,0 +1,1864 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Emergency Checklist | Prism Specialties DMV</title>
+    <meta name="description" content="Professional emergency response checklist. Used by emergency responders and insurance professionals throughout the DMV region.">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+        }
+
+        .header-nav {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .company-name {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #00a0df;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .company-name img {
+            height: 60px;
+            width: auto;
+            margin-right: 15px;
+            clip-path: inset(0 0 12% 0);
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        .main-nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .main-nav a:hover {
+            color: #00a0df;
+        }
+
+        .emergency-banner {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            font-weight: 600;
+        }
+
+        .viewer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 30px 20px;
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 30px;
+        }
+
+        .pdf-display {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .pdf-header {
+            background: linear-gradient(135deg, #00a0df 0%, #0080c7 100%);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .checklist-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .checklist-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 15px;
+        }
+
+        .authority-badge {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+        }
+
+        .pdf-actions {
+            padding: 25px;
+            background: #f8f9fa;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .action-btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .action-btn.primary {
+            background: #00a0df;
+            color: white;
+        }
+
+        .action-btn.primary:hover {
+            background: #0080c7;
+            transform: translateY(-2px);
+        }
+
+        .action-btn.secondary {
+            background: white;
+            color: #333;
+            border: 2px solid #dee2e6;
+        }
+
+        .action-btn.secondary:hover {
+            background: #e9ecef;
+            transform: translateY(-2px);
+        }
+
+        .action-btn.success {
+            background: #28a745;
+            color: white;
+        }
+
+        .action-btn.success:hover {
+            background: #218838;
+            transform: translateY(-2px);
+        }
+
+        /* Multiple PDF Access Methods Styles */
+        .delivery-options {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid #dee2e6;
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .delivery-options h3 {
+            color: #00a0df;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .delivery-section {
+            background: white;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #00a0df;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .delivery-section h4 {
+            color: #00a0df;
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .delivery-btn {
+            width: 100%;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+
+        .delivery-btn.primary {
+            background: #00a0df;
+            color: white;
+        }
+
+        .delivery-btn.primary:hover {
+            background: #0080c7;
+            transform: translateY(-1px);
+        }
+
+        .delivery-btn.secondary {
+            background: #f8f9fa;
+            color: #333;
+            border: 1px solid #dee2e6;
+        }
+
+        .delivery-btn.secondary:hover {
+            background: #e9ecef;
+            transform: translateY(-1px);
+        }
+
+        .delivery-btn.success {
+            background: #28a745;
+            color: white;
+        }
+
+        .delivery-btn.success:hover {
+            background: #218838;
+            transform: translateY(-1px);
+        }
+
+        .social-sharing-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .social-btn {
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s;
+            cursor: pointer;
+            color: white;
+            font-size: 16px;
+        }
+
+        .social-btn.facebook {
+            background: #4267B2;
+        }
+
+        .social-btn.facebook:hover {
+            background: #365899;
+            transform: translateY(-1px);
+        }
+
+        .social-btn.twitter {
+            background: #1DA1F2;
+        }
+
+        .social-btn.twitter:hover {
+            background: #0d8bd9;
+            transform: translateY(-1px);
+        }
+
+        .social-btn.linkedin {
+            background: #0077B5;
+        }
+
+        .social-btn.linkedin:hover {
+            background: #005885;
+            transform: translateY(-1px);
+        }
+
+        .social-btn.copy-link {
+            background: #6c757d;
+        }
+
+        .social-btn.copy-link:hover {
+            background: #545b62;
+            transform: translateY(-1px);
+        }
+
+        /* Mobile Responsiveness for Delivery Options */
+        @media (max-width: 768px) {
+            .delivery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .delivery-options {
+                padding: 20px 15px;
+                margin: 20px 0;
+            }
+
+            .delivery-section {
+                padding: 15px;
+            }
+
+            .social-sharing-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        /* GHL Contact Modal Styles */
+        .contact-modal {
+            position: fixed;
+            z-index: 10000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-modal-content {
+            background: white;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .contact-modal-header {
+            background: linear-gradient(135deg, #00a0df 0%, #0080c7 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-modal-header h3 {
+            margin: 0;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .close-modal {
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .close-modal:hover {
+            opacity: 0.7;
+        }
+
+        .contact-modal-body {
+            padding: 25px;
+        }
+
+        .contact-modal-body p {
+            margin-bottom: 20px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"] {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input[type="text"]:focus,
+        .form-group input[type="email"]:focus,
+        .form-group input[type="tel"]:focus {
+            outline: none;
+            border-color: #00a0df;
+            box-shadow: 0 0 0 3px rgba(0, 160, 223, 0.1);
+        }
+
+        .form-group input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+        }
+
+        .form-group label:has(input[type="checkbox"]) {
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
+            color: white;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.3);
+        }
+
+        .submit-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .privacy-notice {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            text-align: center;
+        }
+
+        .privacy-notice small {
+            color: #6c757d;
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        /* Loading state */
+        .loading {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .loading::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.8), transparent);
+            animation: loading-shine 1.5s infinite;
+        }
+
+        @keyframes loading-shine {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        .pdf-frame {
+            width: 100%;
+            min-height: 800px;
+            border: none;
+            background: white;
+        }
+
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .sidebar-card {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+
+        .sidebar-card h3 {
+            background: #f8f9fa;
+            padding: 20px;
+            color: #333;
+            font-size: 1.1rem;
+            border-bottom: 2px solid #e9ecef;
+        }
+
+        .sidebar-content {
+            padding: 20px;
+        }
+
+        .related-checklist {
+            display: flex;
+            align-items: center;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s;
+            border: 1px solid #e9ecef;
+        }
+
+        .related-checklist:hover {
+            background: #f8f9fa;
+            transform: translateX(5px);
+            border-color: #00a0df;
+        }
+
+        .related-icon {
+            font-size: 1.5rem;
+            margin-right: 12px;
+            width: 40px;
+            text-align: center;
+        }
+
+        .related-info h4 {
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .related-info p {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .contact-info {
+            text-align: center;
+        }
+
+        .emergency-phone {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        .contact-details p {
+            margin-bottom: 8px;
+            color: #666;
+        }
+
+        .social-sharing {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        .social-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .social-btn:hover {
+            transform: scale(1.1);
+        }
+
+        .social-btn.facebook { background: #3b5998; }
+        .social-btn.twitter { background: #1da1f2; }
+        .social-btn.linkedin { background: #0077b5; }
+        .social-btn.email { background: #34495e; }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #00a0df;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @media (max-width: 768px) {
+            .viewer-container {
+                grid-template-columns: 1fr;
+                padding: 20px 15px;
+                gap: 20px;
+            }
+
+            .pdf-actions {
+                flex-direction: column;
+                position: sticky;
+                top: 70px;
+                background: white;
+                padding: 15px;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                z-index: 100;
+                margin-bottom: 20px;
+            }
+
+            .action-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 15px;
+                font-size: 16px;
+                margin-bottom: 10px;
+                touch-action: manipulation;
+            }
+
+            .sidebar {
+                order: -1;
+            }
+
+            .checklist-title {
+                font-size: 1.4rem;
+            }
+
+            .pdf-frame {
+                min-height: 600px;
+                border-radius: 0;
+                box-shadow: none;
+            }
+
+            .social-sharing {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .social-btn {
+                padding: 12px;
+                text-align: center;
+            }
+
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .main-nav {
+                display: none;
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div>
+            <div class="loading-spinner"></div>
+            <p style="margin-top: 15px; color: #666;">Loading your professional checklist...</p>
+        </div>
+    </div>
+
+    <header class="header-nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="company-name">
+                <img src="../../images/logos/prism-logo-1000.png" alt="Prism Specialties DMV">
+                <span>Prism Specialties DMV</span>
+            </a>
+            <nav class="main-nav">
+                <a href="../../index.html">Home</a>
+                <a href="../../services.html">Services</a>
+                <a href="../../about-us.html">About</a>
+                <a href="../../contact.html">Contact</a>
+                <a href="../../faq.html">FAQ</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="emergency-banner">
+        🚨 24/7 Emergency Response: (301) 215-3191 | Professional Restoration Throughout DMV Region
+    </div>
+
+    <main class="viewer-container">
+        <div class="pdf-display">
+            <div class="pdf-header">
+                <h1 class="checklist-title" id="checklistTitle">Emergency Response Checklist</h1>
+                <p class="checklist-subtitle" id="checklistSubtitle">Professional emergency response protocol</p>
+                <div class="authority-badge">✅ Used by Emergency Responders & Insurance Professionals</div>
+            </div>
+
+            <!-- Multiple PDF Access Methods -->
+            <div class="delivery-options">
+                <h3>📋 Access This Checklist</h3>
+                <div class="delivery-grid">
+                    <!-- Primary Actions -->
+                    <div class="delivery-section">
+                        <h4>🖥️ View Options</h4>
+                        <button class="delivery-btn primary" onclick="openFullscreen()">
+                            📱 Full Screen View
+                        </button>
+                        <button class="delivery-btn secondary" onclick="openMobileOptimized()">
+                            📱 Mobile Optimized
+                        </button>
+                    </div>
+
+                    <!-- Download Options -->
+                    <div class="delivery-section">
+                        <h4>📥 Download Options</h4>
+                        <button class="delivery-btn success" onclick="downloadPDF()">
+                            📄 Download PDF
+                        </button>
+                        <button class="delivery-btn secondary" onclick="downloadPrintVersion()">
+                            🖨️ Print Version
+                        </button>
+                    </div>
+
+                    <!-- Share Options -->
+                    <div class="delivery-section">
+                        <h4>📤 Share Options</h4>
+                        <button class="delivery-btn secondary" onclick="shareViaEmail()">
+                            📧 Email Link
+                        </button>
+                        <button class="delivery-btn secondary" onclick="shareViaSMS()">
+                            📱 Text Message
+                        </button>
+                        <button class="delivery-btn secondary" onclick="shareViaWhatsApp()">
+                            💬 WhatsApp
+                        </button>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="delivery-section">
+                        <h4>🌐 Social Sharing</h4>
+                        <div class="social-sharing-grid">
+                            <button class="social-btn facebook" onclick="shareOnFacebook()" title="Share on Facebook">f</button>
+                            <button class="social-btn twitter" onclick="shareOnTwitter()" title="Share on Twitter">🐦</button>
+                            <button class="social-btn linkedin" onclick="shareOnLinkedIn()" title="Share on LinkedIn">in</button>
+                            <button class="social-btn copy-link" onclick="copyLink()" title="Copy Link">🔗</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <iframe id="pdfFrame" class="pdf-frame" src="" title="Emergency Response Checklist"></iframe>
+        </div>
+
+        <aside class="sidebar">
+            <div class="sidebar-card">
+                <h3>📞 Emergency Contact</h3>
+                <div class="sidebar-content contact-info">
+                    <div class="emergency-phone">(301) 215-3191</div>
+                    <div class="contact-details">
+                        <p><strong>24/7 Emergency Response</strong></p>
+                        <p>Washington DC • Maryland • Virginia</p>
+                        <p>Professional Restoration Services</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>🔗 Related Checklists</h3>
+                <div class="sidebar-content" id="relatedChecklists">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>📤 Share This Checklist</h3>
+                <div class="sidebar-content">
+                    <div class="social-sharing">
+                        <a href="#" class="social-btn facebook" onclick="shareOnFacebook()" title="Share on Facebook">f</a>
+                        <a href="#" class="social-btn twitter" onclick="shareOnTwitter()" title="Share on Twitter">🐦</a>
+                        <a href="#" class="social-btn linkedin" onclick="shareOnLinkedIn()" title="Share on LinkedIn">in</a>
+                        <a href="#" class="social-btn email" onclick="shareViaEmail()" title="Share via Email">📧</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sidebar-card">
+                <h3>💡 Need Professional Help?</h3>
+                <div class="sidebar-content">
+                    <p style="margin-bottom: 15px; color: #666; font-size: 0.9rem;">
+                        Our certified restoration specialists are available 24/7 for emergency response throughout the DMV region.
+                    </p>
+                    <a href="tel:3012153191" class="action-btn primary" style="width: 100%; justify-content: center;">
+                        📞 Call Emergency Line
+                    </a>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <!-- GHL Contact Capture Modal -->
+    <div id="contactModal" class="contact-modal" style="display: none;">
+        <div class="contact-modal-content">
+            <div class="contact-modal-header">
+                <h3>🚨 Emergency Contact Information</h3>
+                <span class="close-modal" onclick="closeContactModal()">&times;</span>
+            </div>
+            <div class="contact-modal-body">
+                <p>To access this professional emergency checklist and receive important follow-up information:</p>
+                <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                    <div class="form-group">
+                        <label for="firstName">First Name *</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="(301) 555-0123">
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="emergencyContact" name="emergencyContact">
+                            This is an active emergency (we'll prioritize your follow-up)
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <input type="checkbox" id="smsConsent" name="smsConsent">
+                            Send me emergency preparedness tips via SMS
+                        </label>
+                    </div>
+                    <button type="submit" class="submit-btn">
+                        📋 Access Emergency Checklist
+                    </button>
+                </form>
+                <div class="privacy-notice">
+                    <small>Your information is secure and will only be used for emergency response and restoration services. We respect your privacy.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GHL Integration -->
+    <script src="ghl-integration.js"></script>
+
+    <script>
+        // GHL Configuration - Set your actual credentials here
+        const GHL_CONFIG = {
+            privateToken: 'YOUR_PRIVATE_TOKEN_HERE', // Replace with actual token
+            locationId: 'YOUR_LOCATION_ID_HERE'      // Replace with actual location ID
+        };
+
+        // Initialize GHL integration
+        window.GHL.init(GHL_CONFIG.privateToken, GHL_CONFIG.locationId);
+
+        // Checklist configurations
+        const checklists = {
+            'fire-damage': {
+                title: 'Fire Damage - First 48 Hours Critical Actions',
+                subtitle: 'Professional emergency response protocol for fire and smoke damage',
+                file: 'fire-damage-first-48-hours.html',
+                icon: '🔥',
+                color: '#d32f2f'
+            },
+            'water-emergency': {
+                title: 'Water Emergency - Save What Matters Most',
+                subtitle: 'Critical response guide to minimize water damage and protect belongings',
+                file: 'water-emergency-save-what-matters.html',
+                icon: '💧',
+                color: '#1976d2'
+            },
+            'lightning-strike': {
+                title: 'Lightning Strike - Power Surge Protection',
+                subtitle: 'Emergency electronics protection and damage assessment protocol',
+                file: 'lightning-strike-power-surge.html',
+                icon: '⚡',
+                color: '#ff6f00'
+            },
+            'smoke-damage': {
+                title: 'Smoke Damage - Air Quality Emergency',
+                subtitle: 'Immediate air quality protection and smoke damage mitigation',
+                file: 'smoke-damage-air-quality.html',
+                icon: '💨',
+                color: '#424242'
+            },
+            'storm-damage': {
+                title: 'Storm Damage - Structure Assessment',
+                subtitle: 'Critical structural safety evaluation and emergency response',
+                file: 'storm-damage-structure-assessment.html',
+                icon: '🌪️',
+                color: '#1565c0'
+            },
+            'document-recovery': {
+                title: 'Document Recovery - Critical Papers',
+                subtitle: 'HIPAA-compliant emergency document preservation protocol',
+                file: 'water-emergency-save-what-matters.html', // Using water template for now
+                icon: '📄',
+                color: '#7b1fa2'
+            }
+        };
+
+        // Get URL parameters
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Load checklist based on URL parameter
+        function loadChecklist() {
+            const checklistType = getUrlParameter('checklist') || 'water-emergency';
+            const userEmail = getUrlParameter('email');
+
+            const checklist = checklists[checklistType];
+            if (!checklist) {
+                console.error('Unknown checklist type:', checklistType);
+                return;
+            }
+
+            // Update page content
+            document.getElementById('checklistTitle').textContent = checklist.title;
+            document.getElementById('checklistSubtitle').textContent = checklist.subtitle;
+            document.title = checklist.title + ' | Prism Specialties DMV';
+
+            // Load PDF iframe
+            const pdfFrame = document.getElementById('pdfFrame');
+            pdfFrame.src = '../assets/pdfs/' + checklist.file;
+
+            // Track user email if provided
+            if (userEmail) {
+                trackUser(userEmail, checklistType);
+            }
+
+            // Load related checklists
+            loadRelatedChecklists(checklistType);
+
+            // Hide loading overlay
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').classList.add('hidden');
+            }, 1500);
+        }
+
+        // Track user for follow-up
+        function trackUser(email, checklistType) {
+            // Store in localStorage for follow-up
+            const userData = {
+                email: email,
+                checklist: checklistType,
+                timestamp: new Date().toISOString(),
+                viewed: true,
+                userAgent: navigator.userAgent,
+                referrer: document.referrer
+            };
+
+            localStorage.setItem('checklistUser_' + Date.now(), JSON.stringify(userData));
+
+            // Background email capture - could integrate with GoHighLevel webhook
+            setTimeout(() => {
+                fetch('/api/track-user', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(userData)
+                }).catch(err => {
+                    console.log('Background tracking failed (expected in demo):', err.message);
+                });
+            }, 2000);
+
+            console.log('User tracked:', userData);
+        }
+
+        // Load related checklists
+        function loadRelatedChecklists(currentType) {
+            const container = document.getElementById('relatedChecklists');
+            container.innerHTML = '';
+
+            Object.keys(checklists).forEach(key => {
+                if (key !== currentType) {
+                    const checklist = checklists[key];
+                    const linkHtml = `
+                        <a href="?checklist=${key}" class="related-checklist">
+                            <div class="related-icon">${checklist.icon}</div>
+                            <div class="related-info">
+                                <h4>${checklist.title.split(' - ')[0]}</h4>
+                                <p>${checklist.subtitle.substring(0, 50)}...</p>
+                            </div>
+                        </a>
+                    `;
+                    container.innerHTML += linkHtml;
+                }
+            });
+        }
+
+        // PDF Actions
+        function openFullscreen() {
+            const pdfFrame = document.getElementById('pdfFrame');
+            if (pdfFrame.requestFullscreen) {
+                pdfFrame.requestFullscreen();
+            } else if (pdfFrame.webkitRequestFullscreen) {
+                pdfFrame.webkitRequestFullscreen();
+            } else if (pdfFrame.msRequestFullscreen) {
+                pdfFrame.msRequestFullscreen();
+            }
+        }
+
+        function downloadPDF() {
+            const checklistType = getUrlParameter('checklist') || 'water-emergency';
+            const checklist = checklists[checklistType];
+
+            // Open in new window to trigger browser's print/save dialog
+            const printWindow = window.open('../assets/pdfs/' + checklist.file, '_blank');
+            printWindow.onload = function() {
+                printWindow.print();
+            };
+        }
+
+        function printChecklist() {
+            const pdfFrame = document.getElementById('pdfFrame');
+            pdfFrame.contentWindow.print();
+        }
+
+        function shareChecklist() {
+            if (navigator.share) {
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+                const checklist = checklists[checklistType];
+
+                navigator.share({
+                    title: checklist.title + ' | Prism Specialties DMV',
+                    text: 'Professional emergency response checklist used by emergency responders.',
+                    url: window.location.href
+                });
+            } else {
+                // Fallback to copying URL
+                navigator.clipboard.writeText(window.location.href);
+                alert('Checklist URL copied to clipboard!');
+            }
+        }
+
+        // Social sharing functions with GHL integration
+        async function shareOnFacebook() {
+            if (!currentContactId) {
+                showContactModal(() => shareOnFacebook());
+                return;
+            }
+
+            try {
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+
+                // Track Facebook share activity in GHL
+                await window.GHL.trackActivity(currentContactId, 'Facebook Share', {
+                    checklistType: checklistType,
+                    shareMethod: 'facebook',
+                    timestamp: new Date().toISOString()
+                });
+
+                const url = encodeURIComponent(window.location.href);
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+                showSuccessMessage('Emergency checklist shared on Facebook! Activity tracked in GHL.');
+            } catch (error) {
+                console.error('Facebook sharing failed:', error);
+                // Fallback to basic Facebook sharing
+                const url = encodeURIComponent(window.location.href);
+                window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+                showSuccessMessage('Emergency checklist shared on Facebook!');
+            }
+        }
+
+        async function shareOnTwitter() {
+            if (!currentContactId) {
+                showContactModal(() => shareOnTwitter());
+                return;
+            }
+
+            try {
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+
+                // Track Twitter share activity in GHL
+                await window.GHL.trackActivity(currentContactId, 'Twitter Share', {
+                    checklistType: checklistType,
+                    shareMethod: 'twitter',
+                    timestamp: new Date().toISOString()
+                });
+
+                const checklist = checklists[checklistType];
+                const text = encodeURIComponent(`Professional ${checklist.title} - Used by Emergency Responders`);
+                const url = encodeURIComponent(window.location.href);
+                window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+                showSuccessMessage('Emergency checklist shared on Twitter! Activity tracked in GHL.');
+            } catch (error) {
+                console.error('Twitter sharing failed:', error);
+                // Fallback to basic Twitter sharing
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+                const checklist = checklists[checklistType];
+                const text = encodeURIComponent(`Professional ${checklist.title} - Used by Emergency Responders`);
+                const url = encodeURIComponent(window.location.href);
+                window.open(`https://twitter.com/intent/tweet?text=${text}&url=${url}`, '_blank');
+                showSuccessMessage('Emergency checklist shared on Twitter!');
+            }
+        }
+
+        async function shareOnLinkedIn() {
+            if (!currentContactId) {
+                showContactModal(() => shareOnLinkedIn());
+                return;
+            }
+
+            try {
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+
+                // Track LinkedIn share activity in GHL
+                await window.GHL.trackActivity(currentContactId, 'LinkedIn Share', {
+                    checklistType: checklistType,
+                    shareMethod: 'linkedin',
+                    timestamp: new Date().toISOString()
+                });
+
+                const url = encodeURIComponent(window.location.href);
+                window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+                showSuccessMessage('Emergency checklist shared on LinkedIn! Activity tracked in GHL.');
+            } catch (error) {
+                console.error('LinkedIn sharing failed:', error);
+                // Fallback to basic LinkedIn sharing
+                const url = encodeURIComponent(window.location.href);
+                window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+                showSuccessMessage('Emergency checklist shared on LinkedIn!');
+            }
+        }
+
+        // Legacy function - redirects to GHL-integrated version
+        function shareViaEmail() {
+            return shareViaEmailGHL();
+        }
+
+        // GHL-integrated email sharing
+        async function shareViaEmailGHL() {
+            if (!currentContactId) {
+                showContactModal(() => shareViaEmailGHL());
+                return;
+            }
+
+            try {
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+                await window.GHL.shareViaGHL(currentContactId, 'email', checklistType);
+                showSuccessMessage('Emergency checklist sent via email through GHL!');
+
+                // Track sharing activity
+                await window.GHL.trackActivity(currentContactId, 'Email Share', {
+                    checklistType: checklistType,
+                    method: 'ghl_email'
+                });
+            } catch (error) {
+                console.error('GHL email sharing failed:', error);
+                // Fallback to device email
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+                const checklist = checklists[checklistType];
+                const subject = encodeURIComponent(`Emergency Checklist: ${checklist.title}`);
+                const body = encodeURIComponent(`Professional emergency checklist: ${window.location.href}`);
+                window.location.href = `mailto:?subject=${subject}&body=${body}`;
+            }
+        }
+
+        // Enhanced Delivery Methods
+
+        // Mobile-optimized version
+        function openMobileOptimized() {
+            const checklistType = getUrlParameter('checklist') || 'water-emergency';
+            const mobileUrl = `mobile-optimized.html?checklist=${checklistType}`;
+            window.open(mobileUrl, '_blank');
+        }
+
+        // Print-optimized version
+        function downloadPrintVersion() {
+            const checklistType = getUrlParameter('checklist') || 'water-emergency';
+            const checklist = checklists[checklistType];
+
+            // Create print-optimized version
+            const printWindow = window.open('', '_blank');
+            const pdfFrame = document.getElementById('pdfFrame');
+
+            printWindow.document.write(`
+                <!DOCTYPE html>
+                <html>
+                <head>
+                    <title>Print: ${checklist.title}</title>
+                    <style>
+                        @media print {
+                            body { margin: 0; font-family: Arial, sans-serif; }
+                            .no-print { display: none !important; }
+                            .checkbox {
+                                width: 20px !important;
+                                height: 20px !important;
+                                border: 3px solid #000 !important;
+                                display: inline-block !important;
+                                margin-right: 15px !important;
+                            }
+                            .item-title { font-weight: bold !important; font-size: 14px !important; }
+                            .item-description { font-size: 12px !important; color: #333 !important; }
+                            .priority-high { border-left: 8px solid #000 !important; }
+                            .section-title {
+                                background: #f0f0f0 !important;
+                                font-weight: bold !important;
+                                font-size: 16px !important;
+                                padding: 10px !important;
+                                border: 2px solid #000 !important;
+                            }
+                        }
+                    </style>
+                </head>
+                <body>
+                    <div style="text-align: center; margin-bottom: 20px;">
+                        <h1>${checklist.title}</h1>
+                        <p>${checklist.subtitle}</p>
+                        <p><strong>Professional Emergency Response Protocol</strong></p>
+                    </div>
+                    ${pdfFrame.contentDocument.body.innerHTML}
+                    <script>
+                        window.onload = function() {
+                            window.print();
+                        }
+                    </script>
+                </body>
+                </html>
+            `);
+            printWindow.document.close();
+        }
+
+        // WhatsApp sharing with GHL integration
+        async function shareViaWhatsApp() {
+            if (!currentContactId) {
+                showContactModal(() => shareViaWhatsApp());
+                return;
+            }
+
+            try {
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+
+                // Track WhatsApp share activity in GHL
+                await window.GHL.trackActivity(currentContactId, 'WhatsApp Share', {
+                    checklistType: checklistType,
+                    shareMethod: 'whatsapp',
+                    timestamp: new Date().toISOString()
+                });
+
+                const checklist = checklists[checklistType];
+                const text = encodeURIComponent(`🚨 Emergency Checklist: ${checklist.title}\\n\\nProfessional emergency response protocol used by first responders.\\n\\n${window.location.href}\\n\\n📞 24/7 Emergency: (301) 215-3191`);
+                window.open(`https://wa.me/?text=${text}`, '_blank');
+
+                showSuccessMessage('Emergency checklist shared via WhatsApp! Activity tracked in GHL.');
+            } catch (error) {
+                console.error('WhatsApp sharing failed:', error);
+                // Fallback to basic WhatsApp sharing without GHL tracking
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+                const checklist = checklists[checklistType];
+                const text = encodeURIComponent(`🚨 Emergency Checklist: ${checklist.title}\\n\\nProfessional emergency response protocol used by first responders.\\n\\n${window.location.href}\\n\\n📞 24/7 Emergency: (301) 215-3191`);
+                window.open(`https://wa.me/?text=${text}`, '_blank');
+                showSuccessMessage('Emergency checklist shared via WhatsApp!');
+            }
+        }
+
+        // GHL-Integrated Variables
+        let currentContactId = null;
+        let userContactData = null;
+
+        // Show contact modal before any sharing action
+        function showContactModal(callback = null) {
+            document.getElementById('contactModal').style.display = 'flex';
+            if (callback) {
+                window.modalCallback = callback;
+            }
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').style.display = 'none';
+            window.modalCallback = null;
+        }
+
+        // Handle contact form submission
+        async function handleContactSubmit(event) {
+            event.preventDefault();
+
+            const submitBtn = event.target.querySelector('.submit-btn');
+            const originalText = submitBtn.innerHTML;
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '📡 Connecting to GHL...';
+            submitBtn.classList.add('loading');
+
+            try {
+                const formData = new FormData(event.target);
+                const contactData = {
+                    firstName: formData.get('firstName'),
+                    lastName: formData.get('lastName'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    emergencyContact: formData.get('emergencyContact'),
+                    smsConsent: formData.get('smsConsent')
+                };
+
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+
+                // Process through GHL
+                const result = await window.GHL.processPDFAccess(
+                    contactData,
+                    checklistType,
+                    'web_form'
+                );
+
+                if (result.success) {
+                    currentContactId = result.contact.id;
+                    userContactData = contactData;
+
+                    // Store contact data locally for session
+                    sessionStorage.setItem('ghl_contact_id', currentContactId);
+                    sessionStorage.setItem('user_contact_data', JSON.stringify(userContactData));
+
+                    // Success feedback
+                    submitBtn.innerHTML = '✅ Connected! Loading checklist...';
+                    submitBtn.style.background = '#28a745';
+
+                    // Close modal and execute callback if any
+                    setTimeout(() => {
+                        closeContactModal();
+                        if (window.modalCallback) {
+                            window.modalCallback();
+                        } else {
+                            // Default action: show success message
+                            showSuccessMessage('Contact saved! You now have access to the emergency checklist.');
+                        }
+                    }, 1500);
+
+                    // Track checklist access
+                    await window.GHL.trackActivity(currentContactId, 'Checklist Access', {
+                        checklistType: checklistType,
+                        accessMethod: 'contact_form',
+                        timestamp: new Date().toISOString()
+                    });
+
+                    // Create opportunity for new contacts
+                    if (result.isNewContact) {
+                        try {
+                            await window.GHL.createOpportunity(currentContactId, checklistType);
+                            console.log('Opportunity created for new contact in GHL');
+                        } catch (error) {
+                            console.error('Failed to create opportunity:', error);
+                        }
+                    }
+
+                    // Trigger appropriate workflow automation
+                    try {
+                        const workflowId = window.GHL.getWorkflowIdForChecklist(checklistType);
+                        if (workflowId) {
+                            await window.GHL.triggerWorkflow(currentContactId, workflowId, {
+                                checklistType: checklistType,
+                                accessMethod: 'contact_form',
+                                isNewContact: result.isNewContact,
+                                timestamp: new Date().toISOString()
+                            });
+                            console.log('GHL workflow triggered:', workflowId);
+                        }
+                    } catch (error) {
+                        console.error('Failed to trigger workflow:', error);
+                    }
+
+                } else {
+                    throw new Error(result.error || 'Failed to connect to GHL');
+                }
+
+            } catch (error) {
+                console.error('Contact submission failed:', error);
+                submitBtn.innerHTML = '❌ Connection failed. Please try again.';
+                submitBtn.style.background = '#dc3545';
+
+                setTimeout(() => {
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.style.background = '';
+                    submitBtn.classList.remove('loading');
+                }, 3000);
+            }
+        }
+
+        // Enhanced SMS sharing through GHL
+        async function shareViaSMS() {
+            if (!currentContactId) {
+                showContactModal(() => shareViaSMS());
+                return;
+            }
+
+            try {
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+                await window.GHL.shareViaGHL(currentContactId, 'sms', checklistType);
+                showSuccessMessage('Emergency checklist sent via SMS through GHL!');
+
+                // Track sharing activity
+                await window.GHL.trackActivity(currentContactId, 'SMS Share', {
+                    checklistType: checklistType,
+                    method: 'ghl_sms'
+                });
+            } catch (error) {
+                console.error('GHL SMS sharing failed:', error);
+                // Fallback to device SMS
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+                const checklist = checklists[checklistType];
+                const text = encodeURIComponent(`🚨 Emergency Checklist: ${checklist.title}\\n\\n${window.location.href}\\n\\n24/7 Emergency: (301) 215-3191`);
+                window.location.href = `sms:?body=${text}`;
+            }
+        }
+
+        // Copy link to clipboard
+        function copyLink() {
+            navigator.clipboard.writeText(window.location.href).then(function() {
+                // Show temporary success message
+                const button = event.target;
+                const originalText = button.innerHTML;
+                button.innerHTML = '✅ Copied!';
+                button.style.background = '#28a745';
+                setTimeout(() => {
+                    button.innerHTML = originalText;
+                    button.style.background = '#6c757d';
+                }, 2000);
+            }).catch(function() {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = window.location.href;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('Link copied to clipboard!');
+            });
+        }
+
+        // Enhanced email sharing through GHL
+        async function shareViaEmail() {
+            if (!currentContactId) {
+                showContactModal(() => shareViaEmail());
+                return;
+            }
+
+            try {
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+                await window.GHL.shareViaGHL(currentContactId, 'email', checklistType);
+                showSuccessMessage('Emergency checklist sent via email through GHL!');
+
+                // Track sharing activity
+                await window.GHL.trackActivity(currentContactId, 'Email Share', {
+                    checklistType: checklistType,
+                    method: 'ghl_email'
+                });
+            } catch (error) {
+                console.error('GHL email sharing failed:', error);
+                // Fallback to device email
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+                const checklist = checklists[checklistType];
+                const subject = encodeURIComponent(`Emergency Checklist: ${checklist.title}`);
+                const body = encodeURIComponent(`Professional emergency checklist: ${window.location.href}`);
+                window.location.href = `mailto:?subject=${subject}&body=${body}`;
+            }
+        }
+
+        // Show success message
+        function showSuccessMessage(message) {
+            const notification = document.createElement('div');
+            notification.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #28a745;
+                color: white;
+                padding: 15px 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+                z-index: 10001;
+                font-weight: 600;
+                max-width: 300px;
+            `;
+            notification.textContent = message;
+            document.body.appendChild(notification);
+
+            setTimeout(() => {
+                notification.style.opacity = '0';
+                notification.style.transform = 'translateX(100%)';
+                setTimeout(() => {
+                    document.body.removeChild(notification);
+                }, 300);
+            }, 3000);
+        }
+
+        // Initialize page and check for existing contact
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check if user already has contact info in session
+            const storedContactId = sessionStorage.getItem('ghl_contact_id');
+            const storedContactData = sessionStorage.getItem('user_contact_data');
+
+            if (storedContactId && storedContactData) {
+                currentContactId = storedContactId;
+                userContactData = JSON.parse(storedContactData);
+                console.log('Restored GHL contact session:', currentContactId);
+            }
+
+            // Enhanced analytics tracking
+            if (currentContactId) {
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+
+                // Track detailed page view analytics
+                window.GHL.trackActivity(currentContactId, 'Page View', {
+                    checklistType: checklistType,
+                    pageUrl: window.location.href,
+                    timestamp: new Date().toISOString(),
+                    userAgent: navigator.userAgent,
+                    referrer: document.referrer,
+                    screenResolution: `${screen.width}x${screen.height}`,
+                    viewportSize: `${window.innerWidth}x${window.innerHeight}`,
+                    isMobile: /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent),
+                    sessionStart: !sessionStorage.getItem('session_tracked')
+                });
+
+                // Mark session as tracked
+                if (!sessionStorage.getItem('session_tracked')) {
+                    sessionStorage.setItem('session_tracked', 'true');
+
+                    // Track session start event
+                    window.GHL.trackActivity(currentContactId, 'Session Start', {
+                        checklistType: checklistType,
+                        entryPoint: document.referrer || 'Direct',
+                        timestamp: new Date().toISOString()
+                    });
+                }
+
+                // Track engagement metrics
+                trackEngagementMetrics(currentContactId, checklistType);
+            }
+
+            // Show contact modal for new visitors after 10 seconds
+            if (!currentContactId) {
+                setTimeout(() => {
+                    showContactModal();
+                }, 10000);
+            }
+        });
+
+        // Mobile-optimized SMS sharing with GHL integration
+        async function shareViaText() {
+            if (!currentContactId) {
+                showContactModal(() => shareViaText());
+                return;
+            }
+
+            try {
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+                await window.GHL.shareViaGHL(currentContactId, 'sms', checklistType);
+                showSuccessMessage('Emergency checklist sent via SMS through GHL!');
+
+                // Track sharing activity
+                await window.GHL.trackActivity(currentContactId, 'Mobile SMS Share', {
+                    checklistType: checklistType,
+                    method: 'ghl_mobile_sms'
+                });
+            } catch (error) {
+                console.error('GHL mobile SMS sharing failed:', error);
+                // Fallback to device SMS
+                const checklistType = getUrlParameter('checklist') || 'water-emergency';
+                const checklist = checklists[checklistType];
+                const message = encodeURIComponent(`Emergency Checklist: ${checklist.title}\n\n${window.location.href}\n\nUsed by emergency responders & insurance professionals`);
+                window.location.href = `sms:?body=${message}`;
+            }
+        }
+
+        // Enhanced mobile detection and optimizations
+        function initializeMobileOptimizations() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+            if (isMobile) {
+                // Add text sharing button for mobile
+                const socialSharing = document.querySelector('.social-sharing');
+                if (socialSharing) {
+                    const textBtn = document.createElement('a');
+                    textBtn.href = '#';
+                    textBtn.className = 'social-btn text';
+                    textBtn.onclick = shareViaText;
+                    textBtn.title = 'Share via Text';
+                    textBtn.innerHTML = '📱';
+                    socialSharing.appendChild(textBtn);
+                }
+
+                // Optimize iframe loading for mobile
+                const pdfFrame = document.getElementById('pdfFrame');
+                pdfFrame.addEventListener('load', () => {
+                    setTimeout(() => {
+                        // Add zoom controls for mobile
+                        addMobileZoomControls();
+                    }, 1000);
+                });
+            }
+        }
+
+        // Add mobile zoom controls
+        function addMobileZoomControls() {
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            if (!isMobile) return;
+
+            const pdfActions = document.querySelector('.pdf-actions');
+            const zoomControls = document.createElement('div');
+            zoomControls.className = 'zoom-controls';
+            zoomControls.style.cssText = 'display: flex; gap: 10px; margin-top: 10px;';
+            zoomControls.innerHTML = `
+                <button onclick="zoomPDF('in')" class="action-btn" style="flex: 1;">🔍+ Zoom In</button>
+                <button onclick="zoomPDF('out')" class="action-btn" style="flex: 1;">🔍- Zoom Out</button>
+                <button onclick="zoomPDF('fit')" class="action-btn" style="flex: 1;">📱 Fit Screen</button>
+            `;
+            pdfActions.appendChild(zoomControls);
+        }
+
+        // Mobile zoom functionality
+        function zoomPDF(action) {
+            const pdfFrame = document.getElementById('pdfFrame');
+            const currentTransform = pdfFrame.style.transform || 'scale(1)';
+            let currentScale = parseFloat(currentTransform.match(/scale\(([^)]+)\)/)?.[1] || 1);
+
+            switch(action) {
+                case 'in':
+                    currentScale = Math.min(currentScale * 1.2, 3);
+                    break;
+                case 'out':
+                    currentScale = Math.max(currentScale / 1.2, 0.5);
+                    break;
+                case 'fit':
+                    currentScale = 1;
+                    break;
+            }
+
+            pdfFrame.style.transform = `scale(${currentScale})`;
+            pdfFrame.style.transformOrigin = 'top left';
+        }
+
+        // Initialize on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            loadChecklist();
+            initializeMobileOptimizations();
+        });
+
+        // Enhanced GHL Lead Tracking and Analytics System
+        function trackEngagementMetrics(contactId, checklistType) {
+            let timeOnPage = 0;
+            let scrollDepth = 0;
+            let clickCount = 0;
+            let interactionEvents = [];
+
+            // Track time on page
+            const timeTracker = setInterval(() => {
+                timeOnPage += 1;
+
+                // Send periodic engagement updates to GHL
+                if (timeOnPage % 30 === 0) { // Every 30 seconds
+                    window.GHL.trackActivity(contactId, 'Engagement Update', {
+                        checklistType: checklistType,
+                        timeOnPage: timeOnPage,
+                        scrollDepth: scrollDepth,
+                        clickCount: clickCount,
+                        interactionEvents: interactionEvents.slice(-5), // Last 5 interactions
+                        timestamp: new Date().toISOString()
+                    });
+                }
+            }, 1000);
+
+            // Track scroll depth
+            window.addEventListener('scroll', () => {
+                const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+                if (scrollPercent > scrollDepth) {
+                    scrollDepth = Math.min(scrollPercent, 100);
+
+                    // Track milestone scroll events
+                    if (scrollDepth >= 25 && !sessionStorage.getItem('scroll_25')) {
+                        sessionStorage.setItem('scroll_25', 'true');
+                        window.GHL.trackActivity(contactId, 'Scroll Milestone', {
+                            checklistType: checklistType,
+                            milestone: '25%',
+                            timestamp: new Date().toISOString()
+                        });
+                    }
+                    if (scrollDepth >= 50 && !sessionStorage.getItem('scroll_50')) {
+                        sessionStorage.setItem('scroll_50', 'true');
+                        window.GHL.trackActivity(contactId, 'Scroll Milestone', {
+                            checklistType: checklistType,
+                            milestone: '50%',
+                            timestamp: new Date().toISOString()
+                        });
+                    }
+                    if (scrollDepth >= 75 && !sessionStorage.getItem('scroll_75')) {
+                        sessionStorage.setItem('scroll_75', 'true');
+                        window.GHL.trackActivity(contactId, 'Scroll Milestone', {
+                            checklistType: checklistType,
+                            milestone: '75%',
+                            timestamp: new Date().toISOString()
+                        });
+                    }
+                    if (scrollDepth >= 100 && !sessionStorage.getItem('scroll_100')) {
+                        sessionStorage.setItem('scroll_100', 'true');
+                        window.GHL.trackActivity(contactId, 'Scroll Complete', {
+                            checklistType: checklistType,
+                            milestone: '100%',
+                            timestamp: new Date().toISOString()
+                        });
+                    }
+                }
+            });
+
+            // Track clicks and interactions
+            document.addEventListener('click', (event) => {
+                clickCount++;
+                const clickedElement = event.target;
+                const elementType = clickedElement.tagName.toLowerCase();
+                const elementClass = clickedElement.className;
+                const elementText = clickedElement.textContent?.substring(0, 50) || '';
+
+                interactionEvents.push({
+                    type: 'click',
+                    element: elementType,
+                    class: elementClass,
+                    text: elementText,
+                    timestamp: new Date().toISOString()
+                });
+
+                // Track important button clicks
+                if (clickedElement.matches('.delivery-btn, .action-btn, .social-btn, .emergency-hotline')) {
+                    window.GHL.trackActivity(contactId, 'Button Click', {
+                        checklistType: checklistType,
+                        buttonType: elementClass,
+                        buttonText: elementText,
+                        timestamp: new Date().toISOString()
+                    });
+                }
+
+                // Track emergency contact clicks
+                if (clickedElement.matches('a[href^="tel:"]')) {
+                    window.GHL.trackActivity(contactId, 'Emergency Call Attempted', {
+                        checklistType: checklistType,
+                        phoneNumber: clickedElement.href.replace('tel:', ''),
+                        timestamp: new Date().toISOString()
+                    });
+                }
+            });
+
+            // Track when user leaves the page
+            window.addEventListener('beforeunload', () => {
+                window.GHL.trackActivity(contactId, 'Session End', {
+                    checklistType: checklistType,
+                    totalTimeOnPage: timeOnPage,
+                    finalScrollDepth: scrollDepth,
+                    totalClicks: clickCount,
+                    timestamp: new Date().toISOString()
+                });
+                clearInterval(timeTracker);
+            });
+
+            // Track focus/blur events (user switching tabs)
+            let isVisible = true;
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden && isVisible) {
+                    isVisible = false;
+                    window.GHL.trackActivity(contactId, 'Tab Hidden', {
+                        checklistType: checklistType,
+                        timeOnPageWhenHidden: timeOnPage,
+                        timestamp: new Date().toISOString()
+                    });
+                } else if (!document.hidden && !isVisible) {
+                    isVisible = true;
+                    window.GHL.trackActivity(contactId, 'Tab Visible', {
+                        checklistType: checklistType,
+                        timeOnPageWhenReturned: timeOnPage,
+                        timestamp: new Date().toISOString()
+                    });
+                }
+            });
+        }
+
+        // Lead scoring and qualification tracking
+        function updateLeadScore(contactId, action, points = 1) {
+            const currentScore = parseInt(sessionStorage.getItem('lead_score') || '0');
+            const newScore = currentScore + points;
+            sessionStorage.setItem('lead_score', newScore.toString());
+
+            // Send score update to GHL custom field
+            window.GHL.trackActivity(contactId, 'Lead Score Update', {
+                action: action,
+                pointsAdded: points,
+                totalScore: newScore,
+                timestamp: new Date().toISOString()
+            });
+
+            // Trigger high-value lead workflow if score threshold reached
+            if (newScore >= 50 && !sessionStorage.getItem('high_value_triggered')) {
+                sessionStorage.setItem('high_value_triggered', 'true');
+                window.GHL.triggerWorkflow(contactId, 'HIGH_VALUE_LEAD_WORKFLOW_ID', {
+                    leadScore: newScore,
+                    trigger: 'score_threshold',
+                    timestamp: new Date().toISOString()
+                });
+            }
+        }
+    </script>
+    <script src="ghl-integration.js"></script>
+</body>
+</html>

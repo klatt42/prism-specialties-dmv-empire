@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Claims - Emergency Documentation | Prism Specialties DMV</title>
+    <style>
+        @page { size: A4; margin: 0.5in; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; font-size: 11px; line-height: 1.4; color: #333; background: white; }
+        .pdf-container { max-width: 8.5in; margin: 0 auto; padding: 20px; background: white; }
+        .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid #2e7d32; padding-bottom: 15px; margin-bottom: 20px; }
+        .logo-section { display: flex; align-items: center; }
+                        .logo-image {
+            height: 85px;
+            width: auto;
+            margin-right: 15px;
+            clip-path: inset(0 0 12% 0);
+        }
+        .company-info h1 { color: #2e7d32; font-size: 18px; font-weight: bold; margin-bottom: 3px; }
+        .company-info p { color: #666; font-size: 10px; }
+        .emergency-contact { text-align: right; background: #f8f9fa; padding: 10px; border-radius: 5px; border-left: 4px solid #e74c3c; }
+        .emergency-contact h3 { color: #e74c3c; font-size: 12px; margin-bottom: 5px; }
+        .emergency-contact .phone { font-size: 16px; font-weight: bold; color: #333; }
+        .checklist-title { background: linear-gradient(135deg, #2e7d32 0%, #1b5e20 100%); color: white; padding: 15px; border-radius: 8px; margin-bottom: 20px; text-align: center; }
+        .checklist-title h2 { font-size: 20px; margin-bottom: 5px; }
+        .checklist-title p { font-size: 11px; opacity: 0.9; }
+        .authority-badge { background: #2e7d32; color: white; padding: 8px 15px; border-radius: 20px; font-size: 10px; font-weight: bold; margin: 15px 0; text-align: center; display: inline-block; }
+        .checklist-section { margin-bottom: 20px; }
+        .section-title { background: #f8f9fa; border-left: 4px solid #2e7d32; padding: 8px 15px; font-weight: bold; color: #333; margin-bottom: 10px; border-radius: 0 5px 5px 0; }
+        .checklist-item { display: flex; align-items: flex-start; margin-bottom: 8px; padding: 8px; border-radius: 5px; }
+        .checkbox { width: 15px; height: 15px; border: 2px solid #2e7d32; border-radius: 3px; margin-right: 12px; margin-top: 2px; flex-shrink: 0; }
+        .item-content { flex: 1; }
+        .item-title { font-weight: bold; color: #333; margin-bottom: 3px; }
+        .item-description { color: #666; font-size: 10px; line-height: 1.3; }
+        .priority-high { border-left: 4px solid #e74c3c; }
+        .priority-medium { border-left: 4px solid #f39c12; }
+        .priority-low { border-left: 4px solid #27ae60; }
+        .footer { margin-top: 30px; border-top: 2px solid #2e7d32; padding-top: 15px; display: flex; justify-content: space-between; align-items: center; }
+        .qr-placeholder { width: 60px; height: 60px; background: #ddd; border: 2px dashed #999; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 8px; color: #666; margin-bottom: 5px; }
+        .footer-info { flex: 1; text-align: right; }
+        .footer-info p { font-size: 9px; color: #666; margin-bottom: 3px; }
+        .website { color: #2e7d32; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <div class="pdf-container">
+        <div class="header">
+            <div class="logo-section">
+                <img src="../../../images/logos/prism-logo-1000.png" class="logo-image">
+                <div class="company-info">
+                    <h1>Prism Specialties DMV</h1>
+                    <p>Professional Emergency Restoration Services</p>
+                </div>
+            </div>
+            <div class="emergency-contact">
+                <h3>🚨 24/7 Emergency</h3>
+                <div class="phone">(301) 215-3191</div>
+                <p>Washington DC • Maryland • Virginia</p>
+            </div>
+        </div>
+
+        <div class="checklist-title">
+            <h2>📋 Insurance Claims - Emergency Documentation</h2>
+            <p>Critical documentation protocol for maximum insurance claim recovery</p>
+        </div>
+
+        <div class="authority-badge">✅ Used by Emergency Responders & Insurance Professionals</div>
+
+        <div class="checklist-section">
+            <div class="section-title">IMMEDIATE DOCUMENTATION (0-30 MINUTES)</div>
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📞 Contact Insurance Immediately</div>
+                    <div class="item-description">Report claim within 24 hours. Get claim number and adjuster contact info.</div>
+                </div>
+            </div>
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📸 Extensive Photo Documentation</div>
+                    <div class="item-description">Take photos from multiple angles before moving anything. Include wide shots and close-ups.</div>
+                </div>
+            </div>
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🎥 Video Walkthrough</div>
+                    <div class="item-description">Record video narrative describing damage and your immediate observations.</div>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-section">
+            <div class="section-title">DETAILED INVENTORY (30 MIN - 2 HOURS)</div>
+            <div class="checklist-item priority-medium">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📝 Damaged Items List</div>
+                    <div class="item-description">Create detailed inventory with descriptions, ages, purchase prices, and estimated replacement costs.</div>
+                </div>
+            </div>
+            <div class="checklist-item priority-medium">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🔢 Serial Numbers</div>
+                    <div class="item-description">Document serial numbers, model numbers, and specifications for all electronics and appliances.</div>
+                </div>
+            </div>
+            <div class="checklist-item priority-medium">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🧾 Receipt Collection</div>
+                    <div class="item-description">Gather receipts, warranties, and proof of purchase for damaged items.</div>
+                </div>
+            </div>
+        </div>
+        <div class="checklist-section">
+            <div class="section-title">CLAIM OPTIMIZATION (2-24 HOURS)</div>
+            <div class="checklist-item priority-low">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">💰 Professional Appraisals</div>
+                    <div class="item-description">Get professional appraisals for valuable items: art, jewelry, antiques.</div>
+                </div>
+            </div>
+            <div class="checklist-item priority-low">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📄 Additional Living Expenses</div>
+                    <div class="item-description">Document temporary housing, meals, and other expenses if displaced.</div>
+                </div>
+            </div>
+            <div class="checklist-item priority-low">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">⚖️ Public Adjuster Consideration</div>
+                    <div class="item-description">Consider hiring public adjuster for complex or high-value claims.</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div>
+                <div class="qr-placeholder">QR CODE</div>
+                <p style="font-size: 8px; text-align: center;">Scan for updates</p>
+            </div>
+            <div class="footer-info">
+                <p><strong>Professional Restoration Services</strong></p>
+                <p>Document • Electronics • Art • Textiles</p>
+                <p class="website">www.prismspecialtiesdmv.com</p>
+                <p>© 2025 Prism Specialties DMV • Licensed & Insured</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

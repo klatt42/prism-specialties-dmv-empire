@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lightning Strike - Power Surge Protection | Prism Specialties DMV</title>
+    <style>
+        /* Professional PDF Template - Prism Specialties DMV Branding */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --prism-primary: #00a0df;
+            --prism-secondary: #0080c7;
+            --prism-accent: #e74c3c;
+            --prism-dark: #2c3e50;
+            --prism-light: #ecf0f1;
+            --prism-success: #27ae60;
+            --prism-warning: #f39c12;
+            --lightning-yellow: #f1c40f;
+            --text-primary: #2c3e50;
+            --text-secondary: #7f8c8d;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --border-color: #e1e8ed;
+            --emergency-red: #e74c3c;
+            --emergency-orange: #ff6b35;
+        }
+
+        @page {
+            size: A4;
+            margin: 0.75in;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            font-size: 14px;
+        }
+
+        .pdf-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            min-height: 11in;
+            position: relative;
+            padding: 0.75in;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Professional Header */
+        .pdf-header {
+            border-bottom: 3px solid var(--lightning-yellow);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding-top: 5px;
+        }
+
+        .company-logo-img {
+            height: 85px;
+            width: auto;
+            margin-right: 15px;
+            clip-path: inset(0 0 12% 0);
+        }
+
+        .company-info h1 {
+            color: var(--lightning-yellow);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+
+        .company-tagline {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .header-right {
+            text-align: right;
+        }
+
+        .emergency-hotline {
+            background: var(--emergency-red);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .professional-badge {
+            background: var(--prism-success);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+        }
+
+        /* Lightning-Specific Critical Timeline */
+        .critical-timeline {
+            background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
+            border: 2px solid var(--lightning-yellow);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .timeline-header {
+            color: var(--lightning-yellow);
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 8px;
+            background: white;
+            border-radius: 5px;
+            border-left: 4px solid var(--lightning-yellow);
+        }
+
+        .timeline-time {
+            font-weight: 600;
+            color: var(--emergency-red);
+            min-width: 120px;
+            font-size: 12px;
+        }
+
+        .timeline-action {
+            color: var(--text-primary);
+            font-size: 12px;
+        }
+
+        /* Insurance Alert Box */
+        .insurance-alert {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+            border: 2px solid var(--emergency-orange);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .insurance-alert h3 {
+            color: var(--emergency-orange);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .insurance-alert p {
+            color: var(--text-primary);
+            font-size: 12px;
+            line-height: 1.4;
+        }
+
+        .checklist-title {
+            background: linear-gradient(135deg, var(--lightning-yellow) 0%, #e6c200 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .checklist-title h2 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .checklist-title p {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .authority-badge {
+            background: #2e7d32;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: bold;
+            margin: 15px 0;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .checklist-section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--lightning-yellow);
+            padding: 8px 15px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .checkbox {
+            width: 15px;
+            height: 15px;
+            border: 2px solid var(--lightning-yellow);
+            border-radius: 3px;
+            margin-right: 12px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .item-description {
+            color: #666;
+            font-size: 10px;
+            line-height: 1.3;
+        }
+
+        .priority-high {
+            border-left: 4px solid var(--emergency-red);
+        }
+
+        .priority-medium {
+            border-left: 4px solid var(--prism-warning);
+        }
+
+        .priority-low {
+            border-left: 4px solid var(--prism-success);
+        }
+
+        .footer {
+            margin-top: 30px;
+            border-top: 2px solid var(--lightning-yellow);
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .qr-placeholder {
+            width: 60px;
+            height: 60px;
+            background: #ddd;
+            border: 2px dashed #999;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .footer-info {
+            flex: 1;
+            text-align: right;
+        }
+
+        .footer-info p {
+            font-size: 9px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .website {
+            color: var(--lightning-yellow);
+            font-weight: bold;
+        }
+
+        /* Professional Tips */
+        .pro-tip {
+            background: #f0f8ff;
+            border: 2px solid var(--lightning-yellow);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        .pro-tip::before {
+            content: "💡 PRO TIP";
+            position: absolute;
+            top: -10px;
+            left: 15px;
+            background: var(--lightning-yellow);
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+
+        .pro-tip p {
+            color: var(--text-primary);
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        /* Professional Authority Credentials */
+        .authority-credentials {
+            background: linear-gradient(135deg, #fffde7 0%, #fff9c4 100%);
+            border: 2px solid var(--lightning-yellow);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--lightning-yellow);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .credential-icon {
+            font-size: 16px;
+            width: 24px;
+            text-align: center;
+        }
+
+        .credential-text {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .authority-partnerships {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--prism-success);
+            text-align: center;
+        }
+
+        .authority-partnerships p {
+            font-size: 11px;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .authority-partnerships strong {
+            color: var(--prism-success);
+        }
+
+        /* Regional Emergency Contacts */
+        .regional-contacts {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid var(--text-secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .regional-contacts h3 {
+            color: var(--lightning-yellow);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--lightning-yellow);
+        }
+
+        .contact-item h4 {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--lightning-yellow);
+            margin-bottom: 5px;
+        }
+
+        .contact-item p {
+            font-size: 10px;
+            color: var(--text-primary);
+            margin: 2px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="pdf-container">
+        <!-- Professional Header -->
+        <header class="pdf-header">
+            <div class="header-left">
+                <img src="../../../images/logos/prism-logo-1000.png" class="company-logo-img" alt="Prism Specialties DMV">
+                <div class="company-info">
+                    <h1>Prism Specialties DMV</h1>
+                    <div class="company-tagline">Professional Emergency Response & Restoration</div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="emergency-hotline">📞 (301) 215-3191</div>
+                <div class="professional-badge">✓ Specialty Contents</div>
+            </div>
+        </header>
+
+        <!-- Authority & Credibility Banner -->
+        <section class="critical-timeline">
+            <div class="timeline-header">⚡ Lightning Strike Assessment Protocol</div>
+            <div class="timeline-item">
+                <div class="timeline-time">IMMEDIATE</div>
+                <div class="timeline-action">Unplug all electronics, assess for visible damage, ensure electrical safety</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">2-4 HOURS</div>
+                <div class="timeline-action">Professional electrical inspection, insurance contact, damage documentation</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">24 HOURS</div>
+                <div class="timeline-action">Electronics evaluation, surge protection assessment, restoration planning</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">ONGOING</div>
+                <div class="timeline-action">Monitor for delayed failures, implement comprehensive protection</div>
+            </div>
+        </section>
+
+        <!-- Title Section -->
+        <div class="checklist-title">
+            <h2>⚡ Lightning Strike - Power Surge Protection</h2>
+            <p>Emergency electronics protection and electrical safety assessment protocol</p>
+        </div>
+
+        <!-- Authority Banner -->
+        <section class="insurance-alert">
+            <h3>🔍 Professional Contents Assessment Required</h3>
+            <p>Lightning strikes often cause hidden damage to electronics and valuable contents that appears days or weeks later. This protocol ensures proper insurance documentation for delayed failure claims and focuses on protecting your valuable items.</p>
+        </section>
+
+        <!-- Professional Authority Section -->
+        <section class="authority-credentials">
+            <div class="credentials-grid">
+                <div class="credential-item">
+                    <div class="credential-icon">📱</div>
+                    <div class="credential-text">Electronics Recovery Experts</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-icon">🚨</div>
+                    <div class="credential-text">Surge Damage Specialists</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-icon">📋</div>
+                    <div class="credential-text">Insurance Approved Documentation</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-icon">🔌</div>
+                    <div class="credential-text">Data Recovery Services</div>
+                </div>
+            </div>
+            <div class="authority-partnerships">
+                <p><strong>Trusted Partners:</strong> Dominion Energy • Pepco • NECA-IBEW Electricians • Virginia State Corporation Commission • Maryland PSC</p>
+            </div>
+        </section>
+
+        <!-- Checklist Sections -->
+        <div class="checklist-section">
+            <div class="section-title">IMMEDIATE SAFETY (0-15 MINUTES)</div>
+
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🔌 Emergency Power Disconnection</div>
+                    <div class="item-description">Immediately unplug all electronics and appliances. Turn off main electrical breaker if burning smell detected.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🚨 Safety Assessment</div>
+                    <div class="item-description">Check for smoke, burning smells, scorch marks, or visible damage to electrical panels and outlets.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📞 Emergency Professional Contact</div>
+                    <div class="item-description">Contact qualified electrician and emergency restoration services. Do NOT restore power without inspection.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <div class="section-title">DAMAGE ASSESSMENT (15 MIN - 2 HOURS)</div>
+
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📸 Document Everything</div>
+                    <div class="item-description">Photograph all electrical panels, affected areas, and electronics that were connected during strike.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-medium">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📋 Create Comprehensive Inventory</div>
+                    <div class="item-description">List all electronics, appliances, and systems that were connected during lightning event.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-medium">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🏠 Check Critical Systems</div>
+                    <div class="item-description">Inspect HVAC, security systems, smoke detectors, and smart home devices for functionality.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-medium">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📱 Contact Insurance Company</div>
+                    <div class="item-description">Report lightning damage claim immediately. Request coverage for professional electrical inspection.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <div class="section-title">RECOVERY & PROTECTION (2-24 HOURS)</div>
+
+            <div class="checklist-item priority-low">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🔍 Professional Electronics Evaluation</div>
+                    <div class="item-description">Have sensitive electronics professionally tested before attempting to use. Hidden damage common.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-low">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🛡️ Surge Protection Assessment</div>
+                    <div class="item-description">Evaluate current surge protection effectiveness and plan whole-house protection upgrades.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-low">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">⚡ Electrical System Upgrade Planning</div>
+                    <div class="item-description">Consider TVSS (Transient Voltage Surge Suppressor) installation and grounding improvements.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-low">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📊 Monitor for Delayed Failures</div>
+                    <div class="item-description">Watch for equipment failures over next 30 days. Lightning damage often appears weeks later.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Professional Tips Section -->
+        <div class="pro-tip">
+            <p><strong>Professional Insight:</strong> 60% of lightning damage occurs in electronic circuits, not visible areas. Our specialists use advanced testing equipment to detect hidden electrical damage that standard inspections miss. Early professional assessment prevents costly delayed failures and ensures complete insurance coverage.</p>
+        </div>
+
+        <!-- Regional Emergency Contacts -->
+        <section class="regional-contacts">
+            <h3>⚡ DMV Electrical Emergency Contacts</h3>
+            <div class="contacts-grid">
+                <div class="contact-item">
+                    <h4>Fairfax County</h4>
+                    <p>Electrical Emergency: (703) 324-1441</p>
+                    <p>Dominion Energy: (866) 366-4357</p>
+                    <p>Electrical Inspector: (703) 324-1780</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Montgomery County</h4>
+                    <p>Electrical Emergency: (240) 777-2444</p>
+                    <p>Pepco: (877) 737-2662</p>
+                    <p>Electrical Inspector: (240) 777-6220</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Prince William County</h4>
+                    <p>Electrical Emergency: (703) 792-6500</p>
+                    <p>Dominion Energy: (866) 366-4357</p>
+                    <p>Electrical Inspector: (703) 792-7023</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Arlington County</h4>
+                    <p>Electrical Emergency: (703) 228-4851</p>
+                    <p>Dominion Energy: (866) 366-4357</p>
+                    <p>Electrical Inspector: (703) 228-3881</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Professional Footer -->
+        <footer class="footer">
+            <div class="footer-left">
+                <div class="qr-code">
+                    <div class="qr-placeholder">QR CODE</div>
+                    <div style="font-size: 8px; text-align: center; margin-top: 5px;">Scan for Resources</div>
+                </div>
+            </div>
+            <div class="footer-center">
+                <div style="text-align: center; font-size: 10px; color: var(--text-secondary);">
+                    <p><strong>Regional Offices</strong></p>
+                    <p>Northern VA: (703) 555-0123</p>
+                    <p>Maryland: (301) 555-0124</p>
+                    <p>Washington DC: (202) 555-0125</p>
+                </div>
+            </div>
+            <div class="footer-right">
+                <div class="footer-info">
+                    <p><strong>Specialty Contents Recovery</strong></p>
+                    <p>Electronics • Electrical • Surge Protection</p>
+                    <p>Water • Fire • Smoke • Mold</p>
+                    <p class="website">www.prismspecialtiesdmv.com</p>
+                    <p>© 2025 Prism Specialties DMV • Licensed • Bonded • Insured</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Damage Recovery - First 48 Hours Critical Response | Prism Specialties DMV</title>
+    <style>
+        /* Professional PDF Template - Prism Specialties DMV Branding */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        :root {
+            --prism-primary: #00a0df;
+            --prism-secondary: #0080c7;
+            --prism-accent: #e74c3c;
+            --prism-dark: #2c3e50;
+            --prism-light: #ecf0f1;
+            --prism-success: #27ae60;
+            --prism-warning: #f39c12;
+            --text-primary: #2c3e50;
+            --text-secondary: #7f8c8d;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --border-color: #e1e8ed;
+            --emergency-red: #e74c3c;
+            --emergency-orange: #ff6b35;
+        }
+
+        @page {
+            size: A4;
+            margin: 0.75in;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--bg-primary);
+            font-size: 14px;
+        }
+
+        .pdf-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            background: white;
+            min-height: 11in;
+            position: relative;
+            padding: 0.75in;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Professional Header */
+        .pdf-header {
+            border-bottom: 3px solid var(--emergency-red);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding-top: 5px;
+        }
+
+        .company-logo-img {
+            height: 85px;
+            width: auto;
+            margin-right: 15px;
+            clip-path: inset(0 0 12% 0);
+        }
+
+        .company-info h1 {
+            color: var(--emergency-red);
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+
+        .company-tagline {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .header-right {
+            text-align: right;
+        }
+
+        .emergency-hotline {
+            background: var(--emergency-red);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: inline-block;
+        }
+
+        .professional-badge {
+            background: var(--prism-success);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-right: 15px;
+            clip-path: inset(0 0 12% 0);
+        }
+
+
+        .checklist-title {
+            background: linear-gradient(135deg, var(--emergency-red) 0%, #b71c1c 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .checklist-title h2 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .checklist-title p {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .authority-badge {
+            background: #2e7d32;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: bold;
+            margin: 15px 0;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .checklist-section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            background: var(--bg-secondary);
+            border-left: 4px solid var(--emergency-red);
+            padding: 8px 15px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 5px;
+        }
+
+        .checkbox {
+            width: 15px;
+            height: 15px;
+            border: 2px solid var(--emergency-red);
+            border-radius: 3px;
+            margin-right: 12px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .item-description {
+            color: #666;
+            font-size: 10px;
+            line-height: 1.3;
+        }
+
+        .priority-high {
+            border-left: 4px solid var(--emergency-red);
+        }
+
+        .priority-medium {
+            border-left: 4px solid var(--prism-warning);
+        }
+
+        .priority-low {
+            border-left: 4px solid var(--prism-success);
+        }
+
+        .footer {
+            margin-top: 30px;
+            border-top: 2px solid var(--emergency-red);
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .qr-placeholder {
+            width: 60px;
+            height: 60px;
+            background: #ddd;
+            border: 2px dashed #999;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .footer-info {
+            flex: 1;
+            text-align: right;
+        }
+
+        .footer-info p {
+            font-size: 9px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .website {
+            color: var(--emergency-red);
+            font-weight: bold;
+        }
+
+        /* Professional Authority Credentials */
+        .authority-credentials {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffebee 100%);
+            border: 2px solid var(--emergency-red);
+            border-radius: 12px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+
+        .credentials-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .credential-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: white;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--emergency-red);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .credential-icon {
+            font-size: 16px;
+            width: 24px;
+            text-align: center;
+        }
+
+        .credential-text {
+            font-size: 12px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+
+        .authority-partnerships {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid var(--prism-success);
+            text-align: center;
+        }
+
+        .authority-partnerships p {
+            font-size: 11px;
+            color: var(--text-primary);
+            margin: 0;
+        }
+
+        .authority-partnerships strong {
+            color: var(--prism-success);
+        }
+
+        /* Regional Emergency Contacts */
+        .regional-contacts {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border: 2px solid var(--text-secondary);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .regional-contacts h3 {
+            color: var(--emergency-red);
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .contacts-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            border-left: 3px solid var(--emergency-red);
+        }
+
+        .contact-item h4 {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--emergency-red);
+            margin-bottom: 5px;
+        }
+
+        .contact-item p {
+            font-size: 10px;
+            color: var(--text-primary);
+            margin: 2px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="pdf-container">
+        <!-- Professional Header -->
+        <header class="pdf-header">
+            <div class="header-left">
+                <img src="../../../images/logos/prism-logo-1000.png" class="company-logo-img" alt="Prism Specialties DMV">
+                <div class="company-info">
+                    <h1>Prism Specialties DMV</h1>
+                    <div class="company-tagline">Professional Emergency Response & Restoration</div>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="emergency-hotline">📞 (301) 215-3191</div>
+                <div class="professional-badge">✓ Specialty Contents</div>
+            </div>
+        </header>
+
+        <!-- Title Section -->
+        <div class="checklist-title">
+            <h2>🔥 Fire Damage - First 48 Hours Critical Actions</h2>
+            <p>Professional emergency response protocol for fire and smoke damage</p>
+        </div>
+
+        <!-- Professional Authority Section -->
+        <section class="authority-credentials">
+            <div class="credentials-grid">
+                <div class="credential-item">
+                    <div class="credential-icon">📚</div>
+                    <div class="credential-text">Specialty Contents Restoration</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-icon">🚨</div>
+                    <div class="credential-text">Emergency Recovery Specialists</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-icon">📋</div>
+                    <div class="credential-text">Insurance Approved Documentation</div>
+                </div>
+                <div class="credential-item">
+                    <div class="credential-icon">🏛️</div>
+                    <div class="credential-text">Museum-Quality Techniques</div>
+                </div>
+            </div>
+            <div class="authority-partnerships">
+                <p><strong>Trusted Partners:</strong> Fairfax County Fire & Rescue • Montgomery County Emergency Services • Prince William County Fire • Arlington County Emergency Management</p>
+            </div>
+        </section>
+
+        <!-- Checklist Sections -->
+
+        <div class="checklist-section">
+            <div class="section-title">IMMEDIATE SAFETY (0-30 MINUTES)</div>
+
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🚨 Ensure Everyone is Safe</div>
+                    <div class="item-description">Evacuate all persons and pets. Do not re-enter until fire officials declare it safe.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📞 Contact Emergency Services</div>
+                    <div class="item-description">Call 911 if not already done. Report gas leaks, electrical hazards, or structural damage.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🏠 Check Structural Safety</div>
+                    <div class="item-description">Look for sagging ceilings, damaged walls, or compromised support beams.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <div class="section-title">EMERGENCY RESPONSE (30 MIN - 2 HOURS)</div>
+
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📱 Contact Insurance Company</div>
+                    <div class="item-description">Report claim immediately. Get claim number and adjuster contact information.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📸 Document Everything</div>
+                    <div class="item-description">Take extensive photos/videos of all damage before moving anything.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-medium">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🔒 Secure the Property</div>
+                    <div class="item-description">Board up broken windows/openings to prevent further damage.</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="checklist-section">
+            <div class="section-title">DAMAGE CONTROL (2-8 HOURS)</div>
+
+            <div class="checklist-item priority-medium">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">💧 Address Water Damage</div>
+                    <div class="item-description">Remove standing water from firefighting efforts if electricity is safe.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-medium">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🌬️ Ventilate Smoke Odors</div>
+                    <div class="item-description">Open windows/doors carefully. Use fans without spreading soot.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-low">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📋 Create Damage Inventory</div>
+                    <div class="item-description">List all damaged items with descriptions and estimated values.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Regional Emergency Contacts -->
+        <section class="regional-contacts">
+            <h3>🚨 DMV Regional Emergency Contacts</h3>
+            <div class="contacts-grid">
+                <div class="contact-item">
+                    <h4>Fairfax County</h4>
+                    <p>Fire/EMS: 911 or (703) 691-2131</p>
+                    <p>Non-Emergency: (703) 691-2131</p>
+                    <p>Utilities: Dominion Energy (866) 366-4357</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Montgomery County</h4>
+                    <p>Fire/EMS: 911 or (240) 777-2444</p>
+                    <p>Non-Emergency: (301) 279-8000</p>
+                    <p>Utilities: Pepco (877) 737-2662</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Prince William County</h4>
+                    <p>Fire/EMS: 911 or (703) 792-6500</p>
+                    <p>Non-Emergency: (703) 792-6500</p>
+                    <p>Utilities: Dominion Energy (866) 366-4357</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Arlington County</h4>
+                    <p>Fire/EMS: 911 or (703) 228-4851</p>
+                    <p>Non-Emergency: (703) 228-4851</p>
+                    <p>Utilities: Dominion Energy (866) 366-4357</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div>
+                <div class="qr-placeholder">QR CODE</div>
+                <p style="font-size: 8px; text-align: center;">Scan for updates</p>
+            </div>
+            <div class="footer-info">
+                <p><strong>Specialty Contents Recovery</strong></p>
+                <p>Document • Electronics • Art • Textiles</p>
+                <p class="website">www.prismspecialtiesdmv.com</p>
+                <p>© 2025 Prism Specialties DMV • Licensed & Insured</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

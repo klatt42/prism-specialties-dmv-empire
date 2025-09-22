@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=3.0">
+    <title>Emergency Checklist | Prism Specialties DMV</title>
+    <meta name="description" content="Touch-optimized emergency response checklist with haptic feedback and accessibility features.">
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#e74c3c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Emergency Checklists">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../../images/logos/prism-logo-1000.png">
+
+    <!-- Accessibility -->
+    <meta name="color-scheme" content="light dark">
+
+    <style>
+        :root {
+            --emergency-red: #e74c3c;
+            --emergency-red-dark: #c0392b;
+            --emergency-orange: #f39c12;
+            --success-green: #27ae60;
+            --primary-blue: #00a0df;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+            --shadow: 0 4px 15px rgba(0,0,0,0.15);
+            --shadow-heavy: 0 8px 25px rgba(0,0,0,0.2);
+
+            /* Touch targets */
+            --touch-target: 48px;
+            --touch-large: 60px;
+            --touch-xl: 72px;
+        }
+
+        /* High Contrast Mode */
+        @media (prefers-contrast: high) {
+            :root {
+                --emergency-red: #d32f2f;
+                --text-dark: #000000;
+                --text-light: #333333;
+                --bg-light: #ffffff;
+                --shadow: 0 4px 15px rgba(0,0,0,0.3);
+            }
+        }
+
+        /* Dark Mode Support */
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-dark: #ffffff;
+                --text-light: #cccccc;
+                --bg-light: #1a1a1a;
+                --emergency-red: #ff6b6b;
+            }
+        }
+
+        /* Reduced Motion */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: rgba(231, 76, 60, 0.3);
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Emergency Header */
+        .emergency-header {
+            background: linear-gradient(135deg, var(--emergency-red) 0%, var(--emergency-red-dark) 100%);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .emergency-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .emergency-subtitle {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 500;
+        }
+
+        .accessibility-controls {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            display: flex;
+            gap: 10px;
+        }
+
+        .accessibility-btn {
+            width: var(--touch-target);
+            height: var(--touch-target);
+            border-radius: 50%;
+            border: none;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .accessibility-btn:active {
+            transform: scale(0.95);
+            background: rgba(0,0,0,0.9);
+        }
+
+        /* PDF Container */
+        .pdf-container {
+            margin-top: 140px;
+            height: calc(100vh - 140px - 200px);
+            position: relative;
+            background: white;
+            border-radius: 15px 15px 0 0;
+            overflow: hidden;
+            box-shadow: var(--shadow-heavy);
+        }
+
+        .pdf-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+            transform-origin: center center;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .pdf-frame.zoomed {
+            cursor: grab;
+        }
+
+        .pdf-frame.dragging {
+            cursor: grabbing;
+        }
+
+        /* Emergency Action Bar */
+        .emergency-actions {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.15);
+            z-index: 1001;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* Thumb-Friendly Buttons */
+        .emergency-btn {
+            min-height: var(--touch-xl);
+            padding: 16px 24px;
+            border: none;
+            border-radius: 16px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            box-shadow: var(--shadow);
+            touch-action: manipulation;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .emergency-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            transition: left 0.5s;
+        }
+
+        .emergency-btn:active::before {
+            left: 100%;
+        }
+
+        .emergency-btn:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .call-btn {
+            background: linear-gradient(135deg, var(--emergency-red) 0%, var(--emergency-red-dark) 100%);
+            color: white;
+            grid-column: span 2;
+            min-height: var(--touch-xl);
+            font-size: 1.3rem;
+            animation: pulse-red 2s infinite;
+        }
+
+        @keyframes pulse-red {
+            0% { box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); }
+            50% { box-shadow: 0 6px 25px rgba(231, 76, 60, 0.6); }
+            100% { box-shadow: 0 4px 15px rgba(231, 76, 60, 0.4); }
+        }
+
+        .save-btn {
+            background: linear-gradient(135deg, var(--success-green) 0%, #219a52 100%);
+            color: white;
+        }
+
+        .share-btn {
+            background: linear-gradient(135deg, var(--primary-blue) 0%, #0080c7 100%);
+            color: white;
+        }
+
+        /* Quick Actions Strip */
+        .quick-actions {
+            position: fixed;
+            top: 140px;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 20px;
+            z-index: 999;
+            display: flex;
+            gap: 12px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+
+        .quick-actions::-webkit-scrollbar {
+            display: none;
+        }
+
+        .quick-action {
+            min-width: var(--touch-large);
+            height: var(--touch-large);
+            border-radius: 50%;
+            border: none;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: var(--shadow);
+        }
+
+        .quick-action:active {
+            transform: scale(0.9);
+        }
+
+        .quick-action.zoom { background: #3498db; color: white; }
+        .quick-action.fullscreen { background: #9b59b6; color: white; }
+        .quick-action.contrast { background: #34495e; color: white; }
+        .quick-action.voice { background: #e67e22; color: white; }
+
+        /* Navigation Hints */
+        .swipe-hint {
+            position: absolute;
+            bottom: 220px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            z-index: 998;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .swipe-hint.show {
+            opacity: 1;
+        }
+
+        /* Print Guidance Modal */
+        .print-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.8);
+            z-index: 2000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .print-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+            color: var(--text-dark);
+        }
+
+        .print-content h3 {
+            color: var(--emergency-red);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .print-options {
+            display: grid;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .print-option {
+            background: var(--bg-light);
+            padding: 20px;
+            border-radius: 12px;
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-align: left;
+        }
+
+        .print-option:active {
+            border-color: var(--primary-blue);
+            transform: scale(0.98);
+        }
+
+        .print-option h4 {
+            color: var(--text-dark);
+            margin-bottom: 8px;
+        }
+
+        .print-option p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* Voice Over Announcements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        .voice-announcement {
+            position: fixed;
+            top: -9999px;
+            left: -9999px;
+        }
+
+        /* High Contrast Mode */
+        .high-contrast {
+            filter: contrast(150%) brightness(120%);
+        }
+
+        .high-contrast .emergency-btn {
+            border: 2px solid var(--text-dark);
+        }
+
+        .high-contrast .pdf-frame {
+            filter: contrast(120%);
+        }
+
+        /* Touch Feedback */
+        .haptic-feedback {
+            position: relative;
+        }
+
+        .haptic-feedback::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.5);
+            transform: translate(-50%, -50%);
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .haptic-feedback.active::after {
+            width: 100px;
+            height: 100px;
+            opacity: 0;
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 768px) {
+            .emergency-actions {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .call-btn {
+                grid-column: span 1;
+            }
+        }
+
+        /* Focus Indicators for Accessibility */
+        .emergency-btn:focus,
+        .quick-action:focus,
+        .accessibility-btn:focus {
+            outline: 3px solid var(--emergency-orange);
+            outline-offset: 2px;
+        }
+
+        /* Loading States */
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .loading::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 20px;
+            border: 2px solid transparent;
+            border-top: 2px solid currentColor;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes spin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Emergency Header -->
+    <header class="emergency-header">
+        <h1 class="emergency-title" id="pageTitle">🔥 Fire Emergency Checklist</h1>
+        <p class="emergency-subtitle">Critical Actions • Professional Response Protocol</p>
+    </header>
+
+    <!-- Accessibility Controls -->
+    <div class="accessibility-controls">
+        <button class="accessibility-btn" onclick="toggleHighContrast()" title="High Contrast Mode" aria-label="Toggle high contrast mode">
+            ⚫
+        </button>
+        <button class="accessibility-btn" onclick="toggleVoiceOver()" title="Voice Over" aria-label="Toggle voice over">
+            🔊
+        </button>
+    </div>
+
+    <!-- Quick Actions Strip -->
+    <div class="quick-actions">
+        <button class="quick-action zoom" onclick="doubleTapZoom()" title="Double-tap zoom" aria-label="Zoom in on content">
+            🔍
+        </button>
+        <button class="quick-action fullscreen" onclick="enterFullscreen()" title="Fullscreen mode" aria-label="Enter fullscreen mode">
+            ⛶
+        </button>
+        <button class="quick-action contrast" onclick="toggleHighContrast()" title="High contrast" aria-label="Toggle high contrast">
+            ◐
+        </button>
+        <button class="quick-action voice" onclick="readAloud()" title="Read aloud" aria-label="Read content aloud">
+            📢
+        </button>
+    </div>
+
+    <!-- PDF Container -->
+    <div class="pdf-container">
+        <iframe id="pdfFrame" class="pdf-frame" src="" title="Emergency Response Checklist" role="main" aria-label="Emergency response checklist document"></iframe>
+    </div>
+
+    <!-- Swipe Navigation Hint -->
+    <div class="swipe-hint" id="swipeHint">
+        👆 Swipe left/right to navigate • Double-tap to zoom
+    </div>
+
+    <!-- Emergency Action Bar -->
+    <div class="emergency-actions">
+        <a href="tel:3012153191" class="emergency-btn call-btn haptic-feedback" onclick="hapticFeedback(this)" aria-label="Call emergency restoration services immediately">
+            📞 <span>CALL NOW</span>
+        </a>
+        <button class="emergency-btn save-btn haptic-feedback" onclick="saveForLater(this)" aria-label="Save checklist for later access">
+            💾 <span>Save Later</span>
+        </button>
+        <button class="emergency-btn share-btn haptic-feedback" onclick="shareWithFamily(this)" aria-label="Share checklist with family members">
+            👨‍👩‍👧‍👦 <span>Share Family</span>
+        </button>
+    </div>
+
+    <!-- Print Guidance Modal -->
+    <div class="print-modal" id="printModal">
+        <div class="print-content">
+            <h3>🖨️ Print Options</h3>
+            <p>Choose the best printing option for your situation:</p>
+
+            <div class="print-options">
+                <div class="print-option" onclick="printAtLibrary()">
+                    <h4>📚 Library Printing</h4>
+                    <p>Free or low-cost printing at local libraries</p>
+                </div>
+
+                <div class="print-option" onclick="printAtOffice()">
+                    <h4>🏢 Office Printing</h4>
+                    <p>Professional quality at office centers</p>
+                </div>
+
+                <div class="print-option" onclick="emailForPrint()">
+                    <h4>📧 Email to Print</h4>
+                    <p>Send link to email for later printing</p>
+                </div>
+            </div>
+
+            <button class="emergency-btn" onclick="closePrintModal()" style="width: 100%; margin-top: 20px;">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <!-- Screen Reader Announcements -->
+    <div class="voice-announcement" id="voiceAnnouncement" aria-live="polite" aria-atomic="true"></div>
+    <div class="sr-only" id="statusMessage" aria-live="polite"></div>
+
+    <script>
+        // Global state
+        let currentScale = 1;
+        let currentChecklist = '';
+        let isHighContrast = false;
+        let isVoiceOverEnabled = false;
+        let lastTap = 0;
+        let touchStartX = 0;
+        let touchStartY = 0;
+
+        // Checklist configurations
+        const checklists = {
+            'fire-damage': {
+                title: '🔥 Fire Emergency Checklist',
+                subtitle: 'Critical Actions • Professional Response Protocol',
+                file: 'fire-damage-first-48-hours.html',
+                voice: 'This is the fire damage emergency checklist with critical actions for the first 48 hours.'
+            },
+            'water-emergency': {
+                title: '💧 Water Emergency Checklist',
+                subtitle: 'Save What Matters • Professional Response',
+                file: 'water-emergency-save-what-matters.html',
+                voice: 'This is the water emergency checklist to save what matters most.'
+            },
+            'lightning-strike': {
+                title: '⚡ Lightning Strike Checklist',
+                subtitle: 'Power Surge Protection • Safety Protocol',
+                file: 'lightning-strike-power-surge.html',
+                voice: 'This is the lightning strike and power surge protection checklist.'
+            },
+            'smoke-damage': {
+                title: '💨 Smoke Damage Checklist',
+                subtitle: 'Air Quality Emergency • Health Protection',
+                file: 'smoke-damage-air-quality.html',
+                voice: 'This is the smoke damage and air quality emergency checklist.'
+            },
+            'storm-damage': {
+                title: '🌪️ Storm Damage Checklist',
+                subtitle: 'Structure Assessment • Safety Evaluation',
+                file: 'storm-damage-structure-assessment.html',
+                voice: 'This is the storm damage structure assessment checklist.'
+            }
+        };
+
+        // Initialize mobile-optimized viewer
+        function initMobileOptimized() {
+            currentChecklist = getUrlParameter('checklist') || 'fire-damage';
+            const userEmail = getUrlParameter('email') || '';
+
+            const checklist = checklists[currentChecklist];
+            if (!checklist) {
+                announceToScreen('Error: Unknown checklist type');
+                return;
+            }
+
+            // Update header
+            document.getElementById('pageTitle').textContent = checklist.title;
+            document.querySelector('.emergency-subtitle').textContent = checklist.subtitle;
+            document.title = checklist.title + ' | Prism Specialties DMV';
+
+            // Load PDF
+            const pdfFrame = document.getElementById('pdfFrame');
+            pdfFrame.src = '../assets/pdfs/' + checklist.file;
+
+            // Setup touch interactions
+            setupTouchGestures();
+            setupSwipeNavigation();
+            setupAccessibility();
+
+            // Show swipe hint briefly
+            showSwipeHint();
+
+            // Initial voice announcement
+            if (isVoiceOverEnabled) {
+                setTimeout(() => {
+                    announceToScreen(checklist.voice);
+                }, 1000);
+            }
+
+            // Track usage
+            if (userEmail) {
+                trackMobileInteraction(userEmail, currentChecklist);
+            }
+        }
+
+        // Touch gesture setup
+        function setupTouchGestures() {
+            const pdfFrame = document.getElementById('pdfFrame');
+            let isDoubleTap = false;
+
+            // Double-tap to zoom
+            pdfFrame.addEventListener('touchend', (e) => {
+                const currentTime = Date.now();
+                const tapLength = currentTime - lastTap;
+
+                if (tapLength < 500 && tapLength > 0) {
+                    e.preventDefault();
+                    doubleTapZoom();
+                    isDoubleTap = true;
+                }
+                lastTap = currentTime;
+            });
+
+            // Prevent single tap when double tap detected
+            pdfFrame.addEventListener('click', (e) => {
+                if (isDoubleTap) {
+                    e.preventDefault();
+                    isDoubleTap = false;
+                }
+            });
+
+            // Pinch to zoom
+            let initialDistance = 0;
+            let initialScale = 1;
+
+            pdfFrame.addEventListener('touchstart', (e) => {
+                if (e.touches.length === 2) {
+                    initialDistance = getDistance(e.touches[0], e.touches[1]);
+                    initialScale = currentScale;
+                }
+            });
+
+            pdfFrame.addEventListener('touchmove', (e) => {
+                if (e.touches.length === 2) {
+                    e.preventDefault();
+                    const currentDistance = getDistance(e.touches[0], e.touches[1]);
+                    const scale = initialScale * (currentDistance / initialDistance);
+                    setZoom(Math.max(0.5, Math.min(3, scale)));
+                }
+            });
+
+            function getDistance(touch1, touch2) {
+                const dx = touch1.clientX - touch2.clientX;
+                const dy = touch1.clientY - touch2.clientY;
+                return Math.sqrt(dx * dx + dy * dy);
+            }
+        }
+
+        // Swipe navigation setup
+        function setupSwipeNavigation() {
+            const container = document.querySelector('.pdf-container');
+
+            container.addEventListener('touchstart', (e) => {
+                touchStartX = e.touches[0].clientX;
+                touchStartY = e.touches[0].clientY;
+            });
+
+            container.addEventListener('touchend', (e) => {
+                const touchEndX = e.changedTouches[0].clientX;
+                const touchEndY = e.changedTouches[0].clientY;
+
+                const deltaX = touchEndX - touchStartX;
+                const deltaY = touchEndY - touchStartY;
+
+                // Only process horizontal swipes
+                if (Math.abs(deltaX) > Math.abs(deltaY) && Math.abs(deltaX) > 50) {
+                    if (deltaX > 0) {
+                        navigateChecklist('previous');
+                    } else {
+                        navigateChecklist('next');
+                    }
+                }
+            });
+        }
+
+        // Accessibility setup
+        function setupAccessibility() {
+            // Keyboard navigation
+            document.addEventListener('keydown', (e) => {
+                switch (e.key) {
+                    case 'ArrowLeft':
+                        navigateChecklist('previous');
+                        break;
+                    case 'ArrowRight':
+                        navigateChecklist('next');
+                        break;
+                    case '+':
+                    case '=':
+                        doubleTapZoom();
+                        break;
+                    case '-':
+                        setZoom(currentScale * 0.8);
+                        break;
+                    case 'f':
+                        enterFullscreen();
+                        break;
+                    case 'h':
+                        toggleHighContrast();
+                        break;
+                    case 'v':
+                        toggleVoiceOver();
+                        break;
+                }
+            });
+
+            // Focus management
+            const focusableElements = document.querySelectorAll('button, a, [tabindex]:not([tabindex="-1"])');
+            focusableElements.forEach(element => {
+                element.addEventListener('focus', () => {
+                    if (isVoiceOverEnabled) {
+                        const label = element.getAttribute('aria-label') || element.textContent;
+                        announceToScreen(label);
+                    }
+                });
+            });
+        }
+
+        // Double-tap zoom
+        function doubleTapZoom() {
+            hapticFeedback();
+
+            if (currentScale === 1) {
+                setZoom(2);
+                announceToScreen('Zoomed in to 200%');
+            } else if (currentScale === 2) {
+                setZoom(3);
+                announceToScreen('Zoomed in to 300%');
+            } else {
+                setZoom(1);
+                announceToScreen('Reset to normal size');
+            }
+        }
+
+        // Set zoom level
+        function setZoom(scale) {
+            currentScale = scale;
+            const pdfFrame = document.getElementById('pdfFrame');
+            pdfFrame.style.transform = `scale(${scale})`;
+
+            if (scale > 1) {
+                pdfFrame.classList.add('zoomed');
+            } else {
+                pdfFrame.classList.remove('zoomed');
+            }
+        }
+
+        // Navigate between checklists
+        function navigateChecklist(direction) {
+            const checklistKeys = Object.keys(checklists);
+            const currentIndex = checklistKeys.indexOf(currentChecklist);
+
+            let newIndex;
+            if (direction === 'next') {
+                newIndex = (currentIndex + 1) % checklistKeys.length;
+            } else {
+                newIndex = currentIndex === 0 ? checklistKeys.length - 1 : currentIndex - 1;
+            }
+
+            const newChecklist = checklistKeys[newIndex];
+            const email = getUrlParameter('email') || '';
+
+            hapticFeedback();
+            announceToScreen(`Navigating to ${checklists[newChecklist].title}`);
+
+            // Navigate to new checklist
+            const newUrl = `?checklist=${newChecklist}&email=${encodeURIComponent(email)}`;
+            window.location.search = newUrl;
+        }
+
+        // Emergency Actions
+        function saveForLater(button) {
+            hapticFeedback(button);
+            announceToScreen('Saving checklist for later access');
+
+            // Save to localStorage
+            const saveData = {
+                checklist: currentChecklist,
+                timestamp: Date.now(),
+                email: getUrlParameter('email') || ''
+            };
+
+            localStorage.setItem('saved_emergency_checklist', JSON.stringify(saveData));
+
+            // Show success feedback
+            button.innerHTML = '✅ <span>Saved!</span>';
+            setTimeout(() => {
+                button.innerHTML = '💾 <span>Save Later</span>';
+            }, 2000);
+
+            // Show print modal
+            document.getElementById('printModal').style.display = 'flex';
+        }
+
+        function shareWithFamily(button) {
+            hapticFeedback(button);
+            announceToScreen('Sharing checklist with family');
+
+            const checklist = checklists[currentChecklist];
+            const shareText = `🚨 Emergency Checklist: ${checklist.title}\n\nCritical safety information for our family.\n\n${window.location.href}`;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: checklist.title,
+                    text: shareText,
+                    url: window.location.href
+                }).then(() => {
+                    button.innerHTML = '✅ <span>Shared!</span>';
+                    setTimeout(() => {
+                        button.innerHTML = '👨‍👩‍👧‍👦 <span>Share Family</span>';
+                    }, 2000);
+                }).catch(err => {
+                    // Fallback to SMS
+                    window.location.href = `sms:?body=${encodeURIComponent(shareText)}`;
+                });
+            } else {
+                // Fallback to SMS
+                window.location.href = `sms:?body=${encodeURIComponent(shareText)}`;
+            }
+        }
+
+        // Print guidance functions
+        function printAtLibrary() {
+            hapticFeedback();
+            announceToScreen('Opening library printing guidance');
+
+            const libraryText = `📚 Library Printing Guide:\n\n1. Visit your local library\n2. Use their computers (usually free)\n3. Go to: ${window.location.href}\n4. Print this emergency checklist\n5. Keep copies at home and in your car\n\nMost libraries offer free printing for emergency documents.`;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Library Printing Instructions',
+                    text: libraryText
+                });
+            } else {
+                copyToClipboard(libraryText);
+                alert('Instructions copied to clipboard');
+            }
+
+            closePrintModal();
+        }
+
+        function printAtOffice() {
+            hapticFeedback();
+            announceToScreen('Opening office printing guidance');
+
+            const officeText = `🏢 Office Printing Guide:\n\n1. Visit FedEx Office, UPS Store, or similar\n2. Use their computers or email the link\n3. URL: ${window.location.href}\n4. Print in color for best visibility\n5. Consider laminating for durability\n\nProfessional printing centers offer high-quality emergency document printing.`;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Office Printing Instructions',
+                    text: officeText
+                });
+            } else {
+                copyToClipboard(officeText);
+                alert('Instructions copied to clipboard');
+            }
+
+            closePrintModal();
+        }
+
+        function emailForPrint() {
+            hapticFeedback();
+            announceToScreen('Sending email for printing');
+
+            const checklist = checklists[currentChecklist];
+            const subject = encodeURIComponent(`Print: ${checklist.title}`);
+            const body = encodeURIComponent(`Emergency Checklist for Printing:\n\n${checklist.title}\n${checklist.subtitle}\n\nPrint URL: ${window.location.href}\n\nPrint this emergency checklist and keep copies accessible.`);
+
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+            closePrintModal();
+        }
+
+        function closePrintModal() {
+            document.getElementById('printModal').style.display = 'none';
+        }
+
+        // Accessibility functions
+        function toggleHighContrast() {
+            isHighContrast = !isHighContrast;
+            document.body.classList.toggle('high-contrast', isHighContrast);
+
+            const message = isHighContrast ? 'High contrast mode enabled' : 'High contrast mode disabled';
+            announceToScreen(message);
+
+            hapticFeedback();
+        }
+
+        function toggleVoiceOver() {
+            isVoiceOverEnabled = !isVoiceOverEnabled;
+
+            const message = isVoiceOverEnabled ? 'Voice over enabled' : 'Voice over disabled';
+            announceToScreen(message);
+
+            if (isVoiceOverEnabled) {
+                const checklist = checklists[currentChecklist];
+                setTimeout(() => announceToScreen(checklist.voice), 500);
+            }
+
+            hapticFeedback();
+        }
+
+        function readAloud() {
+            if ('speechSynthesis' in window) {
+                const checklist = checklists[currentChecklist];
+                const text = `${checklist.title}. ${checklist.voice}. Use the call now button to contact emergency services at 301-215-3191.`;
+
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.rate = 0.8;
+                utterance.pitch = 1;
+                utterance.volume = 1;
+
+                speechSynthesis.speak(utterance);
+                announceToScreen('Reading checklist aloud');
+            } else {
+                announceToScreen('Speech synthesis not supported on this device');
+            }
+
+            hapticFeedback();
+        }
+
+        function enterFullscreen() {
+            const pdfFrame = document.getElementById('pdfFrame');
+
+            if (pdfFrame.requestFullscreen) {
+                pdfFrame.requestFullscreen();
+            } else if (pdfFrame.webkitRequestFullscreen) {
+                pdfFrame.webkitRequestFullscreen();
+            } else if (pdfFrame.msRequestFullscreen) {
+                pdfFrame.msRequestFullscreen();
+            }
+
+            announceToScreen('Entering fullscreen mode');
+            hapticFeedback();
+        }
+
+        // Haptic feedback
+        function hapticFeedback(element) {
+            // Visual feedback
+            if (element) {
+                element.classList.add('active');
+                setTimeout(() => {
+                    element.classList.remove('active');
+                }, 300);
+            }
+
+            // Haptic feedback (iOS/Android)
+            if ('vibrate' in navigator) {
+                navigator.vibrate([50, 30, 50]);
+            }
+
+            // Audio feedback
+            try {
+                const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+
+                oscillator.frequency.setValueAtTime(800, audioContext.currentTime);
+                gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.1);
+
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.1);
+            } catch (e) {
+                // Fallback: no audio feedback
+            }
+        }
+
+        // Screen reader announcements
+        function announceToScreen(message) {
+            const announcement = document.getElementById('voiceAnnouncement');
+            announcement.textContent = message;
+
+            // Also update status message for screen readers
+            const statusMessage = document.getElementById('statusMessage');
+            statusMessage.textContent = message;
+
+            // Clear after announcement
+            setTimeout(() => {
+                announcement.textContent = '';
+                statusMessage.textContent = '';
+            }, 3000);
+        }
+
+        // Show swipe hint
+        function showSwipeHint() {
+            const hint = document.getElementById('swipeHint');
+            hint.classList.add('show');
+
+            setTimeout(() => {
+                hint.classList.remove('show');
+            }, 4000);
+        }
+
+        // Utility functions
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        function copyToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text);
+            } else {
+                const textArea = document.createElement('textarea');
+                textArea.value = text;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+            }
+        }
+
+        function trackMobileInteraction(email, checklist) {
+            const interactionData = {
+                email: email,
+                checklist: checklist,
+                timestamp: new Date().toISOString(),
+                isMobileOptimized: true,
+                hasHapticFeedback: 'vibrate' in navigator,
+                hasVoiceOver: 'speechSynthesis' in window,
+                userAgent: navigator.userAgent
+            };
+
+            localStorage.setItem('mobileOptimized_' + Date.now(), JSON.stringify(interactionData));
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', initMobileOptimized);
+
+        // Handle orientation changes
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => {
+                setZoom(1); // Reset zoom on orientation change
+                announceToScreen('Orientation changed, zoom reset');
+            }, 100);
+        });
+
+        // Prevent zoom on form inputs (iOS)
+        document.addEventListener('touchstart', (e) => {
+            if (e.touches.length > 1) {
+                e.preventDefault();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile: Fire Damage - First 48 Hours | Prism Specialties DMV</title>
+    <style>
+        /* Mobile-Optimized PDF Template */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        .mobile-container {
+            max-width: 100%;
+            margin: 0 auto;
+            background: white;
+        }
+
+        /* Mobile Header */
+        .mobile-header {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .mobile-header h1 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .mobile-header p {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .emergency-banner {
+            background: #27ae60;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            margin-bottom: 20px;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .emergency-banner a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        /* Mobile Authority */
+        .mobile-authority {
+            background: #f8f9fa;
+            border: 2px solid #e74c3c;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .authority-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #e74c3c;
+        }
+
+        /* Mobile Timeline */
+        .mobile-timeline {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffebee 100%);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .timeline-title {
+            color: #e74c3c;
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .timeline-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 5px solid #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        .timeline-time {
+            font-weight: 700;
+            color: #e74c3c;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .timeline-action {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Mobile Sections */
+        .mobile-section {
+            margin-bottom: 25px;
+        }
+
+        .section-header {
+            background: #e74c3c;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        /* Mobile Checklist Items */
+        .mobile-item {
+            background: white;
+            border: 2px solid #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .mobile-item.priority-high {
+            border-left: 6px solid #e74c3c;
+        }
+
+        .mobile-item.priority-medium {
+            border-left: 6px solid #f39c12;
+        }
+
+        .mobile-item.priority-low {
+            border-left: 6px solid #27ae60;
+        }
+
+        .mobile-checkbox {
+            width: 30px;
+            height: 30px;
+            border: 3px solid #e74c3c;
+            border-radius: 6px;
+            float: left;
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+
+        .mobile-content {
+            overflow: hidden;
+        }
+
+        .mobile-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .mobile-description {
+            font-size: 16px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Mobile Footer */
+        .mobile-footer {
+            background: #2c3e50;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #e74c3c;
+            margin-bottom: 10px;
+        }
+
+        .footer-contact {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .footer-services {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 10px;
+        }
+
+        .footer-website {
+            font-size: 16px;
+            font-weight: 600;
+            color: #e74c3c;
+        }
+
+        /* Tap-friendly buttons for mobile */
+        .mobile-action {
+            background: #e74c3c;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin: 10px 0;
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            width: 100%;
+            cursor: pointer;
+        }
+
+        .mobile-action:hover {
+            background: #c0392b;
+        }
+
+        /* Print optimization for mobile */
+        @media print {
+            body {
+                font-size: 14px;
+                padding: 0;
+            }
+
+            .mobile-checkbox {
+                width: 20px;
+                height: 20px;
+                border: 2px solid #000;
+            }
+
+            .mobile-title {
+                font-size: 16px;
+            }
+
+            .mobile-description {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mobile-container">
+        <!-- Mobile Header -->
+        <header class="mobile-header">
+            <h1>🔥 Fire Damage Emergency</h1>
+            <p>First 48 Hours Critical Response</p>
+        </header>
+
+        <!-- Emergency Contact Banner -->
+        <div class="emergency-banner">
+            🚨 24/7 Emergency: <a href="tel:3012153191">(301) 215-3191</a>
+        </div>
+
+        <!-- Authority Badge -->
+        <div class="mobile-authority">
+            <div class="authority-text">✅ Used by Emergency Responders & Insurance Professionals</div>
+        </div>
+
+        <!-- Critical Timeline -->
+        <section class="mobile-timeline">
+            <div class="timeline-title">⏰ Critical 48-Hour Timeline</div>
+            <div class="timeline-item">
+                <div class="timeline-time">0-30 MINUTES</div>
+                <div class="timeline-action">Ensure safety, contact emergency services, assess structure</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">30 MIN - 2 HOURS</div>
+                <div class="timeline-action">Contact insurance, document damage, secure property</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-time">2-8 HOURS</div>
+                <div class="timeline-action">Address water damage, ventilate, create inventory</div>
+            </div>
+        </section>
+
+        <!-- Checklist Sections -->
+        <section class="mobile-section">
+            <div class="section-header">IMMEDIATE SAFETY (0-30 MINUTES)</div>
+
+            <div class="mobile-item priority-high">
+                <div class="mobile-checkbox"></div>
+                <div class="mobile-content">
+                    <div class="mobile-title">🚨 Ensure Everyone is Safe</div>
+                    <div class="mobile-description">Evacuate all persons and pets. Do not re-enter until fire officials declare it safe.</div>
+                </div>
+            </div>
+
+            <div class="mobile-item priority-high">
+                <div class="mobile-checkbox"></div>
+                <div class="mobile-content">
+                    <div class="mobile-title">📞 Contact Emergency Services</div>
+                    <div class="mobile-description">Call 911 if not already done. Report gas leaks, electrical hazards, or structural damage.</div>
+                </div>
+            </div>
+
+            <div class="mobile-item priority-high">
+                <div class="mobile-checkbox"></div>
+                <div class="mobile-content">
+                    <div class="mobile-title">🏠 Check Structural Safety</div>
+                    <div class="mobile-description">Look for sagging ceilings, damaged walls, or compromised support beams.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mobile-section">
+            <div class="section-header">EMERGENCY RESPONSE (30 MIN - 2 HOURS)</div>
+
+            <div class="mobile-item priority-high">
+                <div class="mobile-checkbox"></div>
+                <div class="mobile-content">
+                    <div class="mobile-title">📱 Contact Insurance Company</div>
+                    <div class="mobile-description">Report claim immediately. Get claim number and adjuster contact information.</div>
+                </div>
+            </div>
+
+            <div class="mobile-item priority-high">
+                <div class="mobile-checkbox"></div>
+                <div class="mobile-content">
+                    <div class="mobile-title">📸 Document Everything</div>
+                    <div class="mobile-description">Take extensive photos/videos of all damage before moving anything.</div>
+                </div>
+            </div>
+
+            <div class="mobile-item priority-medium">
+                <div class="mobile-checkbox"></div>
+                <div class="mobile-content">
+                    <div class="mobile-title">🔒 Secure the Property</div>
+                    <div class="mobile-description">Board up broken windows/openings to prevent further damage.</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mobile-section">
+            <div class="section-header">DAMAGE CONTROL (2-8 HOURS)</div>
+
+            <div class="mobile-item priority-medium">
+                <div class="mobile-checkbox"></div>
+                <div class="mobile-content">
+                    <div class="mobile-title">💧 Address Water Damage</div>
+                    <div class="mobile-description">Remove standing water from firefighting efforts if electricity is safe.</div>
+                </div>
+            </div>
+
+            <div class="mobile-item priority-medium">
+                <div class="mobile-checkbox"></div>
+                <div class="mobile-content">
+                    <div class="mobile-title">🌬️ Ventilate Smoke Odors</div>
+                    <div class="mobile-description">Open windows/doors carefully. Use fans without spreading soot.</div>
+                </div>
+            </div>
+
+            <div class="mobile-item priority-low">
+                <div class="mobile-checkbox"></div>
+                <div class="mobile-content">
+                    <div class="mobile-title">📋 Create Damage Inventory</div>
+                    <div class="mobile-description">List all damaged items with descriptions and estimated values.</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mobile Footer -->
+        <footer class="mobile-footer">
+            <div class="footer-logo">Prism Specialties DMV</div>
+            <div class="footer-contact">📞 (301) 215-3191</div>
+            <div class="footer-services">Specialty Contents Recovery<br>Document • Electronics • Art • Textiles</div>
+            <div class="footer-website">www.prismspecialtiesdmv.com</div>
+        </footer>
+    </div>
+
+    <script>
+        // Mobile-specific functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add tap functionality for checkboxes
+            const checkboxes = document.querySelectorAll('.mobile-checkbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('click', function() {
+                    this.style.background = this.style.background ? '' : '#27ae60';
+                    this.innerHTML = this.innerHTML ? '' : '✓';
+                });
+            });
+
+            // Add print functionality
+            if (window.location.search.includes('print=true')) {
+                window.print();
+            }
+        });
+    </script>
+</body>
+</html>

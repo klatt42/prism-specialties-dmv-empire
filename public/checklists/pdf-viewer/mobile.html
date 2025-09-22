@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=3.0">
+    <title>Emergency Checklist | Prism Specialties DMV</title>
+    <meta name="description" content="Professional emergency response checklist for mobile viewing. Used by emergency responders and insurance professionals.">
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#00a0df">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Emergency Checklists">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../../images/logos/prism-logo-1000.png">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="../../images/logos/prism-logo-1000.png" as="image">
+
+    <style>
+        :root {
+            --primary-blue: #00a0df;
+            --emergency-red: #e74c3c;
+            --success-green: #27ae60;
+            --warning-orange: #f39c12;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Mobile-First Header */
+        .mobile-header {
+            background: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+
+        .header-logo {
+            height: 40px;
+            width: auto;
+            clip-path: inset(0 0 12% 0);
+        }
+
+        .header-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-left: 10px;
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .header-menu {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+            padding: 5px;
+        }
+
+        /* PDF Container - 80% of screen */
+        .pdf-container {
+            margin-top: 60px;
+            height: calc(100vh - 60px - 80px); /* Account for header and controls */
+            position: relative;
+            background: white;
+            border-radius: 0;
+            overflow: hidden;
+        }
+
+        .pdf-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+            transform-origin: center center;
+            transition: transform 0.2s ease;
+        }
+
+        /* Mobile Control Bar - Always Visible */
+        .mobile-controls {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            padding: 15px;
+            z-index: 1001;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            height: 80px;
+            align-items: center;
+        }
+
+        .control-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 50px;
+            touch-action: manipulation;
+        }
+
+        .download-btn {
+            background: var(--success-green);
+            color: white;
+        }
+
+        .emergency-btn {
+            background: var(--emergency-red);
+            color: white;
+        }
+
+        .control-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Floating Action Buttons */
+        .fab-container {
+            position: fixed;
+            right: 15px;
+            bottom: 100px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .fab {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            touch-action: manipulation;
+        }
+
+        .fab:active {
+            transform: scale(0.9);
+        }
+
+        .fab.share { background: var(--warning-orange); }
+        .fab.fullscreen { background: var(--text-dark); }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 2000;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .menu-item {
+            background: white;
+            color: var(--text-dark);
+            padding: 15px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            min-width: 200px;
+            text-align: center;
+            transition: all 0.2s ease;
+        }
+
+        .menu-item:active {
+            transform: scale(0.95);
+        }
+
+        .menu-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+        }
+
+        /* Share Menu */
+        .share-menu {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 20px 20px 0 0;
+            z-index: 2001;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            padding: 20px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+        }
+
+        .share-menu.active {
+            transform: translateY(0);
+        }
+
+        .share-options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .share-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 15px 10px;
+            background: var(--bg-light);
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .share-btn .icon {
+            font-size: 1.5rem;
+        }
+
+        /* Add to Home Screen Banner */
+        .pwa-banner {
+            position: fixed;
+            top: 60px;
+            left: 15px;
+            right: 15px;
+            background: var(--primary-blue);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            z-index: 999;
+            transform: translateY(-100px);
+            transition: transform 0.3s ease;
+            opacity: 0;
+        }
+
+        .pwa-banner.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .pwa-content {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .pwa-text {
+            flex: 1;
+            font-size: 0.9rem;
+        }
+
+        .pwa-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        /* Loading States */
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.9);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+        }
+
+        .loading-spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--bg-light);
+            border-top: 3px solid var(--primary-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Touch Gestures */
+        .pdf-frame.zoomed {
+            cursor: grab;
+        }
+
+        .pdf-frame.dragging {
+            cursor: grabbing;
+        }
+
+        /* Offline Banner */
+        .offline-banner {
+            position: fixed;
+            top: 60px;
+            left: 15px;
+            right: 15px;
+            background: var(--text-light);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            z-index: 998;
+            font-size: 0.9rem;
+            text-align: center;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .offline-banner.show {
+            transform: translateY(0);
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 768px) {
+            .mobile-controls {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .header-title {
+                font-size: 1.1rem;
+            }
+        }
+
+        /* High DPI Screens */
+        @media (-webkit-min-device-pixel-ratio: 2) {
+            .pdf-frame {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <img src="../../images/logos/prism-logo-1000.png" alt="Prism Specialties" class="header-logo">
+        <h1 class="header-title" id="headerTitle">Emergency Checklist</h1>
+        <button class="header-menu" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    </header>
+
+    <!-- PDF Container -->
+    <div class="pdf-container">
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-spinner"></div>
+        </div>
+        <iframe id="pdfFrame" class="pdf-frame" src="" title="Emergency Response Checklist"></iframe>
+    </div>
+
+    <!-- Mobile Controls -->
+    <div class="mobile-controls">
+        <a href="#" class="control-btn download-btn" onclick="downloadPDF()" id="downloadBtn">
+            📥 Download PDF
+        </a>
+        <a href="tel:3012153191" class="control-btn emergency-btn">
+            🚨 Emergency Call
+        </a>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <button class="fab fullscreen" onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
+        <button class="fab share" onclick="toggleShareMenu()" title="Share">📤</button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <button class="menu-close" onclick="toggleMenu()">×</button>
+        <a href="#" class="menu-item" onclick="showMoreChecklists()">📋 Get More Checklists</a>
+        <a href="tel:3012153191" class="menu-item">📞 Emergency Contact</a>
+        <a href="#" class="menu-item" onclick="togglePWABanner()">📱 Add to Home Screen</a>
+        <a href="../index.html" class="menu-item">🏠 All Checklists</a>
+    </div>
+
+    <!-- Share Menu -->
+    <div class="share-menu" id="shareMenu">
+        <h3 style="margin-bottom: 10px; text-align: center;">Share Emergency Checklist</h3>
+        <div class="share-options">
+            <a href="#" class="share-btn" onclick="shareWhatsApp()">
+                <span class="icon">📱</span>
+                WhatsApp
+            </a>
+            <a href="#" class="share-btn" onclick="shareText()">
+                <span class="icon">💬</span>
+                Text/SMS
+            </a>
+            <a href="#" class="share-btn" onclick="shareEmail()">
+                <span class="icon">📧</span>
+                Email
+            </a>
+            <a href="#" class="share-btn" onclick="copyLink()">
+                <span class="icon">🔗</span>
+                Copy Link
+            </a>
+        </div>
+        <button onclick="toggleShareMenu()" style="width: 100%; margin-top: 15px; padding: 10px; background: var(--bg-light); border: none; border-radius: 10px;">Close</button>
+    </div>
+
+    <!-- PWA Banner -->
+    <div class="pwa-banner" id="pwaBanner">
+        <div class="pwa-content">
+            <span>📱</span>
+            <div class="pwa-text">
+                <strong>Add to Home Screen</strong><br>
+                Get instant access to emergency checklists offline
+            </div>
+            <button class="pwa-close" onclick="hidePWABanner()">×</button>
+        </div>
+    </div>
+
+    <!-- Offline Banner -->
+    <div class="offline-banner" id="offlineBanner">
+        📵 You're offline - Using cached version
+    </div>
+
+    <script>
+        // Checklist configurations
+        const checklists = {
+            'fire-damage': {
+                title: 'Fire Damage - First 48 Hours Critical',
+                file: 'fire-damage-first-48-hours.html',
+                icon: '🔥'
+            },
+            'water-emergency': {
+                title: 'Water Emergency - Save What Matters',
+                file: 'water-emergency-save-what-matters.html',
+                icon: '💧'
+            },
+            'lightning-strike': {
+                title: 'Lightning Strike - Power Surge Protection',
+                file: 'lightning-strike-power-surge.html',
+                icon: '⚡'
+            },
+            'smoke-damage': {
+                title: 'Smoke Damage - Air Quality Emergency',
+                file: 'smoke-damage-air-quality.html',
+                icon: '💨'
+            },
+            'storm-damage': {
+                title: 'Storm Damage - Structure Assessment',
+                file: 'storm-damage-structure-assessment.html',
+                icon: '🌪️'
+            },
+            'document-recovery': {
+                title: 'Document Recovery - Critical Papers',
+                file: 'water-emergency-save-what-matters.html',
+                icon: '📄'
+            }
+        };
+
+        let currentScale = 1;
+        let currentChecklist = '';
+        let userEmail = '';
+        let userZip = '';
+
+        // Get URL parameters
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        // Initialize mobile viewer
+        function initMobileViewer() {
+            currentChecklist = getUrlParameter('checklist') || 'water-emergency';
+            userEmail = getUrlParameter('email') || '';
+            userZip = getUrlParameter('zip') || '';
+
+            const checklist = checklists[currentChecklist];
+            if (!checklist) {
+                console.error('Unknown checklist type:', currentChecklist);
+                return;
+            }
+
+            // Update header
+            document.getElementById('headerTitle').textContent = checklist.icon + ' ' + checklist.title.split(' - ')[0];
+            document.title = checklist.title + ' | Prism Specialties DMV';
+
+            // Load PDF
+            const pdfFrame = document.getElementById('pdfFrame');
+            pdfFrame.src = '../assets/pdfs/' + checklist.file;
+
+            // Track user
+            if (userEmail) {
+                trackMobileUser(userEmail, currentChecklist, userZip);
+            }
+
+            // Setup touch gestures
+            setupTouchGestures();
+
+            // Hide loading after delay
+            setTimeout(() => {
+                document.getElementById('loadingOverlay').style.display = 'none';
+            }, 2000);
+
+            // Show PWA banner after delay
+            setTimeout(() => {
+                showPWABanner();
+            }, 5000);
+
+            // Setup offline detection
+            setupOfflineDetection();
+        }
+
+        // Track mobile user
+        function trackMobileUser(email, checklist, zip) {
+            const userData = {
+                email: email,
+                checklist: checklist,
+                zip: zip,
+                timestamp: new Date().toISOString(),
+                isMobile: true,
+                userAgent: navigator.userAgent,
+                viewportSize: `${window.innerWidth}x${window.innerHeight}`
+            };
+
+            localStorage.setItem('mobileUser_' + Date.now(), JSON.stringify(userData));
+
+            // Background tracking
+            setTimeout(() => {
+                fetch('/api/track-mobile-user', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(userData)
+                }).catch(err => {
+                    console.log('Background tracking failed (expected in demo):', err.message);
+                });
+            }, 1000);
+        }
+
+        // Touch gesture setup
+        function setupTouchGestures() {
+            const pdfFrame = document.getElementById('pdfFrame');
+            let startScale = 1;
+            let startDistance = 0;
+            let isZooming = false;
+            let isDragging = false;
+            let startX = 0;
+            let startY = 0;
+
+            // Pinch to zoom
+            pdfFrame.addEventListener('touchstart', (e) => {
+                if (e.touches.length === 2) {
+                    isZooming = true;
+                    startDistance = getDistance(e.touches[0], e.touches[1]);
+                    startScale = currentScale;
+                } else if (e.touches.length === 1 && currentScale > 1) {
+                    isDragging = true;
+                    startX = e.touches[0].clientX;
+                    startY = e.touches[0].clientY;
+                    pdfFrame.classList.add('dragging');
+                }
+            });
+
+            pdfFrame.addEventListener('touchmove', (e) => {
+                e.preventDefault();
+
+                if (isZooming && e.touches.length === 2) {
+                    const currentDistance = getDistance(e.touches[0], e.touches[1]);
+                    const scale = startScale * (currentDistance / startDistance);
+                    currentScale = Math.max(0.5, Math.min(3, scale));
+                    pdfFrame.style.transform = `scale(${currentScale})`;
+                }
+            });
+
+            pdfFrame.addEventListener('touchend', () => {
+                isZooming = false;
+                isDragging = false;
+                pdfFrame.classList.remove('dragging');
+
+                if (currentScale > 1) {
+                    pdfFrame.classList.add('zoomed');
+                } else {
+                    pdfFrame.classList.remove('zoomed');
+                }
+            });
+
+            function getDistance(touch1, touch2) {
+                const dx = touch1.clientX - touch2.clientX;
+                const dy = touch1.clientY - touch2.clientY;
+                return Math.sqrt(dx * dx + dy * dy);
+            }
+        }
+
+        // PDF Actions
+        function downloadPDF() {
+            const checklist = checklists[currentChecklist];
+            const downloadBtn = document.getElementById('downloadBtn');
+
+            downloadBtn.innerHTML = '⬇️ Downloading...';
+            downloadBtn.style.background = '#3498db';
+
+            // Create download link
+            const link = document.createElement('a');
+            link.href = '../assets/pdfs/' + checklist.file;
+            link.download = checklist.title.replace(/[^a-zA-Z0-9]/g, '_') + '.html';
+            link.target = '_blank';
+
+            // Trigger download
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+
+            // Reset button
+            setTimeout(() => {
+                downloadBtn.innerHTML = '📥 Download PDF';
+                downloadBtn.style.background = 'var(--success-green)';
+
+                // Show success message
+                showToast('✅ Downloaded! Check your downloads folder.');
+            }, 1000);
+        }
+
+        function toggleFullscreen() {
+            const pdfFrame = document.getElementById('pdfFrame');
+
+            if (!document.fullscreenElement) {
+                if (pdfFrame.requestFullscreen) {
+                    pdfFrame.requestFullscreen();
+                } else if (pdfFrame.webkitRequestFullscreen) {
+                    pdfFrame.webkitRequestFullscreen();
+                } else if (pdfFrame.msRequestFullscreen) {
+                    pdfFrame.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        // Menu functions
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        function toggleShareMenu() {
+            const shareMenu = document.getElementById('shareMenu');
+            shareMenu.classList.toggle('active');
+        }
+
+        // Sharing functions
+        function shareWhatsApp() {
+            const checklist = checklists[currentChecklist];
+            const message = encodeURIComponent(`Emergency Checklist: ${checklist.title}\n\n${window.location.href}\n\nUsed by emergency responders & insurance professionals`);
+            window.open(`https://wa.me/?text=${message}`, '_blank');
+            toggleShareMenu();
+        }
+
+        function shareText() {
+            const checklist = checklists[currentChecklist];
+            const message = encodeURIComponent(`Emergency Checklist: ${checklist.title}\n\n${window.location.href}\n\nUsed by emergency responders`);
+            window.location.href = `sms:?body=${message}`;
+            toggleShareMenu();
+        }
+
+        function shareEmail() {
+            const checklist = checklists[currentChecklist];
+            const subject = encodeURIComponent(`Emergency Checklist: ${checklist.title}`);
+            const body = encodeURIComponent(`I thought you might find this professional emergency response checklist useful:\n\n${checklist.title}\n\n${window.location.href}\n\nThis checklist is used by emergency responders and insurance professionals throughout the DMV region.`);
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+            toggleShareMenu();
+        }
+
+        function copyLink() {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    showToast('🔗 Link copied to clipboard!');
+                });
+            } else {
+                // Fallback for older browsers
+                const textArea = document.createElement('textarea');
+                textArea.value = window.location.href;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast('🔗 Link copied!');
+            }
+            toggleShareMenu();
+        }
+
+        // PWA Functions
+        function showPWABanner() {
+            // Only show on mobile and if not already installed
+            const isMobile = /Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const isStandalone = window.matchMedia('(display-mode: standalone)').matches;
+
+            if (isMobile && !isStandalone && !localStorage.getItem('pwaBannerDismissed')) {
+                document.getElementById('pwaBanner').classList.add('show');
+            }
+        }
+
+        function hidePWABanner() {
+            document.getElementById('pwaBanner').classList.remove('show');
+            localStorage.setItem('pwaBannerDismissed', 'true');
+        }
+
+        function togglePWABanner() {
+            showPWABanner();
+            toggleMenu();
+        }
+
+        // More checklists
+        function showMoreChecklists() {
+            const message = `Get all 16 professional emergency checklists:\n\n${window.location.origin}/checklists/\n\nFire, Water, Document Recovery, Electronics & More`;
+
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Emergency Checklists Collection',
+                    text: message,
+                    url: window.location.origin + '/checklists/'
+                });
+            } else {
+                window.open(window.location.origin + '/checklists/', '_blank');
+            }
+            toggleMenu();
+        }
+
+        // Offline detection
+        function setupOfflineDetection() {
+            const offlineBanner = document.getElementById('offlineBanner');
+
+            function updateOnlineStatus() {
+                if (!navigator.onLine) {
+                    offlineBanner.classList.add('show');
+                } else {
+                    offlineBanner.classList.remove('show');
+                }
+            }
+
+            window.addEventListener('online', updateOnlineStatus);
+            window.addEventListener('offline', updateOnlineStatus);
+            updateOnlineStatus();
+        }
+
+        // Toast notifications
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                top: 80px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--text-dark);
+                color: white;
+                padding: 12px 20px;
+                border-radius: 25px;
+                z-index: 3000;
+                font-size: 0.9rem;
+                font-weight: 500;
+                box-shadow: var(--shadow);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+            toast.textContent = message;
+
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '1';
+            }, 100);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        document.body.removeChild(toast);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', initMobileViewer);
+
+        // Handle orientation changes
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => {
+                currentScale = 1;
+                document.getElementById('pdfFrame').style.transform = 'scale(1)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

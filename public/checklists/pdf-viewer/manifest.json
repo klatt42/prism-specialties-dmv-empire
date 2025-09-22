@@ -1,0 +1,63 @@
+{
+    "name": "Emergency Checklists - Prism Specialties DMV",
+    "short_name": "Emergency Checklists",
+    "description": "Professional emergency response checklists for the DMV region. Used by emergency responders and insurance professionals.",
+    "start_url": "/checklists/pdf-viewer/mobile.html",
+    "display": "standalone",
+    "background_color": "#f8f9fa",
+    "theme_color": "#00a0df",
+    "orientation": "portrait-primary",
+    "scope": "/checklists/",
+    "icons": [
+        {
+            "src": "../../images/logos/prism-logo-1000.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "../../images/logos/prism-logo-1000.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ],
+    "categories": ["emergency", "safety", "utilities"],
+    "screenshots": [
+        {
+            "src": "../../images/logos/prism-logo-1000.png",
+            "sizes": "1080x1920",
+            "type": "image/png",
+            "form_factor": "narrow"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Water Emergency",
+            "url": "/checklists/pdf-viewer/mobile.html?checklist=water-emergency",
+            "description": "Water damage emergency response checklist",
+            "icons": [
+                {
+                    "src": "../../images/logos/prism-logo-1000.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Fire Damage",
+            "url": "/checklists/pdf-viewer/mobile.html?checklist=fire-damage",
+            "description": "Fire damage recovery checklist",
+            "icons": [
+                {
+                    "src": "../../images/logos/prism-logo-1000.png",
+                    "sizes": "96x96"
+                }
+            ]
+        },
+        {
+            "name": "Emergency Contact",
+            "url": "tel:3012153191",
+            "description": "Call emergency restoration services"
+        }
+    ]
+}

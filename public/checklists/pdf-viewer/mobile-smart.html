@@ -1,0 +1,1514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, maximum-scale=3.0">
+    <title>Emergency Checklist | Prism Specialties DMV</title>
+    <meta name="description" content="Smart PDF delivery with connection-aware loading. Professional emergency response checklists.">
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#00a0df">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Emergency Checklists">
+    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="../../images/logos/prism-logo-1000.png">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="../../images/logos/prism-logo-1000.png" as="image">
+
+    <style>
+        :root {
+            --primary-blue: #00a0df;
+            --emergency-red: #e74c3c;
+            --success-green: #27ae60;
+            --warning-orange: #f39c12;
+            --text-dark: #2c3e50;
+            --text-light: #7f8c8d;
+            --bg-light: #f8f9fa;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Connection Status Banner */
+        .connection-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: var(--primary-blue);
+            color: white;
+            padding: 8px 15px;
+            font-size: 0.8rem;
+            text-align: center;
+            z-index: 1001;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .connection-banner.show {
+            transform: translateY(0);
+        }
+
+        .connection-banner.slow { background: var(--warning-orange); }
+        .connection-banner.fast { background: var(--success-green); }
+        .connection-banner.offline { background: var(--text-light); }
+
+        /* Mobile Header */
+        .mobile-header {
+            background: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 10px 15px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+
+        .header-logo {
+            height: 40px;
+            width: auto;
+            clip-path: inset(0 0 12% 0);
+        }
+
+        .header-title {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            margin-left: 10px;
+            flex: 1;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .connection-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--success-green);
+            margin-right: 10px;
+        }
+
+        .connection-indicator.slow { background: var(--warning-orange); }
+        .connection-indicator.offline { background: var(--text-light); }
+
+        /* Smart PDF Container */
+        .pdf-container {
+            margin-top: 60px;
+            height: calc(100vh - 60px - 80px);
+            position: relative;
+            background: white;
+            overflow: hidden;
+        }
+
+        .pdf-preview {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding: 20px;
+            z-index: 2;
+        }
+
+        .preview-image {
+            max-width: 100%;
+            max-height: 70%;
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            object-fit: contain;
+        }
+
+        .preview-controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .preview-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .preview-subtitle {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .load-full-btn {
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .load-full-btn:active {
+            transform: scale(0.98);
+        }
+
+        .pdf-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+            background: white;
+            transform-origin: center center;
+            transition: transform 0.2s ease;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .pdf-frame.loaded {
+            opacity: 1;
+            z-index: 3;
+        }
+
+        /* Progressive Loading Overlay */
+        .loading-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.95);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 4;
+        }
+
+        .loading-content {
+            text-align: center;
+            max-width: 300px;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid var(--bg-light);
+            border-top: 4px solid var(--primary-blue);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        .loading-text {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 10px;
+        }
+
+        .loading-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .loading-progress {
+            width: 100%;
+            height: 6px;
+            background: var(--bg-light);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .loading-bar {
+            height: 100%;
+            background: var(--primary-blue);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+
+        /* Mobile Controls */
+        .mobile-controls {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+            padding: 15px;
+            z-index: 1001;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            height: 80px;
+            align-items: center;
+        }
+
+        .control-btn {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            min-height: 50px;
+            touch-action: manipulation;
+        }
+
+        .download-btn {
+            background: var(--success-green);
+            color: white;
+        }
+
+        .download-btn.slow-connection {
+            background: var(--warning-orange);
+        }
+
+        .emergency-btn {
+            background: var(--emergency-red);
+            color: white;
+        }
+
+        .control-btn:active {
+            transform: scale(0.98);
+        }
+
+        /* Floating Action Buttons */
+        .fab-container {
+            position: fixed;
+            right: 15px;
+            bottom: 100px;
+            z-index: 1002;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .fab {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+            touch-action: manipulation;
+        }
+
+        .fab:active {
+            transform: scale(0.9);
+        }
+
+        .fab.share { background: var(--warning-orange); }
+        .fab.fullscreen { background: var(--text-dark); }
+
+        /* Connection Speed Indicator */
+        .speed-indicator {
+            position: fixed;
+            top: 70px;
+            right: 15px;
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            z-index: 999;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .speed-indicator.show {
+            opacity: 1;
+        }
+
+        /* Smart Share Menu */
+        .share-menu {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            border-radius: 20px 20px 0 0;
+            z-index: 2001;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            padding: 20px;
+            box-shadow: 0 -5px 20px rgba(0,0,0,0.1);
+        }
+
+        .share-menu.active {
+            transform: translateY(0);
+        }
+
+        .share-options {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .share-btn {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 15px 10px;
+            background: var(--bg-light);
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            color: var(--text-dark);
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .share-btn.disabled {
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .share-btn .icon {
+            font-size: 1.5rem;
+        }
+
+        /* Offline Mode Styles */
+        .offline-indicator {
+            position: fixed;
+            top: 60px;
+            left: 15px;
+            right: 15px;
+            background: var(--text-light);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            z-index: 998;
+            font-size: 0.9rem;
+            text-align: center;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .offline-indicator.show {
+            transform: translateY(0);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* High DPI Screens */
+        @media (-webkit-min-device-pixel-ratio: 2) {
+            .pdf-frame, .preview-image {
+                image-rendering: -webkit-optimize-contrast;
+                image-rendering: crisp-edges;
+            }
+        }
+
+        /* Responsive Adjustments */
+        @media (min-width: 768px) {
+            .mobile-controls {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Connection Status Banner -->
+    <div class="connection-banner" id="connectionBanner">
+        📶 Optimizing for your connection speed...
+    </div>
+
+    <!-- Mobile Header -->
+    <header class="mobile-header">
+        <img src="../../images/logos/prism-logo-1000.png" alt="Prism Specialties" class="header-logo">
+        <h1 class="header-title" id="headerTitle">Emergency Checklist</h1>
+        <div class="connection-indicator" id="connectionIndicator"></div>
+        <button class="header-menu" onclick="toggleMenu()" aria-label="Menu">☰</button>
+    </header>
+
+    <!-- Speed Indicator -->
+    <div class="speed-indicator" id="speedIndicator">
+        Connection: Fast
+    </div>
+
+    <!-- PDF Container with Smart Loading -->
+    <div class="pdf-container">
+        <!-- Fast Preview -->
+        <div class="pdf-preview" id="pdfPreview">
+            <img id="previewImage" class="preview-image" src="" alt="PDF Preview">
+            <div class="preview-controls">
+                <h2 class="preview-title" id="previewTitle">Emergency Checklist</h2>
+                <p class="preview-subtitle">Quick preview - Full PDF loading in background</p>
+                <button class="load-full-btn" onclick="loadFullPDF()" id="loadFullBtn">
+                    📄 View Full PDF
+                </button>
+            </div>
+        </div>
+
+        <!-- Progressive Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay">
+            <div class="loading-content">
+                <div class="loading-spinner"></div>
+                <div class="loading-text" id="loadingText">Loading Emergency Checklist</div>
+                <div class="loading-subtitle" id="loadingSubtitle">Optimizing for your connection...</div>
+                <div class="loading-progress">
+                    <div class="loading-bar" id="loadingBar"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Full PDF -->
+        <iframe id="pdfFrame" class="pdf-frame" src="" title="Emergency Response Checklist"></iframe>
+    </div>
+
+    <!-- Mobile Controls -->
+    <div class="mobile-controls">
+        <a href="#" class="control-btn download-btn" onclick="smartDownload()" id="downloadBtn">
+            📥 Download PDF
+        </a>
+        <a href="tel:3012153191" class="control-btn emergency-btn">
+            🚨 Emergency Call
+        </a>
+    </div>
+
+    <!-- Floating Action Buttons -->
+    <div class="fab-container">
+        <button class="fab fullscreen" onclick="toggleFullscreen()" title="Fullscreen">⛶</button>
+        <button class="fab share" onclick="toggleShareMenu()" title="Share">📤</button>
+    </div>
+
+    <!-- Smart Share Menu -->
+    <div class="share-menu" id="shareMenu">
+        <h3 style="margin-bottom: 10px; text-align: center;">Share Emergency Checklist</h3>
+        <div class="share-options">
+            <a href="#" class="share-btn" onclick="shareWhatsApp()" id="shareWhatsApp">
+                <span class="icon">📱</span>
+                WhatsApp
+            </a>
+            <a href="#" class="share-btn" onclick="shareText()" id="shareText">
+                <span class="icon">💬</span>
+                Text/SMS
+            </a>
+            <a href="#" class="share-btn" onclick="shareEmail()" id="shareEmail">
+                <span class="icon">📧</span>
+                Email
+            </a>
+            <a href="#" class="share-btn" onclick="shareFile()" id="shareFile">
+                <span class="icon">📎</span>
+                File
+            </a>
+        </div>
+        <button onclick="toggleShareMenu()" style="width: 100%; margin-top: 15px; padding: 10px; background: var(--bg-light); border: none; border-radius: 10px;">Close</button>
+    </div>
+
+    <!-- Offline Indicator -->
+    <div class="offline-indicator" id="offlineIndicator">
+        📵 You're offline - Using cached version
+    </div>
+
+    <script>
+        // Checklist configurations
+        const checklists = {
+            'fire-damage': {
+                title: 'Fire Damage - First 48 Hours Critical',
+                file: 'fire-damage-first-48-hours.html',
+                preview: 'fire-damage-first-48-hours-preview.png',
+                icon: '🔥'
+            },
+            'water-emergency': {
+                title: 'Water Emergency - Save What Matters',
+                file: 'water-emergency-save-what-matters.html',
+                preview: 'water-emergency-save-what-matters-preview.png',
+                icon: '💧'
+            },
+            'lightning-strike': {
+                title: 'Lightning Strike - Power Surge Protection',
+                file: 'lightning-strike-power-surge.html',
+                preview: 'lightning-strike-power-surge-preview.png',
+                icon: '⚡'
+            },
+            'smoke-damage': {
+                title: 'Smoke Damage - Air Quality Emergency',
+                file: 'smoke-damage-air-quality.html',
+                preview: 'smoke-damage-air-quality-preview.png',
+                icon: '💨'
+            },
+            'storm-damage': {
+                title: 'Storm Damage - Structure Assessment',
+                file: 'storm-damage-structure-assessment.html',
+                preview: 'storm-damage-structure-assessment-preview.png',
+                icon: '🌪️'
+            },
+            'document-recovery': {
+                title: 'Document Recovery - Critical Papers',
+                file: 'water-emergency-save-what-matters.html',
+                preview: 'water-emergency-save-what-matters-preview.png',
+                icon: '📄'
+            }
+        };
+
+        let currentChecklist = '';
+        let userEmail = '';
+        let userZip = '';
+        let connectionSpeed = 'unknown';
+        let isOnline = navigator.onLine;
+        let fullPDFLoaded = false;
+        let backgroundDownloadComplete = false;
+
+        // Connection speed detection
+        async function detectConnectionSpeed() {
+            const startTime = Date.now();
+            const imageUrl = '../../images/logos/prism-logo-1000.png?' + Date.now();
+
+            try {
+                const response = await fetch(imageUrl);
+                const blob = await response.blob();
+                const endTime = Date.now();
+                const duration = endTime - startTime;
+                const sizeInBytes = blob.size;
+                const speedBps = sizeInBytes / (duration / 1000);
+                const speedKbps = speedBps / 1024;
+
+                if (speedKbps > 500) {
+                    return 'fast';
+                } else if (speedKbps > 100) {
+                    return 'medium';
+                } else {
+                    return 'slow';
+                }
+            } catch (error) {
+                return 'slow';
+            }
+        }
+
+        // Update connection indicator
+        function updateConnectionIndicator(speed) {
+            const indicator = document.getElementById('connectionIndicator');
+            const speedIndicator = document.getElementById('speedIndicator');
+            const banner = document.getElementById('connectionBanner');
+
+            indicator.className = 'connection-indicator ' + speed;
+
+            let speedText = '';
+            let bannerText = '';
+
+            switch (speed) {
+                case 'fast':
+                    speedText = 'Connection: Fast';
+                    bannerText = '⚡ Fast connection detected - Loading full PDF';
+                    banner.className = 'connection-banner fast show';
+                    break;
+                case 'medium':
+                    speedText = 'Connection: Medium';
+                    bannerText = '📶 Medium connection - Smart loading enabled';
+                    banner.className = 'connection-banner show';
+                    break;
+                case 'slow':
+                    speedText = 'Connection: Slow';
+                    bannerText = '🐌 Slow connection detected - Optimized preview first';
+                    banner.className = 'connection-banner slow show';
+                    break;
+                case 'offline':
+                    speedText = 'Offline Mode';
+                    bannerText = '📵 Offline mode - Using cached content';
+                    banner.className = 'connection-banner offline show';
+                    indicator.className = 'connection-indicator offline';
+                    break;
+            }
+
+            speedIndicator.textContent = speedText;
+            speedIndicator.classList.add('show');
+
+            setTimeout(() => {
+                banner.classList.remove('show');
+                speedIndicator.classList.remove('show');
+            }, 3000);
+        }
+
+        // Initialize smart viewer
+        async function initSmartViewer() {
+            currentChecklist = getUrlParameter('checklist') || 'water-emergency';
+            userEmail = getUrlParameter('email') || '';
+            userZip = getUrlParameter('zip') || '';
+
+            const checklist = checklists[currentChecklist];
+            if (!checklist) {
+                console.error('Unknown checklist type:', currentChecklist);
+                return;
+            }
+
+            // Update header
+            document.getElementById('headerTitle').textContent = checklist.icon + ' ' + checklist.title.split(' - ')[0];
+            document.title = checklist.title + ' | Prism Specialties DMV';
+
+            // Track user
+            if (userEmail) {
+                trackSmartUser(userEmail, currentChecklist, userZip);
+            }
+
+            // Detect connection speed
+            updateLoadingText('Detecting connection speed...');
+            connectionSpeed = await detectConnectionSpeed();
+            updateConnectionIndicator(connectionSpeed);
+
+            // Load based on connection speed
+            await smartLoadPDF(checklist);
+
+            // Setup offline detection
+            setupOfflineDetection();
+        }
+
+        // Smart PDF loading based on connection
+        async function smartLoadPDF(checklist) {
+            const previewImage = document.getElementById('previewImage');
+            const previewTitle = document.getElementById('previewTitle');
+            const pdfFrame = document.getElementById('pdfFrame');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const pdfPreview = document.getElementById('pdfPreview');
+
+            try {
+                if (connectionSpeed === 'fast') {
+                    // Fast connection: Load full PDF immediately
+                    updateLoadingText('Loading full PDF...', 'Your fast connection allows immediate access');
+                    await loadFullPDFDirect(checklist);
+                } else {
+                    // Slow/Medium: Load preview first, PDF in background
+                    updateLoadingText('Loading optimized preview...', 'Full PDF downloading in background');
+
+                    // Load preview image
+                    const previewUrl = `../assets/previews/${checklist.preview}`;
+                    previewImage.src = previewUrl;
+                    previewTitle.textContent = checklist.title;
+
+                    // Show preview after loading
+                    previewImage.onload = () => {
+                        loadingOverlay.style.display = 'none';
+                        pdfPreview.style.display = 'flex';
+                        updateProgressBar(25);
+                    };
+
+                    // Start background download
+                    startBackgroundDownload(checklist);
+                }
+            } catch (error) {
+                console.error('Error in smart loading:', error);
+                // Fallback to basic loading
+                await loadFullPDFDirect(checklist);
+            }
+        }
+
+        // Load full PDF directly (for fast connections)
+        async function loadFullPDFDirect(checklist) {
+            const pdfFrame = document.getElementById('pdfFrame');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+
+            updateProgressBar(50);
+            pdfFrame.src = '../assets/pdfs/' + checklist.file;
+
+            pdfFrame.onload = () => {
+                updateProgressBar(100);
+                setTimeout(() => {
+                    loadingOverlay.style.display = 'none';
+                    pdfFrame.classList.add('loaded');
+                    fullPDFLoaded = true;
+                }, 500);
+            };
+        }
+
+        // Background download for slow connections
+        async function startBackgroundDownload(checklist) {
+            updateProgressBar(30);
+
+            try {
+                // Simulate progressive loading
+                const pdfUrl = '../assets/pdfs/' + checklist.file;
+                const response = await fetch(pdfUrl);
+
+                updateProgressBar(60);
+
+                if (response.ok) {
+                    const blob = await response.blob();
+                    updateProgressBar(90);
+
+                    // Cache the PDF
+                    if ('caches' in window) {
+                        const cache = await caches.open('pdf-cache-v1');
+                        await cache.put(pdfUrl, new Response(blob));
+                    }
+
+                    backgroundDownloadComplete = true;
+                    updateProgressBar(100);
+
+                    // Update download button
+                    const downloadBtn = document.getElementById('downloadBtn');
+                    downloadBtn.innerHTML = '✅ PDF Ready - Download';
+                    downloadBtn.classList.remove('slow-connection');
+
+                    // Update load full button
+                    const loadFullBtn = document.getElementById('loadFullBtn');
+                    loadFullBtn.innerHTML = '📄 View Full PDF (Ready!)';
+
+                    showToast('📥 Full PDF downloaded and ready!');
+                }
+            } catch (error) {
+                console.error('Background download failed:', error);
+                showToast('⚠️ Background download failed - Will load on demand');
+            }
+        }
+
+        // Load full PDF (called by user or auto)
+        async function loadFullPDF() {
+            const checklist = checklists[currentChecklist];
+            const pdfFrame = document.getElementById('pdfFrame');
+            const pdfPreview = document.getElementById('pdfPreview');
+            const loadingOverlay = document.getElementById('loadingOverlay');
+
+            if (fullPDFLoaded) {
+                // Already loaded, just show it
+                pdfPreview.style.display = 'none';
+                pdfFrame.classList.add('loaded');
+                return;
+            }
+
+            // Show loading
+            loadingOverlay.style.display = 'flex';
+            updateLoadingText('Loading full PDF...', 'Please wait...');
+
+            try {
+                if (backgroundDownloadComplete) {
+                    // Use cached version
+                    pdfFrame.src = '../assets/pdfs/' + checklist.file;
+                } else {
+                    // Load directly
+                    pdfFrame.src = '../assets/pdfs/' + checklist.file;
+                }
+
+                pdfFrame.onload = () => {
+                    loadingOverlay.style.display = 'none';
+                    pdfPreview.style.display = 'none';
+                    pdfFrame.classList.add('loaded');
+                    fullPDFLoaded = true;
+                };
+
+            } catch (error) {
+                console.error('Error loading full PDF:', error);
+                showToast('❌ Error loading PDF - Please try again');
+                loadingOverlay.style.display = 'none';
+            }
+        }
+
+        // Smart download based on connection
+        function smartDownload() {
+            const checklist = checklists[currentChecklist];
+            const downloadBtn = document.getElementById('downloadBtn');
+
+            if (connectionSpeed === 'slow' && !backgroundDownloadComplete) {
+                // For slow connections, offer alternatives
+                showSlowConnectionMenu();
+            } else {
+                // Standard download
+                downloadBtn.innerHTML = '⬇️ Downloading...';
+                downloadBtn.style.background = '#3498db';
+
+                const link = document.createElement('a');
+                link.href = '../assets/pdfs/' + checklist.file;
+                link.download = checklist.title.replace(/[^a-zA-Z0-9]/g, '_') + '.html';
+                link.target = '_blank';
+
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                setTimeout(() => {
+                    downloadBtn.innerHTML = '📥 Download PDF';
+                    downloadBtn.style.background = 'var(--success-green)';
+                    showToast('✅ Downloaded! Check your downloads folder.');
+                }, 1000);
+            }
+        }
+
+        // Show slow connection options
+        function showSlowConnectionMenu() {
+            const options = [
+                'Download when ready (background loading)',
+                'Get direct link to share',
+                'View preview only (save data)'
+            ];
+
+            // Simple implementation - could be enhanced with modal
+            const choice = confirm('Slow connection detected.\n\nFull PDF is still downloading in background.\n\nOK: Wait for download\nCancel: Get link to share');
+
+            if (choice) {
+                showToast('📥 Will download when background loading completes');
+            } else {
+                copyLink();
+            }
+        }
+
+        // Smart sharing based on connection
+        function toggleShareMenu() {
+            const shareMenu = document.getElementById('shareMenu');
+            const isActive = shareMenu.classList.contains('active');
+
+            if (!isActive) {
+                // Update share options based on connection
+                updateShareOptions();
+            }
+
+            shareMenu.classList.toggle('active');
+        }
+
+        // Update share options based on connection and download status
+        function updateShareOptions() {
+            const shareFile = document.getElementById('shareFile');
+
+            if (connectionSpeed === 'slow' || !backgroundDownloadComplete) {
+                shareFile.classList.add('disabled');
+                shareFile.innerHTML = '<span class="icon">📎</span>File (Loading...)';
+            } else {
+                shareFile.classList.remove('disabled');
+                shareFile.innerHTML = '<span class="icon">📎</span>File';
+            }
+        }
+
+        // Share file attachment (for fast connections or completed downloads)
+        function shareFile() {
+            if (connectionSpeed === 'slow' && !backgroundDownloadComplete) {
+                showToast('⏳ Please wait for download to complete');
+                return;
+            }
+
+            const checklist = checklists[currentChecklist];
+
+            if (navigator.share && navigator.canShare) {
+                // Use native sharing if available
+                const file = new File(['PDF content'], checklist.title + '.pdf', { type: 'application/pdf' });
+
+                navigator.share({
+                    title: checklist.title,
+                    text: 'Emergency response checklist',
+                    files: [file]
+                }).catch(err => {
+                    console.log('File sharing failed:', err);
+                    copyLink();
+                });
+            } else {
+                // Fallback to link sharing
+                copyLink();
+            }
+
+            toggleShareMenu();
+        }
+
+        // Helper functions (keeping existing ones)
+        function getUrlParameter(name) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(name);
+        }
+
+        function updateLoadingText(text, subtitle = '') {
+            document.getElementById('loadingText').textContent = text;
+            document.getElementById('loadingSubtitle').textContent = subtitle;
+        }
+
+        function updateProgressBar(percentage) {
+            document.getElementById('loadingBar').style.width = percentage + '%';
+        }
+
+        function trackSmartUser(email, checklist, zip) {
+            const userData = {
+                email: email,
+                checklist: checklist,
+                zip: zip,
+                timestamp: new Date().toISOString(),
+                isMobile: true,
+                connectionSpeed: connectionSpeed,
+                userAgent: navigator.userAgent
+            };
+
+            localStorage.setItem('smartUser_' + Date.now(), JSON.stringify(userData));
+        }
+
+        function setupOfflineDetection() {
+            const offlineIndicator = document.getElementById('offlineIndicator');
+
+            function updateOnlineStatus() {
+                isOnline = navigator.onLine;
+
+                if (!isOnline) {
+                    offlineIndicator.classList.add('show');
+                    updateConnectionIndicator('offline');
+                } else {
+                    offlineIndicator.classList.remove('show');
+                    // Re-detect connection speed when back online
+                    detectConnectionSpeed().then(speed => {
+                        connectionSpeed = speed;
+                        updateConnectionIndicator(speed);
+                    });
+                }
+            }
+
+            window.addEventListener('online', updateOnlineStatus);
+            window.addEventListener('offline', updateOnlineStatus);
+        }
+
+        function toggleFullscreen() {
+            const pdfFrame = document.getElementById('pdfFrame');
+
+            if (!document.fullscreenElement) {
+                if (pdfFrame.requestFullscreen) {
+                    pdfFrame.requestFullscreen();
+                } else if (pdfFrame.webkitRequestFullscreen) {
+                    pdfFrame.webkitRequestFullscreen();
+                } else if (pdfFrame.msRequestFullscreen) {
+                    pdfFrame.msRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                }
+            }
+        }
+
+        function shareWhatsApp() {
+            const checklist = checklists[currentChecklist];
+            const message = encodeURIComponent(`Emergency Checklist: ${checklist.title}\n\n${window.location.href}\n\nUsed by emergency responders & insurance professionals`);
+            window.open(`https://wa.me/?text=${message}`, '_blank');
+            toggleShareMenu();
+        }
+
+        function shareText() {
+            const checklist = checklists[currentChecklist];
+            const message = encodeURIComponent(`Emergency Checklist: ${checklist.title}\n\n${window.location.href}\n\nUsed by emergency responders`);
+            window.location.href = `sms:?body=${message}`;
+            toggleShareMenu();
+        }
+
+        function shareEmail() {
+            const checklist = checklists[currentChecklist];
+            const subject = encodeURIComponent(`Emergency Checklist: ${checklist.title}`);
+            const body = encodeURIComponent(`Professional emergency response checklist:\n\n${checklist.title}\n\n${window.location.href}\n\nOptimized for ${connectionSpeed} connections.`);
+            window.location.href = `mailto:?subject=${subject}&body=${body}`;
+            toggleShareMenu();
+        }
+
+        function copyLink() {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(window.location.href).then(() => {
+                    showToast('🔗 Link copied to clipboard!');
+                });
+            } else {
+                const textArea = document.createElement('textarea');
+                textArea.value = window.location.href;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                showToast('🔗 Link copied!');
+            }
+            toggleShareMenu();
+        }
+
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.style.cssText = `
+                position: fixed;
+                top: 80px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: var(--text-dark);
+                color: white;
+                padding: 12px 20px;
+                border-radius: 25px;
+                z-index: 3000;
+                font-size: 0.9rem;
+                font-weight: 500;
+                box-shadow: var(--shadow);
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            `;
+            toast.textContent = message;
+
+            document.body.appendChild(toast);
+
+            setTimeout(() => {
+                toast.style.opacity = '1';
+            }, 100);
+
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        document.body.removeChild(toast);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        function toggleMenu() {
+            // Placeholder for menu functionality
+            showToast('📋 Menu functionality can be added here');
+        }
+
+        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+
+        // SMS Opt-in Modal
+        function showSMSOptIn() {
+            const modal = document.createElement('div');
+            modal.id = 'smsOptInModal';
+            modal.innerHTML = `
+                <div style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 2000; display: flex; align-items: center; justify-content: center; padding: 20px;">
+                    <div style="background: white; border-radius: 15px; padding: 30px; max-width: 400px; width: 100%; text-align: center; position: relative;">
+                        <button onclick="closeSMSOptIn()" style="position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 24px; cursor: pointer; color: #999;">&times;</button>
+
+                        <div style="margin-bottom: 20px;">
+                            <div style="background: #e8f5e8; border-radius: 50%; width: 60px; height: 60px; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 24px;">📱</div>
+                            <h3 style="color: var(--primary-blue); margin-bottom: 10px;">Get Emergency Alerts</h3>
+                            <p style="color: #666; font-size: 0.9rem;">Receive SMS alerts for severe weather, emergency updates, and seasonal preparedness tips in your area.</p>
+                        </div>
+
+                        <form onsubmit="handleSMSOptIn(event)" style="margin-bottom: 20px;">
+                            <input type="tel" id="smsPhone" placeholder="Enter phone number" style="width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 15px; font-size: 16px;" required>
+
+                            <div style="margin-bottom: 20px;">
+                                <label style="display: flex; align-items: center; justify-content: center; font-size: 0.85rem; color: #666;">
+                                    <input type="checkbox" id="smsConsent" required style="margin-right: 8px;">
+                                    I consent to receive SMS alerts. Standard rates apply.
+                                </label>
+                            </div>
+
+                            <button type="submit" style="width: 100%; background: var(--success-green); color: white; border: none; padding: 15px; border-radius: 25px; font-weight: 600; font-size: 16px; cursor: pointer;">
+                                🚨 Enable Emergency Alerts
+                            </button>
+                        </form>
+
+                        <div style="display: flex; gap: 10px;">
+                            <button onclick="closeSMSOptIn()" style="flex: 1; background: #f8f9fa; color: #666; border: 1px solid #ddd; padding: 12px; border-radius: 20px; font-weight: 500; cursor: pointer;">
+                                Maybe Later
+                            </button>
+                        </div>
+
+                        <p style="font-size: 0.75rem; color: #999; margin-top: 15px; line-height: 1.4;">
+                            We'll send weather alerts, emergency updates, and helpful seasonal tips. Reply STOP to opt out anytime.
+                        </p>
+                    </div>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+        }
+
+        // Handle SMS opt-in
+        async function handleSMSOptIn(event) {
+            event.preventDefault();
+
+            const phone = document.getElementById('smsPhone').value;
+            const consent = document.getElementById('smsConsent').checked;
+
+            if (!phone || !consent) return;
+
+            try {
+                // Submit to GHL for SMS opt-in
+                const response = await fetch('/api/ghl-webhook', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        phone: phone,
+                        email: new URLSearchParams(window.location.search).get('email'),
+                        action: 'sms_opt_in',
+                        source: 'pdf_viewer_sms_prompt',
+                        timestamp: new Date().toISOString(),
+                        tags: ['sms_opted_in', 'emergency_alerts', 'mobile_user']
+                    })
+                });
+
+                if (response.ok) {
+                    showToast('✅ Emergency alerts enabled! Welcome to our alert system.');
+
+                    // Track SMS opt-in
+                    trackEngagement('sms_opt_in', {
+                        phone: phone,
+                        checklist: currentChecklist
+                    });
+                } else {
+                    showToast('⚠️ Unable to enable alerts right now. Please try again later.');
+                }
+            } catch (error) {
+                console.error('SMS opt-in error:', error);
+                showToast('⚠️ Unable to enable alerts right now. Please try again later.');
+            }
+
+            closeSMSOptIn();
+        }
+
+        // Close SMS opt-in modal
+        function closeSMSOptIn() {
+            const modal = document.getElementById('smsOptInModal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+
+        // Show SMS opt-in after PDF engagement
+        function triggerSMSOptIn() {
+            // Show after 30 seconds of viewing or on scroll/interaction
+            setTimeout(() => {
+                if (!localStorage.getItem('sms_opt_in_shown')) {
+                    showSMSOptIn();
+                    localStorage.setItem('sms_opt_in_shown', Date.now());
+                }
+            }, 30000);
+        }
+
+        // PDF Engagement Tracking
+        function trackEngagement(action, data = {}) {
+            const engagementData = {
+                action: action,
+                checklist: currentChecklist,
+                timestamp: new Date().toISOString(),
+                url: window.location.href,
+                mobile_user: true,
+                connection_speed: connectionSpeed,
+                ...data
+            };
+
+            // Send to GHL webhook for tracking
+            fetch('/api/ghl-webhook', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    ...engagementData,
+                    email: new URLSearchParams(window.location.search).get('email'),
+                    action: 'track_engagement',
+                    tags: [`engagement_${action}`, `checklist_${currentChecklist}`]
+                })
+            }).catch(error => {
+                console.warn('Tracking error:', error);
+            });
+
+            console.log('Engagement tracked:', engagementData);
+        }
+
+        // Track various engagement events and trigger intelligent nurture
+        function setupEngagementTracking() {
+            let timeOnPage = 0;
+            let hasScrolled = false;
+            let pdfDownloaded = false;
+            let emergencyCallClicked = false;
+            let pdfViewStartTime = Date.now();
+
+            // Track time on page with nurture triggers
+            setInterval(() => {
+                timeOnPage += 5;
+                if (timeOnPage === 30) {
+                    trackEngagement('time_30_seconds');
+                } else if (timeOnPage === 60) {
+                    trackEngagement('time_1_minute');
+                    // Trigger medium engagement assessment
+                    assessAndTriggerNurture('medium_engagement_check');
+                } else if (timeOnPage === 180) {
+                    trackEngagement('time_3_minutes');
+                } else if (timeOnPage === 300) {
+                    // 5+ minutes = high engagement
+                    trackEngagement('time_5_minutes');
+                    assessAndTriggerNurture('high_engagement_trigger');
+                }
+            }, 5000);
+
+            // Track scroll behavior
+            window.addEventListener('scroll', () => {
+                if (!hasScrolled) {
+                    hasScrolled = true;
+                    trackEngagement('scrolled');
+                }
+
+                // Track deep scroll (75%+)
+                const scrollPercentage = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+                if (scrollPercentage > 75 && !localStorage.getItem('deep_scroll_tracked')) {
+                    trackEngagement('deep_scroll');
+                    localStorage.setItem('deep_scroll_tracked', 'true');
+                }
+            });
+
+            // Track PDF loading completion
+            document.getElementById('pdfFrame').addEventListener('load', () => {
+                trackEngagement('pdf_loaded');
+                pdfViewStartTime = Date.now();
+            });
+
+            // Track download attempts with nurture trigger
+            document.getElementById('downloadBtn').addEventListener('click', () => {
+                if (!pdfDownloaded) {
+                    pdfDownloaded = true;
+                    trackEngagement('pdf_downloaded');
+                    // Download is a strong engagement signal
+                    assessAndTriggerNurture('download_completed');
+                }
+            });
+
+            // Track emergency call clicks (highest value action)
+            document.addEventListener('click', (e) => {
+                if (e.target.href && e.target.href.includes('tel:') && !emergencyCallClicked) {
+                    emergencyCallClicked = true;
+                    trackEngagement('emergency_call_clicked');
+                    // Immediate high-priority nurture trigger
+                    assessAndTriggerNurture('emergency_call_immediate');
+                }
+            });
+
+            // Track sharing actions
+            document.getElementById('shareMenu').addEventListener('click', (e) => {
+                if (e.target.id) {
+                    trackEngagement('share_attempted', { method: e.target.id });
+                }
+            });
+
+            // Track return visitor behavior
+            if (localStorage.getItem('previous_visit')) {
+                trackEngagement('return_visitor');
+                // Check if they downloaded before
+                if (localStorage.getItem('pdf_downloaded_before')) {
+                    assessAndTriggerNurture('return_visitor_with_download');
+                }
+            } else {
+                localStorage.setItem('previous_visit', Date.now());
+            }
+
+            // Track session end and trigger nurture based on total engagement
+            window.addEventListener('beforeunload', () => {
+                const totalTime = Date.now() - pdfViewStartTime;
+                assessAndTriggerNurture('session_end', { totalEngagementTime: totalTime });
+            });
+        }
+
+        // Assess engagement and trigger appropriate nurture sequence
+        async function assessAndTriggerNurture(triggerPoint, additionalData = {}) {
+            const urlParams = new URLSearchParams(window.location.search);
+            const email = urlParams.get('email');
+
+            if (!email) return; // Can't nurture without email
+
+            // Collect comprehensive engagement data
+            const engagementData = {
+                email: email,
+                checklistType: currentChecklist,
+                device: isMobileDevice() ? 'mobile' : 'desktop',
+                triggerPoint: triggerPoint,
+                timestamp: Date.now(),
+
+                // Engagement metrics
+                pdfViewTime: Date.now() - (localStorage.getItem('session_start') || Date.now()),
+                downloadedPDF: localStorage.getItem('pdf_downloaded') === 'true',
+                clickedEmergencyCall: localStorage.getItem('emergency_call_clicked') === 'true',
+                optedIntoSMS: localStorage.getItem('sms_opted_in') === 'true',
+                sharedContent: localStorage.getItem('content_shared') === 'true',
+                scrolledDeep: localStorage.getItem('deep_scroll_tracked') === 'true',
+                returnVisitor: !!localStorage.getItem('previous_visit'),
+                multiplePageViews: parseInt(localStorage.getItem('page_view_count') || '1') > 1,
+
+                // Behavioral indicators
+                quickActions: checkQuickActionPattern(),
+                detailedEngagement: checkDetailedEngagementPattern(),
+                accessedDuringEmergency: isEmergencyTime(),
+                immediateFormSubmission: checkImmediateSubmission(),
+
+                // Technical data
+                connectionSpeed: connectionSpeed,
+                inServiceArea: checkServiceArea(urlParams.get('zip')),
+                state: getStateFromZip(urlParams.get('zip')),
+
+                // Additional context
+                ...additionalData
+            };
+
+            try {
+                // Send to intelligent nurture system
+                const response = await fetch('/api/intelligent-nurture', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(engagementData)
+                });
+
+                if (response.ok) {
+                    const result = await response.json();
+                    console.log('Nurture sequence triggered:', result);
+
+                    // Show user feedback for high engagement
+                    if (result.nurtureSequence?.urgency === 'immediate') {
+                        showHighEngagementMessage();
+                    }
+                } else {
+                    console.warn('Nurture trigger failed:', response.status);
+                }
+            } catch (error) {
+                console.error('Nurture system error:', error);
+            }
+        }
+
+        // Check for quick action patterns (mobile behavior)
+        function checkQuickActionPattern() {
+            const actions = [
+                localStorage.getItem('form_submitted'),
+                localStorage.getItem('emergency_call_clicked'),
+                localStorage.getItem('sms_opted_in')
+            ].filter(Boolean);
+
+            return actions.length >= 2; // Multiple quick actions
+        }
+
+        // Check for detailed engagement patterns (desktop behavior)
+        function checkDetailedEngagementPattern() {
+            return (
+                (Date.now() - parseInt(localStorage.getItem('session_start') || Date.now())) > 180000 && // 3+ minutes
+                localStorage.getItem('deep_scroll_tracked') === 'true'
+            );
+        }
+
+        // Check if accessing during emergency time (nights/weekends)
+        function isEmergencyTime() {
+            const now = new Date();
+            const hour = now.getHours();
+            const day = now.getDay();
+
+            return hour < 8 || hour > 18 || day === 0 || day === 6; // Before 8am, after 6pm, or weekends
+        }
+
+        // Check if form submission was immediate (<30 seconds)
+        function checkImmediateSubmission() {
+            const sessionStart = parseInt(localStorage.getItem('session_start') || Date.now());
+            const formSubmitted = parseInt(localStorage.getItem('form_submit_time') || '0');
+
+            return formSubmitted > 0 && (formSubmitted - sessionStart) < 30000;
+        }
+
+        // Check if in service area
+        function checkServiceArea(zipCode) {
+            if (!zipCode) return false;
+
+            const dmvZips = ['20001', '20002', '20003', '20852', '20854', '22101', '22102', '22182'];
+            return dmvZips.includes(zipCode.substring(0, 5));
+        }
+
+        // Get state from ZIP code
+        function getStateFromZip(zipCode) {
+            if (!zipCode) return null;
+
+            const zip5 = zipCode.substring(0, 5);
+            if (zip5 >= '20001' && zip5 <= '20599') return 'DC';
+            if (zip5.startsWith('20') || zip5.startsWith('21')) return 'MD';
+            if (zip5.startsWith('22') || zip5.startsWith('23')) return 'VA';
+
+            return null;
+        }
+
+        // Show message for high engagement users
+        function showHighEngagementMessage() {
+            const message = document.createElement('div');
+            message.style.cssText = `
+                position: fixed; top: 20px; right: 20px; z-index: 3000;
+                background: linear-gradient(135deg, #27ae60, #2ecc71);
+                color: white; padding: 15px 20px; border-radius: 10px;
+                box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+                font-weight: 600; max-width: 300px;
+            `;
+            message.innerHTML = `
+                🚀 <strong>Priority Support Activated!</strong><br>
+                <small>We'll contact you within 2 hours for personalized assistance.</small>
+            `;
+
+            document.body.appendChild(message);
+
+            setTimeout(() => {
+                if (message.parentNode) {
+                    message.remove();
+                }
+            }, 5000);
+        }
+
+        // Initialize session tracking
+        function initializeSessionTracking() {
+            if (!localStorage.getItem('session_start')) {
+                localStorage.setItem('session_start', Date.now());
+            }
+
+            // Increment page view count
+            const currentCount = parseInt(localStorage.getItem('page_view_count') || '0');
+            localStorage.setItem('page_view_count', (currentCount + 1).toString());
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeSessionTracking();
+            initSmartViewer();
+            setupEngagementTracking();
+            triggerSMSOptIn();
+        });
+
+        // Handle orientation changes
+        window.addEventListener('orientationchange', () => {
+            setTimeout(() => {
+                // Reset any zoom or transforms
+                const pdfFrame = document.getElementById('pdfFrame');
+                pdfFrame.style.transform = 'scale(1)';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

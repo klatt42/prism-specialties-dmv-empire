@@ -160,6 +160,11 @@
             100% { transform: translateY(-100px); }
         }
 
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         .hero-content {
             position: relative;
             z-index: 2;
@@ -581,12 +586,16 @@
             Get our complete collection of emergency checklists and restoration guides. Be prepared for water damage, fire damage, and document recovery emergencies.
         </p>
         <div style="background: white; padding: 30px; border-radius: 10px; display: inline-block; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
-            <form onsubmit="return false;">
+            <form onsubmit="getEmergencyPackage(event)">
                 <div style="margin-bottom: 15px;">
-                    <input type="email" placeholder="Enter email for emergency package" style="padding: 15px; border: 1px solid #ddd; border-radius: 5px; width: 300px; margin-right: 15px;" required>
-                    <input type="text" placeholder="Zip code" style="padding: 15px; border: 1px solid #ddd; border-radius: 5px; width: 120px;" required>
+                    <input type="email" id="packageEmail" placeholder="Enter email for emergency package" style="padding: 15px; border: 1px solid #ddd; border-radius: 5px; width: 300px; margin-right: 15px;" required>
+                    <input type="text" id="packageZip" placeholder="Zip code" style="padding: 15px; border: 1px solid #ddd; border-radius: 5px; width: 120px;" required>
                 </div>
-                <button type="submit" style="background: #4caf50; color: white; padding: 15px 30px; border: none; border-radius: 25px; font-weight: 600; font-size: 16px;">Get Free Package</button>
+                <button type="submit" id="packageBtn" style="background: #4caf50; color: white; padding: 15px 30px; border: none; border-radius: 25px; font-weight: 600; font-size: 16px;">Get Free Package</button>
+                <div id="packageSpinner" style="display: none; text-align: center; margin-top: 10px;">
+                    <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid #f3f3f3; border-top: 2px solid #4caf50; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    <span style="margin-left: 10px; color: #666;">Preparing your emergency package...</span>
+                </div>
             </form>
             <p style="font-size: 0.9rem; color: #777; margin-top: 15px;">Includes: Water, Fire, Document recovery checklists + FAQ guide</p>
         </div>
@@ -611,6 +620,55 @@
     function toggleNav() {
         const nav = document.getElementById('nav-menu');
         nav.classList.toggle('active');
+    }
+
+    function getEmergencyPackage(event) {
+        event.preventDefault();
+
+        const email = document.getElementById('packageEmail').value;
+        const zipCode = document.getElementById('packageZip').value;
+
+        if (!email) {
+            alert('Please enter your email address to access the emergency package.');
+            return;
+        }
+
+        // Show loading spinner
+        const submitBtn = document.getElementById('packageBtn');
+        const loadingSpinner = document.getElementById('packageSpinner');
+
+        submitBtn.style.display = 'none';
+        loadingSpinner.style.display = 'block';
+
+        // Detect mobile and build URL with parameters (smart viewer for mobile)
+        const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+        const viewerPath = isMobile ? 'checklists/pdf-viewer/mobile-smart.html' : 'checklists/pdf-viewer/viewer.html';
+
+        let viewerUrl = `${viewerPath}?checklist=emergency-package&email=${encodeURIComponent(email)}`;
+        if (zipCode) {
+            viewerUrl += `&zip=${encodeURIComponent(zipCode)}`;
+        }
+
+        // Simulate processing delay for better UX
+        setTimeout(() => {
+            window.open(viewerUrl, '_blank');
+
+            // Reset form state
+            submitBtn.style.display = 'block';
+            loadingSpinner.style.display = 'none';
+
+            // Show success message
+            const successMsg = document.createElement('div');
+            successMsg.style.cssText = 'background: #4caf50; color: white; padding: 10px; border-radius: 5px; margin-top: 10px; text-align: center;';
+            successMsg.innerHTML = '✅ Emergency package opened in new tab! Complete guides included.';
+            loadingSpinner.parentNode.appendChild(successMsg);
+
+            setTimeout(() => {
+                if (successMsg.parentNode) {
+                    successMsg.parentNode.removeChild(successMsg);
+                }
+            }, 3000);
+        }, 800);
     }
     </script>
 </body>

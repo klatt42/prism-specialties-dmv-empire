@@ -106,6 +106,10 @@
             font-weight: 600;
             cursor: pointer;
         }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
         @media (max-width: 768px) {
             .checklist-title { font-size: 2rem; }
             .form-group input { width: 100%; margin-bottom: 15px; }
@@ -143,7 +147,12 @@
             <form onsubmit="getInstantChecklist(event)" style="margin-bottom: 20px;">
                 <div style="margin-bottom: 15px;">
                     <input type="email" id="userEmail" placeholder="Your email address" required style="width: 250px; padding: 12px; border: 1px solid #ddd; border-radius: 5px; margin-right: 10px;">
-                    <button type="submit" class="cta-button">Get Instant PDF Access</button>
+                    <input type="text" id="userZip" placeholder="Zip code" style="width: 120px; padding: 12px; border: 1px solid #ddd; border-radius: 5px; margin-right: 10px;">
+                    <button type="submit" class="cta-button" id="submitBtn">Get Instant PDF Access</button>
+                </div>
+                <div id="loadingSpinner" style="display: none; text-align: center; margin-top: 10px;">
+                    <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid #f3f3f3; border-top: 2px solid #1976d2; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    <span style="margin-left: 10px; color: #666;">Loading your water emergency checklist...</span>
                 </div>
                 <p style="font-size: 0.9rem; color: #666;">Get immediate access to professional PDF + optional follow-up emergency tips</p>
             </form>
@@ -245,17 +254,49 @@
             event.preventDefault();
 
             const email = document.getElementById('userEmail').value;
+            const zipCode = document.getElementById('userZip').value;
 
             if (!email) {
                 alert('Please enter your email address to access the professional checklist.');
                 return;
             }
 
+            // Show loading spinner
+            const submitBtn = document.getElementById('submitBtn');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+
+            submitBtn.style.display = 'none';
+            loadingSpinner.style.display = 'block';
+
             // Detect mobile and use appropriate viewer (smart viewer for mobile)
             const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
             const viewerPath = isMobile ? 'pdf-viewer/mobile-smart.html' : 'pdf-viewer/viewer.html';
-            const viewerUrl = `${viewerPath}?checklist=water-emergency&email=${encodeURIComponent(email)}`;
-            window.open(viewerUrl, '_blank');
+
+            let viewerUrl = `${viewerPath}?checklist=water-emergency&email=${encodeURIComponent(email)}`;
+            if (zipCode) {
+                viewerUrl += `&zip=${encodeURIComponent(zipCode)}`;
+            }
+
+            // Simulate processing delay for better UX
+            setTimeout(() => {
+                window.open(viewerUrl, '_blank');
+
+                // Reset form state
+                submitBtn.style.display = 'block';
+                loadingSpinner.style.display = 'none';
+
+                // Show success message
+                const successMsg = document.createElement('div');
+                successMsg.style.cssText = 'background: #4caf50; color: white; padding: 10px; border-radius: 5px; margin-top: 10px; text-align: center;';
+                successMsg.innerHTML = '✅ Water emergency checklist opened in new tab! Professional response guide included.';
+                loadingSpinner.parentNode.appendChild(successMsg);
+
+                setTimeout(() => {
+                    if (successMsg.parentNode) {
+                        successMsg.parentNode.removeChild(successMsg);
+                    }
+                }, 3000);
+            }, 800);
         }
 
         function printChecklist() {

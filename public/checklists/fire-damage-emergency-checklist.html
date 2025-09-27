@@ -296,51 +296,26 @@
                 viewerUrl += `&zip=${encodeURIComponent(zipCode)}`;
             }
 
-            // Create GHL contact immediately before PDF access
-            createGHLContact({
-                email: email,
-                zip: zipCode,
-                source: 'fire-damage-checklist-form',
-                timestamp: new Date().toISOString(),
-                checklist_type: 'fire_damage',
-                mobile_user: isMobile
-            }).then(() => {
-                // Immediate PDF access (no delay)
-                window.location.href = viewerUrl;
-            }).catch(error => {
-                console.warn('GHL integration failed, proceeding with PDF access:', error);
-                // Still provide PDF access even if GHL fails
-                window.location.href = viewerUrl;
-            });
+            // Simulate processing delay for better UX
+            setTimeout(() => {
+                window.open(viewerUrl, '_blank');
 
-        // Helper function for GHL integration
-        async function createGHLContact(leadData) {
-            try {
-                const response = await fetch('/api/ghl-webhook', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({
-                        ...leadData,
-                        tags: [
-                            'pdf_viewed',
-                            leadData.mobile_user ? 'mobile_user' : 'desktop_user',
-                            `checklist_${leadData.checklist_type}`,
-                            'instant_access'
-                        ]
-                    })
-                });
+                // Reset form state
+                submitBtn.style.display = 'block';
+                loadingSpinner.style.display = 'none';
 
-                if (response.ok) {
-                    console.log('GHL contact created successfully');
-                } else {
-                    console.warn('GHL contact creation failed:', response.status);
-                }
-            } catch (error) {
-                console.warn('GHL integration error:', error);
-                throw error;
-            }
+                // Show success message
+                const successMsg = document.createElement('div');
+                successMsg.style.cssText = 'background: #4caf50; color: white; padding: 10px; border-radius: 5px; margin-top: 10px; text-align: center;';
+                successMsg.innerHTML = '✅ Fire damage checklist opened in new tab! Professional recovery guide included.';
+                loadingSpinner.parentNode.appendChild(successMsg);
+
+                setTimeout(() => {
+                    if (successMsg.parentNode) {
+                        successMsg.parentNode.removeChild(successMsg);
+                    }
+                }, 3000);
+            }, 800);
         }
 
         function printChecklist() {

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile PDF Viewer Demo | Prism Specialties DMV</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8f9fa;
+            color: #333;
+        }
+        .demo-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #00a0df;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #00a0df;
+        }
+        .feature-card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+        }
+        .demo-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .demo-btn {
+            display: block;
+            background: linear-gradient(135deg, #00a0df, #0080c7);
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            border-radius: 10px;
+            text-align: center;
+            font-weight: 600;
+            transition: transform 0.2s ease;
+        }
+        .demo-btn:hover {
+            transform: translateY(-2px);
+        }
+        .fire { background: linear-gradient(135deg, #e74c3c, #c0392b); }
+        .water { background: linear-gradient(135deg, #3498db, #2980b9); }
+        .document { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+        .code-snippet {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <h1>📱 Mobile-First PDF Viewer Demo</h1>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🎯 Mobile-First Design</h3>
+                <p>PDF takes 80% of screen space with touch-optimized controls always accessible.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>👆 Touch Gestures</h3>
+                <p>Pinch-to-zoom, swipe navigation, and full-screen support for optimal mobile viewing.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📥 Instant Downloads</h3>
+                <p>Large, prominent download button always visible for quick PDF access.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>📱 Native Sharing</h3>
+                <p>WhatsApp, SMS, email sharing with emergency contact quick-dial integration.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>🏠 Add to Home Screen</h3>
+                <p>PWA functionality with offline support and app-like experience.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3>⚡ Fast Loading</h3>
+                <p>Optimized for mobile networks with service worker caching.</p>
+            </div>
+        </div>
+
+        <h2>🚀 Try Mobile Viewer</h2>
+        <p>Click any demo link below (best viewed on mobile device):</p>
+
+        <div class="demo-links">
+            <a href="checklists/pdf-viewer/mobile.html?checklist=fire-damage&email=demo@example.com" class="demo-btn fire">
+                🔥 Fire Damage Checklist
+            </a>
+            <a href="checklists/pdf-viewer/mobile.html?checklist=water-emergency&email=demo@example.com" class="demo-btn water">
+                💧 Water Emergency Checklist
+            </a>
+            <a href="checklists/pdf-viewer/mobile.html?checklist=document-recovery&email=demo@example.com" class="demo-btn document">
+                📄 Document Recovery
+            </a>
+        </div>
+
+        <h2>📋 Form Integration</h2>
+        <p>Mobile detection automatically redirects users to optimized viewer:</p>
+
+        <div class="code-snippet">
+const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+const viewerPath = isMobile ? 'mobile.html' : 'viewer.html';
+window.open(`${viewerPath}?checklist=${type}&email=${email}&zip=${zip}`, '_blank');
+        </div>
+
+        <h2>🎯 Key Features Implemented</h2>
+        <ul>
+            <li>✅ <strong>80% PDF Display</strong> - Maximum content visibility</li>
+            <li>✅ <strong>Floating Action Buttons</strong> - Share and fullscreen controls</li>
+            <li>✅ <strong>Mobile Controls Bar</strong> - Download and emergency call always visible</li>
+            <li>✅ <strong>Touch Gestures</strong> - Pinch-to-zoom and drag support</li>
+            <li>✅ <strong>Native Sharing</strong> - WhatsApp, SMS, Email, Copy link</li>
+            <li>✅ <strong>PWA Support</strong> - Add to home screen, offline functionality</li>
+            <li>✅ <strong>Emergency Contact</strong> - One-tap dial to (301) 215-3191</li>
+            <li>✅ <strong>Form Integration</strong> - Automatic mobile detection and redirect</li>
+        </ul>
+
+        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #ecf0f1;">
+            <p style="color: #7f8c8d;">Professional emergency response checklists for the DMV region</p>
+            <p style="color: #00a0df; font-weight: 600;">Prism Specialties DMV • Emergency Restoration Services</p>
+        </div>
+    </div>
+</body>
+</html>

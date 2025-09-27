@@ -103,9 +103,15 @@
             font-weight: 600;
             cursor: pointer;
         }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
         @media (max-width: 768px) {
             .checklist-title { font-size: 2rem; }
             .form-group input { width: 100%; margin-bottom: 15px; }
+            .form-group { flex-direction: column; align-items: center; }
+            .form-group input { width: 100%; max-width: 300px; }
         }
     </style>
 </head>
@@ -135,16 +141,21 @@
         <p class="checklist-subtitle">HIPAA-compliant methods for recovering damaged important documents</p>
 
         <div class="download-form">
-            <h3 style="margin-bottom: 15px;">Get Document Recovery Protocol</h3>
-            <form onsubmit="return false;">
-                <div class="form-group">
-                    <input type="email" placeholder="Your email address" required>
-                    <input type="text" placeholder="Phone (for secure consultation)" required>
+            <h3 style="margin-bottom: 15px;">Professional Document Recovery Protocol</h3>
+            <p style="color: #666; margin-bottom: 20px;">✅ HIPAA-Compliant Methods • Used by Insurance Professionals</p>
+            <form onsubmit="getInstantChecklist(event)" style="margin-bottom: 20px;">
+                <div class="form-group" style="margin-bottom: 15px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                    <input type="email" id="userEmail" placeholder="Your email address" required style="flex: 1; min-width: 250px; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                    <input type="text" id="userZip" placeholder="Zip code" style="width: 120px; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                    <button type="submit" class="cta-button" id="submitBtn">Get Instant PDF Access</button>
                 </div>
-                <button type="submit" class="cta-button">Download Recovery Guide</button>
+                <div id="loadingSpinner" style="display: none; text-align: center; margin-top: 10px;">
+                    <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid #f3f3f3; border-top: 2px solid #7b1fa2; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    <span style="margin-left: 10px; color: #666;">Loading your document recovery protocol...</span>
+                </div>
             </form>
             <p style="font-size: 0.9rem; color: #666; margin-top: 15px;">
-                Includes secure handling protocols + replacement procedures
+                Get immediate access to HIPAA-compliant document recovery methods + professional restoration guidance
             </p>
         </div>
     </section>
@@ -217,6 +228,63 @@
         <a href="tel:301-215-3191" style="background: #7b1fa2; color: white; padding: 15px 30px; text-decoration: none; border-radius: 25px; font-weight: 600;">Call 301-215-3191</a>
         <p style="margin-top: 30px; color: #999;">&copy; 2025 Prism Specialties DMV</p>
     </footer>
+    <script>
+        function getInstantChecklist(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('userEmail').value;
+            const zipCode = document.getElementById('userZip').value;
+
+            if (!email) {
+                alert('Please enter your email address to access the professional protocol.');
+                return;
+            }
+
+            // Show loading spinner
+            const submitBtn = document.getElementById('submitBtn');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+
+            submitBtn.style.display = 'none';
+            loadingSpinner.style.display = 'block';
+
+            // Detect mobile and build URL with parameters (smart viewer for mobile)
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const viewerPath = isMobile ? 'pdf-viewer/mobile-smart.html' : 'pdf-viewer/viewer.html';
+
+            let viewerUrl = `${viewerPath}?checklist=document-recovery&email=${encodeURIComponent(email)}`;
+            if (zipCode) {
+                viewerUrl += `&zip=${encodeURIComponent(zipCode)}`;
+            }
+
+            // Simulate processing delay for better UX
+            setTimeout(() => {
+                window.open(viewerUrl, '_blank');
+
+                // Reset form state
+                submitBtn.style.display = 'block';
+                loadingSpinner.style.display = 'none';
+
+                // Show success message
+                const successMsg = document.createElement('div');
+                successMsg.style.cssText = 'background: #4caf50; color: white; padding: 10px; border-radius: 5px; margin-top: 10px; text-align: center;';
+                successMsg.innerHTML = '✅ Document recovery protocol opened in new tab! HIPAA-compliant methods included.';
+                loadingSpinner.parentNode.appendChild(successMsg);
+
+                setTimeout(() => {
+                    if (successMsg.parentNode) {
+                        successMsg.parentNode.removeChild(successMsg);
+                    }
+                }, 3000);
+            }, 800);
+        }
+
+        function printChecklist() {
+            const printWindow = window.open('assets/pdfs/water-emergency-save-what-matters.html', '_blank');
+            printWindow.onload = function() {
+                printWindow.print();
+            };
+        }
+    </script>
     <script src="../js/lead-capture.js"></script>
 </body>
 </html>

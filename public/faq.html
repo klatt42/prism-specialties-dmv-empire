@@ -172,17 +172,35 @@
             <p class="hero-subtitle">Expert answers to common restoration questions + free emergency response checklists</p>
 
             <div class="lead-capture-form">
-                <h3>Get Our Complete Emergency Response Guide</h3>
-                <p style="color: #666; margin-bottom: 20px;">Instant access to professional checklists and expert guidance</p>
-                <form onsubmit="return false;">
-                    <div class="form-group">
-                        <input type="email" placeholder="Your email address" required>
-                        <input type="text" placeholder="Zip code (for local resources)" required>
+                <h3>Professional Emergency Response Checklists</h3>
+                <p style="color: #666; margin-bottom: 20px;">Download instantly - Used by Emergency Responders & Insurance Professionals</p>
+                <form onsubmit="redirectToChecklist(event)" style="margin-bottom: 20px;">
+                    <div class="form-group" style="margin-bottom: 15px; display: flex; flex-wrap: wrap; gap: 10px;">
+                        <input type="email" id="userEmail" placeholder="Your email address" required style="flex: 1; min-width: 250px; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                        <input type="text" id="userZip" placeholder="Zip code" style="width: 120px; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                        <select id="checklistType" style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                            <option value="water-emergency">💧 Water Emergency Checklist</option>
+                            <option value="fire-damage">🔥 Fire Damage Recovery</option>
+                            <option value="lightning-strike">⚡ Lightning Strike Protection</option>
+                            <option value="smoke-damage">💨 Smoke Damage Response</option>
+                            <option value="storm-damage">🌪️ Storm Damage Assessment</option>
+                            <option value="document-recovery">📄 Document Recovery</option>
+                        </select>
                     </div>
-                    <button type="submit" class="cta-button">Get Free Emergency Package</button>
+                    <button type="submit" class="cta-button" id="submitBtn">Get Professional Checklist</button>
+                    <div id="loadingSpinner" style="display: none; text-align: center; margin-top: 10px;">
+                        <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid #f3f3f3; border-top: 2px solid #00a0df; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                        <span style="margin-left: 10px; color: #666;">Loading your checklist...</span>
+                    </div>
                 </form>
+                <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-bottom: 20px;">
+                    <a href="checklists/pdf-viewer/viewer.html?checklist=water-emergency" style="background: #1976d2; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; font-weight: 600;">💧 Water Emergency</a>
+                    <a href="checklists/pdf-viewer/viewer.html?checklist=fire-damage" style="background: #d32f2f; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; font-weight: 600;">🔥 Fire Damage</a>
+                    <a href="checklists/pdf-viewer/viewer.html?checklist=lightning-strike" style="background: #ff6f00; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; font-weight: 600;">⚡ Lightning Strike</a>
+                </div>
+                <a href="checklists/pdf-viewer/" style="background: #00a0df; color: white; padding: 15px 30px; text-decoration: none; border-radius: 25px; font-weight: 600; display: inline-block;">View All 16 Professional Checklists</a>
                 <p style="font-size: 0.9rem; color: #777; margin-top: 15px;">
-                    Includes: Water damage, fire damage, and document recovery checklists
+                    Complete collection: Fire, Water, Storm, Document Recovery, Electronics & More
                 </p>
             </div>
         </div>
@@ -271,6 +289,58 @@
     </footer>
 
     <script>
+        // Redirect to PDF viewer with email tracking
+        function redirectToChecklist(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('userEmail').value;
+            const zipCode = document.getElementById('userZip').value;
+            const checklistType = document.getElementById('checklistType').value;
+
+            if (!email) {
+                alert('Please enter your email address to access the professional checklist.');
+                return;
+            }
+
+            // Show loading spinner
+            const submitBtn = document.getElementById('submitBtn');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+
+            submitBtn.style.display = 'none';
+            loadingSpinner.style.display = 'block';
+
+            // Enhanced URL with zip code for regional optimization
+            // Detect mobile and use appropriate viewer (smart viewer for mobile)
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const viewerPath = isMobile ? 'checklists/pdf-viewer/mobile-smart.html' : 'checklists/pdf-viewer/viewer.html';
+
+            let viewerUrl = `${viewerPath}?checklist=${checklistType}&email=${encodeURIComponent(email)}`;
+            if (zipCode) {
+                viewerUrl += `&zip=${encodeURIComponent(zipCode)}`;
+            }
+
+            // Simulate processing delay for better UX
+            setTimeout(() => {
+                window.open(viewerUrl, '_blank');
+
+                // Reset form state
+                submitBtn.style.display = 'block';
+                loadingSpinner.style.display = 'none';
+
+                // Show success message
+                const successMsg = document.createElement('div');
+                successMsg.style.cssText = 'background: #4caf50; color: white; padding: 10px; border-radius: 5px; margin-top: 10px; text-align: center;';
+                successMsg.innerHTML = '✅ Checklist opened in new tab! Check your downloads for offline access.';
+                loadingSpinner.parentNode.appendChild(successMsg);
+
+                setTimeout(() => {
+                    if (successMsg.parentNode) {
+                        successMsg.parentNode.removeChild(successMsg);
+                    }
+                }, 3000);
+            }, 800);
+        }
+
         // Basic form interaction
         document.addEventListener('DOMContentLoaded', function() {
             console.log('FAQ page loaded successfully');

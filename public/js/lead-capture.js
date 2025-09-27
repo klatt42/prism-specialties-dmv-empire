@@ -1,6 +1,6 @@
 // Mobile-optimized lead capture functionality for Prism Specialties DMV
 
-// Lead capture form handler
+// Lead capture form handler with immediate GHL integration
 function handleLeadSubmit(event, redirectUrl) {
     event.preventDefault();
 
@@ -16,7 +16,18 @@ function handleLeadSubmit(event, redirectUrl) {
         return false;
     }
 
-    // Store lead data (would integrate with CRM/backend)
+    // Immediately create GHL contact (fire and forget)
+    createGHLContact({
+        email,
+        phone,
+        zip,
+        source: redirectUrl,
+        timestamp: new Date().toISOString(),
+        checklist_type: getChecklistType(redirectUrl),
+        mobile_user: isMobileDevice()
+    });
+
+    // Store lead data locally for backup
     console.log('Lead captured:', { email, phone, zip, source: redirectUrl });
 
     // Success message
@@ -28,6 +39,49 @@ function handleLeadSubmit(event, redirectUrl) {
     }
 
     return false;
+}
+
+// Create GHL contact immediately
+async function createGHLContact(leadData) {
+    try {
+        const response = await fetch('/api/ghl-webhook', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                ...leadData,
+                tags: [
+                    'pdf_viewed',
+                    leadData.mobile_user ? 'mobile_user' : 'desktop_user',
+                    `checklist_${leadData.checklist_type}`,
+                    'lead_captured'
+                ]
+            })
+        });
+
+        if (response.ok) {
+            console.log('GHL contact created successfully');
+        } else {
+            console.warn('GHL contact creation failed:', response.status);
+        }
+    } catch (error) {
+        console.warn('GHL integration error:', error);
+    }
+}
+
+// Extract checklist type from URL
+function getChecklistType(url) {
+    if (url.includes('fire')) return 'fire_damage';
+    if (url.includes('water')) return 'water_damage';
+    if (url.includes('document')) return 'document_recovery';
+    if (url.includes('lightning')) return 'lightning_strike';
+    return 'general';
+}
+
+// Detect mobile device
+function isMobileDevice() {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 }
 
 // Exit-intent popup for lead capture

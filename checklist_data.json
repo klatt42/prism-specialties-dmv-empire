@@ -1,0 +1,208 @@
+{
+  "checklists": [
+    {
+      "filename": "fire-damage-first-48-hours",
+      "title": "Fire Damage - First 48 Hours Critical Actions",
+      "subtitle": "Professional emergency response protocol for fire and smoke damage",
+      "icon": "🔥",
+      "color": "#d32f2f",
+      "color_dark": "#b71c1c",
+      "sections": [
+        {
+          "title": "IMMEDIATE SAFETY (0-30 MINUTES)",
+          "items": [
+            {"title": "🚨 Ensure Everyone is Safe", "description": "Evacuate all persons and pets. Do not re-enter until fire officials declare it safe.", "priority": "priority-high"},
+            {"title": "📞 Contact Emergency Services", "description": "Call 911 if not already done. Report gas leaks, electrical hazards, or structural damage.", "priority": "priority-high"},
+            {"title": "🏠 Check Structural Safety", "description": "Look for sagging ceilings, damaged walls, or compromised support beams.", "priority": "priority-high"}
+          ]
+        },
+        {
+          "title": "EMERGENCY RESPONSE (30 MIN - 2 HOURS)",
+          "items": [
+            {"title": "📱 Contact Insurance Company", "description": "Report claim immediately. Get claim number and adjuster contact information.", "priority": "priority-high"},
+            {"title": "📸 Document Everything", "description": "Take extensive photos/videos of all damage before moving anything.", "priority": "priority-high"},
+            {"title": "🔒 Secure the Property", "description": "Board up broken windows/openings to prevent further damage.", "priority": "priority-medium"}
+          ]
+        },
+        {
+          "title": "DAMAGE CONTROL (2-8 HOURS)",
+          "items": [
+            {"title": "💧 Address Water Damage", "description": "Remove standing water from firefighting efforts if electricity is safe.", "priority": "priority-medium"},
+            {"title": "🌬️ Ventilate Smoke Odors", "description": "Open windows/doors carefully. Use fans without spreading soot.", "priority": "priority-medium"},
+            {"title": "📋 Create Damage Inventory", "description": "List all damaged items with descriptions and estimated values.", "priority": "priority-low"}
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "water-emergency-save-what-matters",
+      "title": "Water Emergency - Save What Matters Most",
+      "subtitle": "Critical response guide to minimize water damage and protect belongings",
+      "icon": "💧",
+      "color": "#1976d2",
+      "color_dark": "#1565c0",
+      "sections": [
+        {
+          "title": "IMMEDIATE ACTION (0-15 MINUTES)",
+          "items": [
+            {"title": "⚡ Electrical Safety First", "description": "Shut off electricity to affected areas if safe to do so. Stay out of standing water.", "priority": "priority-high"},
+            {"title": "🚰 Stop the Water Source", "description": "Locate and shut off main water supply if from plumbing issue.", "priority": "priority-high"},
+            {"title": "📞 Emergency Contacts", "description": "Call insurance company and emergency restoration services immediately.", "priority": "priority-high"}
+          ]
+        },
+        {
+          "title": "DAMAGE PREVENTION (15 MIN - 1 HOUR)",
+          "items": [
+            {"title": "📸 Document Everything", "description": "Take photos and videos of all damage before touching anything.", "priority": "priority-high"},
+            {"title": "🏃‍♂️ Remove Standing Water", "description": "Use pumps, wet vacuums, or mops. First 24 hours are critical.", "priority": "priority-medium"},
+            {"title": "📚 Rescue Priority Items", "description": "Move valuable documents, electronics, and irreplaceable items to dry areas.", "priority": "priority-medium"}
+          ]
+        },
+        {
+          "title": "RECOVERY PROCESS (1-24 HOURS)",
+          "items": [
+            {"title": "🌬️ Increase Air Circulation", "description": "Open windows, use fans and dehumidifiers to speed drying.", "priority": "priority-medium"},
+            {"title": "🧽 Remove Wet Materials", "description": "Remove carpeting and damaged materials that can't dry within 48 hours.", "priority": "priority-low"},
+            {"title": "🧪 Monitor for Mold", "description": "Watch for mold signs. Mold can begin growing within 24-48 hours.", "priority": "priority-low"}
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "lightning-strike-power-surge-protection",
+      "title": "Lightning Strike - Power Surge Protection",
+      "subtitle": "Emergency electronics protection and damage assessment protocol",
+      "icon": "⚡",
+      "color": "#ff6f00",
+      "color_dark": "#e65100",
+      "sections": [
+        {
+          "title": "IMMEDIATE RESPONSE (0-15 MINUTES)",
+          "items": [
+            {"title": "🔌 Unplug Everything", "description": "Immediately disconnect all electronics and appliances from power sources.", "priority": "priority-high"},
+            {"title": "🚨 Safety Assessment", "description": "Check for smoke, burning smells, or visible damage to electrical systems.", "priority": "priority-high"},
+            {"title": "📞 Call Electrician", "description": "Have electrical system inspected before restoring power to any circuits.", "priority": "priority-high"}
+          ]
+        },
+        {
+          "title": "DAMAGE ASSESSMENT (15 MIN - 1 HOUR)",
+          "items": [
+            {"title": "📱 Test Critical Systems", "description": "Check smoke detectors, security systems, and essential electronics.", "priority": "priority-medium"},
+            {"title": "📋 Document Affected Items", "description": "List all electronics that were plugged in during the strike.", "priority": "priority-medium"},
+            {"title": "🏠 Check HVAC Systems", "description": "Inspect heating, cooling, and ventilation systems for damage.", "priority": "priority-medium"}
+          ]
+        },
+        {
+          "title": "RECOVERY PLANNING (1-24 HOURS)",
+          "items": [
+            {"title": "📞 Contact Insurance", "description": "Report lightning damage claim with detailed equipment list.", "priority": "priority-low"},
+            {"title": "🔍 Professional Assessment", "description": "Have electronics professionally evaluated before attempting to use.", "priority": "priority-low"},
+            {"title": "🛡️ Surge Protection Review", "description": "Plan improved surge protection for future storm seasons.", "priority": "priority-low"}
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "smoke-damage-air-quality-emergency",
+      "title": "Smoke Damage - Air Quality Emergency Response",
+      "subtitle": "Immediate air quality protection and smoke damage mitigation guide",
+      "icon": "💨",
+      "color": "#424242",
+      "color_dark": "#212121",
+      "sections": [
+        {
+          "title": "AIR SAFETY (0-30 MINUTES)",
+          "items": [
+            {"title": "😷 Protect Breathing", "description": "Use N95 masks or better. Evacuate if air quality is dangerous.", "priority": "priority-high"},
+            {"title": "🚪 Seal Unaffected Areas", "description": "Close doors to prevent smoke spread to clean areas of property.", "priority": "priority-high"},
+            {"title": "🌬️ Ventilation Strategy", "description": "Open windows/doors on clean air side. Create positive pressure away from smoke.", "priority": "priority-high"}
+          ]
+        },
+        {
+          "title": "DAMAGE CONTROL (30 MIN - 2 HOURS)",
+          "items": [
+            {"title": "📸 Document Smoke Patterns", "description": "Photograph smoke staining patterns before any cleaning attempts.", "priority": "priority-medium"},
+            {"title": "🧽 Do NOT Clean Yet", "description": "Improper cleaning can set stains permanently. Wait for professionals.", "priority": "priority-medium"},
+            {"title": "❄️ Protect Sensitive Items", "description": "Remove electronics, documents, and artwork from smoke exposure.", "priority": "priority-medium"}
+          ]
+        },
+        {
+          "title": "PROFESSIONAL RESPONSE (2-8 HOURS)",
+          "items": [
+            {"title": "🏢 Contact Restoration Experts", "description": "Smoke damage requires specialized cleaning techniques and equipment.", "priority": "priority-low"},
+            {"title": "🔬 Air Quality Testing", "description": "Have air quality professionally assessed before reoccupation.", "priority": "priority-low"},
+            {"title": "🧥 Textile Assessment", "description": "Professional evaluation needed for clothing, drapes, and upholstery.", "priority": "priority-low"}
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "storm-damage-structure-assessment",
+      "title": "Storm Damage - Immediate Structure Assessment",
+      "subtitle": "Critical structural safety evaluation and emergency response protocol",
+      "icon": "🌪️",
+      "color": "#1565c0",
+      "color_dark": "#0d47a1",
+      "sections": [
+        {
+          "title": "SAFETY FIRST (0-15 MINUTES)",
+          "items": [
+            {"title": "👁️ External Visual Inspection", "description": "Check for obvious structural damage from safe distance before entering.", "priority": "priority-high"},
+            {"title": "⚡ Electrical Hazards", "description": "Look for downed power lines, damaged electrical equipment, or exposed wiring.", "priority": "priority-high"},
+            {"title": "🏠 Entry Safety Check", "description": "Test doors/windows for proper operation. Check for sagging or shifted structures.", "priority": "priority-high"}
+          ]
+        },
+        {
+          "title": "DAMAGE ASSESSMENT (15 MIN - 1 HOUR)",
+          "items": [
+            {"title": "🏗️ Structural Elements", "description": "Inspect foundation, walls, roof, and support beams for visible damage.", "priority": "priority-medium"},
+            {"title": "💧 Water Intrusion", "description": "Check for roof leaks, broken windows, or compromised building envelope.", "priority": "priority-medium"},
+            {"title": "📐 Utilities Check", "description": "Inspect gas lines, electrical panels, and plumbing for storm damage.", "priority": "priority-medium"}
+          ]
+        },
+        {
+          "title": "EMERGENCY STABILIZATION (1-4 HOURS)",
+          "items": [
+            {"title": "🔧 Temporary Repairs", "description": "Make emergency repairs to prevent further damage - tarps, boarding, etc.", "priority": "priority-low"},
+            {"title": "📋 Professional Inspection", "description": "Schedule structural engineer evaluation for any questionable damage.", "priority": "priority-low"},
+            {"title": "📞 Insurance Documentation", "description": "Document all damage thoroughly before making any temporary repairs.", "priority": "priority-low"}
+          ]
+        }
+      ]
+    },
+    {
+      "filename": "document-recovery-critical-papers",
+      "title": "Document Recovery - Critical Papers Restoration",
+      "subtitle": "HIPAA-compliant emergency document preservation and recovery protocol",
+      "icon": "📄",
+      "color": "#7b1fa2",
+      "color_dark": "#4a148c",
+      "sections": [
+        {
+          "title": "IMMEDIATE STABILIZATION (0-30 MINUTES)",
+          "items": [
+            {"title": "🛑 Stop Further Damage", "description": "Remove from water/contaminated environment. Handle minimally to prevent additional damage.", "priority": "priority-high"},
+            {"title": "🧤 Proper Protection", "description": "Wear clean gloves. Avoid direct skin contact with damaged or contaminated papers.", "priority": "priority-high"},
+            {"title": "📸 Document Current Condition", "description": "Photograph all damaged documents before attempting any recovery procedures.", "priority": "priority-high"}
+          ]
+        },
+        {
+          "title": "PRIORITY ASSESSMENT (30 MIN - 1 HOUR)",
+          "items": [
+            {"title": "📋 Identify Critical Documents", "description": "Prioritize: birth certificates, passports, insurance policies, medical records, legal documents.", "priority": "priority-medium"},
+            {"title": "🏥 HIPAA Compliance", "description": "Use secure chain of custody for medical documents. Maintain confidentiality throughout process.", "priority": "priority-medium"},
+            {"title": "🏢 Professional vs. Replacement", "description": "Determine which documents need professional restoration vs. replacement from issuing agency.", "priority": "priority-medium"}
+          ]
+        },
+        {
+          "title": "RECOVERY PROCESS (1-24 HOURS)",
+          "items": [
+            {"title": "❄️ Freeze if Wet", "description": "For water-damaged documents that can't be immediately processed, freeze in plastic bags.", "priority": "priority-low"},
+            {"title": "🌬️ Air Dry Carefully", "description": "For immediate drying: separate pages, lay flat on clean absorbent surfaces.", "priority": "priority-low"},
+            {"title": "🔒 Secure Storage Planning", "description": "Plan secure, climate-controlled storage for recovered and replacement documents.", "priority": "priority-low"}
+          ]
+        }
+      ]
+    }
+  ]
+}

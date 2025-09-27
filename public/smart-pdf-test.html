@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart PDF Delivery Test | Prism Specialties DMV</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #00a0df;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .feature-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #00a0df;
+            text-align: center;
+        }
+        .feature-card h3 {
+            margin-top: 0;
+            color: #2c3e50;
+            font-size: 1rem;
+        }
+        .feature-card .icon {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .test-section {
+            background: #e8f5e8;
+            border-left: 4px solid #27ae60;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 0 10px 10px 0;
+        }
+        .test-btn {
+            display: block;
+            background: #00a0df;
+            color: white;
+            text-decoration: none;
+            padding: 15px 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            margin: 10px 0;
+            transition: all 0.2s;
+        }
+        .test-btn:hover {
+            background: #0080c7;
+            transform: translateY(-2px);
+        }
+        .fire { background: #e74c3c; }
+        .fire:hover { background: #c0392b; }
+        .water { background: #3498db; }
+        .water:hover { background: #2980b9; }
+        .lightning { background: #f39c12; }
+        .lightning:hover { background: #d68910; }
+        .url-box {
+            background: #2c3e50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: monospace;
+            font-size: 0.9rem;
+            word-break: break-all;
+            margin: 10px 0;
+        }
+        .connection-demo {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+        .connection-btn {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .fast { background: #27ae60; color: white; }
+        .medium { background: #f39c12; color: white; }
+        .slow { background: #e74c3c; color: white; }
+        .offline { background: #95a5a6; color: white; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📱 Smart PDF Delivery Test</h1>
+
+        <p style="text-align: center; margin-bottom: 30px; color: #7f8c8d;">
+            Connection-aware PDF loading with progressive delivery and preview images
+        </p>
+
+        <div class="feature-grid">
+            <div class="feature-card">
+                <span class="icon">⚡</span>
+                <h3>Fast Connection</h3>
+                <p>Full PDF loads immediately</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">📶</span>
+                <h3>Medium Connection</h3>
+                <p>Preview first, PDF in background</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">🐌</span>
+                <h3>Slow Connection</h3>
+                <p>Optimized preview, smart download</p>
+            </div>
+            <div class="feature-card">
+                <span class="icon">📵</span>
+                <h3>Offline Mode</h3>
+                <p>Cached content available</p>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>🧪 Test Smart Viewer (Mobile Optimized)</h3>
+            <p>These will automatically detect your connection speed and load accordingly:</p>
+
+            <a href="checklists/pdf-viewer/mobile-smart.html?checklist=fire-damage&email=test@example.com" class="test-btn fire" target="_blank">
+                🔥 Test Fire Damage Smart Viewer
+            </a>
+
+            <a href="checklists/pdf-viewer/mobile-smart.html?checklist=water-emergency&email=test@example.com" class="test-btn water" target="_blank">
+                💧 Test Water Emergency Smart Viewer
+            </a>
+
+            <a href="checklists/pdf-viewer/mobile-smart.html?checklist=lightning-strike&email=test@example.com" class="test-btn lightning" target="_blank">
+                ⚡ Test Lightning Strike Smart Viewer
+            </a>
+        </div>
+
+        <div class="test-section">
+            <h3>📋 Test Form Integration</h3>
+            <p>Forms now redirect mobile users to smart viewer:</p>
+
+            <a href="faq.html" class="test-btn" target="_blank">
+                📝 Test FAQ Form → Smart Viewer
+            </a>
+
+            <a href="checklists/fire-damage-emergency-checklist.html" class="test-btn fire" target="_blank">
+                🔥 Test Fire Form → Smart Viewer
+            </a>
+        </div>
+
+        <div class="test-section">
+            <h3>🔗 Direct URLs for Testing</h3>
+
+            <h4>Fire Damage Smart Viewer:</h4>
+            <div class="url-box">
+                localhost:8002/checklists/pdf-viewer/mobile-smart.html?checklist=fire-damage&email=test@example.com
+            </div>
+
+            <h4>Water Emergency Smart Viewer:</h4>
+            <div class="url-box">
+                localhost:8002/checklists/pdf-viewer/mobile-smart.html?checklist=water-emergency&email=test@example.com
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>🎯 Expected Smart Features</h3>
+            <ul style="line-height: 1.8;">
+                <li>🔍 <strong>Connection Detection</strong> - Automatic speed testing</li>
+                <li>🖼️ <strong>Preview Images</strong> - Fast loading placeholder content</li>
+                <li>📥 <strong>Background Download</strong> - PDF loads while user reads preview</li>
+                <li>⚡ <strong>Progressive Loading</strong> - Smooth transition to full PDF</li>
+                <li>📱 <strong>Smart Sharing</strong> - Options adapt to connection speed</li>
+                <li>💾 <strong>Offline Caching</strong> - Downloaded PDFs work offline</li>
+                <li>📊 <strong>Connection Indicator</strong> - Visual feedback on speed</li>
+                <li>🎛️ <strong>Adaptive UI</strong> - Controls change based on connection</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h3>📱 Mobile Testing Tips</h3>
+            <ol style="line-height: 1.8;">
+                <li>Open browser dev tools (F12)</li>
+                <li>Toggle device toolbar (mobile emulation)</li>
+                <li>Select mobile device (iPhone/Android)</li>
+                <li>Go to Network tab → throttle connection speed</li>
+                <li>Test different connection speeds to see adaptive behavior</li>
+            </ol>
+        </div>
+
+        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #ecf0f1;">
+            <p style="color: #7f8c8d;">Professional emergency response checklists with smart delivery</p>
+            <p style="color: #00a0df; font-weight: 600;">Prism Specialties DMV • Optimized for All Connection Speeds</p>
+        </div>
+    </div>
+
+    <script>
+        // Show connection info
+        function showConnectionInfo() {
+            const info = document.createElement('div');
+            info.style.cssText = `
+                position: fixed;
+                bottom: 20px;
+                right: 20px;
+                background: #2c3e50;
+                color: white;
+                padding: 15px;
+                border-radius: 10px;
+                font-size: 0.8rem;
+                z-index: 1000;
+                max-width: 200px;
+            `;
+
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+
+            info.innerHTML = `
+                <strong>Your Device:</strong><br>
+                Mobile: ${isMobile ? 'Yes' : 'No'}<br>
+                Viewport: ${window.innerWidth}x${window.innerHeight}<br>
+                ${connection ? `Connection: ${connection.effectiveType || 'Unknown'}` : 'Connection: Unknown'}
+            `;
+
+            document.body.appendChild(info);
+
+            setTimeout(() => {
+                if (info.parentNode) {
+                    document.body.removeChild(info);
+                }
+            }, 5000);
+        }
+
+        // Show info after page loads
+        setTimeout(showConnectionInfo, 2000);
+    </script>
+</body>
+</html>

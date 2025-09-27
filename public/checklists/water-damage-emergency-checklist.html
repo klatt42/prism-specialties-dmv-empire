@@ -138,16 +138,21 @@
         <p class="checklist-subtitle">Professional 15-point response guide to minimize damage and protect your belongings</p>
 
         <div class="download-form">
-            <h3 style="margin-bottom: 15px;">Get PDF Download + Expert Follow-up</h3>
-            <form onsubmit="return false;">
-                <div class="form-group">
-                    <input type="email" placeholder="Your email address" required>
-                    <input type="text" placeholder="Phone (for emergency support)" required>
+            <h3 style="margin-bottom: 15px;">Professional Water Emergency Checklist</h3>
+            <p style="color: #666; margin-bottom: 20px;">✅ Used by Emergency Responders & Insurance Professionals</p>
+            <form onsubmit="getInstantChecklist(event)" style="margin-bottom: 20px;">
+                <div style="margin-bottom: 15px;">
+                    <input type="email" id="userEmail" placeholder="Your email address" required style="width: 250px; padding: 12px; border: 1px solid #ddd; border-radius: 5px; margin-right: 10px;">
+                    <button type="submit" class="cta-button">Get Instant PDF Access</button>
                 </div>
-                <button type="submit" class="cta-button">Download PDF Checklist</button>
+                <p style="font-size: 0.9rem; color: #666;">Get immediate access to professional PDF + optional follow-up emergency tips</p>
             </form>
+            <div style="display: flex; gap: 15px; justify-content: center; margin-bottom: 20px;">
+                <a href="pdf-viewer/viewer.html?checklist=water-emergency" style="background: #1976d2; color: white; padding: 15px 25px; text-decoration: none; border-radius: 8px; font-weight: 600;">📄 View Online Checklist</a>
+                <a href="javascript:void(0)" onclick="printChecklist()" style="background: #2e7d32; color: white; padding: 15px 25px; text-decoration: none; border-radius: 8px; font-weight: 600;">🖨️ Print PDF Version</a>
+            </div>
             <p style="font-size: 0.9rem; color: #666; margin-top: 15px;">
-                Includes printable checklist + local emergency contacts
+                Professional 15-point response protocol • Mobile-optimized • Print-ready format
             </p>
         </div>
     </section>
@@ -235,6 +240,31 @@
         <a href="tel:301-215-3191" style="background: #1976d2; color: white; padding: 15px 30px; text-decoration: none; border-radius: 25px; font-weight: 600;">Call 301-215-3191</a>
         <p style="margin-top: 30px; color: #999;">&copy; 2025 Prism Specialties DMV</p>
     </footer>
+    <script>
+        function getInstantChecklist(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('userEmail').value;
+
+            if (!email) {
+                alert('Please enter your email address to access the professional checklist.');
+                return;
+            }
+
+            // Detect mobile and use appropriate viewer (smart viewer for mobile)
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const viewerPath = isMobile ? 'pdf-viewer/mobile-smart.html' : 'pdf-viewer/viewer.html';
+            const viewerUrl = `${viewerPath}?checklist=water-emergency&email=${encodeURIComponent(email)}`;
+            window.open(viewerUrl, '_blank');
+        }
+
+        function printChecklist() {
+            const printWindow = window.open('assets/pdfs/water-emergency-save-what-matters.html', '_blank');
+            printWindow.onload = function() {
+                printWindow.print();
+            };
+        }
+    </script>
     <script src="../js/lead-capture.js"></script>
 </body>
 </html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PDF Checklist Generator | Prism Specialties DMV</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 0.5in;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            font-size: 11px;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+        }
+
+        .pdf-container {
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 3px solid #00a0df;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-placeholder {
+            width: 60px;
+            height: 40px;
+            background: #00a0df;
+            border-radius: 5px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 10px;
+        }
+
+        .company-info h1 {
+            color: #00a0df;
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+
+        .company-info p {
+            color: #666;
+            font-size: 10px;
+        }
+
+        .emergency-contact {
+            text-align: right;
+            background: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .emergency-contact h3 {
+            color: #e74c3c;
+            font-size: 12px;
+            margin-bottom: 5px;
+        }
+
+        .emergency-contact .phone {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .checklist-title {
+            background: linear-gradient(135deg, #00a0df 0%, #0080c7 100%);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .checklist-title h2 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .checklist-title p {
+            font-size: 11px;
+            opacity: 0.9;
+        }
+
+        .authority-badge {
+            background: #2e7d32;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: bold;
+            margin: 15px 0;
+            text-align: center;
+            display: inline-block;
+        }
+
+        .checklist-section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            background: #f8f9fa;
+            border-left: 4px solid #00a0df;
+            padding: 8px 15px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            border-radius: 0 5px 5px 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 8px;
+            padding: 8px;
+            border-radius: 5px;
+            transition: background 0.2s;
+        }
+
+        .checklist-item:hover {
+            background: #f8f9fa;
+        }
+
+        .checkbox {
+            width: 15px;
+            height: 15px;
+            border: 2px solid #00a0df;
+            border-radius: 3px;
+            margin-right: 12px;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .item-content {
+            flex: 1;
+        }
+
+        .item-title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 3px;
+        }
+
+        .item-description {
+            color: #666;
+            font-size: 10px;
+            line-height: 1.3;
+        }
+
+        .priority-high {
+            border-left: 4px solid #e74c3c;
+        }
+
+        .priority-medium {
+            border-left: 4px solid #f39c12;
+        }
+
+        .priority-low {
+            border-left: 4px solid #27ae60;
+        }
+
+        .footer {
+            margin-top: 30px;
+            border-top: 2px solid #00a0df;
+            padding-top: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .qr-section {
+            text-align: center;
+        }
+
+        .qr-placeholder {
+            width: 60px;
+            height: 60px;
+            background: #ddd;
+            border: 2px dashed #999;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .footer-info {
+            flex: 1;
+            text-align: right;
+        }
+
+        .footer-info p {
+            font-size: 9px;
+            color: #666;
+            margin-bottom: 3px;
+        }
+
+        .website {
+            color: #00a0df;
+            font-weight: bold;
+        }
+
+        @media print {
+            .pdf-container {
+                box-shadow: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .checklist-item:hover {
+                background: transparent;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pdf-container" id="fire-damage-checklist">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo-section">
+                <div class="logo-placeholder">PRISM</div>
+                <div class="company-info">
+                    <h1>Prism Specialties DMV</h1>
+                    <p>Professional Emergency Restoration Services</p>
+                </div>
+            </div>
+            <div class="emergency-contact">
+                <h3>🚨 24/7 Emergency</h3>
+                <div class="phone">(301) 215-3191</div>
+                <p>Washington DC • Maryland • Virginia</p>
+            </div>
+        </div>
+
+        <!-- Title Section -->
+        <div class="checklist-title">
+            <h2>🔥 Fire Damage - First 48 Hours Critical Actions</h2>
+            <p>Professional emergency response protocol for fire and smoke damage</p>
+        </div>
+
+        <div class="authority-badge">✅ Used by Emergency Responders & Insurance Professionals</div>
+
+        <!-- Immediate Safety (0-30 minutes) -->
+        <div class="checklist-section">
+            <div class="section-title">IMMEDIATE SAFETY (0-30 MINUTES)</div>
+
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🚨 Ensure Everyone is Safe</div>
+                    <div class="item-description">Evacuate all persons and pets. Do not re-enter until fire officials declare it safe.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📞 Contact Emergency Services</div>
+                    <div class="item-description">Call 911 if not already done. Report any gas leaks, electrical hazards, or structural damage.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🏠 Check Structural Safety</div>
+                    <div class="item-description">Look for sagging ceilings, damaged walls, or compromised support beams before entering.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emergency Response (30 minutes - 2 hours) -->
+        <div class="checklist-section">
+            <div class="section-title">EMERGENCY RESPONSE (30 MIN - 2 HOURS)</div>
+
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📱 Contact Insurance Company</div>
+                    <div class="item-description">Report claim immediately. Get claim number and adjuster contact information.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-high">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📸 Document Everything</div>
+                    <div class="item-description">Take extensive photos/videos of all damage before moving anything. Include serial numbers of damaged items.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-medium">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🔒 Secure the Property</div>
+                    <div class="item-description">Board up broken windows/openings. Contact board-up services if needed to prevent further damage.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Damage Control (2-8 hours) -->
+        <div class="checklist-section">
+            <div class="section-title">DAMAGE CONTROL (2-8 HOURS)</div>
+
+            <div class="checklist-item priority-medium">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">💧 Address Water Damage</div>
+                    <div class="item-description">Remove standing water from firefighting efforts. Use pumps/wet vacuums if electricity is safe.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-medium">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">🌬️ Ventilate Smoke Odors</div>
+                    <div class="item-description">Open windows/doors carefully. Use fans to increase circulation without spreading soot to clean areas.</div>
+                </div>
+            </div>
+
+            <div class="checklist-item priority-low">
+                <div class="checkbox"></div>
+                <div class="item-content">
+                    <div class="item-title">📋 Create Damage Inventory</div>
+                    <div class="item-description">List all damaged items with descriptions, age, and estimated values for insurance purposes.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <div class="qr-section">
+                <div class="qr-placeholder">QR CODE</div>
+                <p style="font-size: 8px;">Scan for updates</p>
+            </div>
+            <div class="footer-info">
+                <p><strong>Professional Restoration Services</strong></p>
+                <p>Document • Electronics • Art • Textiles</p>
+                <p class="website">www.prismspecialtiesdmv.com</p>
+                <p>© 2025 Prism Specialties DMV • Licensed & Insured</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add print functionality
+        function printPDF() {
+            window.print();
+        }
+
+        // Add click functionality to checkboxes
+        document.addEventListener('DOMContentLoaded', function() {
+            const checkboxes = document.querySelectorAll('.checkbox');
+            checkboxes.forEach(checkbox => {
+                checkbox.addEventListener('click', function() {
+                    if (this.style.backgroundColor === 'rgb(0, 160, 223)') {
+                        this.style.backgroundColor = '';
+                        this.innerHTML = '';
+                    } else {
+                        this.style.backgroundColor = '#00a0df';
+                        this.innerHTML = '✓';
+                        this.style.color = 'white';
+                        this.style.fontWeight = 'bold';
+                        this.style.fontSize = '12px';
+                        this.style.display = 'flex';
+                        this.style.alignItems = 'center';
+                        this.style.justifyContent = 'center';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

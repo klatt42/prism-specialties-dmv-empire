@@ -13,16 +13,18 @@
     <link rel="stylesheet" href="../../public/css/styles.css">
 
     <style>
-        /* Header Styles */
-        header {
+        /* Emergency Professional Header Styling */
+        .professional-header {
             background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 0;
+            margin: 0;
         }
 
-        .header-content {
+        .professional-header .container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -31,92 +33,125 @@
             padding: 15px 20px;
         }
 
-        .logo-brand {
+        .professional-header .logo-section {
             display: flex;
             align-items: center;
+            gap: 15px;
+        }
+
+        .professional-header .logo-section a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
             text-decoration: none;
         }
 
-        .logo-brand img {
-            height: 85px;
-            width: auto;
-            clip-path: inset(0 0 12% 0);
-            margin-right: 15px;
+        .professional-header .logo-clipped {
+            width: 85px;
+            height: 60px;
+            overflow: hidden;
+            position: relative;
         }
 
-        .brand-text {
-            color: #00a0df;
-            font-size: 1.8rem;
+        .professional-header .logo-clipped img {
+            width: 85px;
+            height: auto;
+            position: absolute;
+            top: -5px;
+            left: 0;
+        }
+
+        .professional-header .company-name {
+            font-size: 1.4rem;
             font-weight: 700;
+            color: #00a0df;
+            text-decoration: none;
         }
 
-        nav {
+        .professional-header .main-nav {
             display: flex;
             gap: 30px;
             align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
-        nav a {
+        .professional-header .main-nav a {
             text-decoration: none;
             color: #333;
             font-weight: 500;
-            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
 
-        nav a:hover {
+        .professional-header .main-nav a:hover {
             color: #00a0df;
+            background: rgba(0, 160, 223, 0.1);
         }
 
-        /* Emergency Banner */
-        .emergency-banner {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            color: white;
-            text-align: center;
-            padding: 10px 0;
+        .professional-header .main-nav a.active {
+            color: #00a0df;
             font-weight: 600;
         }
 
-        .emergency-banner a {
+        .professional-header .phone-cta {
+            background: #00a0df;
             color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
             text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        .emergency-banner a:hover {
-            text-decoration: underline;
+        .professional-header .phone-cta:hover {
+            background: #0090c9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 160, 223, 0.3);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        @media (max-width: 768px) {
+            .professional-header .container {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .professional-header .main-nav {
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .professional-header .company-name {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <a href="../../index.html" class="logo-brand">
-                <img src="../../images/logos/prism-logo-1000.png" alt="Prism Specialties DMV">
-                <span class="brand-text">Prism Specialties DMV</span>
-            </a>
-            <nav id="nav-menu">
-                <a href="../../index.html">Home</a>
-                <a href="../../services.html">Services</a>
-                <a href="../../contact.html">Contact</a>
-                <a href="../../about-us.html">About</a>
+    <!-- PROFESSIONAL STYLED HEADER -->
+    <header class="professional-header">
+        <div class="container">
+            <div class="logo-section">
+                <a href="../../public/index.html">
+                    <div class="logo-clipped">
+                        <img src="../../public/images/logos/prism-logo-1000.png" alt="Prism Logo">
+                    </div>
+                    <span class="company-name">Prism Specialties DMV</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../../public/index.html#services">Services</a>
                 <a href="../index.html">Blog</a>
-                <a href="../../emergency.html">Emergency</a>
+                <a href="../../public/northern-virginia.html">Northern VA Services</a>
+                <a href="../../public/index.html#contact">Contact</a>
+                <a href="tel:703-229-1321" class="phone-cta">703-229-1321</a>
             </nav>
         </div>
     </header>
-
-    <!-- Emergency Banner -->
-    <div class="emergency-banner">
-        <div class="container">
-            🚨 <strong>Emergency? Call Now:</strong> <a href="tel:301-215-3191">301-215-3191</a> - 24/7 Response
-        </div>
-    </div>
 
     <main style="max-width: 1200px; margin: 0 auto; padding: 20px;">
         <!-- Blog Header -->
@@ -149,14 +184,14 @@
             <section style="line-height: 1.8; font-size: 1.05rem;">
                 <h2 style="color: #1a1a2e; margin-top: 50px; margin-bottom: 25px; font-size: 2rem; font-weight: 600; border-bottom: 3px solid #007bff; padding-bottom: 10px;">The Emergency Call: Every Minute Counted</h2>
 
-                <p>The Alexandria homeowner called our Northern Virginia emergency line in the early morning hours on a Tuesday. A burst pipe in the Old Town Alexandria home had flooded the formal sitting room where the family's art collection was displayed. By the time the damage was discovered, several paintings had been sitting in standing water for hours.</p>
+                <p>The Alexandria homeowner called our Northern Virginia emergency line at 2:47 AM on a Tuesday. A burst pipe in the Old Town Alexandria home had flooded the formal sitting room where the family's art collection was displayed. By the time the damage was discovered, several paintings had been sitting in standing water for hours.</p>
 
                 <div style="background: #fff8e1; border-left: 4px solid #ffc107; padding: 20px; margin: 30px 0; border-radius: 8px;">
                     <p style="font-style: italic; margin-bottom: 10px; color: #666; font-size: 1.1rem;">"I was devastated. These weren't just paintings – they were my great-great-grandmother's treasures, the only tangible connection I had to our family's Virginia history. I thought they were gone forever."</p>
                     <p style="font-weight: 600; color: #555; margin: 0;">— Alexandria Estate Owner</p>
                 </div>
 
-                <p>Our Northern Virginia emergency response team arrived with fast response, even at that early hour. Time is critical in art recovery – every minute paintings remain in contact with water increases damage exponentially.</p>
+                <p>Our Northern Virginia emergency response team arrived within 90 minutes, even at that early hour. Time is critical in art recovery – every minute paintings remain in contact with water increases damage exponentially.</p>
 
                 <h2 style="color: #1a1a2e; margin-top: 50px; margin-bottom: 25px; font-size: 2rem; font-weight: 600; border-bottom: 3px solid #007bff; padding-bottom: 10px;">Assessment: What We Found in Alexandria</h2>
 
@@ -259,7 +294,7 @@
                         <div style="text-align: center;">
                             <div style="background: #2196f3; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">💰</div>
                             <h4 style="color: #1976d2; margin-bottom: 10px;">Appraiser Coordination</h4>
-                            <p style="color: #424242; margin: 0;">Direct communication with professional Virginia art appraisers</p>
+                            <p style="color: #424242; margin: 0;">Direct communication with certified Virginia art appraisers</p>
                         </div>
                         <div style="text-align: center;">
                             <div style="background: #2196f3; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">⚖️</div>
@@ -357,7 +392,7 @@
             <section>
                 <div style="background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: white; padding: 40px; border-radius: 15px; text-align: center; margin: 50px 0; box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);">
                     <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 2rem; font-weight: 700;">Ready to Restore Your Northern Virginia Estate Art?</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 25px; opacity: 0.95;">Our experienced restoration team provides emergency response throughout Northern Virginia, including Alexandria, Arlington, Fairfax County, and surrounding areas. From single piece assessments to complete estate collection evaluation, we preserve your family's artistic legacy with professional-grade care.</p>
+                    <p style="font-size: 1.1rem; margin-bottom: 25px; opacity: 0.95;">Our certified restoration team provides emergency response throughout Northern Virginia, including Alexandria, Arlington, Fairfax County, and surrounding areas. From single piece assessments to complete estate collection evaluation, we preserve your family's artistic legacy with professional-grade care.</p>
                     <a href="tel:703-229-1321" style="display: inline-block; background: white; color: #007bff; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(0,0,0,0.1);">Call Now: 703-229-1321</a>
                     <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">Free consultations • Insurance assistance • 24/7 emergency response</p>
                 </div>
@@ -376,7 +411,7 @@
                 </div>
                 <div>
                     <h4 style="color: #00a0df; margin-bottom: 15px; font-size: 1.2rem; font-weight: 600;">DMV Regional Coverage</h4>
-                    <p style="margin-bottom: 10px; opacity: 0.9;">Washington DC: <a href="tel:301-215-3191" style="color: #28a745; text-decoration: none; font-weight: 600;">301-215-3191</a></p>
+                    <p style="margin-bottom: 10px; opacity: 0.9;">Washington DC: <a href="tel:202-335-4240" style="color: #28a745; text-decoration: none; font-weight: 600;">202-335-4240</a></p>
                     <p style="margin-bottom: 10px; opacity: 0.9;">Maryland: <a href="tel:301-215-3191" style="color: #28a745; text-decoration: none; font-weight: 600;">301-215-3191</a></p>
                     <p style="margin-bottom: 10px; opacity: 0.9;">Northern VA: <a href="tel:703-229-1321" style="color: #28a745; text-decoration: none; font-weight: 600;">703-229-1321</a></p>
                 </div>

@@ -344,7 +344,7 @@
         }
 
         function printChecklist() {
-            const printWindow = window.open('assets/pdfs/fire-damage-first-48-hours.html', '_blank');
+            const printWindow = window.open('assets/pdfs/fire-damage-first-48-hours.pdf', '_blank');
             printWindow.onload = function() {
                 printWindow.print();
             };
@@ -353,8 +353,8 @@
     <script src="../js/lead-capture.js"></script>
     <script src="../js/analytics-tracker.js"></script>
 
-    <!-- Chatbot Widget Integration -->
-    <script src="../js/ghl-chatbot-widget.js"></script>
+    <!-- Prism Specialties DMV GHL Conversation AI Widget -->
+    <script src="../js/ghl-direct-widget.js"></script>
 
     <script>
         // Track form modal interactions
@@ -372,19 +372,7 @@
                 }
             });
 
-            // Initialize chatbot with fire damage focus
-            if (window.prismChatbot) {
-                window.prismChatbot.trackEvent('page_fire_checklist_loaded', {
-                    page_type: 'fire_damage_checklist',
-                    checklist_type: 'fire-damage'
-                });
-
-                // Show emergency badge on chatbot for fire damage page
-                const emergencyBadge = document.querySelector('.emergency-badge');
-                if (emergencyBadge) {
-                    emergencyBadge.style.display = 'flex';
-                }
-            }
+            console.log('🔥 Fire Damage Emergency Checklist page loaded with GHL widget');
         });
     </script>
 </body>

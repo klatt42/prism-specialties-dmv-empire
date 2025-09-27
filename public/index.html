@@ -167,6 +167,39 @@
             cursor: pointer;
             padding: 10px;
         }
+
+        /* Show mobile toggle on small screens */
+        @media (max-width: 768px) {
+            .mobile-nav-toggle {
+                display: block;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+                flex-direction: column;
+                padding: 20px;
+                z-index: 1000;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            nav a {
+                padding: 10px 0;
+                border-bottom: 1px solid #eee;
+            }
+
+            nav a:last-child {
+                border-bottom: none;
+            }
+        }
         
         .services-dropdown {
             position: relative;
@@ -867,11 +900,11 @@
                 <article class="blog-preview-card">
                     <div class="blog-preview-content">
                         <div class="blog-category">Art Restoration • Washington DC</div>
-                        <h3><a href="../blog/art-restoration/dc-art-restoration-success-stories.html">Historic Art Recovery: 5 Washington DC Museum Pieces We've Restored</a></h3>
+                        <h3><a href="blog/art-restoration/dc-art-restoration-success-stories.html">Historic Art Recovery: 5 Washington DC Museum Pieces We've Restored</a></h3>
                         <p>Discover how Prism Specialties restored historic museum pieces for Washington DC institutions. Expert art restoration with museum-quality results.</p>
                         <div class="blog-preview-meta">
                             <span class="read-time">5 min read</span>
-                            <span class="blog-cta"><a href="../blog/art-restoration/dc-art-restoration-success-stories.html" style="color: #007bff; text-decoration: none; font-weight: 500;">Read Success Story →</a></span>
+                            <span class="blog-cta"><a href="blog/art-restoration/dc-art-restoration-success-stories.html" style="color: #007bff; text-decoration: none; font-weight: 500;">Read Success Story →</a></span>
                         </div>
                     </div>
                 </article>
@@ -879,11 +912,11 @@
                 <article class="blog-preview-card">
                     <div class="blog-preview-content">
                         <div class="blog-category">Emergency Response • Maryland</div>
-                        <h3><a href="../blog/art-restoration/emergency-art-restoration-annapolis.html">5:00 AM Emergency Call: Racing Against Time in Annapolis</a></h3>
+                        <h3><a href="blog/art-restoration/emergency-art-restoration-annapolis.html">5:00 AM Emergency Call: Racing Against Time in Annapolis</a></h3>
                         <p>24/7 emergency art restoration response in Maryland. See our rapid response capabilities and emergency recovery process.</p>
                         <div class="blog-preview-meta">
                             <span class="read-time">7 min read</span>
-                            <span class="blog-cta"><a href="../blog/art-restoration/emergency-art-restoration-annapolis.html" style="color: #007bff; text-decoration: none; font-weight: 500;">Read Emergency Story →</a></span>
+                            <span class="blog-cta"><a href="blog/art-restoration/emergency-art-restoration-annapolis.html" style="color: #007bff; text-decoration: none; font-weight: 500;">Read Emergency Story →</a></span>
                         </div>
                     </div>
                 </article>
@@ -891,18 +924,18 @@
                 <article class="blog-preview-card">
                     <div class="blog-preview-content">
                         <div class="blog-category">Fire Recovery • Montgomery County</div>
-                        <h3><a href="../blog/electronics-restoration/church-musical-electronics-dmv.html">Church Fire Recovery: 10-Day Rush Mode Restoration</a></h3>
+                        <h3><a href="blog/electronics-restoration/church-musical-electronics-dmv.html">Church Fire Recovery: 10-Day Rush Mode Restoration</a></h3>
                         <p>How we cleaned, restored, and deodorized an entire church's smoke-damaged electronics in Montgomery County, Maryland.</p>
                         <div class="blog-preview-meta">
                             <span class="read-time">6 min read</span>
-                            <span class="blog-cta"><a href="../blog/electronics-restoration/church-musical-electronics-dmv.html" style="color: #007bff; text-decoration: none; font-weight: 500;">Read Recovery Story →</a></span>
+                            <span class="blog-cta"><a href="blog/electronics-restoration/church-musical-electronics-dmv.html" style="color: #007bff; text-decoration: none; font-weight: 500;">Read Recovery Story →</a></span>
                         </div>
                     </div>
                 </article>
             </div>
 
             <div class="blog-section-cta">
-                <a href="../blog/index.html" class="view-all-posts-btn">View All Restoration Stories</a>
+                <a href="blog/index.html" class="view-all-posts-btn">View All Restoration Stories</a>
                 <p class="blog-cta-subtitle">Expert insights • Real projects • Proven results across the DMV region</p>
             </div>
         </div>
@@ -1525,6 +1558,11 @@
         document.body.style.overflow = 'auto'; // Restore scrolling
     }
 
+    function toggleNav() {
+        const nav = document.getElementById('nav-menu');
+        nav.classList.toggle('active');
+    }
+
     // Close modal when clicking outside of it
     window.onclick = function(event) {
         const modal = document.getElementById('claimModal');
@@ -1545,5 +1583,8 @@
     </script>
     
     <script src="https://links.bizinsiderpro.com/js/form_embed.js"></script>
+
+    <!-- Prism Specialties DMV GHL Conversation AI Widget -->
+    <script src="js/ghl-direct-widget.js"></script>
 </body>
 </html>

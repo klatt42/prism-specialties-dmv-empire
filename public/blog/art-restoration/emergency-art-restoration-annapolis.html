@@ -13,16 +13,18 @@
     <link rel="stylesheet" href="../../public/css/styles.css">
 
     <style>
-        /* Header Styles */
-        header {
+        /* Emergency Professional Header Styling */
+        .professional-header {
             background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 0;
+            margin: 0;
         }
 
-        .header-content {
+        .professional-header .container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -31,98 +33,138 @@
             padding: 15px 20px;
         }
 
-        .logo-brand {
+        .professional-header .logo-section {
             display: flex;
             align-items: center;
+            gap: 15px;
+        }
+
+        .professional-header .logo-section a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
             text-decoration: none;
         }
 
-        .logo-brand img {
-            height: 85px;
-            width: auto;
-            clip-path: inset(0 0 12% 0);
-            margin-right: 15px;
+        .professional-header .logo-clipped {
+            width: 85px;
+            height: 60px;
+            overflow: hidden;
+            position: relative;
         }
 
-        .brand-text {
-            color: #00a0df;
-            font-size: 1.8rem;
+        .professional-header .logo-clipped img {
+            width: 85px;
+            height: auto;
+            position: absolute;
+            top: -5px;
+            left: 0;
+        }
+
+        .professional-header .company-name {
+            font-size: 1.4rem;
             font-weight: 700;
+            color: #00a0df;
+            text-decoration: none;
         }
 
-        nav {
+        .professional-header .main-nav {
             display: flex;
             gap: 30px;
             align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
-        nav a {
+        .professional-header .main-nav a {
             text-decoration: none;
             color: #333;
             font-weight: 500;
-            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
 
-        nav a:hover {
+        .professional-header .main-nav a:hover {
             color: #00a0df;
+            background: rgba(0, 160, 223, 0.1);
         }
 
-        /* Emergency Banner */
-        .emergency-banner {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            color: white;
-            text-align: center;
-            padding: 10px 0;
+        .professional-header .main-nav a.active {
+            color: #00a0df;
             font-weight: 600;
         }
 
-        .emergency-banner a {
+        .professional-header .phone-cta {
+            background: #dc3545;
             color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
             text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            animation: pulse-red 2s infinite;
         }
 
-        .emergency-banner a:hover {
-            text-decoration: underline;
+        .professional-header .phone-cta:hover {
+            background: #c82333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
         }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        @keyframes pulse-red {
+            0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+        }
+
+        @media (max-width: 768px) {
+            .professional-header .container {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .professional-header .main-nav {
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .professional-header .company-name {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <a href="../../index.html" class="logo-brand">
-                <img src="../../images/logos/prism-logo-1000.png" alt="Prism Specialties DMV">
-                <span class="brand-text">Prism Specialties DMV</span>
-            </a>
-            <nav id="nav-menu">
-                <a href="../../index.html">Home</a>
-                <a href="../../services.html">Services</a>
-                <a href="../../contact.html">Contact</a>
-                <a href="../../about-us.html">About</a>
+    <!-- PROFESSIONAL STYLED HEADER -->
+    <header class="professional-header">
+        <div class="container">
+            <div class="logo-section">
+                <a href="../../public/index.html">
+                    <div class="logo-clipped">
+                        <img src="../../public/images/logos/prism-logo-1000.png" alt="Prism Logo">
+                    </div>
+                    <span class="company-name">Prism Specialties DMV</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../../public/index.html#services">Services</a>
                 <a href="../index.html">Blog</a>
-                <a href="../../emergency.html">Emergency</a>
+                <a href="../../public/maryland.html">Maryland Services</a>
+                <a href="../../public/index.html#contact">Contact</a>
+                <a href="tel:301-215-3191" class="phone-cta">🚨 Emergency: 301-215-3191</a>
             </nav>
         </div>
     </header>
-
-    <!-- Emergency Banner -->
-    <div class="emergency-banner">
-        <div class="container">
-            🚨 <strong>Emergency? Call Now:</strong> <a href="tel:301-215-3191">301-215-3191</a> - 24/7 Response
-        </div>
-    </div>
 
     <main style="max-width: 1200px; margin: 0 auto; padding: 20px;">
         <!-- Blog Header -->
         <header style="text-align: center; margin-bottom: 60px; padding: 40px 20px; background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); color: white; border-radius: 15px; position: relative; overflow: hidden;">
             <div style="position: absolute; top: 10px; right: 20px; background: rgba(255,255,255,0.2); padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: 600;">24/7 EMERGENCY</div>
-            <h1 style="font-size: 2.8rem; margin-bottom: 15px; font-weight: 700;">Early Morning Emergency Call: Racing Against Time in Annapolis</h1>
+            <h1 style="font-size: 2.8rem; margin-bottom: 15px; font-weight: 700;">5:00 AM Emergency Call: Racing Against Time in Annapolis</h1>
             <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 0;">How our Maryland emergency response team saved priceless artwork from fire damage in the state capital - when every hour counted</p>
         </header>
 
@@ -130,13 +172,13 @@
             <!-- Post Meta -->
             <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 30px; font-size: 0.9rem; color: #666; flex-wrap: wrap; justify-content: center;">
                 <span style="padding: 5px 15px; background: #fff3cd; border-radius: 20px; font-weight: 500; color: #856404;">🚨 Emergency Response</span>
-                <span style="padding: 5px 15px; background: #d1ecf1; border-radius: 20px; font-weight: 500; color: #0c5460;">Fast Emergency Response</span>
+                <span style="padding: 5px 15px; background: #d1ecf1; border-radius: 20px; font-weight: 500; color: #0c5460;">67-Minute Response Time</span>
                 <span style="padding: 5px 15px; background: #f8d7da; border-radius: 20px; font-weight: 500; color: #721c24;">Fire & Smoke Damage Recovery</span>
             </div>
 
             <!-- Post Introduction -->
             <section style="font-size: 1.1rem; line-height: 1.7; margin-bottom: 40px; padding: 30px; background: linear-gradient(135deg, #fff5f5 0%, #fed7d7 100%); border-radius: 12px; border-left: 5px solid #dc3545;">
-                <p>Early on a cold February morning, our Maryland emergency hotline received a call that would test every aspect of our rapid response capabilities. A small electrical fire in a historic Annapolis building had triggered the sprinkler system, and five irreplaceable 18th-century paintings were now facing both fire and water damage.</p>
+                <p>At 5:00 AM on a cold February morning, our Maryland emergency hotline received a call that would test every aspect of our rapid response capabilities. A small electrical fire in a historic Annapolis building had triggered the sprinkler system, and five irreplaceable 18th-century paintings were now facing both fire and water damage.</p>
 
                 <p>This is the story of how 67 minutes changed everything - demonstrating why Maryland families, institutions, and businesses trust Prism Specialties when time is the most critical factor in art preservation.</p>
 
@@ -172,7 +214,7 @@
 
                 <h2 style="color: #1a1a2e; margin-top: 50px; margin-bottom: 25px; font-size: 2rem; font-weight: 600; border-bottom: 3px solid #dc3545; padding-bottom: 10px;">Emergency Response: The First Golden Hour</h2>
 
-                <p>In emergency art restoration, the first hour is critical. Our Maryland team was dispatched with fast response, arriving at the Annapolis location with rapid response - even with early morning traffic and the distance from our facility.</p>
+                <p>In emergency art restoration, the first hour is critical. Our Maryland team was dispatched within 12 minutes of the call, arriving at the Annapolis location in 67 minutes - even with early morning traffic and the distance from our facility.</p>
 
                 <div style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 30px; border-radius: 12px; margin: 30px 0;">
                     <h3 style="color: white; margin-top: 0; margin-bottom: 20px; text-align: center;">⏱️ 67-MINUTE EMERGENCY RESPONSE TIMELINE</h3>
@@ -303,7 +345,7 @@
                     </div>
                     <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-left: 5px solid #17a2b8;">
                         <h4 style="color: #17a2b8; margin-top: 0; margin-bottom: 15px;">🎨 Paint Consolidation</h4>
-                        <p>Softened paint layers stabilized using professional-approved adhesives. Critical work completed within a fast timeframe to prevent permanent paint loss.</p>
+                        <p>Softened paint layers stabilized using emergency-approved adhesives. Critical work completed within 48 hours to prevent permanent paint loss.</p>
                     </div>
                     <div style="background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); border-left: 5px solid #6f42c1;">
                         <h4 style="color: #6f42c1; margin-top: 0; margin-bottom: 15px;">🪵 Frame Restoration</h4>
@@ -332,7 +374,7 @@
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
                         <div style="text-align: center;">
                             <div style="background: rgba(255,255,255,0.2); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">⏱️</div>
-                            <h4 style="color: white; margin-bottom: 10px;">Fast Professional Response</h4>
+                            <h4 style="color: white; margin-bottom: 10px;">Response Time Guarantee</h4>
                             <p style="margin: 0; opacity: 0.9;">90 minutes or less to anywhere in Maryland</p>
                         </div>
                         <div style="text-align: center;">
@@ -440,7 +482,7 @@
                 <div style="background: linear-gradient(135deg, #dc3545 0%, #c82333 100%); color: white; padding: 25px; border-radius: 12px; margin: 30px 0; text-align: center; box-shadow: 0 8px 25px rgba(220, 53, 69, 0.2);">
                     <p style="margin-bottom: 15px; font-weight: 600; font-size: 1.1rem;"><strong>🚨 ART EMERGENCY IN MARYLAND? EVERY SECOND COUNTS!</strong></p>
                     <a href="tel:301-215-3191" style="display: inline-block; background: white; color: #dc3545; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">Emergency Hotline: 301-215-3191</a>
-                    <p style="margin-top: 10px; font-size: 0.9rem;">Available 24/7 • Fast response • Maryland statewide</p>
+                    <p style="margin-top: 10px; font-size: 0.9rem;">Available 24/7 • 90-minute response guarantee • Maryland statewide</p>
                 </div>
             </section>
 
@@ -448,7 +490,7 @@
             <section>
                 <div style="background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: white; padding: 40px; border-radius: 15px; text-align: center; margin: 50px 0; box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);">
                     <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 2rem; font-weight: 700;">Need Emergency Art Restoration in Maryland?</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 25px; opacity: 0.95;">Don't wait for disaster to strike. Our experienced emergency response team provides 24/7 coverage throughout Maryland, including Annapolis, Baltimore, Frederick, and all surrounding areas. When every minute counts, trust the team that saved Annapolis's historic artwork.</p>
+                    <p style="font-size: 1.1rem; margin-bottom: 25px; opacity: 0.95;">Don't wait for disaster to strike. Our certified emergency response team provides 24/7 coverage throughout Maryland, including Annapolis, Baltimore, Frederick, and all surrounding areas. When every minute counts, trust the team that saved Annapolis's historic artwork.</p>
                     <a href="tel:301-215-3191" style="display: inline-block; background: white; color: #007bff; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(0,0,0,0.1);">24/7 Emergency: 301-215-3191</a>
                     <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">Immediate response • Insurance assistance • Historic artwork specialists</p>
                 </div>

@@ -13,22 +13,18 @@
     <link rel="stylesheet" href="../../public/css/styles.css">
 
     <style>
-        /* Standard Prism Header Styles */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
+        /* Emergency Professional Header Styling */
+        .professional-header {
             background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 0;
+            margin: 0;
         }
 
-        .header-content {
+        .professional-header .container {
             max-width: 1200px;
             margin: 0 auto;
             display: flex;
@@ -37,87 +33,125 @@
             padding: 15px 20px;
         }
 
-        .logo-brand {
+        .professional-header .logo-section {
             display: flex;
             align-items: center;
+            gap: 15px;
+        }
+
+        .professional-header .logo-section a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
             text-decoration: none;
         }
 
-        .logo-brand img {
-            height: 85px;
-            width: auto;
-            clip-path: inset(0 0 12% 0);
-            margin-right: 15px;
+        .professional-header .logo-clipped {
+            width: 85px;
+            height: 60px;
+            overflow: hidden;
+            position: relative;
         }
 
-        .brand-text {
-            color: #00a0df;
-            font-size: 1.8rem;
+        .professional-header .logo-clipped img {
+            width: 85px;
+            height: auto;
+            position: absolute;
+            top: -5px;
+            left: 0;
+        }
+
+        .professional-header .company-name {
+            font-size: 1.4rem;
             font-weight: 700;
+            color: #00a0df;
+            text-decoration: none;
         }
 
-        nav {
+        .professional-header .main-nav {
             display: flex;
             gap: 30px;
             align-items: center;
+            list-style: none;
+            margin: 0;
+            padding: 0;
         }
 
-        nav a {
+        .professional-header .main-nav a {
             text-decoration: none;
             color: #333;
             font-weight: 500;
-            transition: color 0.3s;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
         }
 
-        nav a:hover {
+        .professional-header .main-nav a:hover {
             color: #00a0df;
+            background: rgba(0, 160, 223, 0.1);
         }
 
-        /* Emergency Banner */
-        .emergency-banner {
-            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
-            color: white;
-            text-align: center;
-            padding: 10px 0;
+        .professional-header .main-nav a.active {
+            color: #00a0df;
             font-weight: 600;
         }
 
-        .emergency-banner a {
+        .professional-header .phone-cta {
+            background: #00a0df;
             color: white;
+            padding: 12px 24px;
+            border-radius: 5px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
+            transition: all 0.3s ease;
         }
 
-        .emergency-banner a:hover {
-            text-decoration: underline;
+        .professional-header .phone-cta:hover {
+            background: #0090c9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 160, 223, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .professional-header .container {
+                flex-direction: column;
+                gap: 15px;
+                padding: 15px;
+            }
+
+            .professional-header .main-nav {
+                flex-wrap: wrap;
+                gap: 15px;
+                justify-content: center;
+            }
+
+            .professional-header .company-name {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-content">
-            <a href="../../index.html" class="logo-brand">
-                <img src="../../images/logos/prism-logo-1000.png" alt="Prism Specialties DMV">
-                <span class="brand-text">Prism Specialties DMV</span>
-            </a>
-            <nav id="nav-menu">
-                <a href="../../index.html">Home</a>
-                <a href="../../services.html">Services</a>
-                <a href="../../contact.html">Contact</a>
-                <a href="../../about-us.html">About</a>
+    <!-- PROFESSIONAL STYLED HEADER -->
+    <header class="professional-header">
+        <div class="container">
+            <div class="logo-section">
+                <a href="../../public/index.html">
+                    <div class="logo-clipped">
+                        <img src="../../public/images/logos/prism-logo-1000.png" alt="Prism Logo">
+                    </div>
+                    <span class="company-name">Prism Specialties DMV</span>
+                </a>
+            </div>
+            <nav class="main-nav">
+                <a href="../../public/index.html#services">Services</a>
                 <a href="../index.html">Blog</a>
-                <a href="../../emergency.html">Emergency</a>
+                <a href="../../public/washington-dc.html">DC Services</a>
+                <a href="../../public/index.html#contact">Contact</a>
+                <a href="tel:202-335-4240" class="phone-cta">202-335-4240</a>
             </nav>
         </div>
     </header>
-
-    <!-- Emergency Banner -->
-    <div class="emergency-banner">
-        <div class="container">
-            🚨 <strong>Emergency? Call Now:</strong> <a href="tel:301-215-3191">301-215-3191</a> - 24/7 Response
-        </div>
-    </div>
 
     <main style="max-width: 1200px; margin: 0 auto; padding: 20px;">
         <!-- Blog Header -->
@@ -142,7 +176,7 @@
 
                 <div style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 25px; border-radius: 12px; margin: 30px 0; text-align: center; box-shadow: 0 8px 25px rgba(40, 167, 69, 0.2);">
                     <p style="margin-bottom: 15px; font-weight: 600; font-size: 1.1rem;"><strong>Need immediate art restoration help in Washington DC?</strong></p>
-                    <a href="tel:301-215-3191" style="display: inline-block; background: white; color: #28a745; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">Call Our DMV Art Specialists: 301-215-3191</a>
+                    <a href="tel:202-335-4240" style="display: inline-block; background: white; color: #28a745; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">Call Our DC Art Specialists: 202-335-4240</a>
                 </div>
             </section>
 
@@ -176,7 +210,7 @@
 
                 <div style="background: linear-gradient(135deg, #28a745 0%, #20c997 100%); color: white; padding: 25px; border-radius: 12px; margin: 30px 0; text-align: center; box-shadow: 0 8px 25px rgba(40, 167, 69, 0.2);">
                     <p style="margin-bottom: 15px; font-weight: 600; font-size: 1.1rem;"><strong>Art Emergency in DC? Don't Wait!</strong></p>
-                    <a href="tel:301-215-3191" style="display: inline-block; background: white; color: #28a745; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">Emergency Line: 301-215-3191</a>
+                    <a href="tel:202-335-4240" style="display: inline-block; background: white; color: #28a745; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">Emergency Line: 202-335-4240</a>
                     <p style="margin-top: 10px; font-size: 0.9rem;">Available 24/7 for urgent art recovery situations</p>
                 </div>
             </section>
@@ -185,8 +219,8 @@
             <section>
                 <div style="background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: white; padding: 40px; border-radius: 15px; text-align: center; margin: 50px 0; box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);">
                     <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 2rem; font-weight: 700;">Ready to Restore Your Washington DC Artwork?</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 25px; opacity: 0.95;">Our experienced restoration team is ready to help preserve your artistic treasures. From emergency response to planned restoration projects, we provide museum-quality results for DC area collectors, institutions, and galleries.</p>
-                    <a href="tel:301-215-3191" style="display: inline-block; background: white; color: #007bff; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(0,0,0,0.1);">Call Now: 301-215-3191</a>
+                    <p style="font-size: 1.1rem; margin-bottom: 25px; opacity: 0.95;">Our certified restoration team is ready to help preserve your artistic treasures. From emergency response to planned restoration projects, we provide museum-quality results for DC area collectors, institutions, and galleries.</p>
+                    <a href="tel:202-335-4240" style="display: inline-block; background: white; color: #007bff; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(0,0,0,0.1);">Call Now: 202-335-4240</a>
                     <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">Free consultations • Insurance assistance • 24/7 emergency response</p>
                 </div>
             </section>
@@ -200,18 +234,18 @@
                 <div>
                     <h4 style="color: #00a0df; margin-bottom: 15px; font-size: 1.2rem; font-weight: 600;">Washington DC Art Restoration</h4>
                     <p style="margin-bottom: 15px; opacity: 0.9; line-height: 1.6;">Museum-quality restoration services for the nation's capital</p>
-                    <a href="tel:301-215-3191" style="color: #28a745; text-decoration: none; font-weight: 600; font-size: 1.1rem;">301-215-3191</a>
+                    <a href="tel:202-335-4240" style="color: #28a745; text-decoration: none; font-weight: 600; font-size: 1.1rem;">202-335-4240</a>
                 </div>
                 <div>
                     <h4 style="color: #00a0df; margin-bottom: 15px; font-size: 1.2rem; font-weight: 600;">Regional Coverage</h4>
                     <p style="margin-bottom: 10px; opacity: 0.9;">Maryland: <a href="tel:301-215-3191" style="color: #28a745; text-decoration: none; font-weight: 600;">301-215-3191</a></p>
                     <p style="margin-bottom: 10px; opacity: 0.9;">Northern VA: <a href="tel:703-229-1321" style="color: #28a745; text-decoration: none; font-weight: 600;">703-229-1321</a></p>
-                    <p style="margin-bottom: 10px; opacity: 0.9;">Washington DC: <a href="tel:301-215-3191" style="color: #28a745; text-decoration: none; font-weight: 600;">301-215-3191</a></p>
+                    <p style="margin-bottom: 10px; opacity: 0.9;">Washington DC: <a href="tel:202-335-4240" style="color: #28a745; text-decoration: none; font-weight: 600;">202-335-4240</a></p>
                 </div>
                 <div>
                     <h4 style="color: #00a0df; margin-bottom: 15px; font-size: 1.2rem; font-weight: 600;">Emergency Services</h4>
                     <p style="margin-bottom: 15px; opacity: 0.9; line-height: 1.6;">24/7 art recovery response throughout DMV</p>
-                    <a href="tel:301-215-3191" style="color: #28a745; text-decoration: none; font-weight: 600; font-size: 1.1rem;">DC Emergency: 301-215-3191</a>
+                    <a href="tel:202-335-4240" style="color: #28a745; text-decoration: none; font-weight: 600; font-size: 1.1rem;">DC Emergency: 202-335-4240</a>
                 </div>
             </div>
         </div>
@@ -221,9 +255,9 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Track CTA clicks for GHL attribution - DC Numbers
-            document.querySelectorAll('a[href^="tel:301-215-3191"]').forEach(button => {
+            document.querySelectorAll('a[href^="tel:202-335-4240"]').forEach(button => {
                 button.addEventListener('click', function() {
-                    console.log('Blog CTA clicked: DC Art Restoration - 301-215-3191');
+                    console.log('Blog CTA clicked: DC Art Restoration - 202-335-4240');
                 });
             });
         });

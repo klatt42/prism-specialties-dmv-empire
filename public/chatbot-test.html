@@ -149,62 +149,50 @@
         </div>
     </div>
 
-    <!-- Chatbot Widget Integration -->
-    <script src="js/ghl-chatbot-widget.js"></script>
+    <!-- Direct GHL Conversation AI Widget -->
+    <script src="js/ghl-direct-widget.js"></script>
 
     <script>
-        // Test functions for manual verification
+        // Test functions for GHL Conversation AI
         function testChatbotEvent(eventType) {
-            if (window.prismChatbot) {
-                window.prismChatbot.trackEvent(eventType, {
+            if (window.ghlConversationAI) {
+                window.ghlConversationAI.trackEvent(eventType, {
                     test_trigger: true,
                     manual_test: eventType
                 });
                 alert(`✅ Event "${eventType}" triggered! Check GHL dashboard.`);
             } else {
-                alert('❌ Chatbot not loaded. Check console for errors.');
+                alert('❌ GHL Conversation AI not loaded. Check console for errors.');
             }
         }
 
         function testEmergencyFlow() {
-            if (window.prismChatbot) {
-                // Simulate emergency selection
-                window.prismChatbot.leadScore = 75;
-                window.prismChatbot.trackEvent('emergency_selected', {
+            if (window.ghlConversationAI) {
+                window.ghlConversationAI.trackEvent('emergency_selected', {
                     test_emergency: true,
                     lead_score: 75
                 });
-                alert('🚨 Emergency flow triggered! Check for immediate response protocols.');
+                alert('🚨 Emergency flow triggered! This will be handled by your GHL Conversation AI.');
             }
         }
 
         function testLeadScoring() {
-            if (window.prismChatbot) {
-                // Simulate multiple scoring events
-                window.prismChatbot.trackEvent('widget_opened', { test: true });
-                window.prismChatbot.trackEvent('general_inquiry_selected', { test: true });
-                window.prismChatbot.trackEvent('consultation_interest', { test: true });
-                alert('📊 Lead scoring events triggered! Check GHL for point accumulation.');
+            if (window.ghlConversationAI) {
+                window.ghlConversationAI.trackEvent('widget_opened', { test: true });
+                window.ghlConversationAI.trackEvent('consultation_interest', { test: true });
+                alert('📊 Lead scoring events triggered! Check GHL for tracking.');
             }
         }
 
         // Page-specific tracking
         document.addEventListener('DOMContentLoaded', function() {
-            if (window.prismChatbot) {
-                window.prismChatbot.trackEvent('test_page_loaded', {
-                    page_type: 'chatbot_test',
-                    test_environment: true
-                });
-            }
-
-            // Log chatbot status
+            // Wait for GHL widget to load
             setTimeout(() => {
-                if (window.prismChatbot) {
-                    console.log('✅ Chatbot loaded successfully');
-                    console.log('Widget ID:', window.prismChatbot.config.widget_id);
-                    console.log('GHL Location ID:', window.prismChatbot.config.ghl_location_id);
+                if (window.ghlConversationAI) {
+                    console.log('✅ GHL Conversation AI loaded successfully');
+                    console.log('Location ID:', window.ghlConversationAI.config.locationId);
                 } else {
-                    console.error('❌ Chatbot failed to load');
+                    console.error('❌ GHL Conversation AI failed to load');
                 }
             }, 2000);
         });

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Dress Preservation & Restoration | DMV Heirloom Specialists | Prism Specialties</title>
+    <meta name="description" content="Expert wedding dress preservation and restoration across Washington DC, Maryland, and Virginia. Museum-quality cleaning, storage, and damage repair for your precious gown.">
+    <meta name="keywords" content="wedding dress preservation DC, gown restoration Maryland, bridal dress cleaning Virginia, heirloom preservation DMV">
+    <meta name="prism-content-type" content="textile-restoration">
+    <link href="../assets/css/elegant-professional-blog.css" rel="stylesheet">
+    <style>
+        /* Header Styles */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+
+        .logo-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+
+        .logo-brand img {
+            height: 85px;
+            width: auto;
+            clip-path: inset(0 0 12% 0);
+            margin-right: 15px;
+        }
+
+        .brand-text {
+            color: #00a0df;
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #00a0df;
+        }
+
+        /* Emergency Banner */
+        .emergency-banner {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            font-weight: 600;
+        }
+
+        .emergency-banner a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .emergency-banner a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    </style>
+
+    <!-- Prism GHL Integration -->
+    <script src="/integrations/ghl/config/ghl-config.js"></script>
+    <script src="/integrations/ghl/tracking/lead-tracker.js"></script>
+    <script src="/blog/assets/js/ghl-blog-integration.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="../../index.html" class="logo-brand">
+                <img src="../../images/logos/prism-logo-1000.png" alt="Prism Specialties DMV">
+                <span class="brand-text">Prism Specialties DMV</span>
+            </a>
+            <nav id="nav-menu">
+                <a href="../../index.html">Home</a>
+                <a href="../../services.html">Services</a>
+                <a href="../../contact.html">Contact</a>
+                <a href="../../about-us.html">About</a>
+                <a href="../index.html">Blog</a>
+                <a href="../../emergency.html">Emergency</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Emergency Banner -->
+    <div class="emergency-banner">
+        <div class="container">
+            🚨 <strong>Emergency? Call Now:</strong> <a href="tel:301-215-3191">301-215-3191</a> - 24/7 Response
+        </div>
+    </div>
+
+    <main class="blog-content">
+        <article class="restoration-post">
+            <div class="hero-section textile-hero">
+                <h1>Wedding Dress Preservation & Restoration in Washington DC, Maryland & Virginia</h1>
+                <div class="hero-subtitle">
+                    <h2>Museum-Quality Preservation for Your Most Precious Gown</h2>
+                    <p class="hero-description">Transform yellowed, stained, or damaged wedding dresses back to their original beauty with our specialized textile restoration services across the DMV region.</p>
+                </div>
+            </div>
+
+            <section class="content-section">
+                <h2>Why Wedding Dress Preservation Matters</h2>
+                <p>Your wedding dress represents one of the most significant investments and emotional moments of your life. Whether you're planning to pass it down through generations, repurpose it for future celebrations, or simply preserve the memories, <strong>Prism Specialties DMV</strong> provides museum-quality preservation services that ensure your gown remains beautiful for decades to come.</p>
+
+                <div class="preservation-benefits">
+                    <div class="benefit-item">
+                        <h3>🛡️ Protection Against Time</h3>
+                        <p>Prevent yellowing, fabric deterioration, and pest damage through proper preservation techniques</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>💎 Maintain Value</h3>
+                        <p>Preserve both sentimental and monetary value for designer gowns and family heirlooms</p>
+                    </div>
+                    <div class="benefit-item">
+                        <h3>👗 Future Generations</h3>
+                        <p>Enable daughters and granddaughters to wear or repurpose the gown for their special days</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Our Wedding Dress Restoration Process</h2>
+
+                <div class="process-steps">
+                    <div class="step">
+                        <h3>1. Comprehensive Assessment</h3>
+                        <ul>
+                            <li>Detailed photography documentation</li>
+                            <li>Fabric composition analysis</li>
+                            <li>Stain and damage inventory</li>
+                            <li>Historical construction evaluation</li>
+                            <li>Restoration feasibility report</li>
+                        </ul>
+                    </div>
+
+                    <div class="step">
+                        <h3>2. Specialized Cleaning</h3>
+                        <ul>
+                            <li>pH-neutral cleaning solutions for delicate fabrics</li>
+                            <li>Hand-cleaning for intricate beadwork and lace</li>
+                            <li>Stain removal using conservation-grade techniques</li>
+                            <li>Color restoration for yellowed or discolored areas</li>
+                            <li>Gentle pressing and reshaping</li>
+                        </ul>
+                    </div>
+
+                    <div class="step">
+                        <h3>3. Structural Restoration</h3>
+                        <ul>
+                            <li>Tear repair using period-appropriate techniques</li>
+                            <li>Seam reinforcement and reconstruction</li>
+                            <li>Bead and sequin reattachment</li>
+                            <li>Lace patching and invisible mending</li>
+                            <li>Bustle and closure restoration</li>
+                        </ul>
+                    </div>
+
+                    <div class="step">
+                        <h3>4. Museum-Quality Preservation</h3>
+                        <ul>
+                            <li>Acid-free tissue paper and storage materials</li>
+                            <li>Custom preservation boxes sized to your gown</li>
+                            <li>Climate-controlled storage recommendations</li>
+                            <li>Handling and viewing instructions</li>
+                            <li>Long-term preservation care</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section regional-focus">
+                <h2>DMV Wedding Dress Specialists</h2>
+
+                <div class="regional-expertise">
+                    <div class="region-item">
+                        <h3>🏛️ Washington DC</h3>
+                        <ul>
+                            <li>Georgetown bridal boutique partnerships</li>
+                            <li>Embassy and diplomatic gown restoration</li>
+                            <li>Historic venue dress preservation (Kennedy Center, National Cathedral)</li>
+                            <li>Government official family heirlooms</li>
+                        </ul>
+                    </div>
+
+                    <div class="region-item">
+                        <h3>🌊 Maryland</h3>
+                        <ul>
+                            <li>Chesapeake Bay waterfront wedding recovery</li>
+                            <li>Annapolis Naval Academy dress uniforms</li>
+                            <li>Baltimore vintage gown collections</li>
+                            <li>Eastern Shore family heirlooms</li>
+                        </ul>
+                    </div>
+
+                    <div class="region-item">
+                        <h3>⭐ Virginia</h3>
+                        <ul>
+                            <li>Colonial Williamsburg period dress expertise</li>
+                            <li>Old Town Alexandria boutique partnerships</li>
+                            <li>Virginia Beach destination wedding recovery</li>
+                            <li>Shenandoah Valley family collections</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section">
+                <h2>Types of Wedding Dresses We Restore</h2>
+
+                <div class="dress-types">
+                    <div class="dress-category">
+                        <h3>🎭 Vintage & Antique Gowns (1900-1970s)</h3>
+                        <ul>
+                            <li>Victorian and Edwardian lace gowns</li>
+                            <li>1920s beaded flapper-style dresses</li>
+                            <li>1940s wartime silk and rayon gowns</li>
+                            <li>1950s full-skirt taffeta designs</li>
+                            <li>1960s mod and A-line styles</li>
+                        </ul>
+                    </div>
+
+                    <div class="dress-category">
+                        <h3>💎 Designer & Couture Gowns</h3>
+                        <ul>
+                            <li>Vera Wang, Oscar de la Renta, Monique Lhuillier</li>
+                            <li>Kleinfeld and exclusive boutique gowns</li>
+                            <li>Custom-made and bespoke designs</li>
+                            <li>International designer collections</li>
+                            <li>Runway and sample gowns</li>
+                        </ul>
+                    </div>
+
+                    <div class="dress-category">
+                        <h3>🕊️ Traditional & Cultural Gowns</h3>
+                        <ul>
+                            <li>Indian saris and lehengas</li>
+                            <li>Chinese qipao and traditional dresses</li>
+                            <li>African traditional wedding attire</li>
+                            <li>Middle Eastern and Persian gowns</li>
+                            <li>European folk costume wedding dresses</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="testimonial-section">
+                <h2>DMV Brides Trust Prism Specialties</h2>
+
+                <div class="testimonials">
+                    <div class="testimonial">
+                        <blockquote>"My grandmother's 1943 wedding dress was yellow and had water damage from storage. Prism Specialties brought it back to pure white and my daughter wore it for her wedding in Georgetown. Absolutely magical!"</blockquote>
+                        <cite>- Sarah M., Bethesda, MD</cite>
+                    </div>
+
+                    <div class="testimonial">
+                        <blockquote>"After my Vera Wang gown was damaged in our Alexandria townhouse flood, I thought it was ruined forever. The restoration was so perfect, you can't tell anything happened."</blockquote>
+                        <cite>- Jennifer L., Alexandria, VA</cite>
+                    </div>
+
+                    <div class="testimonial">
+                        <blockquote>"Professional service for my mother's 1960s gown preservation. Now it's ready for my future daughter to consider. The museum-quality box is beautiful."</blockquote>
+                        <cite>- Maria C., Washington, DC</cite>
+                    </div>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <div class="consultation-cta">
+                    <h2>Preserve Your Precious Memories</h2>
+                    <p>Don't let time damage your irreplaceable wedding gown. Get a professional assessment from DMV's wedding dress preservation specialists.</p>
+
+                    <div class="cta-options">
+                        <div class="phone-cta">
+                            <h3>Call for Consultation</h3>
+                            <a href="tel:REGIONAL_PHONE" data-phone="regional" class="cta-button">
+                                <span data-phone="regional">[REGIONAL_PHONE]</span>
+                            </a>
+                            <p>Free assessment & preservation quote</p>
+                        </div>
+
+                        <div class="service-features">
+                            <h3>What You Get</h3>
+                            <ul>
+                                <li>✅ Free initial consultation</li>
+                                <li>✅ Detailed assessment report</li>
+                                <li>✅ Before/after documentation</li>
+                                <li>✅ Museum-quality preservation</li>
+                                <li>✅ Professional commitment</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+    </main>
+
+    <footer class="blog-footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Prism Specialties DMV. Wedding dress preservation and restoration across Washington DC, Maryland, and Virginia.</p>
+            <p>Professional restoration: <a href="tel:REGIONAL_PHONE" data-phone="regional">[REGIONAL_PHONE]</a></p>
+        </div>
+    </footer>
+
+    <script>
+        // Wedding dress preservation tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('👗 Wedding dress preservation page loaded');
+
+            if (window.prismTracker) {
+                window.prismTracker.trackPageView('weddingDressPreservation', window.location.href);
+                window.prismTracker.sessionData.contentScore += 35; // High-value textile content
+                window.prismTracker.updateLeadQuality();
+            }
+
+            // Track consultation CTA clicks
+            document.querySelectorAll('.cta-button').forEach(cta => {
+                cta.addEventListener('click', function(e) {
+                    console.log('👗 Wedding dress consultation CTA clicked:', e.target.textContent);
+
+                    if (window.prismTracker) {
+                        window.prismTracker.sessionData.contentScore += 50; // High-intent consultation request
+                        window.prismTracker.updateLeadQuality();
+                    }
+
+                    if (window.prismAutomation) {
+                        window.prismAutomation.triggerTextileRestorationSequence();
+                    }
+                });
+            });
+
+            // Track testimonial engagement
+            document.querySelectorAll('.testimonial').forEach(testimonial => {
+                testimonial.addEventListener('click', function() {
+                    if (window.prismTracker) {
+                        window.prismTracker.sessionData.contentScore += 10; // Social proof engagement
+                        window.prismTracker.updateLeadQuality();
+                    }
+                });
+            });
+
+            // Track dress type category engagement
+            document.querySelectorAll('.dress-category').forEach(category => {
+                category.addEventListener('click', function() {
+                    if (window.prismTracker) {
+                        window.prismTracker.sessionData.contentScore += 15; // Specific service interest
+                        window.prismTracker.updateLeadQuality();
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

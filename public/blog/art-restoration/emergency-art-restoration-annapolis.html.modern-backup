@@ -13,13 +13,6 @@
     <link rel="stylesheet" href="../../public/css/styles.css">
 
     <style>
-        /* Brand Color Variables */
-        :root {
-            --brand-primary: #00a0df;
-            --brand-accent: #7c878f;
-            --brand-text: #666666;
-        }
-
         /* Header Styles */
         header {
             background: white;

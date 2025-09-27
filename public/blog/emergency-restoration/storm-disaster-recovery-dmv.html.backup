@@ -9,37 +9,13 @@
     <meta name="prism-content-type" content="emergency-restoration">
     <link href="../assets/css/elegant-professional-blog.css" rel="stylesheet">
     <style>
-        /* Brand Color Variables */
-        :root {
-            --brand-primary: #00a0df;
-            --brand-accent: #7c878f;
-            --brand-text: #666666;
-        }
-
-        /* Modern CSS Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-            min-height: 100vh;
-        }
-
-        /* Modern Header Styles */
+        /* Header Styles */
         header {
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(255,255,255,0.2);
         }
 
         .header-content {
@@ -48,18 +24,13 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 30px;
+            padding: 15px 20px;
         }
 
         .logo-brand {
             display: flex;
             align-items: center;
             text-decoration: none;
-            transition: transform 0.3s ease;
-        }
-
-        .logo-brand:hover {
-            transform: translateY(-2px);
         }
 
         .logo-brand img {
@@ -67,231 +38,53 @@
             width: auto;
             clip-path: inset(0 0 12% 0);
             margin-right: 15px;
-            filter: drop-shadow(0 2px 4px rgba(0,160,223,0.2));
         }
 
         .brand-text {
-            background: linear-gradient(135deg, #00a0df 0%, #0078a8 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            color: #00a0df;
             font-size: 1.8rem;
             font-weight: 700;
-            letter-spacing: -0.5px;
         }
 
         nav {
             display: flex;
-            gap: 35px;
+            gap: 30px;
             align-items: center;
         }
 
         nav a {
             text-decoration: none;
-            color: #495057;
-            font-weight: 600;
-            font-size: 15px;
-            padding: 10px 16px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        nav a::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0,160,223,0.1), transparent);
-            transition: left 0.5s ease;
-        }
-
-        nav a:hover::before {
-            left: 100%;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
         }
 
         nav a:hover {
             color: #00a0df;
-            background: rgba(0,160,223,0.05);
-            transform: translateY(-1px);
         }
 
-        /* Modern Emergency Banner */
+        /* Emergency Banner */
         .emergency-banner {
-            background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
             text-align: center;
-            padding: 15px 0;
+            padding: 10px 0;
             font-weight: 600;
-            box-shadow: 0 2px 10px rgba(0,123,255,0.3);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .emergency-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
-            animation: shimmer 3s infinite;
-        }
-
-        @keyframes shimmer {
-            0% { left: -100%; }
-            100% { left: 100%; }
         }
 
         .emergency-banner a {
             color: white;
             text-decoration: none;
-            font-weight: 700;
-            padding: 2px 8px;
-            border-radius: 4px;
-            transition: background 0.3s ease;
         }
 
         .emergency-banner a:hover {
-            background: rgba(255,255,255,0.2);
-            text-decoration: none;
+            text-decoration: underline;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 30px;
-        }
-
-        /* Modern Hero Section Styles */
-        .hero-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100" fill="white" opacity="0.05"><polygon points="0,0 1000,100 1000,0"/></svg>');
-            background-size: cover;
-        }
-
-        .hero-section h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 30px;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            line-height: 1.2;
-        }
-
-        /* Modern Content Section Styles */
-        .content-section {
-            background: white;
-            margin: 30px 0;
-            padding: 50px;
-            border-radius: 16px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-            border: 1px solid rgba(255,255,255,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .content-section:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 48px rgba(0,0,0,0.12);
-        }
-
-        .content-section h2 {
-            color: #2c3e50;
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Modern Button Styles */
-        .cta-button {
-            background: linear-gradient(135deg, #28a745 0%, #20c997 100%);
-            color: white;
-            padding: 18px 36px;
-            border: none;
-            border-radius: 12px;
-            font-size: 18px;
-            font-weight: 700;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            box-shadow: 0 6px 20px rgba(40,167,69,0.3);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 30px rgba(40,167,69,0.4);
-            background: linear-gradient(135deg, #218838 0%, #1abc9c 100%);
-        }
-
-        /* Modern Footer Styles */
-        .blog-footer {
-            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            margin-top: 60px;
-        }
-
-        .blog-footer a {
-            color: #3498db;
-            text-decoration: none;
-            font-weight: 600;
-            transition: color 0.3s ease;
-        }
-
-        .blog-footer a:hover {
-            color: #5dade2;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                gap: 20px;
-                padding: 20px;
-            }
-
-            nav {
-                gap: 20px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-
-            .hero-section h1 {
-                font-size: 2.5rem;
-            }
-
-            .content-section {
-                padding: 30px 20px;
-                margin: 20px 10px;
-            }
-
-            .container {
-                padding: 0 20px;
-            }
+            padding: 0 20px;
         }
     </style>
 
@@ -332,8 +125,8 @@
                 <h1>24/7 Storm & Disaster Recovery in Washington DC, Maryland & Virginia</h1>
                 <div class="emergency-cta-banner">
                     <h2>⛈️ Storm or Disaster Damage? We Respond Within 2 Hours</h2>
-                    <a href="tel:301-215-3191" data-phone="regional" class="cta-button emergency-cta">
-                        Call Disaster Emergency Line: <span data-phone="regional">301-215-3191</span>
+                    <a href="tel:REGIONAL_PHONE" data-phone="regional" class="cta-button emergency-cta">
+                        Call Disaster Emergency Line: <span data-phone="regional">[REGIONAL_PHONE]</span>
                     </a>
                     <p class="emergency-subtitle">Serving DC, MD, VA • FEMA Coordination • Insurance Claims Supported • 24/7 Disaster Response Team</p>
                 </div>
@@ -346,7 +139,7 @@
                 <div class="emergency-stats storm-stats">
                     <div class="stat-item">
                         <h3>2 Hour Response</h3>
-                        <p>Disaster recovery team deployed with fast response, 24/7/365</p>
+                        <p>Disaster recovery team deployed within 2 hours, 24/7/365</p>
                     </div>
                     <div class="stat-item">
                         <h3>FEMA Coordination</h3>
@@ -627,8 +420,8 @@
                     <div class="contact-options">
                         <div class="phone-contact">
                             <h3>Disaster Emergency Hotline</h3>
-                            <a href="tel:301-215-3191" data-phone="regional" class="emergency-phone storm-emergency">
-                                <span data-phone="regional">301-215-3191</span>
+                            <a href="tel:REGIONAL_PHONE" data-phone="regional" class="emergency-phone storm-emergency">
+                                <span data-phone="regional">[REGIONAL_PHONE]</span>
                             </a>
                             <p>Available 24/7/365</p>
                         </div>
@@ -654,7 +447,7 @@
     <footer class="blog-footer">
         <div class="footer-content">
             <p>&copy; 2024 Prism Specialties DMV. Professional storm and disaster recovery services across Washington DC, Maryland, and Virginia.</p>
-            <p class="emergency-footer">Storm Emergency Services: <a href="tel:301-215-3191" data-phone="regional" class="emergency-cta">301-215-3191</a></p>
+            <p class="emergency-footer">Storm Emergency Services: <a href="tel:REGIONAL_PHONE" data-phone="regional" class="emergency-cta">[REGIONAL_PHONE]</a></p>
         </div>
     </footer>
 

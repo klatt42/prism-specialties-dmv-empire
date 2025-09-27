@@ -3,11 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restoration Stories & Expertise Blog | Prism Specialties DMV</title>
-    <meta name="description" content="Expert restoration insights, case studies, and emergency response stories from the DMV region's premier specialty restoration specialists.">
-
+    <title>Blog - Prism Specialties DMV</title>
     <style>
-        /* Brand Colors */
+        /* Brand Color Variables */
         :root {
             --brand-primary: #00a0df;
             --brand-accent: #7c878f;
@@ -26,7 +24,6 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--brand-text);
-            background: var(--brand-light);
         }
 
         .container {
@@ -35,8 +32,8 @@
             padding: 0 20px;
         }
 
-        /* Header */
-        .header {
+        /* Header Styles */
+        header {
             background: white;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
@@ -45,10 +42,12 @@
         }
 
         .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
+            padding: 15px 20px;
         }
 
         .logo-brand {
@@ -58,10 +57,10 @@
         }
 
         .logo-brand img {
-            height: 60px;
+            height: 85px;
             width: auto;
-            margin-right: 15px;
             clip-path: inset(0 0 12% 0);
+            margin-right: 15px;
         }
 
         .brand-text {
@@ -70,20 +69,20 @@
             font-weight: 700;
         }
 
-        .nav {
+        nav {
             display: flex;
             gap: 30px;
             align-items: center;
         }
 
-        .nav a {
+        nav a {
             text-decoration: none;
             color: #333;
             font-weight: 500;
             transition: color 0.3s;
         }
 
-        .nav a:hover {
+        nav a:hover {
             color: var(--brand-primary);
         }
 
@@ -92,7 +91,7 @@
             background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
             color: white;
             text-align: center;
-            padding: 15px 0;
+            padding: 10px 0;
             font-weight: 600;
         }
 
@@ -102,366 +101,277 @@
             font-weight: bold;
         }
 
+        .emergency-banner a:hover {
+            text-decoration: underline;
+        }
+
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--brand-primary) 0%, #004080 100%);
+            background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%);
             color: white;
             padding: 80px 0;
             text-align: center;
         }
 
         .hero h1 {
+            color: white;
             font-size: 3rem;
             margin-bottom: 20px;
-            color: white;
         }
 
         .hero p {
             font-size: 1.3rem;
-            margin-bottom: 40px;
-            opacity: 0.9;
+            opacity: 0.95;
         }
 
         /* Blog Content */
         .blog-content {
             padding: 80px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .section-title h2 {
-            color: var(--brand-primary);
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-
-        .featured-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 60px;
-        }
-
-        .blog-card {
-            background: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-        }
-
-        .blog-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-        }
-
-        .blog-card .category {
-            background: var(--brand-primary);
-            color: white;
-            padding: 10px 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .blog-card .content {
-            padding: 30px;
-        }
-
-        .blog-card h3 {
-            color: #333;
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            line-height: 1.3;
-        }
-
-        .blog-card h3 a {
-            color: #333;
-            text-decoration: none;
-        }
-
-        .blog-card h3 a:hover {
-            color: var(--brand-primary);
-        }
-
-        .blog-card p {
-            margin-bottom: 20px;
-            color: var(--brand-text);
-        }
-
-        .read-more {
-            color: var(--brand-primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .read-more:hover {
-            text-decoration: underline;
-        }
-
-        /* Categories Section */
-        .categories-section {
-            background: white;
-            padding: 60px 0;
-        }
-
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .category-card {
-            text-align: center;
-            padding: 40px 30px;
-            border-radius: 10px;
             background: var(--brand-light);
-            transition: all 0.3s ease;
         }
 
-        .category-card:hover {
-            background: var(--brand-primary);
-            color: white;
-        }
-
-        .category-card h3 {
+        .blog-content h2 {
             color: var(--brand-primary);
-            font-size: 1.5rem;
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .blog-content p {
+            font-size: 1.1rem;
             margin-bottom: 15px;
-        }
-
-        .category-card:hover h3 {
-            color: white;
-        }
-
-        .category-card a {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 25px;
-            background: var(--brand-primary);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .category-card:hover a {
-            background: white;
-            color: var(--brand-primary);
-        }
-
-        /* Footer */
-        .footer {
-            background: #333;
-            color: white;
-            padding: 50px 0 30px;
-            text-align: center;
-        }
-
-        .footer h3 {
-            color: white;
-            margin-bottom: 20px;
-        }
-
-        .footer p {
-            margin-bottom: 20px;
-            opacity: 0.9;
-        }
-
-        .footer-cta {
-            background: var(--brand-primary);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .nav {
-                display: none;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1.1rem;
-            }
-
-            .featured-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            .categories-grid {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
         }
     </style>
 </head>
 <body>
     <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <a href="../index.html" class="logo-brand">
-                    <img src="../images/logos/prism-logo-1000.png" alt="Prism Specialties DMV">
-                    <span class="brand-text">Prism Specialties DMV</span>
-                </a>
-                <nav class="nav">
-                    <a href="../index.html">Home</a>
-                    <a href="../services.html">Services</a>
-                    <a href="../about-us.html">About</a>
-                    <a href="../contact.html">Contact</a>
-                    <a href="../checklists/">Checklists</a>
-                    <a href="../faq.html">FAQ</a>
-                </nav>
-            </div>
+    <header>
+        <div class="header-content">
+            <a href="../index.html" class="logo-brand">
+                <img src="../images/logos/prism-logo-1000.png" alt="Prism Specialties DMV">
+                <span class="brand-text">Prism Specialties DMV</span>
+            </a>
+            <nav id="nav-menu">
+                <a href="../index.html">Home</a>
+                <a href="../services.html">Services</a>
+                <a href="../contact.html">Contact</a>
+                <a href="../about-us.html">About</a>
+                <a href="../emergency.html">Emergency</a>
+            </nav>
         </div>
     </header>
 
     <!-- Emergency Banner -->
     <div class="emergency-banner">
         <div class="container">
-            🚨 <strong>Emergency Restoration?</strong> DC: <a href="tel:202-335-4240">202-335-4240</a> | MD: <a href="tel:301-215-3191">301-215-3191</a> | VA: <a href="tel:703-229-1321">703-229-1321</a>
+            🚨 <strong>Emergency? Call Now:</strong> <a href="tel:301-215-3191">301-215-3191</a> - 24/7 Response
         </div>
     </div>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Restoration Stories & Expertise</h1>
-            <p>Real projects, proven results, expert insights from the DMV region's specialty restoration leaders</p>
-        </div>
-    </section>
-
-    <!-- Featured Stories -->
-    <section class="blog-content">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Success Stories</h2>
-                <p>See how our expert team handles emergency restoration across the DMV region</p>
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>Prism Specialties DMV Blog</h1>
+                <p>Expert insights on restoration services across DC, Maryland, and Northern Virginia</p>
             </div>
+        </section>
 
-            <div class="featured-grid">
-                <!-- Emergency Art Recovery -->
-                <article class="blog-card">
-                    <div class="category">🚨 Emergency Response • Maryland</div>
-                    <div class="content">
-                        <h3><a href="art-restoration/emergency-art-restoration-annapolis.html">5:00 AM Emergency: Racing Against Time in Annapolis</a></h3>
-                        <p>67-minute emergency response saves priceless 18th-century artwork from fire damage. See our rapid restoration process when every hour counts.</p>
-                        <a href="art-restoration/emergency-art-restoration-annapolis.html" class="read-more">Read Emergency Story →</a>
-                    </div>
-                </article>
+        <section class="blog-content">
+            <div class="container">
+                <h2>Latest Restoration Stories & Expertise</h2>
+                <p>Real projects, proven techniques, and expert knowledge from the DMV region's restoration specialists.</p>
 
-                <!-- Church Fire Recovery -->
-                <article class="blog-card">
-                    <div class="category">🔥 Fire Recovery • Montgomery County</div>
-                    <div class="content">
-                        <h3><a href="electronics-restoration/church-musical-electronics-dmv.html">Church Fire Recovery: 10-Day Rush Mode Restoration</a></h3>
-                        <p>How we restored smoke-damaged church electronics in Montgomery County when Christmas services couldn't wait.</p>
-                        <a href="electronics-restoration/church-musical-electronics-dmv.html" class="read-more">Read Recovery Story →</a>
-                    </div>
-                </article>
+                <div class="blog-posts-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 30px; margin-top: 40px;">
 
-                <!-- DC Museum Success -->
-                <article class="blog-card">
-                    <div class="category">🏛️ Museum Quality • Washington DC</div>
-                    <div class="content">
-                        <h3><a href="art-restoration/dc-art-restoration-success-stories.html">Historic Art Recovery: 5 DC Museum Pieces Restored</a></h3>
-                        <p>Discover how our restoration team preserved priceless museum artifacts for Washington DC institutions.</p>
-                        <a href="art-restoration/dc-art-restoration-success-stories.html" class="read-more">Read Success Story →</a>
-                    </div>
-                </article>
+                    <!-- Emergency Restoration Services -->
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #e74c3c; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">🔥 EMERGENCY RESTORATION</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="fire-damage-restoration-dmv-emergency.html" style="text-decoration: none; color: inherit;">Fire Damage Restoration: DMV Emergency Response</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">When fire strikes your home or business, every minute counts. Our emergency fire damage restoration team responds 24/7 across the DMV region.</p>
+                            <a href="fire-damage-restoration-dmv-emergency.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
 
-                <!-- Northern VA Estate -->
-                <article class="blog-card">
-                    <div class="category">🏡 Estate Recovery • Northern Virginia</div>
-                    <div class="content">
-                        <h3><a href="art-restoration/northern-va-fine-art-recovery.html">Alexandria Estate: 19th Century Collection Recovery</a></h3>
-                        <p>When a historic Alexandria estate suffered water damage, we saved a priceless 19th-century art collection.</p>
-                        <a href="art-restoration/northern-va-fine-art-recovery.html" class="read-more">Read Estate Story →</a>
-                    </div>
-                </article>
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #3498db; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">💧 WATER DAMAGE</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="water-damage-restoration-dmv-emergency.html" style="text-decoration: none; color: inherit;">Water Damage Restoration: DMV Emergency Recovery</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">Basement floods, burst pipes, and storm damage require immediate action. Our water damage restoration team saves what matters most.</p>
+                            <a href="water-damage-restoration-dmv-emergency.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
 
-                <!-- Document Preservation -->
-                <article class="blog-card">
-                    <div class="category">📄 Document Recovery • Federal</div>
-                    <div class="content">
-                        <h3><a href="document-restoration/water-damaged-documents-dmv.html">Water-Damaged Documents: Federal Archive Recovery</a></h3>
-                        <p>HIPAA-compliant document recovery for government archives and sensitive federal paperwork.</p>
-                        <a href="document-restoration/water-damaged-documents-dmv.html" class="read-more">Read Document Story →</a>
-                    </div>
-                </article>
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #e74c3c; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">🔥 EMERGENCY RESTORATION</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="emergency-restoration/fire-damage-restoration-dmv.html" style="text-decoration: none; color: inherit;">Advanced Fire Damage Restoration Techniques</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">Professional fire damage restoration using advanced techniques and equipment for complete property recovery in the DMV region.</p>
+                            <a href="emergency-restoration/fire-damage-restoration-dmv.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
 
-                <!-- Textile Heritage -->
-                <article class="blog-card">
-                    <div class="category">👗 Heritage Textiles • DMV Region</div>
-                    <div class="content">
-                        <h3><a href="textile-restoration/wedding-dress-preservation-dmv.html">Wedding Dress Preservation: 3-Generation Family Heirloom</a></h3>
-                        <p>Preserving a family's wedding dress heritage through expert textile restoration techniques.</p>
-                        <a href="textile-restoration/wedding-dress-preservation-dmv.html" class="read-more">Read Heritage Story →</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #27ae60; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">🦠 MOLD REMEDIATION</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="emergency-restoration/mold-remediation-dmv.html" style="text-decoration: none; color: inherit;">Professional Mold Remediation Services</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">Safe and effective mold removal and prevention services to protect your property and health in the DMV area.</p>
+                            <a href="emergency-restoration/mold-remediation-dmv.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
 
-    <!-- Categories Section -->
-    <section class="categories-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Restoration Specialties</h2>
-                <p>Expert services across all specialty restoration categories</p>
-            </div>
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #7f8c8d; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">⛈️ STORM DAMAGE</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="emergency-restoration/storm-disaster-recovery-dmv.html" style="text-decoration: none; color: inherit;">Storm Disaster Recovery Services</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">Complete storm damage recovery and restoration services for residential and commercial properties across the DMV.</p>
+                            <a href="emergency-restoration/storm-disaster-recovery-dmv.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
 
-            <div class="categories-grid">
-                <div class="category-card">
-                    <h3>🎨 Art Restoration</h3>
-                    <p>Museum-quality restoration of paintings, sculptures, and mixed media artworks</p>
-                    <a href="art-restoration/">View Art Stories</a>
+                    <!-- Document Restoration -->
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #2c3e50; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">🏛️ GOVERNMENT SERVICES</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="government-document-preservation-dc-federal.html" style="text-decoration: none; color: inherit;">Government Document Preservation: DC Federal Services</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">Federal agencies and government offices trust our document preservation services for critical records and historical materials.</p>
+                            <a href="government-document-preservation-dc-federal.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #3498db; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">📄 DOCUMENT RESTORATION</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="document-restoration/water-damaged-documents-dmv.html" style="text-decoration: none; color: inherit;">Water-Damaged Documents Recovery</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">Professional restoration of water-damaged documents, books, and paper materials using advanced drying and preservation techniques.</p>
+                            <a href="document-restoration/water-damaged-documents-dmv.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
+
+                    <!-- Photo & Art Restoration -->
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #8e44ad; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">📸 FAMILY LEGACY</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="photo-restoration-dmv-family-legacy.html" style="text-decoration: none; color: inherit;">Photo Restoration: Preserving DMV Family Memories</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">Damaged family photos hold irreplaceable memories. Our photo restoration specialists bring faded, torn, and water-damaged photos back to life.</p>
+                            <a href="photo-restoration-dmv-family-legacy.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #e67e22; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">🎨 ART RESTORATION</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="art-restoration/dc-art-restoration-success-stories.html" style="text-decoration: none; color: inherit;">DC Art Restoration Success Stories</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">Real success stories from our art restoration projects across Washington DC, preserving valuable artwork for future generations.</p>
+                            <a href="art-restoration/dc-art-restoration-success-stories.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #e67e22; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">🎨 ART RESTORATION</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="art-restoration/northern-va-fine-art-recovery.html" style="text-decoration: none; color: inherit;">Northern VA Fine Art Recovery</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">Specialized fine art restoration services for Northern Virginia collectors, museums, and art galleries.</p>
+                            <a href="art-restoration/northern-va-fine-art-recovery.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #e74c3c; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">🚨 EMERGENCY ART</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="art-restoration/emergency-art-restoration-annapolis.html" style="text-decoration: none; color: inherit;">Emergency Art Restoration in Annapolis</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">24/7 emergency art restoration services for fire, flood, and disaster-damaged artwork in the Annapolis area.</p>
+                            <a href="art-restoration/emergency-art-restoration-annapolis.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
+
+                    <!-- Electronics Restoration -->
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #e67e22; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">⚡ ELECTRONICS</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="vintage-electronics-restoration-dmv-retro.html" style="text-decoration: none; color: inherit;">Vintage Electronics Restoration: DMV Retro Revival</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">From classic audio equipment to vintage computers, we restore electronics with precision and care for collectors across the DMV.</p>
+                            <a href="vintage-electronics-restoration-dmv-retro.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #9b59b6; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">🎵 MUSICAL ELECTRONICS</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="electronics-restoration/church-musical-electronics-dmv.html" style="text-decoration: none; color: inherit;">Church Musical Electronics Restoration</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">Specialized restoration of church organs, sound systems, and musical electronics across the DMV region.</p>
+                            <a href="electronics-restoration/church-musical-electronics-dmv.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
+
+                    <!-- Textile Restoration -->
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #34495e; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">🇺🇸 MILITARY HERITAGE</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="textile-restoration/military-uniform-restoration-dmv.html" style="text-decoration: none; color: inherit;">Military Uniform Restoration Services</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">Professional restoration of military uniforms and historical textiles, preserving service heritage for families across the DMV.</p>
+                            <a href="textile-restoration/military-uniform-restoration-dmv.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
+
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #e91e63; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">👰 WEDDING MEMORIES</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="textile-restoration/wedding-dress-preservation-dmv.html" style="text-decoration: none; color: inherit;">Wedding Dress Preservation Services</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">Expert wedding dress cleaning, restoration, and preservation to protect your precious memories for generations to come.</p>
+                            <a href="textile-restoration/wedding-dress-preservation-dmv.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
+
+                    <!-- Historical Restoration -->
+                    <article class="blog-post-card" style="background: white; border-radius: 10px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;">
+                        <div style="padding: 30px;">
+                            <div style="color: #8b4513; font-size: 0.9rem; font-weight: 600; margin-bottom: 10px;">🏛️ HISTORICAL</div>
+                            <h3 style="color: var(--brand-primary); margin-bottom: 15px; font-size: 1.4rem;">
+                                <a href="civil-war-restoration-virginia-historical.html" style="text-decoration: none; color: inherit;">Civil War Restoration: Virginia Historical Preservation</a>
+                            </h3>
+                            <p style="color: var(--brand-text); line-height: 1.6; margin-bottom: 20px;">Specialized restoration of Civil War artifacts and historical items, preserving Virginia's rich heritage for future generations.</p>
+                            <a href="civil-war-restoration-virginia-historical.html" style="color: var(--brand-primary); text-decoration: none; font-weight: 600;">Read Full Story →</a>
+                        </div>
+                    </article>
+
                 </div>
 
-                <div class="category-card">
-                    <h3>⚡ Electronics Restoration</h3>
-                    <p>Fire damage recovery, vintage electronics, and emergency restoration services</p>
-                    <a href="electronics-restoration/">View Electronics Stories</a>
-                </div>
-
-                <div class="category-card">
-                    <h3>📄 Document Preservation</h3>
-                    <p>Historic documents, family archives, and important papers restored</p>
-                    <a href="document-restoration/">View Document Stories</a>
-                </div>
-
-                <div class="category-card">
-                    <h3>🧵 Textile Restoration</h3>
-                    <p>Wedding dresses, tapestries, vintage clothing, and fabric heirlooms</p>
-                    <a href="textile-restoration/">View Textile Stories</a>
+                <div style="text-align: center; margin-top: 50px;">
+                    <p style="color: var(--brand-text); font-size: 1.1rem; margin-bottom: 20px;">Expert insights • Real projects • Proven results across the DMV region</p>
+                    <a href="tel:301-215-3191" style="display: inline-block; background: var(--brand-primary); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: transform 0.3s ease;">📞 Get Expert Consultation</a>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <h3>Need Professional Restoration Services?</h3>
-            <p>Our expert team serves the entire DMV region with emergency response and specialty restoration</p>
-            <a href="tel:301-215-3191" class="footer-cta">📞 Call 301-215-3191</a>
-            <p style="opacity: 0.7; margin-top: 20px;">&copy; 2025 Prism Specialties DMV - Expert Restoration Stories</p>
-        </div>
-    </footer>
-
-    <!-- Prism Specialties DMV GHL Conversation AI Widget -->
-    <script src="../js/ghl-direct-widget.js"></script>
+        </section>
+    </main>
 </body>
 </html>

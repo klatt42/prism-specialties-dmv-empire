@@ -13,13 +13,6 @@
     <link rel="stylesheet" href="../../public/css/styles.css">
 
     <style>
-        /* Brand Color Variables */
-        :root {
-            --brand-primary: #00a0df;
-            --brand-accent: #7c878f;
-            --brand-text: #666666;
-        }
-
         /* Header Styles */
         header {
             background: white;
@@ -137,7 +130,7 @@
             <!-- Post Meta -->
             <div style="display: flex; gap: 15px; align-items: center; margin-bottom: 30px; font-size: 0.9rem; color: #666; flex-wrap: wrap; justify-content: center;">
                 <span style="padding: 5px 15px; background: #fff3cd; border-radius: 20px; font-weight: 500; color: #856404;">🚨 Emergency Response</span>
-                <span style="padding: 5px 15px; background: #d1ecf1; border-radius: 20px; font-weight: 500; color: #0c5460;">Fast Emergency Response</span>
+                <span style="padding: 5px 15px; background: #d1ecf1; border-radius: 20px; font-weight: 500; color: #0c5460;">67-Minute Response Time</span>
                 <span style="padding: 5px 15px; background: #f8d7da; border-radius: 20px; font-weight: 500; color: #721c24;">Fire & Smoke Damage Recovery</span>
             </div>
 
@@ -339,7 +332,7 @@
                     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px;">
                         <div style="text-align: center;">
                             <div style="background: rgba(255,255,255,0.2); color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 15px; font-size: 1.5rem;">⏱️</div>
-                            <h4 style="color: white; margin-bottom: 10px;">Fast Professional Response</h4>
+                            <h4 style="color: white; margin-bottom: 10px;">Response Time Guarantee</h4>
                             <p style="margin: 0; opacity: 0.9;">90 minutes or less to anywhere in Maryland</p>
                         </div>
                         <div style="text-align: center;">
@@ -455,7 +448,7 @@
             <section>
                 <div style="background: linear-gradient(135deg, #007bff 0%, #0056b3 100%); color: white; padding: 40px; border-radius: 15px; text-align: center; margin: 50px 0; box-shadow: 0 10px 30px rgba(0, 123, 255, 0.2);">
                     <h3 style="margin-top: 0; margin-bottom: 15px; font-size: 2rem; font-weight: 700;">Need Emergency Art Restoration in Maryland?</h3>
-                    <p style="font-size: 1.1rem; margin-bottom: 25px; opacity: 0.95;">Don't wait for disaster to strike. Our experienced emergency response team provides 24/7 coverage throughout Maryland, including Annapolis, Baltimore, Frederick, and all surrounding areas. When every minute counts, trust the team that saved Annapolis's historic artwork.</p>
+                    <p style="font-size: 1.1rem; margin-bottom: 25px; opacity: 0.95;">Don't wait for disaster to strike. Our certified emergency response team provides 24/7 coverage throughout Maryland, including Annapolis, Baltimore, Frederick, and all surrounding areas. When every minute counts, trust the team that saved Annapolis's historic artwork.</p>
                     <a href="tel:301-215-3191" style="display: inline-block; background: white; color: #007bff; padding: 18px 40px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1.2rem; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(0,0,0,0.1);">24/7 Emergency: 301-215-3191</a>
                     <p style="margin-top: 15px; font-size: 0.9rem; opacity: 0.8;">Immediate response • Insurance assistance • Historic artwork specialists</p>
                 </div>

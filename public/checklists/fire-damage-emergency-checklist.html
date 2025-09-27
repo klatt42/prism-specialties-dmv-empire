@@ -103,9 +103,15 @@
             font-weight: 600;
             cursor: pointer;
         }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
         @media (max-width: 768px) {
             .checklist-title { font-size: 2rem; }
             .form-group input { width: 100%; margin-bottom: 15px; }
+            .form-group { flex-direction: column; align-items: center; }
+            .form-group input { width: 100%; max-width: 300px; }
         }
     </style>
 </head>
@@ -135,16 +141,21 @@
         <p class="checklist-subtitle">Professional 20-step guide for post-fire restoration and recovery</p>
 
         <div class="download-form">
-            <h3 style="margin-bottom: 15px;">Get Complete Fire Recovery Guide</h3>
-            <form onsubmit="return false;">
-                <div class="form-group">
-                    <input type="email" placeholder="Your email address" required>
-                    <input type="text" placeholder="Phone (for priority support)" required>
+            <h3 style="margin-bottom: 15px;">Professional Fire Recovery Checklist</h3>
+            <p style="color: #666; margin-bottom: 20px;">✅ Used by Emergency Responders & Insurance Professionals</p>
+            <form onsubmit="getInstantChecklist(event)" style="margin-bottom: 20px;">
+                <div class="form-group" style="margin-bottom: 15px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center;">
+                    <input type="email" id="userEmail" placeholder="Your email address" required style="flex: 1; min-width: 250px; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                    <input type="text" id="userZip" placeholder="Zip code" style="width: 120px; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
+                    <button type="submit" class="cta-button" id="submitBtn">Get Instant PDF Access</button>
                 </div>
-                <button type="submit" class="cta-button">Download Recovery Guide</button>
+                <div id="loadingSpinner" style="display: none; text-align: center; margin-top: 10px;">
+                    <div style="display: inline-block; width: 20px; height: 20px; border: 2px solid #f3f3f3; border-top: 2px solid #d32f2f; border-radius: 50%; animation: spin 1s linear infinite;"></div>
+                    <span style="margin-left: 10px; color: #666;">Loading your fire recovery checklist...</span>
+                </div>
             </form>
             <p style="font-size: 0.9rem; color: #666; margin-top: 15px;">
-                Includes smoke damage assessment + local restoration contacts
+                Get immediate access to professional 20-step fire recovery protocol + optional follow-up emergency tips
             </p>
         </div>
     </section>
@@ -257,6 +268,124 @@
         <a href="tel:301-215-3191" style="background: #d32f2f; color: white; padding: 15px 30px; text-decoration: none; border-radius: 25px; font-weight: 600;">Call 301-215-3191</a>
         <p style="margin-top: 30px; color: #999;">&copy; 2025 Prism Specialties DMV</p>
     </footer>
+    <script>
+        function getInstantChecklist(event) {
+            event.preventDefault();
+
+            const email = document.getElementById('userEmail').value;
+            const zipCode = document.getElementById('userZip').value;
+
+            if (!email) {
+                alert('Please enter your email address to access the professional checklist.');
+                return;
+            }
+
+            // Show loading spinner
+            const submitBtn = document.getElementById('submitBtn');
+            const loadingSpinner = document.getElementById('loadingSpinner');
+
+            submitBtn.style.display = 'none';
+            loadingSpinner.style.display = 'block';
+
+            // Detect mobile and build URL with parameters (smart viewer for mobile)
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const viewerPath = isMobile ? 'pdf-viewer/mobile-smart.html' : 'pdf-viewer/viewer.html';
+
+            let viewerUrl = `${viewerPath}?checklist=fire-damage&email=${encodeURIComponent(email)}`;
+            if (zipCode) {
+                viewerUrl += `&zip=${encodeURIComponent(zipCode)}`;
+            }
+
+            // Create GHL contact immediately before PDF access
+            createGHLContact({
+                email: email,
+                zip: zipCode,
+                source: 'fire-damage-checklist-form',
+                timestamp: new Date().toISOString(),
+                checklist_type: 'fire_damage',
+                mobile_user: isMobile
+            }).then(() => {
+                // Immediate PDF access (no delay)
+                window.location.href = viewerUrl;
+            }).catch(error => {
+                console.warn('GHL integration failed, proceeding with PDF access:', error);
+                // Still provide PDF access even if GHL fails
+                window.location.href = viewerUrl;
+            });
+
+        // Helper function for GHL integration
+        async function createGHLContact(leadData) {
+            try {
+                const response = await fetch('/api/ghl-webhook', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        ...leadData,
+                        tags: [
+                            'pdf_viewed',
+                            leadData.mobile_user ? 'mobile_user' : 'desktop_user',
+                            `checklist_${leadData.checklist_type}`,
+                            'instant_access'
+                        ]
+                    })
+                });
+
+                if (response.ok) {
+                    console.log('GHL contact created successfully');
+                } else {
+                    console.warn('GHL contact creation failed:', response.status);
+                }
+            } catch (error) {
+                console.warn('GHL integration error:', error);
+                throw error;
+            }
+        }
+
+        function printChecklist() {
+            const printWindow = window.open('assets/pdfs/fire-damage-first-48-hours.html', '_blank');
+            printWindow.onload = function() {
+                printWindow.print();
+            };
+        }
+    </script>
     <script src="../js/lead-capture.js"></script>
+    <script src="../js/analytics-tracker.js"></script>
+
+    <!-- Chatbot Widget Integration -->
+    <script src="../js/ghl-chatbot-widget.js"></script>
+
+    <script>
+        // Track form modal interactions
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track modal view (form is always visible on this page)
+            PDFAnalytics.trackModalOpen('fire_damage_form');
+
+            // Track form field interactions
+            PDFAnalytics.trackFormStart('fire_damage_checklist');
+
+            // Track ZIP code for geographic analysis
+            document.getElementById('userZip').addEventListener('blur', function() {
+                if (this.value) {
+                    PDFAnalytics.trackGeographicData(this.value);
+                }
+            });
+
+            // Initialize chatbot with fire damage focus
+            if (window.prismChatbot) {
+                window.prismChatbot.trackEvent('page_fire_checklist_loaded', {
+                    page_type: 'fire_damage_checklist',
+                    checklist_type: 'fire-damage'
+                });
+
+                // Show emergency badge on chatbot for fire damage page
+                const emergencyBadge = document.querySelector('.emergency-badge');
+                if (emergencyBadge) {
+                    emergencyBadge.style.display = 'flex';
+                }
+            }
+        });
+    </script>
 </body>
 </html>

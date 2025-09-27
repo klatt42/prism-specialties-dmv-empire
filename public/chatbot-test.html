@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Test Page | Prism Specialties DMV</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8f9fa;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .company-name {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #2e7d32;
+            margin-bottom: 10px;
+        }
+        .tagline {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .emergency-banner {
+            background: linear-gradient(135deg, #ff6b35 0%, #d32f2f 100%);
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        .test-section {
+            margin: 30px 0;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .test-instructions {
+            background: #e3f2fd;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #1976d2;
+        }
+        .test-instructions h3 {
+            color: #1976d2;
+            margin-bottom: 15px;
+        }
+        .test-button {
+            background: #2e7d32;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background 0.3s ease;
+        }
+        .test-button:hover {
+            background: #1b5e20;
+        }
+        .emergency-test {
+            background: #d32f2f;
+        }
+        .emergency-test:hover {
+            background: #b71c1c;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1 class="company-name">Prism Specialties DMV</h1>
+            <p class="tagline">Professional Restoration Services</p>
+        </div>
+
+        <div class="emergency-banner">
+            🚨 24/7 Emergency Response Available - Call (202) 335-4240
+        </div>
+
+        <div class="test-section">
+            <h2>Chatbot Integration Test Page</h2>
+            <p>This page is designed to test the GHL Conversation AI chatbot widget integration. The chatbot should appear in the bottom-right corner of your screen.</p>
+        </div>
+
+        <div class="test-instructions">
+            <h3>🧪 Testing Instructions:</h3>
+            <ol>
+                <li><strong>Look for the chatbot widget</strong> in the bottom-right corner (green circle with chat icon)</li>
+                <li><strong>Click the widget</strong> to open the chat interface</li>
+                <li><strong>Test emergency flow:</strong> Click "🚨 YES - Emergency Help" to test emergency routing</li>
+                <li><strong>Test general flow:</strong> Click "📋 No - General Questions" for standard interactions</li>
+                <li><strong>Check regional routing:</strong> Select different regions (DC/VA/MD) to verify phone numbers</li>
+                <li><strong>Monitor GHL:</strong> Check GoHighLevel dashboard for chatbot interaction tracking</li>
+            </ol>
+        </div>
+
+        <div class="test-section">
+            <h3>Expected Chatbot Features:</h3>
+            <ul>
+                <li>✅ Emergency vs. general inquiry detection</li>
+                <li>✅ Regional routing (DC/VA/MD) with appropriate phone numbers</li>
+                <li>✅ Lead scoring based on interaction type</li>
+                <li>✅ GHL contact creation and tracking</li>
+                <li>✅ Mobile-responsive design</li>
+                <li>✅ Professional Prism Specialties branding</li>
+            </ul>
+        </div>
+
+        <div class="test-section">
+            <h3>Manual Test Triggers:</h3>
+            <button class="test-button" onclick="testChatbotEvent('widget_manual_open')">
+                Test Widget Open Event
+            </button>
+            <button class="test-button emergency-test" onclick="testEmergencyFlow()">
+                Test Emergency Flow
+            </button>
+            <button class="test-button" onclick="testLeadScoring()">
+                Test Lead Scoring
+            </button>
+        </div>
+
+        <div class="test-section">
+            <h3>📊 Analytics Verification:</h3>
+            <p>After testing, verify the following in your GHL dashboard:</p>
+            <ul>
+                <li>New contacts created with "chatbot-lead" tag</li>
+                <li>Appropriate regional tags applied (region-dc, region-virginia, region-maryland)</li>
+                <li>Lead scoring values recorded in custom fields</li>
+                <li>Emergency interactions flagged appropriately</li>
+                <li>Contact assignments to regional teams</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Chatbot Widget Integration -->
+    <script src="js/ghl-chatbot-widget.js"></script>
+
+    <script>
+        // Test functions for manual verification
+        function testChatbotEvent(eventType) {
+            if (window.prismChatbot) {
+                window.prismChatbot.trackEvent(eventType, {
+                    test_trigger: true,
+                    manual_test: eventType
+                });
+                alert(`✅ Event "${eventType}" triggered! Check GHL dashboard.`);
+            } else {
+                alert('❌ Chatbot not loaded. Check console for errors.');
+            }
+        }
+
+        function testEmergencyFlow() {
+            if (window.prismChatbot) {
+                // Simulate emergency selection
+                window.prismChatbot.leadScore = 75;
+                window.prismChatbot.trackEvent('emergency_selected', {
+                    test_emergency: true,
+                    lead_score: 75
+                });
+                alert('🚨 Emergency flow triggered! Check for immediate response protocols.');
+            }
+        }
+
+        function testLeadScoring() {
+            if (window.prismChatbot) {
+                // Simulate multiple scoring events
+                window.prismChatbot.trackEvent('widget_opened', { test: true });
+                window.prismChatbot.trackEvent('general_inquiry_selected', { test: true });
+                window.prismChatbot.trackEvent('consultation_interest', { test: true });
+                alert('📊 Lead scoring events triggered! Check GHL for point accumulation.');
+            }
+        }
+
+        // Page-specific tracking
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.prismChatbot) {
+                window.prismChatbot.trackEvent('test_page_loaded', {
+                    page_type: 'chatbot_test',
+                    test_environment: true
+                });
+            }
+
+            // Log chatbot status
+            setTimeout(() => {
+                if (window.prismChatbot) {
+                    console.log('✅ Chatbot loaded successfully');
+                    console.log('Widget ID:', window.prismChatbot.config.widget_id);
+                    console.log('GHL Location ID:', window.prismChatbot.config.ghl_location_id);
+                } else {
+                    console.error('❌ Chatbot failed to load');
+                }
+            }, 2000);
+        });
+    </script>
+</body>
+</html>

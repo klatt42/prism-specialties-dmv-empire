@@ -5,6 +5,11 @@ exports.handler = async (event, context) => {
 
     try {
         const leadData = JSON.parse(event.body);
+
+        // Handle chatbot interactions
+        if (leadData.event_type === 'chatbot_interaction') {
+            return handleChatbotInteraction(leadData);
+        }
         const region = getRegionFromZip(leadData.zip || '20001');
         const regionalPhone = getRegionalPhone(region);
 
@@ -98,4 +103,90 @@ function getRegionalPhone(region) {
     };
 
     return phones[region] || '(301) 215-3191';  // MD number as default
+}
+
+// Handle chatbot interactions and track in GHL
+async function handleChatbotInteraction(interactionData) {
+    try {
+        // Track chatbot engagement as lead scoring activity
+        const response = {
+            statusCode: 200,
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*'
+            },
+            body: JSON.stringify({
+                success: true,
+                event_tracked: interactionData.event,
+                timestamp: interactionData.timestamp
+            })
+        };
+
+        // For emergency interactions, trigger immediate response
+        if (interactionData.event === 'emergency_selected') {
+            // Could trigger emergency workflow here
+            console.log('Emergency chatbot interaction detected:', interactionData);
+        }
+
+        // For lead scoring events, track engagement
+        if (interactionData.lead_score > 0) {
+            console.log('Chatbot lead scoring event:', {
+                event: interactionData.event,
+                score: interactionData.lead_score,
+                page: interactionData.page_url
+            });
+        }
+
+        return response;
+
+    } catch (error) {
+        console.error('Chatbot interaction tracking error:', error);
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: 'Failed to track chatbot interaction' })
+        };
+    }
+}
+
+// Enhanced chatbot contact creation
+async function createChatbotContact(contactData) {
+    const region = getRegionFromZip(contactData.zip);
+    const regionalPhone = getRegionalPhone(region);
+
+    const ghlContactData = {
+        firstName: contactData.first_name || contactData.name?.split(' ')[0] || 'Chatbot',
+        lastName: contactData.last_name || contactData.name?.split(' ').slice(1).join(' ') || 'User',
+        email: contactData.email,
+        phone: contactData.phone || '',
+        address1: contactData.zip ? `ZIP: ${contactData.zip}` : '',
+        city: region,
+        tags: [
+            'chatbot-lead',
+            contactData.interaction_type === 'emergency' ? 'chatbot-emergency' : 'chatbot-general',
+            `region-${region.toLowerCase()}`,
+            'lead-source-chatbot'
+        ],
+        customFields: [
+            { key: 'lead_source', value: 'chatbot-interaction' },
+            { key: 'chatbot_event', value: contactData.initial_event },
+            { key: 'chatbot_score', value: contactData.lead_score },
+            { key: 'regional_phone', value: regionalPhone },
+            { key: 'interaction_timestamp', value: contactData.timestamp }
+        ],
+        locationId: 'BLEBkhJ9lBfryOyCfuOJ'
+    };
+
+    // Send to GHL
+    const ghlResponse = await fetch(`https://services.leadconnectorhq.com/contacts/`, {
+        method: 'POST',
+        headers: {
+            'Authorization': `Bearer pit-7179ac52-bde7-44ac-9a55-79cee37f31a7`,
+            'Version': '2021-07-28',
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(ghlContactData)
+    });
+
+    const ghlResult = await ghlResponse.json();
+    return ghlResult;
 }

@@ -1,0 +1,73 @@
+# Robots.txt for Prism Specialties DMV
+# Updated: September 29, 2025
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://prismspecialtiesdmv.com/sitemap.xml
+
+# Block admin and sensitive areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /_netlify/
+Disallow: /api/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Block test and development files
+Disallow: /test*
+Disallow: /*test*
+Disallow: /*backup*
+Disallow: /*old*
+Disallow: /*broken*
+
+# Allow crawling of all public content
+Allow: /blog/
+Allow: /checklists/
+Allow: /services/
+Allow: /specialties/
+Allow: /damage-types/
+Allow: /fairfax-county/
+Allow: /loudoun-county/
+Allow: /prince-william-county/
+Allow: /montgomery-county/
+Allow: /northern-virginia/
+Allow: /washington-dc/
+Allow: /western-maryland/
+Allow: /images/
+Allow: /css/
+Allow: /js/
+
+# Allow emergency content (high priority)
+Allow: /emergency*
+Allow: /24-7*
+
+# Specific guidance for major search engines
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+# Block common bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
+
+# General crawl delay to be respectful of server resources
+Crawl-delay: 1

@@ -1,8 +1,238 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Pages -->
   <url>
     <loc>https://prismspecialtiesdmv.com/</loc>
-    <lastmod>2025-08-27T09:31:07.770Z</lastmod>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/services.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/about-us.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/contact.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/emergency.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/faq.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Blog Pages -->
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/index.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/fire-damage-restoration-dmv-emergency.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/water-damage-restoration-dmv-emergency.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/civil-war-restoration-virginia-historical.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/vintage-electronics-restoration-dmv-retro.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/government-document-preservation-dc-federal.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/photo-restoration-dmv-family-legacy.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Art Restoration Blog Pages -->
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/art-restoration/dc-art-restoration-success-stories.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/art-restoration/northern-va-fine-art-recovery.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/art-restoration/emergency-art-restoration-annapolis.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Emergency Restoration Blog Pages -->
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/emergency-restoration/fire-damage-restoration-dmv.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/emergency-restoration/storm-disaster-recovery-dmv.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/emergency-restoration/mold-remediation-dmv.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Document Restoration Blog Pages -->
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/document-restoration/water-damaged-documents-dmv.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Electronics Restoration Blog Pages -->
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/electronics-restoration/church-musical-electronics-dmv.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Textile Restoration Blog Pages -->
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/textile-restoration/military-uniform-restoration-dmv.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/blog/textile-restoration/wedding-dress-preservation-dmv.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Emergency Checklists -->
+  <url>
+    <loc>https://prismspecialtiesdmv.com/checklists/index.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/checklists/fire-damage-emergency-checklist.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/checklists/water-damage-emergency-checklist.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/checklists/document-recovery-checklist.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Regional Service Pages -->
+  <url>
+    <loc>https://prismspecialtiesdmv.com/washington-dc/index.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/fairfax-county/index.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/loudoun-county/index.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/prince-william-county/index.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/montgomery-county/index.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/northern-virginia/index.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/western-maryland/index.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- Legal Pages -->
+  <url>
+    <loc>https://prismspecialtiesdmv.com/privacy-policy.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://prismspecialtiesdmv.com/terms-conditions.html</loc>
+    <lastmod>2025-09-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
   </url>
 </urlset>

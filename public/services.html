@@ -6,19 +6,89 @@
     <meta name="description" content="When your precious belongings are damaged, you need restoration specialists who understand that some things hold memories insurance can't measure. Professional restoration across DMV region.">
     <title>Your Treasures Deserve Expert Care | Restoration Services | Prism Specialties DMV</title>
     
-    <!-- Schema Markup -->
+    <!-- Enhanced Service Schema Markup -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Service",
         "name": "Specialty Restoration Services",
+        "description": "Professional restoration services for art, electronics, textiles, and documents throughout the DMV region with 24/7 emergency response",
+        "serviceType": "Restoration Services",
         "provider": {
             "@type": "LocalBusiness",
             "name": "Prism Specialties DMV",
-            "telephone": ["301-215-3191", "703-229-1321"],
-            "areaServed": ["Washington DC", "Maryland", "Virginia"]
+            "url": "https://prismspecialtiesdmv.com",
+            "telephone": "301-215-3191",
+            "email": "info@prismspecialtiesdmv.com",
+            "address": {
+                "@type": "PostalAddress",
+                "addressRegion": "MD, VA, DC",
+                "addressCountry": "US"
+            },
+            "areaServed": [
+                {
+                    "@type": "State",
+                    "name": "Maryland"
+                },
+                {
+                    "@type": "State",
+                    "name": "Virginia"
+                },
+                {
+                    "@type": "State",
+                    "name": "District of Columbia"
+                }
+            ]
         },
-        "serviceType": ["Art Restoration", "Electronics Restoration", "Textile Restoration", "Document Restoration"]
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Restoration Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Art and Collectibles Restoration",
+                        "description": "Museum-quality restoration of paintings, sculptures, antiques, and family heirlooms using professional conservation techniques"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Electronics and Data Recovery",
+                        "description": "Advanced electronics restoration with comprehensive data recovery services for water and fire damaged devices"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Textile and Fabric Restoration",
+                        "description": "Specialized cleaning and restoration of designer clothing, wedding dresses, luxury fabrics, and textile heirlooms"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Document and Photo Recovery",
+                        "description": "Recovery and preservation of important documents, photos, and paper materials with digitization services"
+                    }
+                }
+            ]
+        },
+        "availableChannel": {
+            "@type": "ServiceChannel",
+            "serviceUrl": "https://prismspecialtiesdmv.com",
+            "servicePhone": {
+                "@type": "ContactPoint",
+                "telephone": "301-215-3191",
+                "contactType": "Emergency Service",
+                "availableLanguage": "English",
+                "areaServed": ["MD", "VA", "DC"]
+            }
+        }
     }
     </script>
     

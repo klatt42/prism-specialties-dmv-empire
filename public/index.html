@@ -10,34 +10,70 @@
     <meta name="description" content="Prism Specialties DMV - Premier specialty restoration experts in Maryland, Virginia, and Washington DC. Professional art, electronics, textiles, and document restoration services.">
     <title>Prism Specialties DMV | Premier Specialty Restoration - Art, Electronics, Textiles & Documents</title>
     
-    <!-- Schema Markup -->
+    <!-- Enhanced Schema Markup -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
         "name": "Prism Specialties DMV",
-        "description": "Premier specialty restoration services for art, electronics, textiles, and documents",
+        "description": "Premier specialty restoration services for art, electronics, textiles, and documents serving Washington DC, Maryland, and Northern Virginia with 24/7 emergency response",
+        "url": "https://prismspecialtiesdmv.com",
         "telephone": "301-215-3191",
         "email": "info@prismspecialtiesdmv.com",
+        "priceRange": "$$",
+        "openingHours": "Mo-Su 00:00-23:59",
         "address": {
             "@type": "PostalAddress",
-            "addressLocality": "DMV Area",
-            "addressRegion": "MD, VA, DC"
+            "addressLocality": "DMV Region",
+            "addressRegion": "MD, VA, DC",
+            "addressCountry": "US"
         },
-        "serviceArea": [
-            "Washington DC",
-            "Montgomery County MD", 
-            "Frederick County MD",
-            "Prince George's County MD",
-            "Fairfax County VA",
-            "Arlington County VA", 
-            "Loudoun County VA"
+        "areaServed": [
+            {"@type": "City", "name": "Washington"},
+            {"@type": "State", "name": "District of Columbia"},
+            {"@type": "State", "name": "Maryland"},
+            {"@type": "State", "name": "Virginia"}
         ],
-        "services": [
-            "Art and Collectibles Restoration",
-            "Electronics and Data Recovery",
-            "Textile and Fabric Restoration",
-            "Document and Photo Recovery"
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Specialty Restoration Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Art and Collectibles Restoration",
+                        "description": "Professional restoration of paintings, sculptures, antiques, and family heirlooms using museum-quality conservation techniques"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Electronics and Data Recovery",
+                        "description": "Advanced electronics restoration with comprehensive data recovery services"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Textile and Fabric Restoration",
+                        "description": "Specialized cleaning and restoration of designer clothing, wedding dresses, luxury fabrics, and textile heirlooms"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "Document and Photo Recovery",
+                        "description": "Recovery and preservation of important documents, photos, and paper materials with digitization services"
+                    }
+                }
+            ]
+        },
+        "sameAs": [
+            "https://www.prismspecialties.com"
         ]
     }
     </script>

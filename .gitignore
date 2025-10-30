@@ -6,4 +6,7 @@ node_modules/
 *.log
 dist/
 build/
-.netlify/
+.netlify/*.backup*
+*.old
+*-test.html
+archive/

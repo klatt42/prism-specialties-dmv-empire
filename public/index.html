@@ -840,7 +840,11 @@
     <!-- Emergency Banner -->
     <div class="emergency-banner">
         <div class="container">
-            🚨 <strong>Emergency? Call Now:</strong> <a href="tel:301-215-3191">301-215-3191</a> - 24/7 Response
+            🚨 <strong>Emergency?</strong>
+            <a href="tel:301-215-3191" style="font-size: 1.2em; padding: 0 8px;">
+                CALL NOW: 301-215-3191
+            </a>
+            24/7 Response
         </div>
     </div>
 
@@ -1410,8 +1414,8 @@
                 <!-- Logo and Franchise Info - UPDATED -->
                 <div>
                     <!-- Use the white logo directly -->
-                    <img src="/public/images/prism-logo-white.png.webp" 
-                         alt="Prism Specialties" 
+                    <img src="/images/prism-logo-white.png.webp"
+                         alt="Prism Specialties"
                          style="height: 70px; width: auto; margin-bottom: 15px;">
                     
                     <p style="color: #ccc; font-size: 0.95rem; line-height: 1.6;">
@@ -1590,5 +1594,59 @@
 
     <!-- Prism Specialties DMV GHL Conversation AI Widget -->
     <script src="js/ghl-direct-widget.js"></script>
+
+    <!-- Click Tracking for Analytics -->
+    <script>
+    // Track phone clicks
+    document.addEventListener('DOMContentLoaded', function() {
+        // Track all phone number clicks
+        document.querySelectorAll('a[href^="tel:"]').forEach(function(link) {
+            link.addEventListener('click', function() {
+                var phoneNumber = this.href.replace('tel:', '');
+                console.log('Phone click tracked:', phoneNumber, 'from page:', window.location.pathname);
+
+                // If Google Analytics is available, track it
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'phone_click', {
+                        'phone_number': phoneNumber,
+                        'page': window.location.pathname
+                    });
+                }
+            });
+        });
+
+        // Track form submissions
+        document.querySelectorAll('form').forEach(function(form) {
+            form.addEventListener('submit', function() {
+                var formId = this.id || 'unnamed_form';
+                console.log('Form submission tracked:', formId, 'from page:', window.location.pathname);
+
+                // If Google Analytics is available, track it
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'form_submit', {
+                        'form_id': formId,
+                        'page': window.location.pathname
+                    });
+                }
+            });
+        });
+
+        // Track claim modal opens
+        var originalOpenModal = window.openClaimModal;
+        if (originalOpenModal) {
+            window.openClaimModal = function() {
+                console.log('Claim modal opened from page:', window.location.pathname);
+
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'claim_modal_open', {
+                        'page': window.location.pathname
+                    });
+                }
+
+                originalOpenModal();
+            };
+        }
+    });
+    </script>
 </body>
 </html>

@@ -172,15 +172,9 @@
             font-weight: bold;
         }
 
-        .download-section {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
         .download-btn {
-            flex: 1;
-            padding: 12px 20px;
+            width: 100%;
+            padding: 14px 20px;
             border: none;
             border-radius: 8px;
             font-weight: 600;
@@ -188,25 +182,13 @@
             text-align: center;
             transition: all 0.3s;
             cursor: pointer;
-        }
-
-        .download-btn.primary {
+            display: block;
             background: #00a0df;
             color: white;
         }
 
-        .download-btn.primary:hover {
+        .download-btn:hover {
             background: #0080c7;
-        }
-
-        .download-btn.secondary {
-            background: #f8f9fa;
-            color: #333;
-            border: 2px solid #dee2e6;
-        }
-
-        .download-btn.secondary:hover {
-            background: #e9ecef;
         }
 
         .emergency-contact {
@@ -241,9 +223,6 @@
         .mold { border-color: #795548; }
         .basement { border-color: #1565c0; }
         .kitchen { border-color: #ff5722; }
-        .hvac { border-color: #607d8b; }
-        .roof { border-color: #5d4037; }
-        .vehicle { border-color: #424242; }
 
         @media (max-width: 768px) {
             .hero-title {
@@ -255,8 +234,9 @@
                 padding: 30px 20px;
             }
 
-            .download-section {
+            .main-nav {
                 flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
@@ -301,10 +281,7 @@
                     <li>Insurance documentation requirements</li>
                     <li>Professional restoration contacts</li>
                 </ul>
-                <div class="download-section">
-                    <a href="../assets/pdfs/fire-damage-first-48-hours.pdf" class="download-btn primary" target="_blank">View Online</a>
-                    <a href="#" class="download-btn secondary" onclick="printPDF('../assets/pdfs/fire-damage-first-48-hours.pdf')">Print PDF</a>
-                </div>
+                <a href="../assets/pdfs/fire-damage-first-48-hours.pdf" download class="download-btn">Download PDF</a>
             </div>
         </div>
 
@@ -322,37 +299,261 @@
                     <li>Mold prevention measures</li>
                     <li>24-hour response timeline</li>
                 </ul>
-                <div class="download-section">
-                    <a href="../assets/pdfs/water-emergency-save-what-matters.pdf" class="download-btn primary" target="_blank">View Online</a>
-                    <a href="#" class="download-btn secondary" onclick="printPDF('../assets/pdfs/water-emergency-save-what-matters.pdf')">Print PDF</a>
-                </div>
+                <a href="../assets/pdfs/water-emergency-save-what-matters.pdf" download class="download-btn">Download PDF</a>
             </div>
         </div>
 
-        <!-- Lightning Strike Checklist -->
-        <div class="checklist-card electrical">
+        <!-- Storm Damage Checklist -->
+        <div class="checklist-card storm">
             <div class="card-header">
-                <div class="card-icon">⚡</div>
-                <h3 class="card-title">Lightning Strike Protection</h3>
-                <p class="card-subtitle">Power surge protection and electronics assessment</p>
+                <div class="card-icon">🌪️</div>
+                <h3 class="card-title">Storm Damage Assessment</h3>
+                <p class="card-subtitle">Immediate actions after severe weather events</p>
             </div>
             <div class="card-body">
                 <ul class="feature-list">
-                    <li>Immediate electronics protection</li>
-                    <li>Power surge damage assessment</li>
-                    <li>Professional evaluation protocol</li>
-                    <li>Insurance claim documentation</li>
+                    <li>Structural safety evaluation</li>
+                    <li>Emergency tarping and protection</li>
+                    <li>Wind and hail damage documentation</li>
+                    <li>Insurance claim preparation</li>
                 </ul>
-                <div class="download-section">
-                    <a href="../assets/pdfs/lightning-strike-power-surge.pdf" class="download-btn primary" target="_blank">View Online</a>
-                    <a href="#" class="download-btn secondary" onclick="printPDF('../assets/pdfs/lightning-strike-power-surge.pdf')">Print PDF</a>
-                </div>
+                <a href="../assets/pdfs/storm-damage-immediate-actions.pdf" download class="download-btn">Download PDF</a>
             </div>
         </div>
 
-        <!-- Add more checklists... -->
-        <!-- Note: For brevity, I'm showing 3 examples. The full implementation would include all 16 checklists -->
+        <!-- Smoke Damage Checklist -->
+        <div class="checklist-card smoke">
+            <div class="card-header">
+                <div class="card-icon">💨</div>
+                <h3 class="card-title">Smoke Damage Response</h3>
+                <p class="card-subtitle">Air quality and smoke contamination assessment</p>
+            </div>
+            <div class="card-body">
+                <ul class="feature-list">
+                    <li>Indoor air quality testing</li>
+                    <li>HVAC system inspection</li>
+                    <li>Odor removal protocols</li>
+                    <li>Personal property assessment</li>
+                </ul>
+                <a href="../assets/pdfs/smoke-damage-assessment-guide.pdf" download class="download-btn">Download PDF</a>
+            </div>
+        </div>
 
+        <!-- Document Recovery Checklist -->
+        <div class="checklist-card document">
+            <div class="card-header">
+                <div class="card-icon">📄</div>
+                <h3 class="card-title">Document Recovery Priority Guide</h3>
+                <p class="card-subtitle">HIPAA-compliant document restoration methods</p>
+            </div>
+            <div class="card-body">
+                <ul class="feature-list">
+                    <li>Priority document identification</li>
+                    <li>Freeze-drying preservation</li>
+                    <li>Digital scanning and backup</li>
+                    <li>Chain of custody protocols</li>
+                </ul>
+                <a href="../assets/pdfs/document-recovery-priority-guide.pdf" download class="download-btn">Download PDF</a>
+            </div>
+        </div>
+
+        <!-- Electronics Recovery Checklist -->
+        <div class="checklist-card electronics">
+            <div class="card-header">
+                <div class="card-icon">📱</div>
+                <h3 class="card-title">Electronics Water Damage Response</h3>
+                <p class="card-subtitle">Immediate actions for water-damaged electronics</p>
+            </div>
+            <div class="card-body">
+                <ul class="feature-list">
+                    <li>Power-off and safety protocols</li>
+                    <li>Data recovery prioritization</li>
+                    <li>Professional restoration timeline</li>
+                    <li>Insurance claim documentation</li>
+                </ul>
+                <a href="../assets/pdfs/electronics-water-damage-response.pdf" download class="download-btn">Download PDF</a>
+            </div>
+        </div>
+
+        <!-- Mold Prevention Checklist -->
+        <div class="checklist-card mold">
+            <div class="card-header">
+                <div class="card-icon">🦠</div>
+                <h3 class="card-title">Mold Prevention Quick Actions</h3>
+                <p class="card-subtitle">Prevent mold growth after water damage</p>
+            </div>
+            <div class="card-body">
+                <ul class="feature-list">
+                    <li>24-48 hour critical window</li>
+                    <li>Dehumidification protocols</li>
+                    <li>Air circulation strategies</li>
+                    <li>Professional assessment timing</li>
+                </ul>
+                <a href="../assets/pdfs/mold-prevention-quick-actions.pdf" download class="download-btn">Download PDF</a>
+            </div>
+        </div>
+
+        <!-- Textile Care Checklist -->
+        <div class="checklist-card textile">
+            <div class="card-header">
+                <div class="card-icon">👕</div>
+                <h3 class="card-title">Textile & Fabric Damage Control</h3>
+                <p class="card-subtitle">Emergency care for clothing and fabrics</p>
+            </div>
+            <div class="card-body">
+                <ul class="feature-list">
+                    <li>Immediate fabric stabilization</li>
+                    <li>Color bleeding prevention</li>
+                    <li>Specialty fabric protocols</li>
+                    <li>Professional cleaning guidelines</li>
+                </ul>
+                <a href="../assets/pdfs/textile-fabric-damage-control.pdf" download class="download-btn">Download PDF</a>
+            </div>
+        </div>
+
+        <!-- Art & Antiques Checklist -->
+        <div class="checklist-card art">
+            <div class="card-header">
+                <div class="card-icon">🎨</div>
+                <h3 class="card-title">Art & Antiques Emergency Protocol</h3>
+                <p class="card-subtitle">Preserve valuable and historical items</p>
+            </div>
+            <div class="card-body">
+                <ul class="feature-list">
+                    <li>Immediate stabilization techniques</li>
+                    <li>Environmental controls</li>
+                    <li>Documentation and photography</li>
+                    <li>Professional conservator contacts</li>
+                </ul>
+                <a href="../assets/pdfs/art-antiques-emergency-protocol.pdf" download class="download-btn">Download PDF</a>
+            </div>
+        </div>
+
+        <!-- Basement Flooding Checklist -->
+        <div class="checklist-card basement">
+            <div class="card-header">
+                <div class="card-icon">🏠</div>
+                <h3 class="card-title">Basement Flooding Response Plan</h3>
+                <p class="card-subtitle">Safe water removal and property protection</p>
+            </div>
+            <div class="card-body">
+                <ul class="feature-list">
+                    <li>Electrical safety protocols</li>
+                    <li>Water extraction methods</li>
+                    <li>Structural inspection checklist</li>
+                    <li>Drying and dehumidification</li>
+                </ul>
+                <a href="../assets/pdfs/basement-flooding-response-plan.pdf" download class="download-btn">Download PDF</a>
+            </div>
+        </div>
+
+        <!-- Kitchen Fire Checklist -->
+        <div class="checklist-card kitchen">
+            <div class="card-header">
+                <div class="card-icon">🍳</div>
+                <h3 class="card-title">Kitchen Fire Damage Protocol</h3>
+                <p class="card-subtitle">Kitchen-specific fire and smoke damage response</p>
+            </div>
+            <div class="card-body">
+                <ul class="feature-list">
+                    <li>Appliance safety assessment</li>
+                    <li>Grease fire cleanup protocols</li>
+                    <li>Cabinet and surface restoration</li>
+                    <li>Air quality and odor removal</li>
+                </ul>
+                <a href="../assets/pdfs/kitchen-fire-damage-protocol.pdf" download class="download-btn">Download PDF</a>
+            </div>
+        </div>
+
+        <!-- Antique Furniture Checklist -->
+        <div class="checklist-card art">
+            <div class="card-header">
+                <div class="card-icon">🪑</div>
+                <h3 class="card-title">Antique Furniture Emergency Care</h3>
+                <p class="card-subtitle">Preserve valuable antique furniture</p>
+            </div>
+            <div class="card-body">
+                <ul class="feature-list">
+                    <li>Wood stabilization techniques</li>
+                    <li>Veneer and inlay protection</li>
+                    <li>Professional restoration timeline</li>
+                    <li>Storage and environmental control</li>
+                </ul>
+                <a href="../assets/pdfs/antique-furniture-emergency-care.pdf" download class="download-btn">Download PDF</a>
+            </div>
+        </div>
+
+        <!-- Photograph Preservation Checklist -->
+        <div class="checklist-card document">
+            <div class="card-header">
+                <div class="card-icon">📸</div>
+                <h3 class="card-title">Photograph Memory Preservation</h3>
+                <p class="card-subtitle">Save irreplaceable family photos and memories</p>
+            </div>
+            <div class="card-body">
+                <ul class="feature-list">
+                    <li>Immediate photo stabilization</li>
+                    <li>Air-drying techniques</li>
+                    <li>Digital scanning priorities</li>
+                    <li>Professional restoration options</li>
+                </ul>
+                <a href="../assets/pdfs/photograph-memory-preservation.pdf" download class="download-btn">Download PDF</a>
+            </div>
+        </div>
+
+        <!-- Insurance Documentation Checklist -->
+        <div class="checklist-card insurance">
+            <div class="card-header">
+                <div class="card-icon">📋</div>
+                <h3 class="card-title">Insurance Documentation Checklist</h3>
+                <p class="card-subtitle">Maximize your insurance claim recovery</p>
+            </div>
+            <div class="card-body">
+                <ul class="feature-list">
+                    <li>Required documentation list</li>
+                    <li>Photo and video evidence</li>
+                    <li>Detailed inventory methods</li>
+                    <li>Adjuster communication tips</li>
+                </ul>
+                <a href="../assets/pdfs/insurance-documentation-checklist.pdf" download class="download-btn">Download PDF</a>
+            </div>
+        </div>
+
+        <!-- Business Continuity Checklist -->
+        <div class="checklist-card insurance">
+            <div class="card-header">
+                <div class="card-icon">💼</div>
+                <h3 class="card-title">Business Continuity After Disaster</h3>
+                <p class="card-subtitle">Minimize downtime and business interruption</p>
+            </div>
+            <div class="card-body">
+                <ul class="feature-list">
+                    <li>Critical operations assessment</li>
+                    <li>Data backup and recovery</li>
+                    <li>Employee communication plan</li>
+                    <li>Alternative workspace options</li>
+                </ul>
+                <a href="../assets/pdfs/business-continuity-after-disaster.pdf" download class="download-btn">Download PDF</a>
+            </div>
+        </div>
+
+        <!-- Emergency Contacts Checklist -->
+        <div class="checklist-card insurance">
+            <div class="card-header">
+                <div class="card-icon">📞</div>
+                <h3 class="card-title">Complete Emergency Contact List</h3>
+                <p class="card-subtitle">All essential emergency contacts in one place</p>
+            </div>
+            <div class="card-body">
+                <ul class="feature-list">
+                    <li>Emergency services (911, fire, police)</li>
+                    <li>Insurance company contacts</li>
+                    <li>Utility company numbers</li>
+                    <li>Professional restoration services</li>
+                </ul>
+                <a href="../assets/pdfs/complete-emergency-contact-list.pdf" download class="download-btn">Download PDF</a>
+            </div>
+        </div>
     </main>
 
     <section class="emergency-contact">
@@ -362,21 +563,12 @@
     </section>
 
     <script>
-        function printPDF(url) {
-            // Open the HTML checklist in a new window and trigger print
-            const printWindow = window.open(url, '_blank');
-            printWindow.onload = function() {
-                printWindow.print();
-            };
-        }
-
         // Track downloads for analytics
         document.addEventListener('DOMContentLoaded', function() {
             const downloadLinks = document.querySelectorAll('.download-btn');
             downloadLinks.forEach(link => {
                 link.addEventListener('click', function() {
-                    // Track download events (can be integrated with Google Analytics)
-                    console.log('Checklist accessed:', this.href);
+                    console.log('Checklist downloaded:', this.href);
                 });
             });
         });

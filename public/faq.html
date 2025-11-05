@@ -22,18 +22,10 @@
             },
             {
                 "@type": "Question",
-                "name": "Do you work directly with insurance companies?",
+                "name": "Do you offer 24/7 emergency services?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes, we work directly with all major insurance providers and understand the claims process thoroughly. We can assist with documentation, provide detailed estimates, and communicate directly with your adjuster to ensure your claim moves forward smoothly. Our experience helps maximize your coverage while minimizing out-of-pocket costs."
-                }
-            },
-            {
-                "@type": "Question",
-                "name": "What types of items can you restore?",
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": "We specialize in restoration of documents, textiles, electronics, artwork, and personal belongings affected by water, fire, smoke, or mold damage. Our services include cleaning, deodorization, and restoration of items that many consider 'total losses.' Each situation is unique, so we provide free assessments to determine what can be saved."
+                    "text": "Yes, we provide 24/7 emergency response for urgent situations like active water leaks, fire damage, or severe storm damage. Call 301-215-3191 anytime, and we'll dispatch a team to stabilize the situation and prevent further damage."
                 }
             },
             {
@@ -46,6 +38,86 @@
             },
             {
                 "@type": "Question",
+                "name": "Do you work directly with insurance companies?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we work directly with all major insurance providers and understand the claims process thoroughly. We can assist with documentation, provide detailed estimates, and communicate directly with your adjuster to ensure your claim moves forward smoothly. Our experience helps maximize your coverage while minimizing out-of-pocket costs."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Will my homeowner's insurance cover restoration services?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Most homeowner's insurance policies cover restoration services for sudden and accidental damage like water leaks, fire, storm damage, and vandalism. Coverage varies by policy, so we recommend contacting your insurance company immediately after damage occurs. We can help you understand your coverage and work directly with your adjuster."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you provide free estimates?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we provide free assessments and estimates for all restoration projects. For emergency situations, we'll assess the damage on-site and provide a detailed scope of work and cost estimate before beginning restoration."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What types of items can you restore?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We specialize in restoration of documents, textiles, electronics, artwork, and personal belongings affected by water, fire, smoke, or mold damage. Our services include cleaning, deodorization, and restoration of items that many consider total losses. Each situation is unique, so we provide free assessments to determine what can be saved."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can you restore water-damaged electronics?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we have specialized equipment and expertise for electronics restoration. We use proprietary treatment systems to clean and restore computers, servers, televisions, and other electronics damaged by water, fire, or smoke. The success rate depends on the severity of damage and how quickly we can begin treatment."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do you handle mold remediation?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we provide comprehensive mold remediation services including assessment, containment, removal, and prevention. We follow EPA guidelines and use hydroxyl deodorization and HEPA filtration to ensure safe, thorough mold removal. We also address the underlying moisture issues to prevent future growth."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can you restore historical or antique items?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, we specialize in restoration of historical documents, antique furniture, vintage photographs, and Civil War-era artifacts. We understand the unique challenges of preserving historical items and use appropriate methods that maintain their historical integrity while removing damage."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How long does the restoration process take?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Timeline varies based on the type and extent of damage. Water extraction and drying typically takes 3-5 days. Document restoration can take 1-4 weeks depending on quantity and damage severity. Electronics restoration usually takes 5-10 business days. We provide detailed timelines during the initial assessment."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is your restoration process?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Our process includes: (1) Emergency response and damage assessment, (2) Documentation for insurance, (3) Item stabilization and inventory, (4) Specialized cleaning and restoration using appropriate methods, (5) Deodorization if needed, (6) Quality inspection, and (7) Secure delivery or storage. We keep you informed throughout the entire process."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Which areas do you serve in the DMV region?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "We provide comprehensive restoration services throughout the Greater Washington DC area, including Montgomery County MD, Prince George's County MD, Fairfax County VA, Arlington County VA, Loudoun County VA, Prince William County VA, and Washington DC. We maintain local knowledge of building codes, regulations, and insurance requirements for each jurisdiction."
+                }
+            },
+            {
+                "@type": "Question",
                 "name": "Are your restoration methods safe and certified?",
                 "acceptedAnswer": {
                     "@type": "Answer",
@@ -54,10 +126,10 @@
             },
             {
                 "@type": "Question",
-                "name": "Which areas do you serve in the DMV region?",
+                "name": "Do you have experience with commercial restoration projects?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "We provide comprehensive restoration services throughout the Greater Washington DC area, including Montgomery County MD, Prince George's County MD, Fairfax County VA, Arlington County VA, and Washington DC. We maintain local knowledge of building codes, regulations, and insurance requirements for each jurisdiction."
+                    "text": "Yes, we provide commercial restoration services for businesses, government facilities, and institutions throughout the DMV region. We understand business continuity needs and work efficiently to minimize downtime. We have experience with HIPAA-compliant document recovery, data center restoration, and large-scale commercial projects."
                 }
             }
         ]
@@ -182,11 +254,42 @@
             font-weight: 600;
             color: #1565c0;
             border-left: 5px solid #00a0df;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s;
+        }
+        .faq-question:hover {
+            background: #e3f2fd;
+        }
+        .faq-question::after {
+            content: '+';
+            font-size: 1.5rem;
+            font-weight: 700;
+            transition: transform 0.3s;
+        }
+        .faq-question.active::after {
+            transform: rotate(45deg);
         }
         .faq-answer {
             padding: 20px;
             color: #555;
             line-height: 1.8;
+            display: none;
+        }
+        .faq-answer.active {
+            display: block;
+        }
+        .faq-category {
+            margin-top: 50px;
+            margin-bottom: 30px;
+        }
+        .faq-category h2 {
+            color: #1565c0;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #00a0df;
         }
         .checklist-offer {
             background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
@@ -239,10 +342,20 @@
                         <select id="checklistType" style="flex: 1; min-width: 200px; padding: 12px; border: 1px solid #ddd; border-radius: 5px;">
                             <option value="water-emergency">💧 Water Emergency Checklist</option>
                             <option value="fire-damage">🔥 Fire Damage Recovery</option>
-                            <option value="lightning-strike">⚡ Lightning Strike Protection</option>
-                            <option value="smoke-damage">💨 Smoke Damage Response</option>
                             <option value="storm-damage">🌪️ Storm Damage Assessment</option>
+                            <option value="smoke-damage">💨 Smoke Damage Response</option>
                             <option value="document-recovery">📄 Document Recovery</option>
+                            <option value="electronics-recovery">📱 Electronics Water Damage</option>
+                            <option value="mold-prevention">🦠 Mold Prevention</option>
+                            <option value="textile-care">👕 Textile & Fabric Care</option>
+                            <option value="art-antiques">🎨 Art & Antiques Emergency</option>
+                            <option value="basement-flooding">🏠 Basement Flooding Response</option>
+                            <option value="kitchen-fire">🍳 Kitchen Fire Damage</option>
+                            <option value="antique-furniture">🪑 Antique Furniture Care</option>
+                            <option value="photograph-preservation">📸 Photograph Preservation</option>
+                            <option value="insurance-documentation">📋 Insurance Documentation</option>
+                            <option value="business-continuity">💼 Business Continuity</option>
+                            <option value="emergency-contacts">📞 Emergency Contact List</option>
                         </select>
                     </div>
                     <button type="submit" class="cta-button" id="submitBtn">Get Professional Checklist</button>
@@ -252,9 +365,9 @@
                     </div>
                 </form>
                 <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-bottom: 20px;">
-                    <a href="checklists/pdf-viewer/viewer.html?checklist=water-emergency" style="background: #1976d2; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; font-weight: 600;">💧 Water Emergency</a>
-                    <a href="checklists/pdf-viewer/viewer.html?checklist=fire-damage" style="background: #d32f2f; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; font-weight: 600;">🔥 Fire Damage</a>
-                    <a href="checklists/pdf-viewer/viewer.html?checklist=lightning-strike" style="background: #ff6f00; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; font-weight: 600;">⚡ Lightning Strike</a>
+                    <a href="checklists/assets/pdfs/water-emergency-save-what-matters.pdf" download style="background: #1976d2; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; font-weight: 600;">💧 Water Emergency</a>
+                    <a href="checklists/assets/pdfs/fire-damage-first-48-hours.pdf" download style="background: #d32f2f; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; font-weight: 600;">🔥 Fire Damage</a>
+                    <a href="checklists/assets/pdfs/storm-damage-immediate-actions.pdf" download style="background: #ff6f00; color: white; padding: 12px 20px; text-decoration: none; border-radius: 8px; font-weight: 600;">⚡ Lightning Strike</a>
                 </div>
                 <a href="checklists/pdf-viewer/" style="background: #00a0df; color: white; padding: 15px 30px; text-decoration: none; border-radius: 25px; font-weight: 600; display: inline-block;">View All 16 Professional Checklists</a>
                 <p style="font-size: 0.9rem; color: #777; margin-top: 15px;">
@@ -265,9 +378,14 @@
     </section>
 
     <main class="faq-container">
+        <!-- Emergency Response FAQs -->
+        <div class="faq-category">
+            <h2>📞 Emergency Response & Availability</h2>
+        </div>
+
         <div class="faq-section">
             <div class="faq-question">
-                📞 How quickly can you respond to an emergency?
+                How quickly can you respond to an emergency?
             </div>
             <div class="faq-answer">
                 We prioritize emergency calls and typically respond within hours during business hours. For true emergencies, we have 24/7 availability. Response times vary by location within the DMV region, but we maintain rapid response protocols to minimize further damage to your property.
@@ -276,7 +394,30 @@
 
         <div class="faq-section">
             <div class="faq-question">
-                💰 Do you work directly with insurance companies?
+                Do you offer 24/7 emergency services?
+            </div>
+            <div class="faq-answer">
+                Yes, we provide 24/7 emergency response for urgent situations like active water leaks, fire damage, or severe storm damage. Call 301-215-3191 anytime, and we'll dispatch a team to stabilize the situation and prevent further damage.
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-question">
+                What should I do immediately after damage occurs?
+            </div>
+            <div class="faq-answer">
+                First, ensure everyone's safety and contact emergency services if needed. Then, contact your insurance company to report the claim. Document the damage with photos and contact us for emergency stabilization. Our free emergency checklists provide detailed step-by-step guidance for different damage types.
+            </div>
+        </div>
+
+        <!-- Insurance & Pricing FAQs -->
+        <div class="faq-category">
+            <h2>💰 Insurance & Pricing</h2>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-question">
+                Do you work directly with insurance companies?
             </div>
             <div class="faq-answer">
                 Yes, we work directly with all major insurance providers and understand the claims process thoroughly. We can assist with documentation, provide detailed estimates, and communicate directly with your adjuster to ensure your claim moves forward smoothly. Our experience helps maximize your coverage while minimizing out-of-pocket costs.
@@ -285,7 +426,30 @@
 
         <div class="faq-section">
             <div class="faq-question">
-                🏠 What types of items can you restore?
+                Will my homeowner's insurance cover restoration services?
+            </div>
+            <div class="faq-answer">
+                Most homeowner's insurance policies cover restoration services for sudden and accidental damage like water leaks, fire, storm damage, and vandalism. Coverage varies by policy, so we recommend contacting your insurance company immediately after damage occurs. We can help you understand your coverage and work directly with your adjuster.
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-question">
+                Do you provide free estimates?
+            </div>
+            <div class="faq-answer">
+                Yes, we provide free assessments and estimates for all restoration projects. For emergency situations, we'll assess the damage on-site and provide a detailed scope of work and cost estimate before beginning restoration.
+            </div>
+        </div>
+
+        <!-- Services & Capabilities FAQs -->
+        <div class="faq-category">
+            <h2>🏠 Services & Restoration Capabilities</h2>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-question">
+                What types of items can you restore?
             </div>
             <div class="faq-answer">
                 We specialize in restoration of documents, textiles, electronics, artwork, and personal belongings affected by water, fire, smoke, or mold damage. Our services include cleaning, deodorization, and restoration of items that many consider "total losses." Each situation is unique, so we provide free assessments to determine what can be saved.
@@ -294,16 +458,71 @@
 
         <div class="faq-section">
             <div class="faq-question">
-                📋 What should I do immediately after damage occurs?
+                Can you restore water-damaged electronics?
             </div>
             <div class="faq-answer">
-                First, ensure everyone's safety and contact emergency services if needed. Then, contact your insurance company to report the claim. Document the damage with photos and contact us for emergency stabilization. Our free emergency checklists below provide detailed step-by-step guidance for different damage types.
+                Yes, we have specialized equipment and expertise for electronics restoration. We use proprietary treatment systems to clean and restore computers, servers, televisions, and other electronics damaged by water, fire, or smoke. The success rate depends on the severity of damage and how quickly we can begin treatment.
             </div>
         </div>
 
         <div class="faq-section">
             <div class="faq-question">
-                🔬 Are your restoration methods safe and certified?
+                Do you handle mold remediation?
+            </div>
+            <div class="faq-answer">
+                Yes, we provide comprehensive mold remediation services including assessment, containment, removal, and prevention. We follow EPA guidelines and use hydroxyl deodorization and HEPA filtration to ensure safe, thorough mold removal. We also address the underlying moisture issues to prevent future growth.
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-question">
+                Can you restore historical or antique items?
+            </div>
+            <div class="faq-answer">
+                Yes, we specialize in restoration of historical documents, antique furniture, vintage photographs, and Civil War-era artifacts. We understand the unique challenges of preserving historical items and use appropriate methods that maintain their historical integrity while removing damage.
+            </div>
+        </div>
+
+        <!-- Process & Timeline FAQs -->
+        <div class="faq-category">
+            <h2>⏱️ Process & Timeline</h2>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-question">
+                How long does the restoration process take?
+            </div>
+            <div class="faq-answer">
+                Timeline varies based on the type and extent of damage. Water extraction and drying typically takes 3-5 days. Document restoration can take 1-4 weeks depending on quantity and damage severity. Electronics restoration usually takes 5-10 business days. We provide detailed timelines during the initial assessment.
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-question">
+                What is your restoration process?
+            </div>
+            <div class="faq-answer">
+                Our process includes: (1) Emergency response and damage assessment, (2) Documentation for insurance, (3) Item stabilization and inventory, (4) Specialized cleaning and restoration using appropriate methods, (5) Deodorization if needed, (6) Quality inspection, and (7) Secure delivery or storage. We keep you informed throughout the entire process.
+            </div>
+        </div>
+
+        <!-- Service Area & Certification FAQs -->
+        <div class="faq-category">
+            <h2>📍 Service Area & Certifications</h2>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-question">
+                Which areas do you serve in the DMV region?
+            </div>
+            <div class="faq-answer">
+                We provide comprehensive restoration services throughout the Greater Washington DC area, including Montgomery County MD, Prince George's County MD, Fairfax County VA, Arlington County VA, Loudoun County VA, Prince William County VA, and Washington DC. We maintain local knowledge of building codes, regulations, and insurance requirements for each jurisdiction.
+            </div>
+        </div>
+
+        <div class="faq-section">
+            <div class="faq-question">
+                Are your restoration methods safe and certified?
             </div>
             <div class="faq-answer">
                 We follow industry best practices for all restoration work and maintain appropriate certifications for specialized services. Our methods are safe for both people and possessions, and we use eco-friendly cleaning solutions whenever possible. All work is performed to professional standards with proper documentation.
@@ -312,29 +531,40 @@
 
         <div class="faq-section">
             <div class="faq-question">
-                📍 Which areas do you serve in the DMV region?
+                Do you have experience with commercial restoration projects?
             </div>
             <div class="faq-answer">
-                We provide comprehensive restoration services throughout the Greater Washington DC area, including Montgomery County MD, Prince George's County MD, Fairfax County VA, Arlington County VA, and Washington DC. We maintain local knowledge of building codes, regulations, and insurance requirements for each jurisdiction.
+                Yes, we provide commercial restoration services for businesses, government facilities, and institutions throughout the DMV region. We understand business continuity needs and work efficiently to minimize downtime. We have experience with HIPAA-compliant document recovery, data center restoration, and large-scale commercial projects.
             </div>
         </div>
 
         <div class="checklist-offer">
-            <h2 style="color: #2e7d32; margin-bottom: 20px;">🎯 Free Emergency Checklists</h2>
+            <h2 style="color: #2e7d32; margin-bottom: 20px;">🎯 Free Emergency Checklists - Direct PDF Downloads</h2>
             <p style="margin-bottom: 30px; font-size: 1.1rem;">Professional emergency response guides used by restoration professionals</p>
             <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
-                <a href="checklists/water-damage-emergency-checklist.html" style="background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: #333; box-shadow: 0 4px 15px rgba(0,0,0,0.1); flex: 1; min-width: 250px; max-width: 300px;">
+                <a href="checklists/assets/pdfs/water-emergency-save-what-matters.pdf" download style="background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: #333; box-shadow: 0 4px 15px rgba(0,0,0,0.1); flex: 1; min-width: 250px; max-width: 300px;">
                     <h4 style="color: #1976d2; margin-bottom: 10px;">💧 Water Damage Emergency</h4>
                     <p>15-point professional response checklist</p>
                 </a>
-                <a href="checklists/fire-damage-emergency-checklist.html" style="background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: #333; box-shadow: 0 4px 15px rgba(0,0,0,0.1); flex: 1; min-width: 250px; max-width: 300px;">
+                <a href="checklists/assets/pdfs/fire-damage-first-48-hours.pdf" download style="background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: #333; box-shadow: 0 4px 15px rgba(0,0,0,0.1); flex: 1; min-width: 250px; max-width: 300px;">
                     <h4 style="color: #d32f2f; margin-bottom: 10px;">🔥 Fire Damage Recovery</h4>
                     <p>20-step restoration guide</p>
                 </a>
-                <a href="checklists/document-recovery-checklist.html" style="background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: #333; box-shadow: 0 4px 15px rgba(0,0,0,0.1); flex: 1; min-width: 250px; max-width: 300px;">
+                <a href="checklists/assets/pdfs/document-recovery-priority-guide.pdf" download style="background: white; padding: 20px; border-radius: 10px; text-decoration: none; color: #333; box-shadow: 0 4px 15px rgba(0,0,0,0.1); flex: 1; min-width: 250px; max-width: 300px;">
                     <h4 style="color: #7b1fa2; margin-bottom: 10px;">📄 Document Recovery</h4>
                     <p>HIPAA-compliant methods</p>
                 </a>
+            </div>
+            <div style="margin-top: 30px;">
+                <h3 style="color: #2e7d32; margin-bottom: 20px;">Additional Emergency Guides</h3>
+                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 15px;">
+                    <a href="checklists/assets/pdfs/electronics-water-damage-response.pdf" download style="background: #fff3e0; padding: 15px 25px; border-radius: 8px; text-decoration: none; color: #333; border: 2px solid #ff9800;">📱 Electronics Recovery</a>
+                    <a href="checklists/assets/pdfs/mold-prevention-quick-actions.pdf" download style="background: #f3e5f5; padding: 15px 25px; border-radius: 8px; text-decoration: none; color: #333; border: 2px solid #9c27b0;">🦠 Mold Prevention</a>
+                    <a href="checklists/assets/pdfs/storm-damage-immediate-actions.pdf" download style="background: #e0f2f1; padding: 15px 25px; border-radius: 8px; text-decoration: none; color: #333; border: 2px solid #009688;">🌪️ Storm Damage</a>
+                    <a href="checklists/assets/pdfs/smoke-damage-assessment-guide.pdf" download style="background: #fce4ec; padding: 15px 25px; border-radius: 8px; text-decoration: none; color: #333; border: 2px solid #e91e63;">💨 Smoke Damage</a>
+                    <a href="checklists/assets/pdfs/textile-fabric-damage-control.pdf" download style="background: #e8eaf6; padding: 15px 25px; border-radius: 8px; text-decoration: none; color: #333; border: 2px solid #3f51b5;">👕 Textile Care</a>
+                    <a href="checklists/assets/pdfs/art-antiques-emergency-protocol.pdf" download style="background: #fff9c4; padding: 15px 25px; border-radius: 8px; text-decoration: none; color: #333; border: 2px solid #fbc02d;">🎨 Art & Antiques</a>
+                </div>
             </div>
         </div>
     </main>
@@ -347,7 +577,27 @@
     </footer>
 
     <script>
-        // Redirect to PDF viewer with email tracking
+        // Simple PDF download mapping
+        const pdfMapping = {
+            'water-emergency': 'checklists/assets/pdfs/water-emergency-save-what-matters.pdf',
+            'fire-damage': 'checklists/assets/pdfs/fire-damage-first-48-hours.pdf',
+            'storm-damage': 'checklists/assets/pdfs/storm-damage-immediate-actions.pdf',
+            'smoke-damage': 'checklists/assets/pdfs/smoke-damage-assessment-guide.pdf',
+            'document-recovery': 'checklists/assets/pdfs/document-recovery-priority-guide.pdf',
+            'electronics-recovery': 'checklists/assets/pdfs/electronics-water-damage-response.pdf',
+            'mold-prevention': 'checklists/assets/pdfs/mold-prevention-quick-actions.pdf',
+            'textile-care': 'checklists/assets/pdfs/textile-fabric-damage-control.pdf',
+            'art-antiques': 'checklists/assets/pdfs/art-antiques-emergency-protocol.pdf',
+            'basement-flooding': 'checklists/assets/pdfs/basement-flooding-response-plan.pdf',
+            'kitchen-fire': 'checklists/assets/pdfs/kitchen-fire-damage-protocol.pdf',
+            'antique-furniture': 'checklists/assets/pdfs/antique-furniture-emergency-care.pdf',
+            'photograph-preservation': 'checklists/assets/pdfs/photograph-memory-preservation.pdf',
+            'insurance-documentation': 'checklists/assets/pdfs/insurance-documentation-checklist.pdf',
+            'business-continuity': 'checklists/assets/pdfs/business-continuity-after-disaster.pdf',
+            'emergency-contacts': 'checklists/assets/pdfs/complete-emergency-contact-list.pdf'
+        };
+
+        // Direct PDF download with optional email capture
         function redirectToChecklist(event) {
             event.preventDefault();
 
@@ -356,7 +606,7 @@
             const checklistType = document.getElementById('checklistType').value;
 
             if (!email) {
-                alert('Please enter your email address to access the professional checklist.');
+                alert('Please enter your email address to download the checklist.');
                 return;
             }
 
@@ -367,19 +617,20 @@
             submitBtn.style.display = 'none';
             loadingSpinner.style.display = 'block';
 
-            // Enhanced URL with zip code for regional optimization
-            // Detect mobile and use appropriate viewer (smart viewer for mobile)
-            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-            const viewerPath = isMobile ? 'checklists/pdf-viewer/mobile-smart.html' : 'checklists/pdf-viewer/viewer.html';
+            // Get PDF path
+            const pdfPath = pdfMapping[checklistType];
 
-            let viewerUrl = `${viewerPath}?checklist=${checklistType}&email=${encodeURIComponent(email)}`;
-            if (zipCode) {
-                viewerUrl += `&zip=${encodeURIComponent(zipCode)}`;
-            }
+            // Log lead capture (optional - can be sent to analytics)
+            console.log('Lead captured:', { email, zipCode, checklistType });
 
-            // Simulate processing delay for better UX
+            // Trigger download
             setTimeout(() => {
-                window.open(viewerUrl, '_blank');
+                const link = document.createElement('a');
+                link.href = pdfPath;
+                link.download = pdfPath.split('/').pop();
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
 
                 // Reset form state
                 submitBtn.style.display = 'block';
@@ -388,7 +639,7 @@
                 // Show success message
                 const successMsg = document.createElement('div');
                 successMsg.style.cssText = 'background: #4caf50; color: white; padding: 10px; border-radius: 5px; margin-top: 10px; text-align: center;';
-                successMsg.innerHTML = '✅ Checklist opened in new tab! Check your downloads for offline access.';
+                successMsg.innerHTML = '✅ Checklist download started! Check your downloads folder.';
                 loadingSpinner.parentNode.appendChild(successMsg);
 
                 setTimeout(() => {
@@ -399,12 +650,35 @@
             }, 800);
         }
 
-        // Basic form interaction
+        // FAQ Accordion functionality
         document.addEventListener('DOMContentLoaded', function() {
             console.log('FAQ page loaded successfully');
+
+            // Get all FAQ questions
+            const faqQuestions = document.querySelectorAll('.faq-question');
+
+            // Add click event to each question
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', function() {
+                    // Toggle active class on question
+                    this.classList.toggle('active');
+
+                    // Get the answer element (next sibling)
+                    const answer = this.nextElementSibling;
+
+                    // Toggle active class on answer
+                    if (answer && answer.classList.contains('faq-answer')) {
+                        answer.classList.toggle('active');
+                    }
+                });
+            });
+
+            // Optional: Open first FAQ by default
+            if (faqQuestions.length > 0) {
+                faqQuestions[0].click();
+            }
         });
     </script>
-    <script src="js/lead-capture.js"></script>
 
     <!-- Prism Specialties DMV GHL Conversation AI Widget -->
     <script src="js/ghl-direct-widget.js"></script>

@@ -4,9 +4,9 @@
 (function() {
     'use strict';
 
-    // Your GHL Conversation AI Widget Configuration
+    // Your GHL Voice Chatbot Widget Configuration
     const GHL_CONFIG = {
-        widgetId: '68445a117322c207c75b3c4c',
+        widgetId: '69111346d1e01cc82b9a42d8',
         locationId: 'BLEBkhJ9lBfryOyCfuOJ',
         loaderUrl: 'https://beta.leadconnectorhq.com/loader.js',
         resourcesUrl: 'https://beta.leadconnectorhq.com/chat-widget/loader.js'

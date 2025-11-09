@@ -199,11 +199,11 @@ class GHLConversationAI {
 
 // Initialize when page loads
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize with your actual GHL Conversation AI widget ID
+    // Initialize with your actual GHL Voice Chatbot widget ID
     window.ghlConversationAI = new GHLConversationAI({
-        widgetId: '68445a117322c207c75b3c4c' // Your Prism Specialties DMV widget ID
+        widgetId: '69111346d1e01cc82b9a42d8' // Your Prism Specialties DMV Voice Chatbot widget ID
     });
 
-    console.log('🤖 GHL Conversation AI integration loaded');
-    console.log('Widget ID: 68445a117322c207c75b3c4c');
+    console.log('🤖 GHL Voice Chatbot integration loaded');
+    console.log('Widget ID: 69111346d1e01cc82b9a42d8');
 });

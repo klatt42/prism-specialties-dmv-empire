@@ -58,31 +58,43 @@
         style.id = `widget-positioning-${config.widgetId}`;
 
         if (config.position === 'upper-right') {
-            // Move voice chatbot to upper right
+            // Move voice chatbot to upper right with proper spacing
             style.textContent = `
-                /* Try to target GHL widget iframe for voice chat */
+                /* Voice chatbot - upper right with higher z-index */
                 iframe[src*="${config.widgetId}"],
                 div[data-widget-id="${config.widgetId}"] {
                     top: 20px !important;
                     bottom: auto !important;
                     right: 20px !important;
+                    z-index: 9999 !important;
+                    max-height: 45vh !important;
                 }
 
                 /* Additional selectors for GHL widget containers */
                 [id*="chat-widget-container"][id*="${config.widgetId.substring(0, 8)}"] {
                     top: 20px !important;
                     bottom: auto !important;
+                    z-index: 9999 !important;
                 }
             `;
         } else {
-            // Keep text chatbot in default lower right
+            // Text chatbot in lower right with spacing from bottom and voice bot
             style.textContent = `
-                /* Text chatbot stays in lower right (default) */
+                /* Text chatbot - lower right with proper spacing */
                 iframe[src*="${config.widgetId}"],
                 div[data-widget-id="${config.widgetId}"] {
                     bottom: 20px !important;
                     top: auto !important;
                     right: 20px !important;
+                    z-index: 9998 !important;
+                    max-height: 45vh !important;
+                }
+
+                /* Ensure text chatbot container has proper spacing */
+                [id*="chat-widget-container"][id*="${config.widgetId.substring(0, 8)}"] {
+                    bottom: 20px !important;
+                    top: auto !important;
+                    z-index: 9998 !important;
                 }
             `;
         }
